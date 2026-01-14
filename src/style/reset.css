@@ -1,0 +1,53 @@
+/* reset.css */
+html {
+  color-scheme: light;
+}
+/* Remove margens, paddings e bordas padrões */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove estilos de listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove sublinhado de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Define altura total para HTML e body */
+html, body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Botões sem estilo padrão */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Imagens responsivas */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h3 {
+  color: var(--letra-escura);
+}
+
+p{
+  color: var(--letra-escura);
+}
