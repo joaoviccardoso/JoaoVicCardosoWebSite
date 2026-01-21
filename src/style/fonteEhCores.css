@@ -11,5 +11,7 @@
     --font-size-4xl: 5rem;
 
     /*Cores*/
-    
+    --cor-letraClara: #FFFFFF;
+    --color-componente: #0A0A0A;
+    --color-backgroundPagina:linear-gradient(180deg,#121212 0%,#1a1a1a 50%,#232323 100%);
 }

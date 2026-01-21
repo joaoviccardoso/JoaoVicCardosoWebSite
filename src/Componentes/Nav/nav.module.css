@@ -1,4 +1,18 @@
-h1{
-    font-size: 36px;
-    color: #000;
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    margin: 1rem 0rem;
+    background-color: var(--color-componente);
+}
+
+.navLink{
+    font-size: 26px;
+    color: var(--cor-letraClara);
+}
+
+.ul{
+   display: flex;
+   gap: 3rem;
 }
