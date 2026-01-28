@@ -11,23 +11,23 @@ function Nav(){
                 <ul className={NavCss.ul}>
                     <LinkParaNavegacao
                         child="Home"
-                        className={NavCss.navLink}
+                        to="/"
                     />
                     <LinkParaNavegacao
                         child="Serviços"
-                        className={NavCss.navLink}
+                        to="Servicos"
                     />
                     <LinkParaNavegacao
                         child="Sobre mim"
-                        className={NavCss.navLink}
+                        to="SobreMim"
                     />
                     <LinkParaNavegacao
                         child="Portfólio"
-                        className={NavCss.navLink}
+                        to="Portfolio"
                     />
                     <LinkParaNavegacao
                         child="Contado"
-                        className={NavCss.navLink}
+                        to="Contato"
                     />
                 </ul>
             </nav>

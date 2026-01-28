@@ -13,5 +13,6 @@
     /*Cores*/
     --cor-letraClara: #FFFFFF;
     --color-componente: #0A0A0A;
+    --cor-principal: #22533D;
     --color-backgroundPagina:linear-gradient(180deg,#121212 0%,#1a1a1a 50%,#232323 100%);
 }

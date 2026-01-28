@@ -7,11 +7,6 @@
     background-color: var(--color-componente);
 }
 
-.navLink{
-    font-size: 26px;
-    color: var(--cor-letraClara);
-}
-
 .ul{
    display: flex;
    gap: 3rem;
