@@ -1,5 +1,6 @@
 import NavCss from './nav.module.css' 
 import LinkParaNavegacao from '../Links/link'
+import ListaNav from '../ListaNav'
 
 function Nav(){
     return(
@@ -9,25 +10,8 @@ function Nav(){
                 </div>
 
                 <ul className={NavCss.ul}>
-                    <LinkParaNavegacao
-                        child="Home"
-                        to="/"
-                    />
-                    <LinkParaNavegacao
-                        child="Serviços"
-                        to="Servicos"
-                    />
-                    <LinkParaNavegacao
-                        child="Sobre mim"
-                        to="SobreMim"
-                    />
-                    <LinkParaNavegacao
-                        child="Portfólio"
-                        to="Portfolio"
-                    />
-                    <LinkParaNavegacao
-                        child="Contado"
-                        to="Contato"
+                    <ListaNav
+                        className="navLinkHome"
                     />
                 </ul>
             </nav>

@@ -1,0 +1,56 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-componente);
+    padding: 2.5rem;
+}
+
+.divFooter{
+    display: flex;
+    justify-content: space-around;
+    gap: 7rem;
+}
+
+.footerSobre{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.containerRedes{
+    width: 270px;
+    padding-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.linkPequeno{
+  font-size: 20px;
+  font-weight: 200;
+  width: 120px;
+}
+
+.h3Footer{
+    font-size: var(--font-size-2xl);
+    color: var(--cor-letraClara);
+}
+
+.textoFooter{
+    font-size: 20px;
+    font-weight: 200;
+    color: var(--cor-letraClara);
+    margin-top: .4rem;
+}
+
+.navFooter{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footerCopy{
+    color: var(--cor-letraClara);
+}

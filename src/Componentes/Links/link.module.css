@@ -2,7 +2,9 @@
     position: relative;
     font-size: 26px;
     font-weight: 500;
+    font-family: var(--font-paraTexto);
     color: var(--cor-letraClara);
+    transition: all 0.15s ease;
 }
 
 .navLink::after{
@@ -20,6 +22,12 @@
     0 0 12px #00FF9C,
     0 0 24px rgba(0, 255, 156, 0.7),
     0 0 48px rgba(0, 255, 156, 0.4);
+}
+
+.navLink:active {
+    transform: scale(0.95);
+    color: #00FF9C;
+    text-shadow: 0 0 8px rgba(0, 255, 156, 0.8);
 }
 
 .navLink:hover::after{

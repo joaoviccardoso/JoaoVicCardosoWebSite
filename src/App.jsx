@@ -6,6 +6,7 @@ import Servicos from "./Paginas/Servicos"
 import SobreMim from "./Paginas/SobreMim"
 import Portfolio from "./Paginas/portfolio"
 import "./style/fonteEhCores.css"
+import Footer from "./Componentes/Footer"
 
 function App() {
 
@@ -22,6 +23,10 @@ function App() {
         <Route path="/Servicos" element={<Servicos/>}/>
         <Route path="/SobreMim" element={<SobreMim/>}/>
       </Routes>
+
+      <footer>
+        <Footer/>
+      </footer>
     </>
   )
 }
