@@ -5,6 +5,7 @@ import Contato from "./Paginas/Contato"
 import Servicos from "./Paginas/Servicos"
 import SobreMim from "./Paginas/SobreMim"
 import Portfolio from "./Paginas/portfolio"
+import OffCanvas from "./Componentes/OffCanvasNav/OffCanvas"
 import "./style/fonteEhCores.css"
 import Footer from "./Componentes/Footer"
 
@@ -16,13 +17,17 @@ function App() {
         <Nav/>
       </header>
 
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/Contato" element={<Contato/>}/>
-        <Route path="/Portfolio" element={<Portfolio/>}/>
-        <Route path="/Servicos" element={<Servicos/>}/>
-        <Route path="/SobreMim" element={<SobreMim/>}/>
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/Contato" element={<Contato/>}/>
+          <Route path="/Portfolio" element={<Portfolio/>}/>
+          <Route path="/Servicos" element={<Servicos/>}/>
+          <Route path="/SobreMim" element={<SobreMim/>}/>
+        </Routes>
+      </main>
+
+      <OffCanvas/>
 
       <footer>
         <Footer/>

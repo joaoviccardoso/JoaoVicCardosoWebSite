@@ -1,0 +1,9 @@
+.offcanvas{
+    background: var(--color-gradienteVerde);
+}
+
+.navIitem{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
