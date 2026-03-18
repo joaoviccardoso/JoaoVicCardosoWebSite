@@ -1,3 +1,48 @@
-.h1{
+.sectionHero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerImagemHero{
+    position: relative;
+    top: 25px;
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+}
+
+.containerImagemHero span{
+    position: relative;
+}
+
+.containerImagemHero p{
+    width: 220px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: var(--cor-letraClara);
+    font-family: var(--font-paraTexto);
+    font-size: var(--font-size-xl);
+}
+
+.containerTextoHero{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerTextoHero h1{
+    font-size: var(--font-size-3x2);
+    font-family: var(--font-paraTextoChamativo);
     color: #fff;
+}
+
+.containerTextoHero p{
+    font-size: var(--font-size-xl);
+    font-family: var(---font-paraTexto);
+    color: #fff;
+    padding-right: 9rem;
 }

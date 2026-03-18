@@ -55,7 +55,7 @@
     width: 28px;
 }
 
-@media(max-width: 430px){
+@media(max-width: 480px){
     .nav{
         width: 85%;
     }
