@@ -59,7 +59,7 @@ p{
   color: var(--letra-escura);
 }
 
-@media(max-width: 430px){
+@media(max-width: 480px){
     body{
       padding: 0;
     }
@@ -72,6 +72,7 @@ p{
     }
 
     main{
-      display: none;
+      width: 100%;
+      padding: 0 38px ;
     }
 }

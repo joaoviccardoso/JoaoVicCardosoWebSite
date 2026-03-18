@@ -12,7 +12,7 @@ function Image({ href, src, alt, width, height, className }) {
             alt={alt}
             width={width}
             height={height}
-            className={className}
+            className={`${CssImg.img || ""}${className || ""}`}
             loading="lazy"
         />
     </a>
