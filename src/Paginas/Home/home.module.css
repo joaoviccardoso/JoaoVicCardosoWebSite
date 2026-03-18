@@ -54,3 +54,42 @@
     gap: 8rem;
     margin: 2rem 0 6rem 0;
 }
+
+@media(max-width: 480px){
+    .containerTextoHero h1{
+        font-size: var(--font-size-2xl);
+        font-family: var(--font-paraTextoChamativo);
+        color: #fff;
+    }
+
+    .containerImagemHero{
+        top: 10px;
+        width: 100%;
+    }
+
+    .containerTextoHero p{
+        font-size: var(--font-size-xl);
+        font-family: var(---font-paraTexto);
+        color: #fff;
+        padding:0;
+    }
+
+    .containerBotaoCta{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .containerImagemHero span img{
+        width: 140px;
+    }
+
+    .containerImagemHero p{
+        font-size: var(--font-size-xs);
+        width: 120px;
+    }
+
+    .containerImagemHero img{
+        width: 110px;
+    }
+}
