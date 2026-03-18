@@ -57,18 +57,19 @@
 
 @media(max-width: 480px){
     .containerTextoHero h1{
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-xl);
         font-family: var(--font-paraTextoChamativo);
         color: #fff;
     }
 
     .containerImagemHero{
-        top: 10px;
+        top: 42px;
         width: 100%;
+        margin: 2rem;
     }
 
     .containerTextoHero p{
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-md);
         font-family: var(---font-paraTexto);
         color: #fff;
         padding:0;
