@@ -7,10 +7,11 @@
 
 .containerImagemHero{
     position: relative;
-    top: 25px;
+    top: 38px;
     display: flex;
     justify-content: space-between;
-    width: 55%;
+    width: 75%;
+    margin-top: 5.5rem;
 }
 
 .containerImagemHero span{
@@ -32,17 +33,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 
 .containerTextoHero h1{
-    font-size: var(--font-size-3x2);
+    font-size: var(--font-size-4xl);
     font-family: var(--font-paraTextoChamativo);
     color: #fff;
 }
 
 .containerTextoHero p{
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl);
     font-family: var(---font-paraTexto);
     color: #fff;
-    padding-right: 9rem;
+    padding-right: 17rem;
+}
+
+.containerBotaoCta{
+    display: flex;
+    gap: 8rem;
+    margin: 2rem 0 6rem 0;
 }

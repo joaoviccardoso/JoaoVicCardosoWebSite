@@ -1,4 +1,5 @@
 import CssHome from "./home.module.css"
+import BotaoCta from "../../Componentes/BotaoCta"
 
 function Home(){
     return(
@@ -15,6 +16,17 @@ function Home(){
             <div className={CssHome.containerTextoHero}>
                 <h1>Eu ajudo negócios a crescer <br/>na internet</h1>
                 <p>Desenvolvo sites que conectam sua empresa a mais clientes, de <br/> forma simples e profissional.</p>
+            </div>
+
+            <div className={CssHome.containerBotaoCta}>
+                <BotaoCta
+                    child="Comece seu projeto hoje"
+                    to=""
+                />
+                <BotaoCta
+                    child="Comece seu projeto hoje"
+                    to=""
+                />
             </div>
         </section>
     )
