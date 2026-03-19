@@ -56,17 +56,13 @@
     margin: 2rem 0 6rem 0;
 }
 
-.secao {
+.secao{
     position: relative;
     background: var(--cor-containerCortado);
     width: 100%;
     height: auto;
     clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
     padding: 9rem 10rem 0 10rem;
-}
-
-.containerPresencaDigital{
-    
 }
 
 .containerPresencaDigital h2{
@@ -76,7 +72,7 @@
 }
 
 .containerPresencaDigital p{
-    width: 60%;
+    width: 48%;
     font-size: var(--font-size-xl);
     font-family: var(---font-paraTexto);
     color: #fff;
@@ -125,5 +121,16 @@
 
     .secao {
         clip-path: polygon(0 16%, 100% 0, 100% 100%, 0% 100%);
+        padding: 9rem 2rem 0 2rem;
+    }
+
+    .containerPresencaDigital h2{
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerPresencaDigital p{
+        width: 90%;
+        font-size: var(--font-size-lg);
+        margin: 0;
     }
 }
