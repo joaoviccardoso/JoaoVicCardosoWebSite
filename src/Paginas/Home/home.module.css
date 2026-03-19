@@ -60,9 +60,9 @@
     position: relative;
     background: var(--cor-containerCortado);
     width: 100%;
-    height: auto;
-    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
-    padding: 9rem 10rem 0 10rem;
+    height: 100%;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+    padding: 9rem 12rem 0 12rem;
 }
 
 .containerPresencaDigital h2{
@@ -78,6 +78,31 @@
     color: #fff;
     padding-top: 0.6rem;
     margin: 0;
+}
+
+.containerForaDaInternet{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.containerForaDaInternet img{
+    width: 450px;
+}
+
+.containerTexto h3{
+    color: var(--cor-letraClara);
+    font-family: var(--font-paraTextoChamativo);
+    font-size: var(--font-size-3xl);
+    padding-top: 3rem;
+}
+
+.containerTexto p{
+    width: 750px;
+    color: var(--cor-letraClara);
+    font-family: var(--font-paraTexto);
+    font-size: var(--font-size-xl);
 }
 
 @media(max-width: 480px){
@@ -120,7 +145,7 @@
     }
 
     .secao {
-        clip-path: polygon(0 16%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 6%, 100% 0, 100% 100%, 0% 100%);
         padding: 9rem 2rem 0 2rem;
     }
 
@@ -132,5 +157,33 @@
         width: 90%;
         font-size: var(--font-size-lg);
         margin: 0;
+    }
+
+    .containerForaDaInternet{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .containerTexto{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .containerTexto h3{
+        color: var(--cor-letraClara);
+        font-family: var(--font-paraTextoChamativo);
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerTexto p{
+        width: auto;
+        color: var(--cor-letraClara);
+        font-family: var(--font-paraTexto);
+        font-size: var(--font-size-lg);
+    }
+
+    .containerForaDaInternet img{
+        width: 300px;
     }
 }
