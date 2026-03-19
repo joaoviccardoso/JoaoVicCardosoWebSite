@@ -14,6 +14,7 @@
     --cor-letraClara: #FFFFFF;
     --color-componente: #0A0A0A;
     --cor-principal: #22533D;
+    --cor-containerCortado: rgba(1,1,1, 0.6);
     --color-gradienteVerde: linear-gradient(to right, #10B981, #07533A);
     --color-backgroundPagina:linear-gradient(180deg,#121212 0%,#1a1a1a 50%,#232323 100%);
     --box-shadow:
