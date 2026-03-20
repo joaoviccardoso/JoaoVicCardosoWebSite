@@ -7,21 +7,6 @@
     padding: 9rem 12rem 0 12rem;
 }
 
-.containerPresencaDigital h2{
-    font-size: var(--font-size-3xl);
-    font-family: var(--font-paraTextoChamativo);
-    color: #fff;
-}
-
-.containerPresencaDigital p{
-    width: 48%;
-    font-size: var(--font-size-xl);
-    font-family: var(---font-paraTexto);
-    color: #fff;
-    padding-top: 0.6rem;
-    margin: 0;
-}
-
 .containerForaDaInternet{
     display: flex;
     align-items: center;
@@ -52,16 +37,6 @@
     .secao {
         clip-path: polygon(0 6%, 100% 0, 100% 100%, 0% 100%);
         padding: 9rem 2rem 0 2rem;
-    }
-
-    .containerPresencaDigital h2{
-        font-size: var(--font-size-2xl);
-    }
-
-    .containerPresencaDigital p{
-        width: 90%;
-        font-size: var(--font-size-lg);
-        margin: 0;
     }
 
     .containerForaDaInternet{
