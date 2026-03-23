@@ -1,0 +1,42 @@
+.wrapper {
+    width: 45%;
+    background: transparent;
+    filter: drop-shadow(var(--verde) 1.95px 1.95px 2.6px);
+}
+
+.containerTexto{
+    background-color: var(--preto);
+    padding: 20px;
+    height: 300px;
+    color: white;
+    border-radius: 6px;
+    
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 75%,
+        85% 100%,
+        0 100%
+    );
+}
+
+.containerTexto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 100%;
+    background: var(--color-gradienteVerdeBottom);
+    border-radius: 6px 0 0 6px;
+}
+
+.containerTexto h3{
+    font-size: var(--font-size-2xl);
+    font-family: var(--font-paraTextoChamativo);
+}
+
+.containerTexto p{
+    font-size: var(--font-size-lg);
+    font-family: var(--font-paraTexto);
+}
