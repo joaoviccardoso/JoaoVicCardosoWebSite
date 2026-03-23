@@ -1,0 +1,36 @@
+.containerTituloDaSecao{
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.containerTituloDaSecao h3{
+    font-size: var(--font-size-3xl);
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+}
+
+.containerTituloDaSecao p{
+    font-size: var(--font-size-lg);
+    font-family: var(--font-paraTexto);
+    color: var(--cor-letraClara);
+}
+
+.ulLista {
+    display: grid;
+    padding: 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 140px 80px; /* vertical | horizontal */
+    padding-bottom: 8rem;
+}
+
+.Lista2 {
+    transform: translateY(60px);
+}
+
+.Lista3 {
+    transform: translateY(-40px);
+}
+
+.Lista4 {
+    transform: translateY(40px);
+}
