@@ -34,3 +34,39 @@
 .Lista4 {
     transform: translateY(40px);
 }
+
+@media(max-width: 480px){
+    .secaoComoTransformoIdeias {
+        background-image: none !important;
+    }
+
+    .containerTituloDaSecao{
+        text-align: center;
+        padding: 3rem 0;
+    }
+
+    .containerTituloDaSecao h3{
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerTituloDaSecao p{
+        font-size: var(--font-size-md);
+    }
+
+    .ulLista {
+        grid-template-columns: 1fr;
+        gap: 28px 0px; /* vertical | horizontal */
+    }
+
+    .Lista2 {
+    transform: translateY(0);
+}
+
+    .Lista3 {
+        transform: translateY(0);
+    }
+
+    .Lista4 {
+        transform: translateY(0);
+    }
+}

@@ -42,3 +42,13 @@
     font-family: var(--font-paraTexto);
     padding-left: 1rem;
 }
+
+@media(max-width: 480px){
+    .containerTexto h3{
+        font-size: var(--font-size-xl);
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-md);
+    }
+}

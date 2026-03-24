@@ -20,22 +20,22 @@ function ComoTranformoIdeia(){
 
                 <li className={CssComoTranformoIdeia.Lista2}>
                     <ContainerTexto
-                        titulo="Desenvolvimento Web"
-                        texto="Crio landing pages impactantes e sistemas web robustos, combinando tecnologia de ponta com designs responsivos que funcionam perfeitamente em todos os dispositivos. Sua presença online com performance excepcional."                
+                        titulo="Design UX/UI"
+                        texto="Desenvolvo interfaces intuitivas e atraentes no Figma que encantam seus usuários. Design não é apenas sobre aparência - é sobre criar experiências que convertem e fidelizam seus clientes."                
                     />
                 </li>
 
                 <li className={CssComoTranformoIdeia.Lista3}>
                     <ContainerTexto
-                        titulo="Desenvolvimento Web"
-                        texto="Crio landing pages impactantes e sistemas web robustos, combinando tecnologia de ponta com designs responsivos que funcionam perfeitamente em todos os dispositivos. Sua presença online com performance excepcional."                
+                        titulo="Manutenção de Código"
+                        texto="Realizo correções, otimizações e melhorias em projetos existentes, garantindo que o código esteja limpo, atualizado e com o melhor desempenho possível. Deixo seu site mais estável, rápido e fácil de manter, sem comprometer o design ou as funcionalidades originais."                
                     />
                 </li>
 
                 <li className={CssComoTranformoIdeia.Lista4}>
                     <ContainerTexto
-                        titulo="Desenvolvimento Web"
-                        texto="Crio landing pages impactantes e sistemas web robustos, combinando tecnologia de ponta com designs responsivos que funcionam perfeitamente em todos os dispositivos. Sua presença online com performance excepcional."                
+                        titulo="Estratégia Digital Integrada"
+                        texto="Ofereço presença digital completa: desde configuração profissional de redes sociais até criação de páginas otimizadas que trabalham juntas para construir sua marca e ampliar seu alcance."                
                     />
                 </li>
             </ul>
