@@ -1,15 +1,31 @@
-.secao{
-    position: relative;
+.secao0{
     background: var(--cor-containerCortado);
+    clip-path: polygon(0% 2%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.secao1{
+    position: relative;
     width: 100%;
     height: 100%;
-    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
-    padding: 9rem 12rem 0 12rem;
+    padding: 9rem 12rem 2rem 12rem;
+}
+
+.secao2{
+    position: relative;
+    background: var(--color-gradienteVerdeBottom);
+    width: 100%;
+    height: 100%;
+    padding: 4rem 0;
+    clip-path: polygon(0% 10%, 100% 0, 100% 100%, 0% 100%);
 }
 
 @media(max-width: 480px){
-    .secao {
-        clip-path: polygon(0 2%, 100% 0, 100% 100%, 0% 100%);
+    .secao1 {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         padding: 9rem 2rem 0 2rem;
+    }
+
+    .secao2{
+        clip-path: polygon(0% 7%, 100% 0, 100% 100%, 0% 100%);
     }
 }

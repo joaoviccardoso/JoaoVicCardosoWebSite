@@ -1,0 +1,43 @@
+.secaoGerarValor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerTexto{
+    text-align: center;
+    color: var(--cor-letraClara);
+}
+
+.containerTexto h3{
+    font-family: var(--font-paraTextoChamativo);
+    font-size: var(--font-size-3xl);
+}
+
+.containerTexto p{
+    font-family: var(--font-paraTexto);
+    font-size: var(--font-size-xl);
+}
+
+.btnLista{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    padding: 2rem 0;
+    gap: 2rem;
+}
+
+@media(max-width: 480px){
+    .containerTexto h3{
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-lg);
+    }
+
+    .btnLista{
+        flex-direction: column;
+    }
+}
