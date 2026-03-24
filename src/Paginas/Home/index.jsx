@@ -4,18 +4,23 @@ import PresencaDigital from "./sections/sectionPresencaDigital"
 import ForaDaInternet from "./sections/sectionForaDaInternet"
 import ComoTranformoIdeia from "./sections/sectionComoTransformoIdeia"
 import AlemDeCodigo from "./sections/sectionEntregoAlemDeCodigo"
+import GerarValor from "./sections/sectionGerarValor"
 
 function Home(){
     return(
         <section className={CssHome.sectionContainerHero}>
             <Hero/>
 
-            <section className={CssHome.secao}>
+            <div className={CssHome.secao1}>
                 <PresencaDigital/>
                 <ForaDaInternet></ForaDaInternet>
                 <ComoTranformoIdeia/>
                 <AlemDeCodigo/>
-            </section>
+            </div>
+
+            <div className={CssHome.secao2}>
+                <GerarValor/>
+            </div>
         </section>
     )
 }
