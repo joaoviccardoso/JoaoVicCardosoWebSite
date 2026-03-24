@@ -1,7 +1,6 @@
 import CssContainerTexto from "./containerTexto.module.css"
 
 function ContainerTexto({titulo, texto}){
-    console.log(titulo)
 
     return(
         <div className={CssContainerTexto.wrapper}>
