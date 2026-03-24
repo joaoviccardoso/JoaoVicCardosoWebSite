@@ -10,7 +10,7 @@ function AlemDeCodigo(){
             </div>
 
             <div className={CssAlemDeCodigo.containerOqueEuEntrego}>
-                <img src="./src\assets\BonecoMostrandoOpcoes.png" alt="" />
+                <img src="./src\assets\BonecoMostrandoOpcoes.png" alt="imagem de um personagem mostrandando com a mao oque eu ofereço" />
                 <ul className={CssAlemDeCodigo.ulLista}>
                     <li>
                         <ContainerTexto
