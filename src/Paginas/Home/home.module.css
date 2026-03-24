@@ -3,13 +3,13 @@
     background: var(--cor-containerCortado);
     width: 100%;
     height: 100%;
-    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
     padding: 9rem 12rem 0 12rem;
 }
 
 @media(max-width: 480px){
     .secao {
-        clip-path: polygon(0 6%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 2%, 100% 0, 100% 100%, 0% 100%);
         padding: 9rem 2rem 0 2rem;
     }
 }

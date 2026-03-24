@@ -11,11 +11,14 @@
     --font-size-4xl: 5rem;
 
     /*Cores*/
+    --verde:#10B981;
     --cor-letraClara: #FFFFFF;
     --color-componente: #0A0A0A;
     --cor-principal: #22533D;
+    --preto: #000;
     --cor-containerCortado: rgba(1,1,1, 0.6);
     --color-gradienteVerde: linear-gradient(to right, #10B981, #07533A);
+    --color-gradienteVerdeBottom: linear-gradient(to bottom, #10B981, #07533A);
     --color-backgroundPagina:linear-gradient(180deg,#121212 0%,#1a1a1a 50%,#232323 100%);
     --box-shadow:
     0 0 6px #00FF9C,
