@@ -5,32 +5,26 @@ function GerarValor(){
     return(
         <section className={CssGerarValor.secaoGerarValor}>
             <div className={CssGerarValor.containerTexto}>
-                <h3>Veja Como Posso Gerar Valor para Seu Projeto</h3>
-                <p>Conheça meus projetos, meu processo de desenvolvimento e quem está por trás das soluções.</p>
+                <h3>Veja Como Posso Gerar Valor <br />para Seu Projeto</h3>
+                <p>Conheça meus projetos, meu processo de desenvolvimento e quem está <br/> por trás das soluções.</p>
             </div>
             
-            <ul className={CssGerarValor.ulLista}>
-                <li>
+            <div className={CssGerarValor.btnLista}>
                     <BotaoCta
                         child="Projetos"
                         to="/portfolio"
                     />
-                </li>
-
-                <li>
+                
                     <BotaoCta
-                        child="Projetos"
-                        to="/portfolio"
+                        child="Serviço"
+                        to="/Servicos"
                     />
-                </li>
-
-                <li>
+                
                     <BotaoCta
-                        child="Projetos"
-                        to="/portfolio"
+                        child="Sobre Mim"
+                        to="/sobreMim"
                     />
-                </li>
-            </ul>
+            </div>
         </section>
     )
 }

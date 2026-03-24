@@ -11,16 +11,19 @@ function Home(){
         <section className={CssHome.sectionContainerHero}>
             <Hero/>
 
-            <div className={CssHome.secao1}>
-                <PresencaDigital/>
-                <ForaDaInternet></ForaDaInternet>
-                <ComoTranformoIdeia/>
-                <AlemDeCodigo/>
-            </div>
+            <div className={CssHome.secao0}>
+                <div className={CssHome.secao1}>
+                    <PresencaDigital/>
+                    <ForaDaInternet></ForaDaInternet>
+                    <ComoTranformoIdeia/>
+                    <AlemDeCodigo/>
+                </div>
 
-            <div className={CssHome.secao2}>
-                <GerarValor/>
+                <div className={CssHome.secao2}>
+                    <GerarValor/>
+                </div>
             </div>
+            
         </section>
     )
 }
