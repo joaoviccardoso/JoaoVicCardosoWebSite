@@ -1,16 +1,27 @@
 import { Link } from 'react-router-dom'
 import NavCss from './nav.module.css' 
 import ListaNav from '../ListaNav'
+import Image from '../Img'
+import logo from "../../assets/logoDev.svg"
+import menuCelular from '../../assets/menuCelular.svg'
+import IconeLogin from '../../assets/IconeLogin.svg'
 
 function Nav(){
     return(
         <nav className={`navbar navbar-expand-lg  container-fluid ${NavCss.nav}`}>
                 <div>
-                    <img src="src/assets/logoDev.svg" alt="Logo da pagina" />
+                    <Image
+                        href="http://localhost:5173/"
+                        src={logo}
+                        alt="Logo da pagina"
+                        width={90}
+                        height={80}
+                        loading="lazy"
+                    />
                 </div>
 
                 <button className="btn d-sm-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                     <img src="src/assets/menuCelular.svg" alt="menu para celular" />
+                    <img src={menuCelular} alt="menu para celular" />
                 </button>
 
                 <ul className={NavCss.ul}>
@@ -21,7 +32,7 @@ function Nav(){
 
                 <div className={NavCss.loginContainer}>
                     <span className={NavCss.iconContainer}>
-                        <img src="src/assets/IconeLogin.svg" alt="Logo Login" />
+                        <img src={IconeLogin} alt="Logo Login" />
                     </span>
 
                     <div className={NavCss.borderWrapper}>

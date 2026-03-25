@@ -1,5 +1,6 @@
 import CssAlemDeCodigo from './alemDeCodigo.module.css'
 import ContainerTexto from '../../../../Componentes/ContainerTexto'
+import bonecoMostrandoOpcoes from '../../../../assets/BonecoMostrandoOpcoes.png'
 
 function AlemDeCodigo(){
     return(
@@ -10,7 +11,7 @@ function AlemDeCodigo(){
             </div>
 
             <div className={CssAlemDeCodigo.containerOqueEuEntrego}>
-                <img src="./src\assets\BonecoMostrandoOpcoes.png" alt="imagem de um personagem mostrandando com a mao oque eu ofereço" />
+                <img src={bonecoMostrandoOpcoes} alt="imagem de um personagem mostrandando com a mao oque eu ofereço" />
                 <ul className={CssAlemDeCodigo.ulLista}>
                     <li>
                         <ContainerTexto

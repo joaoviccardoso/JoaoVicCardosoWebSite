@@ -1,5 +1,6 @@
 import CssForaDaInternet from "./foraDaInternet.module.css"
 import BotaoCta from "../../../../Componentes/BotaoCta"
+import personagemComDuvida from '../../../../assets/personagemComDuvida.png'
 
 function ForaDaInternet(){
     return(
@@ -12,7 +13,7 @@ function ForaDaInternet(){
                     to=""
                 />
             </div>
-            <img src="src\assets\personagemComDuvida.png" alt="" />
+            <img src={personagemComDuvida} alt="personagem com cara de duvida" />
         </div>
     )
 }
