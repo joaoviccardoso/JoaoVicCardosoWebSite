@@ -1,8 +1,15 @@
 import CssFooter from "./footer.module.css"
 import ListaNav from "../ListaNav";
 import Image from "../Img";
+import logoLinkedin from '../../assets/linkedin.svg'
+import logoGithub from '../../assets/github.svg'
+import logInstagram from '../../assets/instagram.svg'
+import logoGmail from '../../assets/gmail.svg'
+import logoWhatsapp from '../../assets/whatsapp.svg'
+import logoDev from '../../assets/logoDev.svg'
 
 function Footer(){
+
     return(
         <div className={CssFooter.footer}>
             <div className={CssFooter.divFooter}>
@@ -18,40 +25,40 @@ function Footer(){
                     <ul className={CssFooter.containerRedes}>
                         <Image
                             href="https://www.linkedin.com/in/joaoviccardosodev/"
-                            src="src/assets/linkedin.svg"
+                            src={logoLinkedin}
                             alt="Link para meu Linkedin"
                             width={75}
                             className="logoRedes"
                         />
 
                         <Image
-                            href=""
-                            src="src/assets/github.svg"
-                            alt="Link"
+                            href="https://github.com/joaoviccardoso"
+                            src={logoGithub}
+                            alt="logo github"
+                            width={75}
+                            className="logoRedes"
+                        />
+
+                        <Image
+                            href="https://www.instagram.com/joao__viccardoso/"
+                            src={logInstagram}
+                            alt="logo instagram"
                             width={75}
                             className="logoRedes"
                         />
 
                         <Image
                             href=""
-                            src="src/assets/instagram.svg"
-                            alt="Link"
+                            src={logoGmail}
+                            alt="logo gmail"
                             width={75}
                             className="logoRedes"
                         />
 
                         <Image
                             href=""
-                            src="src/assets/gmail.svg"
-                            alt="Link"
-                            width={75}
-                            className="logoRedes"
-                        />
-
-                        <Image
-                            href=""
-                            src="src/assets/whatsapp.svg"
-                            alt="Link"
+                            src={logoWhatsapp}
+                            alt="logo whatsapp"
                             width={75}
                             className="logoRedes"
                         />
@@ -61,7 +68,7 @@ function Footer(){
                 <section className={CssFooter.footerSobre}>
                     <Image
                         href="http://localhost:5173/"
-                        src="src/assets/logoDev.svg"
+                        src={logoDev}
                         alt="Logo da pagina"
                         width={180}
                         className="logoFooter"

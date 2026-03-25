@@ -1,5 +1,6 @@
 import CssProntoParaComecar from "./prontoParaComecar.module.css"
 import BotaoCta from "../../../../Componentes/BotaoCta"
+import iconePagina from '../../../../assets/iconePaginaWeb.svg'
 
 function ProntoParaComecar(){
     return(
@@ -12,7 +13,7 @@ function ProntoParaComecar(){
                     to="Contato"
                 />
             </div>
-            <img src="src\assets\iconePaginaWeb.svg" alt="imagem ilustrativa de uma pagina web" />
+            <img src={iconePagina} alt="imagem ilustrativa de uma pagina web" />
         </section>
     )
 }
