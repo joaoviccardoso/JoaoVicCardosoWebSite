@@ -7,7 +7,7 @@
 .containerTexto{
     background-color: var(--preto);
     padding: 20px;
-    height: 300px;
+    height: auto;
     color: white;
     border-radius: 6px;
     
@@ -38,7 +38,7 @@
 }
 
 .containerTexto p{
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-family: var(--font-paraTexto);
     padding-left: 1rem;
 }
