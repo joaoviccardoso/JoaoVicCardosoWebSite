@@ -3,18 +3,6 @@
     padding: 6rem 0;
 }
 
-.containerTituloDaSecao h3{
-    font-size: var(--font-size-3xl);
-    font-family: var(--font-paraTextoChamativo);
-    color: var(--cor-letraClara);
-}
-
-.containerTituloDaSecao p{
-    font-size: var(--font-size-lg);
-    font-family: var(--font-paraTexto);
-    color: var(--cor-letraClara);
-}
-
 .ulLista {
     display: grid;
     padding: 0;
@@ -36,6 +24,7 @@
 }
 
 @media(max-width: 480px){
+
     .secaoComoTransformoIdeias {
         background-image: none !important;
     }
@@ -56,11 +45,12 @@
     .ulLista {
         grid-template-columns: 1fr;
         gap: 28px 0px; /* vertical | horizontal */
+        padding-bottom: 3rem;
     }
 
     .Lista2 {
-    transform: translateY(0);
-}
+        transform: translateY(0);
+    }
 
     .Lista3 {
         transform: translateY(0);

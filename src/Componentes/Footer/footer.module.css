@@ -58,7 +58,6 @@
 .h3Footer{
     font-size: var(--font-size-2xl);
     font-family: var(--font-paraTextoChamativo);
-    text-align: end;
 }
 
 @media(max-width: 480px){

@@ -3,12 +3,12 @@ import BotaoCta from "../../../../Componentes/BotaoCta"
 
 function ProntoParaComecar(){
     return(
-        <section className={CssProntoParaComecar}>
+        <section className={CssProntoParaComecar.secaoProntoParaComecar}>
             <div className={CssProntoParaComecar.containerTexto}>
                 <h3>Pronto para transformar suas ideias em realidade?</h3>
                 <p>Seja para um projeto, uma parceria ou só trocar uma ideia, será um prazer conversar com você.</p>
                 <BotaoCta
-                    child="Comece seu projeto hoje"
+                    child="Entre em contato"
                     to="Contato"
                 />
             </div>

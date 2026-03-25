@@ -51,11 +51,15 @@ img {
 }
 
 h3 {
-  color: var(--letra-escura);
+  font-family: var(--font-paraTextoChamativo);
+  color: var(--cor-letraClara);
+  font-size: var(--font-size-3xl);
 }
 
 p{
-  color: var(--letra-escura);
+  color: var(--cor-letraClara);
+  font-size: var(--font-size-xl);
+  font-family: var(--font-paraTexto);
 }
 
 @media(max-width: 480px){

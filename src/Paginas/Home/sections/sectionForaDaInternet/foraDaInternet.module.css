@@ -10,17 +10,11 @@
 }
 
 .containerTexto h3{
-    color: var(--cor-letraClara);
-    font-family: var(--font-paraTextoChamativo);
-    font-size: var(--font-size-3xl);
     padding-top: 3rem;
 }
 
 .containerTexto p{
     width: 750px;
-    color: var(--cor-letraClara);
-    font-family: var(--font-paraTexto);
-    font-size: var(--font-size-xl);
 }
 
 @media(max-width: 480px){
@@ -40,15 +34,11 @@
     }
 
     .containerTexto h3{
-        color: var(--cor-letraClara);
-        font-family: var(--font-paraTextoChamativo);
         font-size: var(--font-size-2xl);
     }
 
     .containerTexto p{
         width: auto;
-        color: var(--cor-letraClara);
-        font-family: var(--font-paraTexto);
         font-size: var(--font-size-lg);
     }
 }

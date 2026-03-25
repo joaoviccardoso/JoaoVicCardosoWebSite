@@ -1,14 +1,11 @@
-.containerPresencaDigital h2{
-    font-size: var(--font-size-3xl);
+.containerPresencaDigital h3{
     font-family: var(--font-paraTextoChamativo);
     color: #fff;
 }
 
 .containerPresencaDigital p{
     width: 48%;
-    font-size: var(--font-size-xl);
     font-family: var(---font-paraTexto);
-    color: #fff;
     padding-top: 0.6rem;
     margin: 0;
 }
