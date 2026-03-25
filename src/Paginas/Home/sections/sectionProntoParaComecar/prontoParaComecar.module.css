@@ -1,36 +1,23 @@
-.containerForaDaInternet{
+.secaoProntoParaComecar{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 5rem;
-}
-
-.containerForaDaInternet img{
-    width: 450px;
-}
-
-.containerTexto h3{
-    padding-top: 3rem;
-}
-
-.containerTexto p{
-    width: 750px;
+    justify-content: center;
+    margin: 4rem 20rem;
 }
 
 @media(max-width: 480px){
-    .containerForaDaInternet{
+    .secaoProntoParaComecar{
         flex-direction: column;
-        gap: 2rem;
-    }
-
-    .containerForaDaInternet img{
-        width: 300px;
+        margin: 0;
+        padding: 3rem 1rem;
     }
 
     .containerTexto{
+        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 1rem;
     }
 
     .containerTexto h3{
@@ -38,7 +25,6 @@
     }
 
     .containerTexto p{
-        width: auto;
         font-size: var(--font-size-lg);
     }
 }

@@ -5,6 +5,7 @@ import ForaDaInternet from "./sections/sectionForaDaInternet"
 import ComoTranformoIdeia from "./sections/sectionComoTransformoIdeia"
 import AlemDeCodigo from "./sections/sectionEntregoAlemDeCodigo"
 import GerarValor from "./sections/sectionGerarValor"
+import ProntoParaComecar from "./sections/sectionProntoParaComecar"
 
 function Home(){
     return(
@@ -24,6 +25,7 @@ function Home(){
                 </div>
             </div>
             
+            <ProntoParaComecar/>
         </section>
     )
 }

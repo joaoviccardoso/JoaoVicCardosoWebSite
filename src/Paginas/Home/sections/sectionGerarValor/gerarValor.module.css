@@ -6,17 +6,6 @@
 
 .containerTexto{
     text-align: center;
-    color: var(--cor-letraClara);
-}
-
-.containerTexto h3{
-    font-family: var(--font-paraTextoChamativo);
-    font-size: var(--font-size-3xl);
-}
-
-.containerTexto p{
-    font-family: var(--font-paraTexto);
-    font-size: var(--font-size-xl);
 }
 
 .btnLista{
