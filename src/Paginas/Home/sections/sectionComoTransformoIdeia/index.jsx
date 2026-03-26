@@ -4,13 +4,13 @@ import CssComoTranformoIdeia from "./comoTranformoIdeia.module.css"
 
 function ComoTranformoIdeia(){
     return(
-        <section className={CssComoTranformoIdeia.secaoComoTransformoIdeias} style={{backgroundImage: `url(${logoDev})`,backgroundSize: '90%' ,backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+        <section className={CssComoTranformoIdeia.secaoComoTransformoIdeias}>
             <div className={CssComoTranformoIdeia.containerTituloDaSecao}>
                 <h3>Como Transformo Ideias em <br/>Resultados Digitais</h3>
                 <p>Meu trabalho vai além da programação. É um processo estratégico <br/>que combina três pilares:</p>
             </div>
 
-            <ul className={CssComoTranformoIdeia.ulLista}>
+            <ul className={CssComoTranformoIdeia.ulLista} style={{backgroundImage: `url(${logoDev})`,backgroundSize: '90%' ,backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                 <li className={CssComoTranformoIdeia.Lista1}>
                     <ContainerTexto
                         titulo="Desenvolvimento Web"
@@ -29,13 +29,6 @@ function ComoTranformoIdeia(){
                     <ContainerTexto
                         titulo="Manutenção de Código"
                         texto="Realizo correções, otimizações e melhorias em projetos existentes, garantindo que o código esteja limpo, atualizado e com o melhor desempenho possível. Deixo seu site mais estável, rápido e fácil de manter, sem comprometer o design ou as funcionalidades originais."                
-                    />
-                </li>
-
-                <li className={CssComoTranformoIdeia.Lista4}>
-                    <ContainerTexto
-                        titulo="Estratégia Digital Integrada"
-                        texto="Ofereço presença digital completa: desde configuração profissional de redes sociais até criação de páginas otimizadas que trabalham juntas para construir sua marca e ampliar seu alcance."                
                     />
                 </li>
             </ul>
