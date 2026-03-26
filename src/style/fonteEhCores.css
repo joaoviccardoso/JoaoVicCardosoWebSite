@@ -16,10 +16,10 @@
     --color-componente: #0A0A0A;
     --cor-principal: #22533D;
     --preto: #000;
-    --cor-containerCortado: rgba(1,1,1, 0.6);
+    --cor-containerCortado: linear-gradient(180deg, #0a0a0a 0%,#101010 100%);
     --color-gradienteVerde: linear-gradient(to right, #10B981, #07533A);
     --color-gradienteVerdeBottom: linear-gradient(to bottom, #10B981, #07533A);
-    --color-backgroundPagina:linear-gradient(180deg,#121212 0%,#1a1a1a 50%,#232323 100%);
+    --color-backgroundPagina:linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 40%, #2a2a2a 100%);
     --box-shadow:
     0 0 6px #00FF9C,
     0 0 12px #00FF9C,
