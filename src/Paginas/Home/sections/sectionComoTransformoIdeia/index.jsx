@@ -13,6 +13,9 @@ function ComoTranformoIdeia(){
     useLayoutEffect(() => {
 
         gsap.registerPlugin(ScrollTrigger)
+
+        const isMobile = window.innerWidth <= 480;
+
         const ctx = gsap.context(() => {
             tl.current = gsap.timeline({
                 scrollTrigger:{
@@ -25,27 +28,33 @@ function ComoTranformoIdeia(){
             })
             .fromTo(`.${CssComoTranformoIdeia.Lista1}`,{
                 opacity:0,
-                x:-160,
+                x: isMobile ? 0 : -160,
+                y: isMobile ? 80 : 0,
             }, {
-                duration: 3,
+                duration: 5,
                 opacity:1,
-                x:0
+                x:0,
+                y:0,
             })
             .fromTo(`.${CssComoTranformoIdeia.Lista2}`,{
                 opacity:0,
-                x:160,
+                x: isMobile ? 0 : 160,
+                y: isMobile ? 80 : 0,
             }, {
-                duration: 3,
+                duration: 5,
                 opacity:1,
-                x:0
+                x:0,
+                y:0
             })
             .fromTo(`.${CssComoTranformoIdeia.Lista3}`,{
                 opacity:0,
-                x:-160,
+                x: isMobile ? 0 : -160,
+                y: isMobile ? 80 : 0,
             }, {
-                duration: 3,
+                duration: 5,
                 opacity:1,
-                x:0
+                x:0,
+                y:0
             })
         }, el)
 
