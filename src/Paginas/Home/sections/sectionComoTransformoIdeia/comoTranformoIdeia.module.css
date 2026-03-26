@@ -1,26 +1,31 @@
 .containerTituloDaSecao{
     text-align: center;
-    padding: 6rem 0;
+    padding: 4rem 0 3rem 0;
 }
 
 .ulLista {
     display: grid;
-    padding: 0;
     grid-template-columns: 1fr 1fr;
-    gap: 140px 80px; /* vertical | horizontal */
-    padding-bottom: 8rem;
+    gap: 1rem;
+    padding-bottom: 2rem;
 }
 
+/* 1º item - esquerda (linha 1) */
+.Lista1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* 2º item - direita (linha 2) */
 .Lista2 {
-    transform: translateY(60px);
+    grid-column: 2;
+    grid-row: 2;
 }
 
+/* 3º item - esquerda (linha 3) */
 .Lista3 {
-    transform: translateY(-40px);
-}
-
-.Lista4 {
-    transform: translateY(40px);
+    grid-column: 1;
+    grid-row: 3;
 }
 
 @media(max-width: 480px){
@@ -53,10 +58,6 @@
     }
 
     .Lista3 {
-        transform: translateY(0);
-    }
-
-    .Lista4 {
         transform: translateY(0);
     }
 }
