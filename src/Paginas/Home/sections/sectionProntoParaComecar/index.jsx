@@ -1,13 +1,13 @@
 import { useRef } from "react";
+import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
 import CssProntoParaComecar from "./prontoParaComecar.module.css"
 import BotaoCta from "../../../../Componentes/BotaoCta"
 import iconePagina from '../../../../assets/iconePaginaWeb.svg'
-import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
 
 function ProntoParaComecar(){
     const el = useRef();
 
-    useScrollAnimation(el, ["#tituloPaginaProntoParaComecar", "#textoPaginaProntoParaComecar", "textoPaginaProntoParaComeca"])
+    useScrollAnimation(el, ["#tituloPaginaProntoParaComecar", "#textoPaginaProntoParaComecar", "#btnCtaSecaoProntoParaComecar"])
 
     return(
         <section className={CssProntoParaComecar.secaoProntoParaComecar}>
@@ -17,7 +17,7 @@ function ProntoParaComecar(){
                 <BotaoCta
                     child="Entre em contato"
                     to="Contato"
-                    id="textoPaginaProntoParaComecar"
+                    id="btnCtaSecaoProntoParaComecar"
                 />
             </div>
             <img src={iconePagina} alt="imagem ilustrativa de uma pagina web" />
