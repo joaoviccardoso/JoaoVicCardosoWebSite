@@ -1,58 +1,14 @@
-import { useLayoutEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef } from 'react';
 import CssForaDaInternet from "./foraDaInternet.module.css"
 import BotaoCta from "../../../../Componentes/BotaoCta"
 import personagemComDuvida from '../../../../assets/personagemComDuvida.png'
+import { useScrollAnimation } from '../../../../hooks/useScrollAnimation';
 
 function ForaDaInternet(){
     const el = useRef();
-    const tl = useRef();
+    
+    useScrollAnimation(el, ["#tituloSecaoForaDaInternet", "#textoSecaoForaDaInternet", "#BotaoCtaForaDaInternet"])
 
-    useLayoutEffect(()=> {
-        gsap.registerPlugin(ScrollTrigger)
-        const isMobile = window.innerWidth <= 480;
-
-        const ctx = gsap.context(()=>{
-            tl.current = gsap.timeline({
-                scrollTrigger:{
-                    trigger: el.current,
-                    scrub: 2,
-                    start: "top 90%",
-                    end: "bottom 70%"
-                }
-            })
-            .fromTo("#tituloSecaoForaDaInternet",{
-                opacity:0,
-                x: isMobile ? -100 : -160,
-                y: isMobile ? 0 : 0,
-            }, {
-                opacity:1,
-                x:0,
-                y:0
-            })
-            .fromTo("#textoSecaoForaDaInternet",{
-                opacity:0,
-                x: isMobile ? -100 : -160,
-                y: isMobile ? 0 : 0,
-            }, {
-                opacity:1,
-                x:0,
-                y:0
-            })
-            .fromTo("#BotaoCtaForaDaInternet",{
-                opacity:0,
-                x: isMobile ? -100 : -160,
-                y: isMobile ? 0 : 0,
-            }, {
-                opacity:1,
-                x:0,
-                y:0
-            });
-        },el)
-
-        return () => ctx.revert();
-    },[])
     return(
         <div className={CssForaDaInternet.containerForaDaInternet}>
             <div className={CssForaDaInternet.containerTexto} ref={el}>
