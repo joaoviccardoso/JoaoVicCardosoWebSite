@@ -61,9 +61,11 @@
 }
 
 .containerBotaoCta{
+    width: 1190px;
     display: flex;
+    align-items: start;
     gap: 8rem;
-    margin: 2rem 0 6rem 0;
+    margin: 1rem 0 5rem 0;
 }
 
 @media(max-width: 480px){

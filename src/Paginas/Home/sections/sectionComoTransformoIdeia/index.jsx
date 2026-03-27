@@ -20,18 +20,16 @@ function ComoTranformoIdeia(){
             tl.current = gsap.timeline({
                 scrollTrigger:{
                     trigger: `.${CssComoTranformoIdeia.modalItens}`,
-                    scrub: true,
-                    markers: true,
+                    scrub: 2,
                     start: "top 80%",
                     end: "bottom 20%"
                 }
             })
             .fromTo(`.${CssComoTranformoIdeia.Lista1}`,{
                 opacity:0,
-                x: isMobile ? 0 : -160,
+                x: isMobile ? 0 : -400,
                 y: isMobile ? 80 : 0,
             }, {
-                duration: 5,
                 opacity:1,
                 x:0,
                 y:0,
@@ -41,7 +39,6 @@ function ComoTranformoIdeia(){
                 x: isMobile ? 0 : 160,
                 y: isMobile ? 80 : 0,
             }, {
-                duration: 5,
                 opacity:1,
                 x:0,
                 y:0
@@ -51,7 +48,6 @@ function ComoTranformoIdeia(){
                 x: isMobile ? 0 : -160,
                 y: isMobile ? 80 : 0,
             }, {
-                duration: 5,
                 opacity:1,
                 x:0,
                 y:0
