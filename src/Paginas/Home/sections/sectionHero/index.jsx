@@ -107,11 +107,11 @@ function Hero(){
                 <div className={CssHero.containerBotaoCta} id="containerBotaoHero">
                     <BotaoCta
                         child="Comece seu projeto hoje"
-                        to=""
+                        to="Contato"
                     />
                     <BotaoCta
-                        child="Comece seu projeto hoje"
-                        to=""
+                        child="Conheça meu trabalho"
+                        to="Servicos"
                     />
                 </div>
         </section>
