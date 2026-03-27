@@ -48,16 +48,18 @@
     }
 
     .ulLista {
+        background-image: none !important;
+    }
+
+   .ulLista {
         grid-template-columns: 1fr;
-        gap: 28px 0px; /* vertical | horizontal */
-        padding-bottom: 3rem;
+        padding: 0 0 3rem 0;
     }
 
-    .Lista2 {
-        transform: translateY(0);
-    }
-
+    .Lista1,
+    .Lista2,
     .Lista3 {
-        transform: translateY(0);
+        grid-column: auto;
+        grid-row: auto;
     }
 }
