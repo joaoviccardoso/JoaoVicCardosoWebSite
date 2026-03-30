@@ -4,6 +4,7 @@
 /* reset.css */
 html {
   color-scheme: light;
+  filter: none !important;
 }
 /* Remove margens, paddings e bordas padrões */
 * {
