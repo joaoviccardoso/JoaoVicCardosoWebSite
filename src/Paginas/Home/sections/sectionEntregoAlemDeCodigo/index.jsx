@@ -20,7 +20,6 @@ function AlemDeCodigo(){
                         scrollTrigger:{
                             trigger: el.current,
                             scrub: 2,
-                            markers: true,
                             start: "top 70%",
                             end: "bottom 50%"
                         }
