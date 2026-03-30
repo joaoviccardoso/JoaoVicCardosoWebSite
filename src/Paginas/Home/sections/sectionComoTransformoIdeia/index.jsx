@@ -21,7 +21,7 @@ function ComoTranformoIdeia(){
                 scrollTrigger:{
                     trigger: `.${CssComoTranformoIdeia.modalItens}`,
                     scrub: 2,
-                    start: "top 80%",
+                    start: "top 62%",
                     end: "bottom 20%"
                 }
             })
