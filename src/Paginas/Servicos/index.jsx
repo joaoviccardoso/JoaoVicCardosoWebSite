@@ -6,7 +6,7 @@ import ComoEuPenso from "./sections/sectionComoEuPenso"
 
 function Servicos(){
     return(
-        <section>
+        <section className={CssServicos.paginaServico}>
             <HeroServico/>
 
             <div>
