@@ -11,7 +11,9 @@ function Servicos(){
 
             <div className={CssServicos.secaoBackgroudServico}>
                 <ParaQuemEh/>
-                <OqueEuFaco/>
+                <div className={CssServicos.divBackgroudVerde}>
+                    <OqueEuFaco/>
+                </div>
             </div>
 
             <ComoEuPenso/>
