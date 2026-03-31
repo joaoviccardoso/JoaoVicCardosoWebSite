@@ -9,7 +9,7 @@ function Servicos(){
         <section className={CssServicos.paginaServico}>
             <HeroServico/>
 
-            <div>
+            <div className={CssServicos.secaoBackgroudServico}>
                 <ParaQuemEh/>
                 <OqueEuFaco/>
             </div>
