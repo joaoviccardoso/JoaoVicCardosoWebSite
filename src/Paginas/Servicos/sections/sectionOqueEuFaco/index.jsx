@@ -15,21 +15,29 @@ function OqueEuFaco() {
                     <ContainerComBotao
                         titulo="1.Landing Pages"
                         texto="Criação de páginas modernas e responsivas focadas em conversão e apresentação de produtos ou serviços."
+                        child="Saber Mais"
+                        idBtn="btnActionSectionOqueEuFaco1"
                     />
 
                     <ContainerComBotao
                         titulo="2. Blogs"
                         texto="Desenvolvimento de blogs organizados, com leitura agradável e estrutura pensada para conteúdo e SEO."
+                        child="Saber Mais"
+                        idBtn="btnActionSectionOqueEuFaco2"
                     />
 
                     <ContainerComBotao
                         titulo="3.Sistemas de Vendas"
                         texto="Plataformas completas com dashboard para clientes e administradores, controle de pedidos e gestão de produtos."
+                        child="Saber Mais"
+                        idBtn="btnActionSectionOqueEuFaco3"
                     />
 
                     <ContainerComBotao
                         titulo="4.Aplicações Web"
                         texto="Sistemas dinâmicos com lógica de programação, cálculos e interação em tempo real com o usuário."
+                        child="Saber Mais"
+                        idBtn="btnActionSectionOqueEuFaco4"
                     />
                 </div>
                 
