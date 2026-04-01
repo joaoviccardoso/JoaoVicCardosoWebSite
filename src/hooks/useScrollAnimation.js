@@ -13,23 +13,23 @@ export function useScrollAnimation(el, ids) {
                 scrollTrigger: {
                     trigger: el.current,
                     scrub: 2,
-                    start: "top 90%",
-                    end: "bottom 70%",
+                    start: "top 70%",
+                    end: "bottom 40%",
                 },
             });
 
-            ids.forEach((id) => {
-                tl.fromTo(id,
-                    {
-                        opacity: 0,
-                        x: isMobile ? -100 : -160,
-                    },
-                    {
-                        opacity: 1,
-                        x: 0,
-                    }
-                );
-            });
+            tl.fromTo(
+            ids, 
+                {
+                    opacity: 0,
+                    x: isMobile ? -100 : -220,
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    stagger: 0.2,
+                }
+            );
         }, el);
 
         return () => ctx.revert();
