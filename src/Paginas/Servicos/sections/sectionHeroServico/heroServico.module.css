@@ -1,0 +1,64 @@
+.secaoHeroServico{
+    display: flex;
+    gap: 2rem;
+    color: var(--cor-letraClara);
+    padding: 8rem 0rem;
+}
+
+.containerTexto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding-left: 2rem;
+    color: #fff;
+}
+
+.containerTexto h1{
+    font-size: var(--font-size-3x2);
+    font-family: var(--font-paraTextoChamativo);
+}
+
+.containerTexto p{
+    font-size: var(--font-size-2xl);
+    font-family: var(--font-paraTexto);
+}
+
+.containerBtnCtaHero{
+    display: flex;
+    gap: 4rem;
+}
+
+.img{
+    width: 500px;
+    height: 500px;
+}
+
+@media(max-width: 480px){
+    .secaoHeroServico{
+        flex-direction: column;
+        padding: 3rem 0rem;
+    }
+
+    .containerTexto{
+        padding: 0;
+    }
+
+    .containerTexto h1{
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerTexto p {
+        font-size: var(--font-size-md);
+    }
+
+    .containerBtnCtaHero{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .img{
+        width: 500px;
+        height: 380px;
+    }
+}

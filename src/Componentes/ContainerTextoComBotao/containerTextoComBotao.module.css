@@ -6,8 +6,8 @@
 
 .containerTexto{
     background-color: var(--preto);
-    padding: 1rem 1rem 3rem 1rem;
-    height: auto;
+    padding: 20px;
+    height: 280px;
     color: white;
     border-radius: 6px;
     
@@ -43,6 +43,9 @@
     padding-left: 1rem;
 }
 
+.containerTexto button{
+    margin-left: 1rem; 
+}
 @media(max-width: 480px){
     .containerTexto h3{
         font-size: var(--font-size-xl);

@@ -1,8 +1,23 @@
 import CssServicos from "./servicos.module.css"
+import HeroServico from "./sections/sectionHeroServico"
+import ParaQuemEh from "./sections/sectionParaQuemEhMeuServico"
+import OqueEuFaco from "./sections/sectionOqueEuFaco"
+import ComoEuPenso from "./sections/sectionComoEuPenso"
 
 function Servicos(){
     return(
-        <h1 className={CssServicos.h1}>Serviços</h1>
+        <section className={CssServicos.paginaServico}>
+            <HeroServico/>
+
+            <div className={CssServicos.secaoBackgroudServico}>
+                <ParaQuemEh/>
+                <div className={CssServicos.divBackgroudVerde}>
+                    <OqueEuFaco/>
+                </div>
+            </div>
+
+            <ComoEuPenso/>
+        </section>
     )
 }
 

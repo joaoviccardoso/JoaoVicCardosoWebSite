@@ -1,0 +1,40 @@
+.secaoParaQuemEh{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.secaoParaQuemEh h3{
+    padding: 2rem;
+}
+
+.ulListaParaQuemEh{
+    display: flex;
+    align-items: center;
+    width: 60vw;
+    justify-content: space-between;
+    text-align: center;
+    color: var(--cor-letraClara);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-paraTextoChamativo);
+    padding: 0 0 2rem 0;
+}
+
+.ulListaParaQuemEh li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width: 480px){
+    .secaoParaQuemEh{
+        text-align: center;
+    }
+
+    .ulListaParaQuemEh{
+        width: 90vw;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
