@@ -13,13 +13,13 @@ export function useScrollAnimationUp(el, ids) {
                 scrollTrigger: {
                     trigger: el.current,
                     scrub: 2,
-                    start: "top 60%",
+                    start: "top 70%",
                     end: "bottom 50%",
                 },
             });
 
             tl.fromTo(
-                    ids, // 👈 array completo
+                    ids,
                         {
                             opacity: 0,
                             y: isMobile ? 100 : 200,
@@ -27,7 +27,7 @@ export function useScrollAnimationUp(el, ids) {
                         {
                             opacity: 1,
                             y: 0,
-                            stagger: 0.2, // 🔥 aqui está o segredo
+                            stagger: 0.2,
                         }
                     );
 
