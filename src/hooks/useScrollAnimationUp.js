@@ -2,8 +2,8 @@ import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export function useScrollAnimation(el, ids) {
-    useLayoutEffect(() => {
+export function useScrollAnimationUp(el, ids) {
+    useLayoutEffect(() =>{
         gsap.registerPlugin(ScrollTrigger);
 
         const isMobile = window.innerWidth <= 480;
@@ -14,24 +14,25 @@ export function useScrollAnimation(el, ids) {
                     trigger: el.current,
                     scrub: 2,
                     start: "top 70%",
-                    end: "bottom 40%",
+                    end: "bottom 50%",
                 },
             });
 
             tl.fromTo(
-            ids, 
-                {
-                    opacity: 0,
-                    x: isMobile ? -100 : -220,
-                },
-                {
-                    opacity: 1,
-                    x: 0,
-                    stagger: 0.2,
-                }
-            );
+                    ids,
+                        {
+                            opacity: 0,
+                            y: isMobile ? 100 : 200,
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            stagger: 0.2,
+                        }
+                    );
+
         }, el);
 
         return () => ctx.revert();
-    }, [el, ids]);
+    }, [el, ids])
 }

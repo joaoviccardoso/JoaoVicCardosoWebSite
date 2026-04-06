@@ -2,7 +2,7 @@ import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export function useScrollAnimation(el, ids) {
+export function useScrollAnimationRight(el, ids) {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +22,7 @@ export function useScrollAnimation(el, ids) {
             ids, 
                 {
                     opacity: 0,
-                    x: isMobile ? -100 : -220,
+                    x: isMobile ? 100 : 220,
                 },
                 {
                     opacity: 1,
