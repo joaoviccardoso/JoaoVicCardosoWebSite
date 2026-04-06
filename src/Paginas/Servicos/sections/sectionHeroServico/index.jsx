@@ -32,7 +32,6 @@ function HeroServico(){
                         scrollTrigger: {
                             trigger: el.current,
                             scrub: 2,
-                            markers: true,
                             start: "top 90%",
                             end: "bottom 50%",
                         }
