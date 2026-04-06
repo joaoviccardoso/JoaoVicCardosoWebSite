@@ -1,0 +1,55 @@
+.secaoHeroSobreMim{
+    display: flex;
+    padding: 4rem 12rem;
+}
+
+.containerTextoSobreMimHero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding-left: 2rem;
+    color: #fff;
+}
+
+.containerTextoSobreMimHero h1{
+    font-size: var(--font-size-3x2);
+    font-family: var(--font-paraTextoChamativo);
+}
+
+.containerTextoSobreMimHero p{
+    font-size: var(--font-size-2xl);
+    font-family: var(--font-paraTexto);
+}
+
+.imgSobreMim{
+    width: 55%;
+}
+
+@media(max-width: 480px){
+    .secaoHeroSobreMim{
+        padding: 2rem 2rem;
+        flex-direction: column;
+    }
+
+    .containerTextoSobreMimHero{
+        gap: 0.3rem;
+        padding:0;
+    }
+
+    .containerTextoSobreMimHero div{
+        text-align: center;
+    }
+
+    .containerTextoSobreMimHero h1{
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerTextoSobreMimHero p{
+        font-size: var(--font-size-md);
+    }
+
+    .imgSobreMim{
+        width: auto;
+    }
+}
