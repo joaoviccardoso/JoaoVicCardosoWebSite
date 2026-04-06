@@ -1,12 +1,15 @@
 import { useRef } from "react"
 import CssComoEuPenso from "./comoEuPenso.module.css"
 import ContainerTexto from "../../../../Componentes/ContainerTexto"
-import { useScrollAnimationLeftAndRight } from "../../../../hooks/useScrollAnimationLeftAndRight";
+import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
+import { useScrollAnimationRight } from "../../../../hooks/useScrollAnimationRight";
 
 function ComoEuPenso(){
-    const el = useRef();
+    const ell = useRef();
+    const elr = useRef();
 
-    useScrollAnimationLeftAndRight(el, ["#containerPasso1", "#containerPasso2", "#containerPasso3", "#containerPasso4", "#containerPasso5"])
+    useScrollAnimation(ell, ["#containerPasso1", "#containerPasso2", "#containerPasso3"])
+    useScrollAnimationRight(elr, ["#containerPasso4", "#containerPasso5"])
     return(
         <section className={CssComoEuPenso.secaoComoEuPenso}>
             <div className={CssComoEuPenso.containerTexto}>
@@ -14,8 +17,8 @@ function ComoEuPenso(){
                 <p>Você não está apenas contratando um desenvolvedor. <br /> Está garantindo:</p>
             </div>
 
-            <div className={CssComoEuPenso.containerPassos} ref={el}>
-                <div className={CssComoEuPenso.divPasso1}>
+            <div className={CssComoEuPenso.containerPassos} >
+                <div className={CssComoEuPenso.divPasso1} ref={ell}>
                     <ContainerTexto
                         titulo="1. Entendimento do Negócio"
                         texto="Eu analiso seu público, seus objetivos e o que seu negócio realmente precisa."
@@ -35,7 +38,7 @@ function ComoEuPenso(){
                     />
                 </div>
 
-                <div className={CssComoEuPenso.divPasso2}>
+                <div className={CssComoEuPenso.divPasso2} ref={elr}>
                     <ContainerTexto
                         titulo="4. Entrega e Ajustes"
                         texto="Testes, melhorias e refinamentos antes da entrega final."
