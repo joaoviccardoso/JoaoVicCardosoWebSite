@@ -1,7 +1,9 @@
 import CssHabilidades from "./habilidades.module.css"
+import MinhasHabilidades from "../../../../Componentes/MinhasHabilidades";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import imgHtml from "../../../../assets/html.svg"
 
 function SecaoHabilidades(){
     const containerPai = useRef(null)
@@ -36,7 +38,12 @@ function SecaoHabilidades(){
         <section className={CssHabilidades.secaoHabilidades} ref={containerPai}>
             <h3>Habilidades Técnicas</h3>
             <ul className={CssHabilidades.ulListaHabilidades} ref={el}>
-                <li className={CssHabilidades.divs1}>1</li>
+                <li className={CssHabilidades.divs1}>
+                    <MinhasHabilidades
+                        img={imgHtml}
+                        alt="Imagem da tecnologia HTML"
+                    />
+                </li>
 
                 <li className={CssHabilidades.divs2}>2</li>
 
