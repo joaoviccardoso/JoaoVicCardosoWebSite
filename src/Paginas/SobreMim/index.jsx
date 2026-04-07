@@ -5,9 +5,9 @@ import SecaoHabilidades from "./sections/sectionHabilidades"
 
 function SobreMim(){
     return(
-        <section>
+        <section className={CssSobreMim.secaoPaginaSobreMim}>
             <SecaoHeroSobreMim/>
-            <div>
+            <div className={CssSobreMim.divBackGroundVerdeQuemSouEu}>
                 <SecaoQueSouEu/>
             </div>
             <SecaoHabilidades/>
