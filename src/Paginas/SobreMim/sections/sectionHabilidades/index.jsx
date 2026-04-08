@@ -30,7 +30,6 @@ function SecaoHabilidades(){
                 scrollTrigger:{
                     trigger: containerPai.current,
                     pin: true,
-                    markers: true,
                     start: "top top",
                     end: `+=${largura}`,
                     scrub: 2,
