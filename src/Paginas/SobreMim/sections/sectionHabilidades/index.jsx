@@ -36,6 +36,8 @@ function SecaoHabilidades(){
                 }
 
             }, containerPai)
+            
+            ScrollTrigger.refresh();
 
             return () => ctx.revert();
         }, [el])
