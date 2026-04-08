@@ -4,6 +4,15 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import imgHtml from "../../../../assets/html.svg"
+import imgCss from "../../../../assets/css.svg"
+import imgJs from "../../../../assets/js.svg"
+import imgReact from "../../../../assets/react.svg"
+import imgNode from "../../../../assets/node.svg"
+import imgUiUx from "../../../../assets/ui-ux.svg"
+import imgBootstrap from "../../../../assets/bootstrap.svg"
+import imgFigma from "../../../../assets/figma.svg"
+import imgGitHub from "../../../../assets/github.svg"
+import logoDev from '../../../../assets/logoDev.svg';
 
 function SecaoHabilidades(){
     const containerPai = useRef(null)
@@ -15,15 +24,16 @@ function SecaoHabilidades(){
         const ctx = gsap.context(() => {
             const tl = gsap.timeline();
             const largura = el.current.scrollWidth;
-
+            
             tl.to(el.current, {
                 x: -(largura - window.innerWidth),
                 scrollTrigger:{
                     trigger: containerPai.current,
                     pin: true,
+                    markers: true,
                     start: "top top",
                     end: `+=${largura}`,
-                    scrub: 1,
+                    scrub: 2,
                 }
 
             }, containerPai)
@@ -35,8 +45,12 @@ function SecaoHabilidades(){
     
 
     return(
-        <section className={CssHabilidades.secaoHabilidades} ref={containerPai}>
-            <h3>Habilidades Técnicas</h3>
+        <section className={CssHabilidades.secaoHabilidades} ref={containerPai} style={{backgroundImage: `url(${logoDev})`,backgroundSize: '55%' ,backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat' }}>
+            <div>   
+                <h3>Habilidades Técnicas</h3>
+                <p>Aqui estão as tecnologias que uso para transformar ideias em projetos reais.</p>
+            </div>
+            
             <ul className={CssHabilidades.ulListaHabilidades} ref={el}>
                 <li className={CssHabilidades.divs1}>
                     <MinhasHabilidades
@@ -45,23 +59,61 @@ function SecaoHabilidades(){
                     />
                 </li>
 
-                <li className={CssHabilidades.divs2}>2</li>
+                <li className={CssHabilidades.divs2}>
+                    <MinhasHabilidades
+                        img={imgCss}
+                        alt="Imagem da tecnologia CSS"
+                    />
+                </li>
 
-                <li className={CssHabilidades.divs3}>3</li>
+                <li className={CssHabilidades.divs3}>
+                    <MinhasHabilidades
+                        img={imgJs}
+                        alt="Imagem da tecnologia JS"
+                    />
+                </li>
 
-                <li className={CssHabilidades.divs1}>4</li>
+                <li className={CssHabilidades.divs1}>
+                    <MinhasHabilidades
+                        img={imgReact}
+                        alt="Imagem da tecnologia React"
+                    />
+                </li>
 
-                <li className={CssHabilidades.divs2}>5</li>
+                <li className={CssHabilidades.divs2}>
+                    <MinhasHabilidades
+                        img={imgNode}
+                        alt="Imagem da tecnologia node"
+                    />
+                </li>
 
-                <li className={CssHabilidades.divs3}>6</li>
+                <li className={CssHabilidades.divs3}>
+                    <MinhasHabilidades
+                        img={imgUiUx}
+                        alt="Imagem da tecnologia UI e UX"
+                    />
+                </li>
 
-                <li className={CssHabilidades.divs1}>7</li>
+                <li className={CssHabilidades.divs1}>
+                    <MinhasHabilidades
+                        img={imgBootstrap}
+                        alt="Imagem da tecnologia Bootstrap"
+                    />
+                </li>
 
-                <li className={CssHabilidades.divs2}>8</li>
+                <li className={CssHabilidades.divs2}>
+                    <MinhasHabilidades
+                        img={imgFigma}
+                        alt="Imagem da tecnologia Figma"
+                    />
+                </li>
 
-                <li className={CssHabilidades.divs3}>9</li>
-
-                <li className={CssHabilidades.divs1}>10</li>
+                <li className={CssHabilidades.divs3}>
+                    <MinhasHabilidades
+                        img={imgGitHub}
+                        alt="Imagem da tecnologia GitHub"
+                    />
+                </li>
             </ul>
         </section>
     )

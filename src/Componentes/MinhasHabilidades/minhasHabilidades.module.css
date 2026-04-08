@@ -12,7 +12,7 @@
 .containerMinhasHabilidades::before {
     content: "";
     position: absolute;
-    width: 105%;
+    width: 101%;
     height: 115%;
 
     background: white;
@@ -47,7 +47,7 @@
 .containerMinhasHabilidades img {
     position: relative;
     z-index: 2;
-    width: 200px;
+    width: 230px;
 }
 
 @media(max-width: 480px){
