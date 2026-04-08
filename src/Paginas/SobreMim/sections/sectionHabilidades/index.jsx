@@ -19,46 +19,53 @@ function SecaoHabilidades(){
     const el = useRef(null);
 
     useLayoutEffect(() => {
-    const images = el.current.querySelectorAll("img");
+    gsap.registerPlugin(ScrollTrigger);
 
+    let ctx;
+
+    const images = el.current.querySelectorAll("img");
     let loaded = 0;
 
     images.forEach((img) => {
         if (img.complete) {
             loaded++;
         } else {
-            img.onload = () => {
-                loaded++;
-                if (loaded === images.length) initAnimation();
-            };
+            img.onload = check;
         }
     });
+
+    function check() {
+        loaded++;
+        if (loaded === images.length) initAnimation();
+    }
 
     if (loaded === images.length) initAnimation();
 
     function initAnimation() {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const ctx = gsap.context(() => {
-            const largura = el.current.scrollWidth;
+        ctx = gsap.context(() => {
 
             gsap.to(el.current, {
-                x: -(largura - window.innerWidth),
+                x: () => -(el.current.scrollWidth - window.innerWidth),
+                ease: "none",
                 scrollTrigger: {
                     trigger: containerPai.current,
                     pin: true,
                     start: "top top",
-                    end: `+=${largura}`,
+                    end: () => `+=${el.current.scrollWidth}`, 
                     scrub: 1,
+                    invalidateOnRefresh: true
                 }
             });
         });
 
         ScrollTrigger.refresh();
-        return () => ctx.revert();
     }
 
-    }, []);
+    return () => {
+        if (ctx) ctx.revert();
+    };
+
+}, []);
         
     
 
