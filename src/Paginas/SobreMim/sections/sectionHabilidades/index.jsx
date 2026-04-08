@@ -32,7 +32,7 @@ function SecaoHabilidades(){
                     pin: true,
                     start: "top top",
                     end: `+=${largura}`,
-                    scrub: 2,
+                    scrub: 1,
                 }
 
             }, containerPai)
