@@ -25,7 +25,8 @@
     display: flex;
     gap: 4rem;
     flex-wrap: nowrap;
-    align-items: center;           
+    align-items: center;   
+    width: max-content;        
 }
 
 .divs1, .divs2, .divs3{
