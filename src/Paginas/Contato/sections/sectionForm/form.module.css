@@ -1,0 +1,30 @@
+.containerInputDeText {
+   display: flex;
+   flex-direction: column;
+}
+
+.containerInputDeText div{
+    width: 100%;
+}
+
+.containerNomeEhTelefone{
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
+
+.containerInputRadio{
+    display: flex;
+    gap: 2rem;
+}
+
+.containerInputTextArea{
+    width: 100%;
+}
+
+@media(max-width: 480px){
+    .containerNomeEhTelefone{
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

@@ -1,4 +1,30 @@
-.h1{
-    font-size: 36px;
-    color: #fff;
+.secaoPaginaContato{
+    display: flex;
+    margin: 2rem 12rem;
+    border-radius: 8px;
+    background: var(--color-componente);
+}
+
+.secaoMeusContatos{
+    width: 50%;
+    background: var(--color-gradienteVerdeBottom);
+    padding: 2rem 2rem;
+    border-radius: 8px 0 0 8px ;
+}
+
+.secaoFormulario{
+    padding: 2rem;
+}
+
+@media(max-width: 480px){
+    .secaoPaginaContato{
+        flex-direction: column-reverse;
+        margin: 2rem 2rem;
+    }
+
+    .secaoMeusContatos{
+        width: 100%;
+        border-radius: 0px 0px 8px 8px;
+    }
+
 }
