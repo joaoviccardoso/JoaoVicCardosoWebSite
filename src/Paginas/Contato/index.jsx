@@ -1,10 +1,18 @@
 import CssContato from "./contato.module.css"
+import MeusContato from "./sections/sectionContato"
+import Formulario from "./sections/sectionForm"
 
 function Contato(){
     return(
-        <main>
-            <h1 className={CssContato.h1}>Contato</h1>
-        </main>
+        <section className={CssContato.secaoPaginaContato}>
+            <section className={CssContato.secaoMeusContatos}>
+                <MeusContato/>
+            </section>
+
+            <section className={CssContato.secaoFormulario}>
+                <Formulario/>
+            </section>
+        </section>
     )
 }
 
