@@ -12,3 +12,8 @@
     gap: 2rem;
     padding-bottom: 1rem;
 }
+
+.containerInputRadio{
+    display: flex;
+    gap: 2rem;
+}

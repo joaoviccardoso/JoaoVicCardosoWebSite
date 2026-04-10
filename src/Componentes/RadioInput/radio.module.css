@@ -1,0 +1,41 @@
+.containerInputRadio div{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.containerInputRadio input{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #C7C7C7;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.containerInputRadio input:checked {
+    border-color: var(--cor-letraClara);
+}
+
+.containerInputRadio input:checked::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: var(--cor-letraClara);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.containerInputRadio label{
+    display: flex;
+    align-items: center;
+    color: var(--cor-letraClara);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-paraTexto);
+    gap: 0.5rem;
+}

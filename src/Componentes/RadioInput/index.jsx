@@ -2,10 +2,11 @@ import CssRadio from "./radio.module.css"
 
 function RadioGroup({ label, name, options, value, onChange }) {
   return (
-    <div>
-      <p>{label}</p>
+    <div className={CssRadio.containerInputRadio}>
 
-      {options.map((option) => (
+      <p>{label}</p>
+      <div>
+        {options.map((option) => (
         <label key={option.value}>
           <input
             type="radio"
@@ -17,6 +18,8 @@ function RadioGroup({ label, name, options, value, onChange }) {
           {option.label}
         </label>
       ))}
+      </div>
+      
     </div>
   );
 }
