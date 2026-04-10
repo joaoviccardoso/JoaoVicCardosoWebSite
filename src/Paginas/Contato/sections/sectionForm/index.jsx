@@ -31,27 +31,35 @@ function Formulario(){
     return(
         <form onSubmit={handleSubmit} className={CssForm.formulario}>
             <div className={CssForm.containerInputDeText}>
-                <Input
-                    label="Nome"
-                    name="nome"
-                    value={form.nome}
-                    onChange={handleChange}
-                />
+                <div className={CssForm.containerNomeEhTelefone}>
+                    <Input
+                        label="Nome"
+                        name="nome"
+                        value={form.nome}
+                        onChange={handleChange}
+                        className={CssForm.inputNome}
+                        placeholder="Nome"
+                    />
 
+                    <Input
+                        label="Telefone"
+                        type="tel"
+                        name="telefone"
+                        value={form.telefone}
+                        onChange={handleChange}
+                        className={CssForm.inputTelefone}
+                        placeholder="Telefone"
+                    />
+                </div>
+                
                 <Input
                     label="Email"
                     type="email"
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                />
-
-                <Input
-                    label="Telefone"
-                    type="tel"
-                    name="telefone"
-                    value={form.telefone}
-                    onChange={handleChange}
+                    className={CssForm.inputEmail}
+                    placeholder="Email"
                 />
             </div>
             

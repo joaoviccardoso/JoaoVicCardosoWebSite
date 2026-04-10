@@ -1,4 +1,5 @@
 .secaoPaginaContato{
+    display: flex;
     margin: 2rem 12rem;
     border-radius: 8px;
     background: var(--color-componente);
@@ -9,4 +10,8 @@
     background: var(--color-gradienteVerdeBottom);
     padding: 2rem 2rem;
     border-radius: 8px 0 0 8px ;
+}
+
+.secaoFormulario{
+    padding: 2rem;
 }

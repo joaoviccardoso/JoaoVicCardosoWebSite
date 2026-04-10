@@ -2,7 +2,7 @@ import CssInput from "./input.module.css"
 
 function Input({ label, type = "text", name, value, onChange, placeholder }) {
   return (
-    <div>
+    <div className={CssInput.containerInput} >
       <label>{label}</label>
       <input
         type={type}

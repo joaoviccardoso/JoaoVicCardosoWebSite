@@ -1,0 +1,14 @@
+.containerInputDeText {
+   display: flex;
+   flex-direction: column;
+}
+
+.containerInputDeText div{
+    width: 100%;
+}
+
+.containerNomeEhTelefone{
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
