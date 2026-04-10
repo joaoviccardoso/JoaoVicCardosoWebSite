@@ -1,4 +1,12 @@
-.h1{
-    font-size: 36px;
-    color: #fff;
+.secaoPaginaContato{
+    margin: 2rem 12rem;
+    border-radius: 8px;
+    background: var(--color-componente);
+}
+
+.secaoMeusContatos{
+    width: 33.33%;
+    background: var(--color-gradienteVerdeBottom);
+    padding: 2rem 2rem;
+    border-radius: 8px 0 0 8px ;
 }
