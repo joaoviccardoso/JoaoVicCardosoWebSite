@@ -2,6 +2,7 @@
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
+    padding: 1rem;
 }
 
 .containerInputRadio input{

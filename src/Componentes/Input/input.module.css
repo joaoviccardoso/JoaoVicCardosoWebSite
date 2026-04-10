@@ -12,7 +12,7 @@
 
 .containerInput input{
     width: 100%;
-    height: 48px;
+    height: 52px;
     color: var(--cor-letraClara);
     font-size: var(--font-size-xl);
     font-family: var(--font-paraTexto);

@@ -6,7 +6,7 @@
 }
 
 .secaoMeusContatos{
-    width: 33.33%;
+    width: 50%;
     background: var(--color-gradienteVerdeBottom);
     padding: 2rem 2rem;
     border-radius: 8px 0 0 8px ;
@@ -14,4 +14,12 @@
 
 .secaoFormulario{
     padding: 2rem;
+}
+
+@media(max-width: 480px){
+    .secaoPaginaContato{
+        flex-direction: column-reverse;
+        margin: 2rem 2rem;
+    }
+
 }
