@@ -1,3 +1,4 @@
-.h1{
-    color: #fff;
+.secaoVerde{
+    background: var(--color-gradienteVerdeBottom);
+    clip-path: polygon(0% 2%, 100% 0, 100% 100%, 0% 100%);
 }

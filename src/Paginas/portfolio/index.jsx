@@ -4,9 +4,9 @@ import Produtos from "./sections/sectionProdutos"
 
 function Portfolio(){
     return(
-        <main className={CssPortfolio}>
+        <main className={CssPortfolio.paginaProdutos}>
             <HeroProdutos/>
-            <div className={CssPortfolio}>
+            <div className={CssPortfolio.secaoVerde}>
                 <Produtos/>
             </div>
         </main>
