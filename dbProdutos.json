@@ -1,0 +1,55 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "titulo": "Calculadora Geral",
+      "descricao": "Uma aplicação web que reúne diversos tipos de cálculos em um só lugar.",
+      "motivo": "Facilitar o acesso a diferentes cálculos sem precisar usar várias ferramentas.",
+      "tecnologias": ["HTML", "CSS", "JavaScript"],
+      "funcionalidades": [
+        "Cálculo de juros simples e compostos",
+        "Cálculo de férias",
+        "Explicação detalhada dos cálculos"
+      ],
+      "imagens": [
+        "/images/calculadora1.png",
+        "/images/calculadora2.png",
+        "/images/calculadora3.png"
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Editor de Deck Yu-Gi-Oh!",
+      "descricao": "Sistema para montar e gerenciar decks do jogo Yu-Gi-Oh.",
+      "motivo": "Ajudar jogadores a organizar e testar suas estratégias.",
+      "tecnologias": ["HTML", "CSS", "JavaScript"],
+      "funcionalidades": [
+        "Busca de cartas via API",
+        "Montagem de decks personalizados",
+        "Salvar dados no LocalStorage"
+      ],
+      "imagens": [
+        "/images/yugioh1.png",
+        "/images/yugioh2.png",
+        "/images/yugioh3.png"
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Cardápio Web para Lanchonete",
+      "descricao": "Cardápio digital com pedidos via WhatsApp.",
+      "motivo": "Facilitar pedidos e digitalizar o atendimento da lanchonete.",
+      "tecnologias": ["HTML", "CSS", "JavaScript"],
+      "funcionalidades": [
+        "Listagem de produtos",
+        "Envio de pedido via WhatsApp",
+        "Adição de novos itens no menu"
+      ],
+      "imagens": [
+        "/images/cardapio1.png",
+        "/images/cardapio2.png",
+        "/images/cardapio3.png"
+      ]
+    }
+  ]
+}
