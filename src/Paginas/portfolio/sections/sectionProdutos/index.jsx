@@ -2,7 +2,7 @@ import CssProduto from "./produtos.module.css"
 
 function Produtos(){
     return(
-        <section>
+        <section className={CssProduto}>
             <div>
 
             </div>
