@@ -36,3 +36,11 @@
     font-size: var(--font-size-sm);
     font-family: var(--font-paraTexto); 
 }
+
+@media(max-width: 480px){
+    .containerCardProdutos{
+        position: relative;
+        width: 310px;
+        height: 610px; 
+    }
+}

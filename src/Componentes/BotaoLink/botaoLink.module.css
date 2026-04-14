@@ -1,0 +1,12 @@
+.botaoLink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-gradienteVerdeBottom);
+    color: var(--cor-letraClara);
+    font-size: var(--font-size-md);
+    font-family: var(--font-paraTexto);
+    width: 150px;
+    height: 50px;
+    clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+}

@@ -48,4 +48,9 @@ span{
     span{
         display: none;
     }
+
+    .listaProdutos{
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
