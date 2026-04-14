@@ -1,0 +1,55 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "titulo": "JV.dev />",
+      "descricao": "O DevTrack é uma aplicação web desenvolvida para apresentar meus projetos, habilidades e soluções digitais. Além de funcionar como portfólio, a plataforma oferece uma área exclusiva para clientes, com dashboard interativo que permite acompanhar o andamento de seus projetos em tempo real.",
+      "motivo": "Este projeto foi criado com o objetivo de centralizar meus trabalhos e demonstrar, na prática, minhas habilidades como desenvolvedor. Além disso, busca oferecer mais transparência e organização para clientes, permitindo que acompanhem o progresso dos seus projetos de forma simples e eficiente.",
+      "tecnologias": ["React", "GSAP", "Bootstrap"],
+      "funcionalidades": [
+        "Visualização de projetos desenvolvidos com detalhes e imagens",
+        "Dashboard do cliente para acompanhamento do status dos projetos",
+        "Interface interativa com animações modernas utilizando GSAP"
+      ],
+      "imagens": [
+        "/images/TelaHomeMeuProjeto.png",
+        "/images/TelaDashBoardAdm.png",
+        "/images/TelaDeCadastros.png"
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "JV.dev />",
+      "descricao": "O DevTrack é uma aplicação web desenvolvida para apresentar meus projetos, habilidades e soluções digitais. Além de funcionar como portfólio, a plataforma oferece uma área exclusiva para clientes, com dashboard interativo que permite acompanhar o andamento de seus projetos em tempo real.",
+      "motivo": "Este projeto foi criado com o objetivo de centralizar meus trabalhos e demonstrar, na prática, minhas habilidades como desenvolvedor. Além disso, busca oferecer mais transparência e organização para clientes, permitindo que acompanhem o progresso dos seus projetos de forma simples e eficiente.",
+      "tecnologias": ["React", "GSAP", "Bootstrap"],
+      "funcionalidades": [
+        "Visualização de projetos desenvolvidos com detalhes e imagens",
+        "Dashboard do cliente para acompanhamento do status dos projetos",
+        "Interface interativa com animações modernas utilizando GSAP"
+      ],
+      "imagens": [
+        "/images/TelaHomeMeuProjeto.png",
+        "/images/TelaDashBoardAdm.png",
+        "/images/TelaDeCadastros.png"
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "JV.dev />",
+      "descricao": "O DevTrack é uma aplicação web desenvolvida para apresentar meus projetos, habilidades e soluções digitais. Além de funcionar como portfólio, a plataforma oferece uma área exclusiva para clientes, com dashboard interativo que permite acompanhar o andamento de seus projetos em tempo real.",
+      "motivo": "Este projeto foi criado com o objetivo de centralizar meus trabalhos e demonstrar, na prática, minhas habilidades como desenvolvedor. Além disso, busca oferecer mais transparência e organização para clientes, permitindo que acompanhem o progresso dos seus projetos de forma simples e eficiente.",
+      "tecnologias": ["React", "GSAP", "Bootstrap"],
+      "funcionalidades": [
+        "Visualização de projetos desenvolvidos com detalhes e imagens",
+        "Dashboard do cliente para acompanhamento do status dos projetos",
+        "Interface interativa com animações modernas utilizando GSAP"
+      ],
+      "imagens": [
+        "/images/TelaHomeMeuProjeto.png",
+        "/images/TelaDashBoardAdm.png",
+        "/images/TelaDeCadastros.png"
+      ]
+    }
+  ]
+}

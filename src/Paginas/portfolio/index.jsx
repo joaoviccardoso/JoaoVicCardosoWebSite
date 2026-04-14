@@ -1,9 +1,14 @@
 import CssPortfolio from "./portfolio.module.css"
+import HeroProdutos from "./sections/sectionHero"
+import Produtos from "./sections/sectionProdutos"
 
 function Portfolio(){
     return(
-        <main>
-            <h1 className={CssPortfolio.h1}>Portfolio</h1>
+        <main className={CssPortfolio.paginaProdutos}>
+            <HeroProdutos/>
+            <div className={CssPortfolio.secaoVerde}>
+                <Produtos/>
+            </div>
         </main>
     )
 }

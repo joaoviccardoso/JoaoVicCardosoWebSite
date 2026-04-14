@@ -1,0 +1,29 @@
+.secaoHeroProdutos{
+    padding: 10rem 12rem;
+    color: #fff;
+}
+
+.secaoHeroProdutos h1{
+    font-size: var(--font-size-4xl);
+    font-family: var(--font-paraTextoChamativo);
+}
+
+.secaoHeroProdutos p{
+    margin:.9rem 0;
+    font-size: var(--font-size-2xl);
+    font-family: var(--font-paraTexto);
+}
+
+@media(max-width: 480px){
+    .secaoHeroProdutos{
+        padding: 4rem 2rem;
+    }
+
+    .secaoHeroProdutos h1{
+        font-size: var(--font-size-2xl);
+    }
+
+    .secaoHeroProdutos p{
+        font-size: var(--font-size-lg);
+    }
+}

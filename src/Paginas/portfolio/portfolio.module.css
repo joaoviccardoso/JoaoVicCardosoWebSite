@@ -1,3 +1,11 @@
-.h1{
-    color: #fff;
+.secaoVerde{
+    background: var(--color-gradienteVerdeBottom);
+    clip-path: polygon(0% 2%, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media(max-width: 480px){
+    .secaoVerde{
+        background: var(--color-gradienteVerdeBottom);
+        clip-path: polygon(0% 1%, 100% 0, 100% 100%, 0% 100%);
+    }
 }

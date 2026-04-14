@@ -1,0 +1,46 @@
+.containerCardProdutos{
+    position: relative;
+    width: 370px;
+    height: 610px; 
+}
+
+.containerCardProdutos img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.containerTextoEhSaber{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    border-radius: 0px 8px 8px 8px;
+    padding: 1rem;
+
+    width: 100%;
+
+    clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%, 0 50%);
+    background-color: var(--branco-menosBranco);
+}
+
+.containerCardProdutos h3{
+    color: var(--color-componente); 
+    font-size: var(--font-size-xl);
+    font-family: var(--font-paraTextoChamativo); 
+}
+
+.containerCardProdutos p{
+    color: var(--color-componente);  
+    font-size: var(--font-size-sm);
+    font-family: var(--font-paraTexto); 
+}
+
+@media(max-width: 480px){
+    .containerCardProdutos{
+        position: relative;
+        width: 310px;
+        height: 610px; 
+    }
+}
