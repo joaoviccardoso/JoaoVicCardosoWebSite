@@ -33,6 +33,13 @@ span{
     border-radius: 6px 0 0 6px;
 }
 
+.listaProdutos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3rem 0;
+}
+
 @media(max-width: 480px){
     .secaoProdutos{
         padding: 2rem 2rem;

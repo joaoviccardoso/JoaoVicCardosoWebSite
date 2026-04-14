@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
+import CardProduto from "../../../../Componentes/CardProdutos"
 import CssProduto from "./produtos.module.css"
 import LinkParaNavegacao from "../../../../Componentes/Links/link"
 import menuCelular from "../../../../assets/menuCelular.svg"
+
 
 function Produtos(){
     const [produto, setProduto] = useState([]);
@@ -9,11 +11,11 @@ function Produtos(){
    useEffect(() => {
     async function buscarDados() {
         try {
-        const res = await fetch("http://localhost:3000/produtos");
-        const data = await res.json();
-        setProduto(data);
+            const res = await fetch("http://localhost:3000/produtos");
+            const data = await res.json();
+            setProduto(data);
         } catch (erro) {
-        console.error(erro);
+            console.error(erro);
         }
     }
 
@@ -42,11 +44,16 @@ function Produtos(){
                 </button>
             </div>
 
-            <ul>
-                <p>ds</p>
-                <p>ds</p>
-                <p>ds</p>
-                <p>ds</p>
+            <ul className={CssProduto.listaProdutos}>
+                {produto.map(p => (
+                    <li key={p.id}>
+                        <CardProduto
+                            titulo={p.titulo}
+                            descricao={p.descricao}
+                            imgUrl={p.imagens[0]}
+                        />
+                    </li>
+                ))}
             </ul>
         </section>
     )

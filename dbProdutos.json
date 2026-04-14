@@ -2,53 +2,53 @@
   "produtos": [
     {
       "id": 1,
-      "titulo": "Calculadora Geral",
-      "descricao": "Uma aplicação web que reúne diversos tipos de cálculos em um só lugar.",
-      "motivo": "Facilitar o acesso a diferentes cálculos sem precisar usar várias ferramentas.",
-      "tecnologias": ["HTML", "CSS", "JavaScript"],
+      "titulo": "JV.dev />",
+      "descricao": "O DevTrack é uma aplicação web desenvolvida para apresentar meus projetos, habilidades e soluções digitais. Além de funcionar como portfólio, a plataforma oferece uma área exclusiva para clientes, com dashboard interativo que permite acompanhar o andamento de seus projetos em tempo real.",
+      "motivo": "Este projeto foi criado com o objetivo de centralizar meus trabalhos e demonstrar, na prática, minhas habilidades como desenvolvedor. Além disso, busca oferecer mais transparência e organização para clientes, permitindo que acompanhem o progresso dos seus projetos de forma simples e eficiente.",
+      "tecnologias": ["React", "GSAP", "Bootstrap"],
       "funcionalidades": [
-        "Cálculo de juros simples e compostos",
-        "Cálculo de férias",
-        "Explicação detalhada dos cálculos"
+        "Visualização de projetos desenvolvidos com detalhes e imagens",
+        "Dashboard do cliente para acompanhamento do status dos projetos",
+        "Interface interativa com animações modernas utilizando GSAP"
       ],
       "imagens": [
-        "/images/calculadora1.png",
-        "/images/calculadora2.png",
-        "/images/calculadora3.png"
+        "/images/TelaHomeMeuProjeto.png",
+        "/images/TelaDashBoardAdm.png",
+        "/images/TelaDeCadastros.png"
       ]
     },
     {
       "id": 2,
-      "titulo": "Editor de Deck Yu-Gi-Oh!",
-      "descricao": "Sistema para montar e gerenciar decks do jogo Yu-Gi-Oh.",
-      "motivo": "Ajudar jogadores a organizar e testar suas estratégias.",
-      "tecnologias": ["HTML", "CSS", "JavaScript"],
+      "titulo": "JV.dev />",
+      "descricao": "O DevTrack é uma aplicação web desenvolvida para apresentar meus projetos, habilidades e soluções digitais. Além de funcionar como portfólio, a plataforma oferece uma área exclusiva para clientes, com dashboard interativo que permite acompanhar o andamento de seus projetos em tempo real.",
+      "motivo": "Este projeto foi criado com o objetivo de centralizar meus trabalhos e demonstrar, na prática, minhas habilidades como desenvolvedor. Além disso, busca oferecer mais transparência e organização para clientes, permitindo que acompanhem o progresso dos seus projetos de forma simples e eficiente.",
+      "tecnologias": ["React", "GSAP", "Bootstrap"],
       "funcionalidades": [
-        "Busca de cartas via API",
-        "Montagem de decks personalizados",
-        "Salvar dados no LocalStorage"
+        "Visualização de projetos desenvolvidos com detalhes e imagens",
+        "Dashboard do cliente para acompanhamento do status dos projetos",
+        "Interface interativa com animações modernas utilizando GSAP"
       ],
       "imagens": [
-        "/images/yugioh1.png",
-        "/images/yugioh2.png",
-        "/images/yugioh3.png"
+        "/images/TelaHomeMeuProjeto.png",
+        "/images/TelaDashBoardAdm.png",
+        "/images/TelaDeCadastros.png"
       ]
     },
     {
       "id": 3,
-      "titulo": "Cardápio Web para Lanchonete",
-      "descricao": "Cardápio digital com pedidos via WhatsApp.",
-      "motivo": "Facilitar pedidos e digitalizar o atendimento da lanchonete.",
-      "tecnologias": ["HTML", "CSS", "JavaScript"],
+      "titulo": "JV.dev />",
+      "descricao": "O DevTrack é uma aplicação web desenvolvida para apresentar meus projetos, habilidades e soluções digitais. Além de funcionar como portfólio, a plataforma oferece uma área exclusiva para clientes, com dashboard interativo que permite acompanhar o andamento de seus projetos em tempo real.",
+      "motivo": "Este projeto foi criado com o objetivo de centralizar meus trabalhos e demonstrar, na prática, minhas habilidades como desenvolvedor. Além disso, busca oferecer mais transparência e organização para clientes, permitindo que acompanhem o progresso dos seus projetos de forma simples e eficiente.",
+      "tecnologias": ["React", "GSAP", "Bootstrap"],
       "funcionalidades": [
-        "Listagem de produtos",
-        "Envio de pedido via WhatsApp",
-        "Adição de novos itens no menu"
+        "Visualização de projetos desenvolvidos com detalhes e imagens",
+        "Dashboard do cliente para acompanhamento do status dos projetos",
+        "Interface interativa com animações modernas utilizando GSAP"
       ],
       "imagens": [
-        "/images/cardapio1.png",
-        "/images/cardapio2.png",
-        "/images/cardapio3.png"
+        "/images/TelaHomeMeuProjeto.png",
+        "/images/TelaDashBoardAdm.png",
+        "/images/TelaDeCadastros.png"
       ]
     }
   ]
