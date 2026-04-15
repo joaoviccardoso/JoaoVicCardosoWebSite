@@ -5,6 +5,7 @@ import Contato from "./Paginas/Contato"
 import Servicos from "./Paginas/Servicos"
 import SobreMim from "./Paginas/SobreMim"
 import Portfolio from "./Paginas/portfolio"
+import PaginaDetalheDosProjetos from "./Paginas/DetalheProjeto"
 import OffCanvas from "./Componentes/OffCanvasNav/OffCanvas"
 import "./style/fonteEhCores.css"
 import Footer from "./Componentes/Footer"
@@ -22,7 +23,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/Contato" element={<Contato/>}/>
           <Route path="/Portfolio" element={<Portfolio/>}/>
-          <Route path="/Portfolio:id" element={<Portfolio/>}/>
+          <Route path="/Portfolio/:id" element={<PaginaDetalheDosProjetos/>}/>
           <Route path="/Servicos" element={<Servicos/>}/>
           <Route path="/SobreMim" element={<SobreMim/>}/>
         </Routes>
