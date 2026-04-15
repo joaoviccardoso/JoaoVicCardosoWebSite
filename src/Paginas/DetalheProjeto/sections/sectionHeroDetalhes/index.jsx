@@ -5,16 +5,18 @@ import MinhasHabilidades from "../../../../Componentes/MinhasHabilidades/index.j
 
 function SecaoHeroDetalhes({titulo, descricao, tecnologias}){
     return(
-        <section className={CssFuncio}>
-            <div className={CssFuncio}>
+        <section className={CssFuncio.secaoHeroDetalhes}>
+            <div className={CssFuncio.divTituloHero}>
                 <h1>{titulo}</h1>
                 <p>{descricao}</p>
-                <BotaoCta
-                    child="Entre em Contato"
-                />
+                <div>
+                    <BotaoCta
+                        child="Entre em Contato"
+                    />
+                </div>
             </div>
 
-            <ul className={CssFuncio}>
+            <ul className={CssFuncio.ulHeroTecnologias}>
                 {tecnologias.map((tec)=>(
                     <li>
                         <MinhasHabilidades
