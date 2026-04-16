@@ -30,15 +30,18 @@ function PaginaDetalheDosProjetos(){
 
     console.log(produto)
     return (
-        <section>
+        <section className={CssDetalhe}>
             <SecaoHeroDetalhes
                 titulo={produto.titulo}
                 descricao={produto.descricao}
                 tecnologias={produto.tecnologias}
             />
-            <div>
-
+            <div className={CssDetalhe.divVerdeMotivacao}>
+                <SecaoMotivacao
+                    textoMotivacao={produto.motivo}
+                />
             </div>
+            <SecaoFuncionalidade/>
         </section>
     )
     
