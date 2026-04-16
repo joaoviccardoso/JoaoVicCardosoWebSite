@@ -1,0 +1,10 @@
+.secaoFuncionalidade{
+    text-align: center;
+    padding: 3rem 12rem;
+}
+
+.ulFuncionalidade{
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+}

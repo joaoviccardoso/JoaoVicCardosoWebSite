@@ -41,7 +41,10 @@ function PaginaDetalheDosProjetos(){
                     textoMotivacao={produto.motivo}
                 />
             </div>
-            <SecaoFuncionalidade/>
+            <SecaoFuncionalidade
+                funcionalidade={produto.funcionalidades}
+                imagens={produto.imagens}
+            />
         </section>
     )
     
