@@ -1,4 +1,5 @@
 import LinkParaNavegacao from '../Links/link'
+import BtnLogin from '../BotaoLogin'
 
 function ListaNav({className}){
     return(
@@ -24,10 +25,13 @@ function ListaNav({className}){
                 className={className}
             />
             <LinkParaNavegacao
-                child="Contado"
+                child="Contato"
                 to="Contato"
                 className={className}
             />
+            <div>
+                <BtnLogin/>
+            </div>
         </>
     )
 }

@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom'
 import NavCss from './nav.module.css' 
 import ListaNav from '../ListaNav'
 import Image from '../Img'
 import logo from "../../assets/logoDev.svg"
 import menuCelular from '../../assets/menuCelular.svg'
-import IconeLogin from '../../assets/IconeLogin.svg'
+import BtnLogin from '../BotaoLogin'
 
 function Nav(){
     return(
@@ -28,19 +27,7 @@ function Nav(){
                     <ListaNav
                         className="navLinkHome"
                     />
-                </ul>
-
-                <div className={NavCss.loginContainer}>
-                    <span className={NavCss.iconContainer}>
-                        <img src={IconeLogin} alt="Logo Login" />
-                    </span>
-
-                    <div className={NavCss.borderWrapper}>
-                        <Link to="/login" className={NavCss.linkLogin}>
-                            Fazer login
-                        </Link>
-                    </div>
-                </div>
+                </ul> 
         </nav>
     )
 }
