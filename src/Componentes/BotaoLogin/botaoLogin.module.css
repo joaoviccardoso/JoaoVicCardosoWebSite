@@ -7,15 +7,19 @@
 }
 
 .linkLogin {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 10px 84px 10px 14px;
     color: white;
     font-family: var(--font-paraTexto);
     font-size: var(--font-size-lg);
-    text-align: start;
     text-decoration: none;
     background: #0b0b0b;
+    overflow: hidden;
+
+    isolation: isolate; /* 🔥 MUITO IMPORTANTE */
+
     clip-path: polygon(50% 0%, 100% 0, 100% 16%, 100% 22%, 100% 66%, 82% 100%, 0 100%, 0% 70%, 0% 35%, 0 0);
 }
 
@@ -45,6 +49,51 @@
 
 .iconContainer img {
     width: 28px;
+}
+
+.linkLogin::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: var(--color-gradienteVerde);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    filter: blur(12px); /* 🔥 começa com blur */
+    opacity: 0.1;
+
+    transition: 
+        transform 0.4s ease,
+        filter 0.4s ease,
+        opacity 0.4s ease;
+
+    z-index: -1; /* 🔥 garante que fique atrás */
+}
+
+/* texto fica acima */
+.linkLogin span,
+.linkLogin {
+  position: relative;
+  z-index: 1;
+}
+
+/* hover */
+.linkLogin:hover::before {
+  transform: scaleX(1);
+  filter: blur(0); /* 🔥 termina sólido */
+  opacity: .8;
+}
+
+
+.borderWrapper:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 6px #10B981;
+}
+
+.borderWrapper:active .linkLogin {
+  background: #050505;
 }
 
 @media(max-width: 480px){

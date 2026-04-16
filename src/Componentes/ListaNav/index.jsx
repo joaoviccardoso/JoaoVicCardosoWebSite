@@ -11,22 +11,22 @@ function ListaNav({className}){
             />
             <LinkParaNavegacao
                 child="Serviços"
-                to="Servicos"
+                to="/Servicos"
                 className={className}
             />
             <LinkParaNavegacao
                 child="Sobre mim"
-                to="SobreMim"
+                to="/SobreMim"
                 className={className}
             />
             <LinkParaNavegacao
                 child="Portfólio"
-                to="Portfolio"
+                to="/Portfolio"
                 className={className}
             />
             <LinkParaNavegacao
                 child="Contato"
-                to="Contato"
+                to="/Contato"
                 className={className}
             />
             <div>
