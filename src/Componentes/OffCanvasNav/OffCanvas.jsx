@@ -1,9 +1,25 @@
+import { useEffect } from "react"
+import { useLocation } from "react-router-dom"
 import ListaNav from "../ListaNav"
 import CssOffCanva from "./OffCanvas.module.css"
 import BtnLogin from "../BotaoLogin"
 import logoDev from "../../assets/logoDev.svg"
 
 function OffCanvas(){
+    const location = useLocation()
+
+    useEffect(() => {
+        const offcanvasElement = document.getElementById('offcanvasExample')
+
+        if (offcanvasElement) {
+            const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvasElement)
+            
+            if (bsOffcanvas) {
+                bsOffcanvas.hide()
+            }
+        }
+    }, [location])
+    
     return(
         <>
         <div className={`offcanvas offcanvas-start ${CssOffCanva.offcanvas}`} tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
