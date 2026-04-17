@@ -12,9 +12,10 @@ export function useScrollAnimationLeftAndRight(el, ids) {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: el.current,
+                    markers:true,
                     scrub: 3,
-                    start: "top 80%",
-                    end: "bottom 45%",
+                    start: "top 90%",
+                    end: "bottom 90%",
                 },
             });
 

@@ -1,60 +1,14 @@
-import { useLayoutEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import { useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useScrollAnimationUp } from '../../../../hooks/useScrollAnimationUp';
 import CssAlemDeCodigo from './alemDeCodigo.module.css'
 import ContainerTexto from '../../../../Componentes/ContainerTexto'
 import bonecoMostrandoOpcoes from '../../../../assets/BonecoMostrandoOpcoes.png'
 
 function AlemDeCodigo(){
 
-    const el = useRef();
-    const tl = useRef();
-
-    useLayoutEffect(()=>{
-        gsap.registerPlugin(ScrollTrigger)
-
-        const isMobile = window.innerWidth <= 480;
-
-         const ctx = gsap.context(() => {
-                    tl.current = gsap.timeline({
-                        scrollTrigger:{
-                            trigger: el.current,
-                            scrub: 2,
-                            start: "top 70%",
-                            end: "bottom 50%"
-                        }
-                    })
-                    .fromTo("#container-1",{
-                        opacity:0,
-                        x: isMobile ? 0 : 200,
-                        y: isMobile ? 80 : 0,
-                    }, {
-                        opacity:1,
-                        x:0,
-                        y:0,
-                    }, 0)
-                    .fromTo("#container-2",{
-                        opacity:0,
-                        x: isMobile ? 0 : 200,
-                        y: isMobile ? 80 : 0,
-                    }, {
-                        opacity:1,
-                        x:0,
-                        y:0,
-                    }, 1)
-                    .fromTo("#container-3",{
-                        opacity:0,
-                        x: isMobile ? 0 : 200,
-                        y: isMobile ? 80 : 0,
-                    }, {
-                        opacity:1,
-                        x:0,
-                        y:0,
-                    }, 2)
-                }, el)
-        
-                return () => ctx.revert();
-        }, [])
+    const el = useRef(null);
+    useScrollAnimationUp(el,["#container-1", "#container-2", "#container-3"])
                     
     return(
         <section className={CssAlemDeCodigo.secaoAlemDeCodigo}>

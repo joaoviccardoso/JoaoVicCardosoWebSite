@@ -20,6 +20,10 @@
 }
 
 @media(max-width: 480px){
+    .secao0{
+        clip-path: polygon(0% 1%, 100% 0, 100% 100%, 0% 100%);
+    }
+
     .secao1 {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         padding: 6rem 2rem 0 2rem;

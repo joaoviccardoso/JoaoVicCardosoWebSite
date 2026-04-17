@@ -5,11 +5,14 @@ import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
 import { useScrollAnimationRight } from "../../../../hooks/useScrollAnimationRight";
 
 function ComoEuPenso(){
-    const ell = useRef();
-    const elr = useRef();
+   
+    const ell = useRef(null);
+    const elr = useRef(null);
 
     useScrollAnimation(ell, ["#containerPasso1", "#containerPasso2", "#containerPasso3"])
     useScrollAnimationRight(elr, ["#containerPasso4", "#containerPasso5"])
+ 
+    
     return(
         <section className={CssComoEuPenso.secaoComoEuPenso}>
             <div className={CssComoEuPenso.containerTexto}>
