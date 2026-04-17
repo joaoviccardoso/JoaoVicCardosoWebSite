@@ -36,19 +36,19 @@
     },
     {
       "id": 3,
-      "titulo": "JV.dev />",
-      "descricao": "O DevTrack é uma aplicação web desenvolvida para apresentar meus projetos, habilidades e soluções digitais. Além de funcionar como portfólio, a plataforma oferece uma área exclusiva para clientes, com dashboard interativo que permite acompanhar o andamento de seus projetos em tempo real.",
-      "motivo": "Este projeto foi criado com o objetivo de centralizar meus trabalhos e demonstrar, na prática, minhas habilidades como desenvolvedor. Além disso, busca oferecer mais transparência e organização para clientes, permitindo que acompanhem o progresso dos seus projetos de forma simples e eficiente.",
-      "tecnologias": ["React", "GSAP", "Bootstrap"],
+      "titulo": "DoceGest />",
+      "descricao": "O DoceGest é uma aplicação web desenvolvida para gerenciar pedidos e produtos de uma doceria. A plataforma permite visualizar o cardápio, registrar pedidos e facilitar a comunicação com clientes via WhatsApp, além de oferecer uma área administrativa para controle completo do negócio.",
+      "motivo": "Este projeto foi criado com o objetivo de ajudar pequenas docerias a organizarem seus pedidos e produtos de forma simples e eficiente. Além disso, busca melhorar a experiência do cliente ao facilitar a visualização do cardápio e o processo de compra.",
+      "tecnologias": ["Html", "CSS", "JavaScript"],
       "funcionalidades": [
-        "Visualização de projetos desenvolvidos com detalhes e imagens",
-        "Dashboard do cliente para acompanhamento do status dos projetos",
-        "Interface interativa com animações modernas utilizando GSAP"
+        "Visualização de produtos com imagens, preços e descrições",
+        "Realização de pedidos com envio direto para o WhatsApp",
+        "Interface simples e responsiva para mobile e desktop"
       ],
       "imagens": [
-        "/images/TelaHomeMeuProjeto.png",
-        "/images/TelaDashBoardAdm.png",
-        "/images/TelaDeCadastros.png"
+        "/images/TelaHomeDoceria.png",
+        "/images/TelaDashBoardDoceria.png",
+        "/images/TelaPedidosDoceria.png"
       ]
     }
   ]

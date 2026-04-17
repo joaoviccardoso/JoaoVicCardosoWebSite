@@ -1,0 +1,9 @@
+.secaoMotivacao{
+    max-width: 60%;
+}
+
+@media(max-width: 480px){
+    .secaoMotivacao{
+        max-width: 100%;
+    }
+}

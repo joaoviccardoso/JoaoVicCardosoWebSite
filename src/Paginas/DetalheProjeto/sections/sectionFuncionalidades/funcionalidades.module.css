@@ -1,0 +1,29 @@
+.secaoFuncionalidade{
+    text-align: center;
+    padding: 3rem 12rem;
+}
+
+.ulFuncionalidade{
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+}
+
+@media(max-width: 480px){
+    .secaoFuncionalidade{
+        padding: 3rem 2rem;
+    }
+
+    .ulFuncionalidade{
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .secaoFuncionalidade h3{
+        font-size: var(--font-size-2xl);
+    }
+
+    .secaoFuncionalidade p{
+        font-size: var(--font-size-lg);
+    }
+}

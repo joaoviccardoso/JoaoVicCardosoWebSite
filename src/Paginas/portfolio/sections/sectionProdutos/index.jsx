@@ -8,21 +8,21 @@ import menuCelular from "../../../../assets/menuCelular.svg"
 function Produtos(){
     const [produto, setProduto] = useState([]);
 
-   useEffect(() => {
-    async function buscarDados() {
-        try {
-            const res = await fetch("http://localhost:3000/produtos");
-            const data = await res.json();
-            setProduto(data);
-        } catch (erro) {
-            console.error(erro);
+    useEffect(() => {
+        async function buscarDados() {
+            try {
+                const res = await fetch("http://localhost:3000/produtos");
+                const data = await res.json();
+                setProduto(data);
+            } catch (erro) {
+                console.error(erro);
+            }
         }
-    }
 
-    buscarDados();
+        buscarDados();
     }, []);
 
-    console.log(produto)
+   
     return(
         <section className={CssProduto.secaoProdutos}>
             <div className={CssProduto.filtroProdutos}>
@@ -46,11 +46,13 @@ function Produtos(){
 
             <ul className={CssProduto.listaProdutos}>
                 {produto.map(p => (
+                    
                     <li key={p.id}>
                         <CardProduto
                             titulo={p.titulo}
                             descricao={p.descricao}
                             imgUrl={p.imagens[0]}
+                            idBtn={p.id}
                         />
                     </li>
                 ))}

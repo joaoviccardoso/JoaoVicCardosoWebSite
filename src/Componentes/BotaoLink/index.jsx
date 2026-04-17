@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import CssBotaoLink from "./botaoLink.module.css"
 
-function BotaoLink({child, to, className, idBtn}){
+function BotaoLink({child, className, id}){
     return(
-        <Link to={to} className={`${CssBotaoLink.botaoLink} ${className || ""}`} id={idBtn}> 
+        <Link to={`/Portfolio/${id}`} className={`${CssBotaoLink.botaoLink} ${className || ""}`} id={id}> 
             {child}
         </Link>
     )
