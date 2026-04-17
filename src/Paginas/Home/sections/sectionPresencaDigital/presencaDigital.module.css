@@ -11,7 +11,7 @@
 }
 
 @media(max-width: 480px){
-    .containerPresencaDigital h2{
+    .containerPresencaDigital h3{
         font-size: var(--font-size-2xl);
     }
 

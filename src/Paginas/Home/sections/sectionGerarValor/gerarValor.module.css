@@ -18,6 +18,10 @@
 }
 
 @media(max-width: 480px){
+    .containerTexto{
+        padding: 0 1rem;
+    }
+
     .containerTexto h3{
         font-size: var(--font-size-2xl);
     }
@@ -28,5 +32,16 @@
 
     .btnLista{
         flex-direction: column;
+    }
+}
+
+@media(max-width: 320px){
+
+    .containerTexto h3{
+        font-size: var(--font-size-xl);
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-md);
     }
 }

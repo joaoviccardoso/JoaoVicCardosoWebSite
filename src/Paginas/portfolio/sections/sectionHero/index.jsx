@@ -30,7 +30,7 @@ function HeroProdutos(){
                         scrollTrigger: {
                             trigger: el.current,
                             scrub: 2,
-                            start: "top 90%",
+                            start: "top 30%",
                             end: "bottom 50%",
                         }
                     })

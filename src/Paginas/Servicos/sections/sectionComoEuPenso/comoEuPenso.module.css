@@ -34,4 +34,12 @@
         flex-direction: column;
         padding: 0;
     }
+
+    .containerTexto h3{
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-lg);
+    }
 }

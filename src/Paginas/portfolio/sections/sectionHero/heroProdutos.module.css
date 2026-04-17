@@ -27,3 +27,14 @@
         font-size: var(--font-size-lg);
     }
 }
+
+
+@media(max-width: 320px){
+    .secaoHeroProdutos h1{
+        font-size: var(--font-size-xl);
+    }
+
+    .secaoHeroProdutos p{
+        font-size: var(--font-size-md);
+    }
+}

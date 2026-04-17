@@ -46,10 +46,11 @@
     }
 
     .secaoHabilidades div h3{
-        font-size: var(--font-size-3xl);
+        font-size: var(--font-size-2xl);
     }
 
     .secaoHabilidades div p{
+        padding: 0 1rem;
         font-size: var(--font-size-lg);
     }
 

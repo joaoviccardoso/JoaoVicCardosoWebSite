@@ -37,4 +37,8 @@
         flex-direction: column;
         gap: 2rem;
     }
+
+    .secaoParaQuemEh h3{
+        font-size: var(--font-size-2xl);
+    }
 }
