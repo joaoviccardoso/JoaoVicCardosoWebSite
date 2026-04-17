@@ -12,6 +12,14 @@
    gap: 3rem;
 }
 
+@media(max-width: 1520px){
+    
+}
+
+@media(max-width: 1310px){
+    
+}
+
 @media(max-width: 480px){
     .nav{
         width: 85%;

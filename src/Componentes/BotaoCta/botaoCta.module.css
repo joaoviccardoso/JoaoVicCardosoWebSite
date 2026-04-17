@@ -36,6 +36,7 @@
   cursor: pointer;
   z-index: 1;
   border-radius: 8px;
+  font-family: var(--font-paraTexto);
 
   /* formato com pontas cortadas */
   clip-path: polygon(
@@ -66,6 +67,17 @@
 .btnSobraBranca:active::before{
     top: 0;
     left: 0;
+}
+
+@media(max-width: 1520px){
+
+}
+
+@media(max-width: 1310px){
+    .btnCta{
+        font-size: 14px;
+        padding: 32px 50px;
+    } 
 }
 
 @media(max-width: 480px){

@@ -96,6 +96,20 @@
   background: #050505;
 }
 
+@media(max-width: 1520px){
+
+}
+
+@media(max-width: 1400px){
+    .linkLogin {
+        padding: 10px 35px 10px 14px;
+    }
+
+    .iconContainer {
+        left: 110px;
+    }
+}
+
 @media(max-width: 480px){
     .loginBtnCelular{
         display: inline-block;
