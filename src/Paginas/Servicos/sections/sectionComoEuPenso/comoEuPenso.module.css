@@ -29,6 +29,12 @@
     width: 100%;
 }
 
+@media(max-width: 1500px){
+    .containerPassos{
+        padding: 0;
+    }
+}
+
 @media(max-width: 480px){
     .containerPassos{
         flex-direction: column;

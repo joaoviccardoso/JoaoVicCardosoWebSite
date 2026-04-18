@@ -7,7 +7,7 @@
 .containerTexto{
     background-color: var(--preto);
     padding: 20px;
-    height: 280px;
+    min-height: 280px;
     color: white;
     border-radius: 6px;
     
@@ -56,6 +56,6 @@
     }
 
     .containerTexto{
-        height: auto;
+        min-height: 280px;
     }
 }

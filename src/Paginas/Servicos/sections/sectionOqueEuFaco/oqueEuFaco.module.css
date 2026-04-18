@@ -34,6 +34,13 @@
     justify-content: center;
 }
 
+@media(max-width: 1500px){
+    .sectionOqueEuFaco{
+        display: flex;
+        flex-direction: column;
+        padding: 0 6rem;
+    }
+}
 
 @media(max-width: 480px){
     .sectionOqueEuFaco{
