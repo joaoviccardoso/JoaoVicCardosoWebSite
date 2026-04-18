@@ -75,6 +75,7 @@ function HeroProdutos(){
                 <div ref={divBotao}>
                     <BotaoCta
                         child="Comece seu projeto hoje"
+                        to="/Contato"
                         className="btnSecaoHeroProdutos"
                     />
                 </div> 

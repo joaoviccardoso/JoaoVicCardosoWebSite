@@ -87,9 +87,11 @@ function HeroServico(){
                 <div className={CssHeroServico.containerBtnCtaHero} ref={divBotao}>
                     <BotaoCta
                         child="Comece seu projeto hoje"
+                        to="/Contato"
                     />
                     <BotaoCta
                         child="Ver Meus Projetos"
+                        to="/Portfolio"
                     />
                 </div>
             </div>

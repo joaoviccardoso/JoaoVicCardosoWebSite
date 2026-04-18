@@ -13,6 +13,7 @@ function SecaoQueSouEu(){
                 <div>
                     <BotaoCta
                         child="Conheça meus Projetos"
+                        to="/Portfolio"
                     />
                 </div>
             </div>
