@@ -10,22 +10,33 @@
     gap: 2rem;
 }
 
+
+@media(max-width: 1250px){
+    .divQuemSouEuTexto h3{
+        font-size: var(--font-size-2xl);
+    }  
+
+    .divQuemSouEuTexto p{
+        font-size: var(--font-size-lg);
+    }
+
+    .imagemQuemSou{
+        width: 60%;
+    }
+}
+
 @media(max-width: 480px){
     .secaoQuemSouEu{
         flex-direction: column-reverse;
         padding: 3rem 2rem;
     }
 
-    .divQuemSouEuTexto h3{
-        font-size: var(--font-size-2xl);
-    }
-
-    .divQuemSouEuTexto p{
-        font-size: var(--font-size-lg);
-    }
-
     .divQuemSouEuTexto div{
         text-align: center;
         margin-bottom:1rem; 
     };
+
+    .imagemQuemSou{
+        width: 100%;
+    }
 }

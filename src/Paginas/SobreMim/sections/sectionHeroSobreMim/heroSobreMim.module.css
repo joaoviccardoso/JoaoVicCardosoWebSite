@@ -1,5 +1,6 @@
 .secaoHeroSobreMim{
     display: flex;
+    align-items: center;
     padding: 4rem 12rem;
 }
 
@@ -24,6 +25,21 @@
 
 .imgSobreMim{
     width: 55%;
+}
+
+@media(max-width: 1250px){
+    .imgSobreMim{
+        width: 45%;
+        height: 100%;
+    }
+
+    .containerTextoSobreMimHero h1{
+        font-size: var(--font-size-3xl);
+    }
+
+    .containerTextoSobreMimHero p{
+        font-size: var(--font-size-xl);
+    }
 }
 
 @media(max-width: 480px){

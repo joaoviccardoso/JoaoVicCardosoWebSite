@@ -35,6 +35,12 @@
     flex-shrink: 0;
 }
 
+@media(max-width: 1500px){
+    .secaoHabilidades div h3{
+        font-size: var(--font-size-3xl);
+    }
+}
+
 @media(max-width: 480px){
     .ulListaHabilidades{
         height: 100vh; 
