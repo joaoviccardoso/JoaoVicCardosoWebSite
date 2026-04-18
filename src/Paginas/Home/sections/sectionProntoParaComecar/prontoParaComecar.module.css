@@ -5,6 +5,12 @@
     margin: 4rem 20rem;
 }
 
+@media(max-width: 1400px){
+    .secaoProntoParaComecar{
+        margin: 4rem 8rem;
+    }
+}
+
 @media(max-width: 480px){
     .secaoProntoParaComecar{
         flex-direction: column;

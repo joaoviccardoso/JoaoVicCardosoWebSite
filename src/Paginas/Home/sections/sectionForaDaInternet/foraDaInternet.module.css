@@ -17,6 +17,16 @@
     width: 750px;
 }
 
+@media(max-width: 1400px){
+    .containerForaDaInternet img{
+        width: 250px;
+    }
+
+    .containerTexto p{
+        width: 550px;
+    }
+}
+
 @media(max-width: 480px){
     .containerForaDaInternet{
         flex-direction: column;
