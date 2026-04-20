@@ -8,8 +8,8 @@ import logoWhatsapp from '../../../../assets/whatsapp.svg'
 
 function MeusContato(){
     return(
-        <div className={CssContato}>
-            <div className={CssContato}>
+        <div className={CssContato.divMeusContatos}>
+            <div className={CssContato.divContainerTexto}>
                 <h3>Bem vindo, Entre em contato.</h3>
                 <p>Seja bem vindo a seção contato voce pode entrar em contato comigo pelo formas a baixo escolha a forma que previrir ou preencha o formulario.</p>
             </div>

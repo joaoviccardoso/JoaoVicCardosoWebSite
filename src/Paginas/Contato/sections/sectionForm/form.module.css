@@ -22,6 +22,12 @@
     width: 100%;
 }
 
+@media(max-width: 1220px){
+    .containerNomeEhTelefone{
+        flex-direction: column;
+    }
+}
+
 @media(max-width: 480px){
     .containerNomeEhTelefone{
         flex-direction: column;

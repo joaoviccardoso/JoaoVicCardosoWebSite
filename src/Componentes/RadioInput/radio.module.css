@@ -41,6 +41,18 @@
     gap: 0.5rem;
 }
 
+@media(max-width: 1400px){
+    .containerInputRadio div{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 1100px){
+    .containerInputRadio label{
+        font-size: var(--font-size-lg);
+    }
+}
+
 @media(max-width: 480px){
     .containerInputRadio div{
         padding: 0;
