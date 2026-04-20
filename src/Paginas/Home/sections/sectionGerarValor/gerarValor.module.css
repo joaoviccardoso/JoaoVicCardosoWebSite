@@ -17,9 +17,10 @@
     gap: 2rem;
 }
 
-@media(max-width: 480px){
-    .containerTexto{
-        padding: 0 1rem;
+@media(max-width: 640px){
+    .btnLista{
+        flex-direction: column;
+        width: 80%;
     }
 
     .containerTexto h3{
@@ -29,9 +30,11 @@
     .containerTexto p{
         font-size: var(--font-size-lg);
     }
+}
 
-    .btnLista{
-        flex-direction: column;
+@media(max-width: 480px){
+    .containerTexto{
+        padding: 0 1rem;
     }
 }
 

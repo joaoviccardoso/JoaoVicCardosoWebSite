@@ -43,6 +43,10 @@
     padding-left: 1rem;
 }
 
+@media(max-width: 1000px){
+
+}
+
 @media(max-width: 480px){
     .containerTexto h3{
         font-size: var(--font-size-xl);

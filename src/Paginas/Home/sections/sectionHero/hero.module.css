@@ -106,7 +106,34 @@
     }
 }
 
-@media(max-width: 480px){
+@media(max-width: 800px){
+    .containerImagemHero{
+        width: 100%;
+        top: 25px;
+    }
+
+    .containerBotaoCta{
+        width: 500px;
+        gap: 1rem;
+    }
+}
+
+@media(max-width: 550px){
+    .containerImagemHero{
+        width: 100%;
+        top: 25px;
+    }
+
+    .containerBotaoCta{
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media(max-width: 500px){
     .containerImagemHero{
         top: 42px;
         width: 100%;
@@ -137,14 +164,6 @@
     .containerTextoHero p{
         font-size: var(--font-size-md);
         padding:0;
-    }
-
-    .containerBotaoCta{
-        width: 100%;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
     }
 }
 

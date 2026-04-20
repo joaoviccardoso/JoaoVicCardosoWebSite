@@ -27,6 +27,21 @@
     }
 }
 
+@media(max-width: 980px){
+    .containerForaDaInternet img{
+        display: none;
+    }
+
+    .containerTexto h3{
+        font-size: var(--font-size-3xl);
+    }
+
+    .containerTexto p{
+        width: auto;
+        font-size: var(--font-size-lg);
+    }
+}
+
 @media(max-width: 480px){
     .containerForaDaInternet{
         flex-direction: column;
@@ -34,6 +49,7 @@
     }
 
     .containerForaDaInternet img{
+        display: block;
         width: 300px;
     }
 

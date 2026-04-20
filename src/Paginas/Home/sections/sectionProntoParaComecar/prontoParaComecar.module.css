@@ -11,6 +11,15 @@
     }
 }
 
+@media(max-width: 800px){
+    .secaoProntoParaComecar{
+        text-align: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 3rem 2rem;
+    }
+}
+
 @media(max-width: 480px){
     .secaoProntoParaComecar{
         flex-direction: column;
