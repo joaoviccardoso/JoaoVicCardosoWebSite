@@ -19,7 +19,7 @@ function Nav(){
                     />
                 </div>
 
-                <button className="btn d-sm-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <button className="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <img src={menuCelular} alt="menu para celular" />
                 </button>
 

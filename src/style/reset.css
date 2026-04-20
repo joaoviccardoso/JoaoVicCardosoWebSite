@@ -67,6 +67,13 @@ p{
   font-family: var(--font-paraTexto);
 }
 
+@media(max-width: 1000px){
+  header{
+    padding: 0 3rem;
+  }
+}
+
+
 @media(max-width: 480px){
     body{
       padding: 0;
