@@ -67,6 +67,21 @@
     }
 }
 
+@media(max-width: 888px){
+    .containerCardProdutos{
+        width: 260px;
+        height: 530px; 
+    }
+
+    .containerCardProdutos h3{
+        font-size: var(--font-size-lg);
+    }
+
+    .containerCardProdutos p{
+        font-size: var(--font-size-xs);
+    }
+}
+
 @media(max-width: 480px){
     .containerCardProdutos{
         position: relative;

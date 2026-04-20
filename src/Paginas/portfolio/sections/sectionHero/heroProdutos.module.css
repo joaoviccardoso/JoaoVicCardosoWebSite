@@ -24,6 +24,12 @@
     }
 }
 
+@media(max-width: 1000px){
+    .secaoHeroProdutos{
+        padding: 4rem;
+    }
+}
+
 @media(max-width: 480px){
     .secaoHeroProdutos{
         padding: 4rem 2rem;

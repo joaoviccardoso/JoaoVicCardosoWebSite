@@ -22,7 +22,13 @@
     }
 }
 
-@media(max-width: 480px){
+@media(max-width: 1000px){
+    .secaoPaginaContato{
+        margin: 2rem 2rem;
+    }
+}
+
+@media(max-width: 650px){
     .secaoPaginaContato{
         flex-direction: column-reverse;
         margin: 2rem 2rem;
@@ -32,5 +38,7 @@
         width: 100%;
         border-radius: 0px 0px 8px 8px;
     }
+}
 
+@media(max-width: 480px){
 }
