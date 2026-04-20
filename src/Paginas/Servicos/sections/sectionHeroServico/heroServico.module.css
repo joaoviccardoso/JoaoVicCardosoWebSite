@@ -50,10 +50,23 @@
     }
 }
 
-@media(max-width: 1400px){
+@media(max-width: 1000px){
+    .secaoHeroServico{
+        flex-direction: column;
+        padding: 3rem 0rem;
+    }
+    
     .img{
-        width: 250px;
-        height: 250px;
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media(max-width: 720px){
+    .containerBtnCtaHero{
+        text-align: center;
+        flex-direction: column;
+        gap: 2rem;
     }
 }
 
@@ -73,11 +86,6 @@
 
     .containerTexto p {
         font-size: var(--font-size-md);
-    }
-
-    .containerBtnCtaHero{
-        flex-direction: column;
-        gap: 2rem;
     }
 
     .img{
