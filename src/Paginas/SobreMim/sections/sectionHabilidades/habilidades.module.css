@@ -41,6 +41,12 @@
     }
 }
 
+@media(max-width: 1000px){
+    .secaoHabilidades{
+        background-image: none !important;
+    }
+}
+
 @media(max-width: 480px){
     .ulListaHabilidades{
         height: 100vh; 
