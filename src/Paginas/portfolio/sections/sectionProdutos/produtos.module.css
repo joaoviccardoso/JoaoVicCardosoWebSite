@@ -37,7 +37,27 @@ span{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    gap: 3rem;
     padding: 3rem 0;
+    flex-wrap: wrap;
+}
+
+@media(max-width: 1300px){
+    .secaoProdutos{
+        padding: 2rem 5rem;
+        width: 100%;
+        background: transparent;
+        filter: drop-shadow(var(--verde) 1.95px 1.95px 2.6px);
+    }
+}
+
+@media(max-width: 1050px){
+    .listaProdutos{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 3rem 0;
+    }
 }
 
 @media(max-width: 480px){

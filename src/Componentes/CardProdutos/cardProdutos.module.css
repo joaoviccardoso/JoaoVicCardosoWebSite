@@ -37,6 +37,36 @@
     font-family: var(--font-paraTexto); 
 }
 
+@media(max-width: 1400px){
+    .containerCardProdutos{
+        width: 280px;
+        height: 500px; 
+    }
+
+    .containerCardProdutos h3{
+        font-size: var(--font-size-lg);
+    }
+
+    .containerCardProdutos p{
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media(max-width: 1500px){
+    .containerCardProdutos{
+        width: 340px;
+        height: 560px; 
+    }
+
+    .containerCardProdutos h3{
+        font-size: var(--font-size-lg);
+    }
+
+    .containerCardProdutos p{
+        font-size: var(--font-size-xs);
+    }
+}
+
 @media(max-width: 480px){
     .containerCardProdutos{
         position: relative;

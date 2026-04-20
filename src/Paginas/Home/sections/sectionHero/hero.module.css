@@ -126,6 +126,10 @@
         width: 110px;
     }
 
+    .containerBalaoOla{
+        display: block;
+    }
+
     .containerTextoHero h1{
         font-size: var(--font-size-2xl);
     }
