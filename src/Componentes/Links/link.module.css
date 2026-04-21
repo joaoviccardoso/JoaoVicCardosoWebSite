@@ -56,3 +56,9 @@
     }
 }
 
+@media(max-width: 1000px){
+    .navLink{
+        font-size: 18px;
+    }
+}
+
