@@ -6,7 +6,7 @@
 }
 
 .secaoMeusContatos{
-    width: 50%;
+    width: 65%;
     background: var(--color-gradienteVerdeBottom);
     padding: 2rem 2rem;
     border-radius: 8px 0 0 8px ;
@@ -16,7 +16,19 @@
     padding: 2rem;
 }
 
-@media(max-width: 480px){
+@media(max-width: 1200px){
+    .secaoMeusContatos{
+        width: 40%;
+    }
+}
+
+@media(max-width: 1000px){
+    .secaoPaginaContato{
+        margin: 2rem 2rem;
+    }
+}
+
+@media(max-width: 650px){
     .secaoPaginaContato{
         flex-direction: column-reverse;
         margin: 2rem 2rem;
@@ -26,5 +38,7 @@
         width: 100%;
         border-radius: 0px 0px 8px 8px;
     }
+}
 
+@media(max-width: 480px){
 }

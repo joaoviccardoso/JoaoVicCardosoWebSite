@@ -28,6 +28,21 @@
     grid-row: 3;
 }
 
+@media(max-width: 1000px){
+    .ulLista {
+        grid-template-columns: 1fr;
+        padding: 0 0 3rem 0;
+        background-image: none !important;
+    }
+
+    .Lista1,
+    .Lista2,
+    .Lista3 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
 @media(max-width: 480px){
 
     .secaoComoTransformoIdeias {
@@ -40,26 +55,10 @@
     }
 
     .containerTituloDaSecao h3{
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-xl);
     }
 
     .containerTituloDaSecao p{
         font-size: var(--font-size-md);
-    }
-
-    .ulLista {
-        background-image: none !important;
-    }
-
-   .ulLista {
-        grid-template-columns: 1fr;
-        padding: 0 0 3rem 0;
-    }
-
-    .Lista1,
-    .Lista2,
-    .Lista3 {
-        grid-column: auto;
-        grid-row: auto;
     }
 }

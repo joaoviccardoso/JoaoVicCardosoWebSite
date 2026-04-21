@@ -10,8 +10,17 @@
     margin: 0;
 }
 
+@media(max-width: 1700px){
+    .containerPresencaDigital p{
+        width: 70%;
+        font-family: var(---font-paraTexto);
+        padding-top: 0.6rem;
+        margin: 0;
+    }
+}
+
 @media(max-width: 480px){
-    .containerPresencaDigital h2{
+    .containerPresencaDigital h3{
         font-size: var(--font-size-2xl);
     }
 

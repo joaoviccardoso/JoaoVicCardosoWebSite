@@ -1,5 +1,6 @@
 .secaoHeroServico{
     display: flex;
+    align-items: center;
     gap: 2rem;
     color: var(--cor-letraClara);
     padding: 8rem 0rem;
@@ -34,6 +35,41 @@
     height: 500px;
 }
 
+@media(max-width: 1400px){
+    .containerTexto h1{
+        font-size: var(--font-size-3xl);
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-xl);
+    }
+
+    .img{
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media(max-width: 1000px){
+    .secaoHeroServico{
+        flex-direction: column;
+        padding: 3rem 0rem;
+    }
+    
+    .img{
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media(max-width: 720px){
+    .containerBtnCtaHero{
+        text-align: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
 @media(max-width: 480px){
     .secaoHeroServico{
         flex-direction: column;
@@ -50,11 +86,6 @@
 
     .containerTexto p {
         font-size: var(--font-size-md);
-    }
-
-    .containerBtnCtaHero{
-        flex-direction: column;
-        gap: 2rem;
     }
 
     .img{

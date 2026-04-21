@@ -34,14 +34,27 @@
     justify-content: center;
 }
 
-
-@media(max-width: 480px){
+@media(max-width: 1500px){
     .sectionOqueEuFaco{
-        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        padding: 0 6rem;
+    }
+}
+
+@media(max-width: 1000px){
+    .divLogo{
+        display: none;
     }
 
     .divConteinerComOsTexto{
         width: 100%;
+    }
+}
+
+@media(max-width: 480px){
+    .sectionOqueEuFaco{
+        padding: 0 1rem;
     }
 
     .containerTexto h3{
@@ -51,9 +64,5 @@
     .containerTexto p{
         width: 80vw;
         font-size: var(--font-size-md);
-    }
-
-    .divLogo{
-        display: none;
     }
 }

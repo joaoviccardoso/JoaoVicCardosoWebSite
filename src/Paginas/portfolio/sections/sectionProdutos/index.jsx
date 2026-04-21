@@ -15,7 +15,7 @@ function Produtos(){
                 const data = await res.json();
                 setProduto(data);
             } catch (erro) {
-                console.error(erro);
+                console.log(erro);
             }
         }
 
@@ -45,7 +45,7 @@ function Produtos(){
             </div>
 
             <ul className={CssProduto.listaProdutos}>
-                {produto.map(p => (
+                {/*produto.map(p => (
                     
                     <li key={p.id}>
                         <CardProduto
@@ -55,7 +55,7 @@ function Produtos(){
                             idBtn={p.id}
                         />
                     </li>
-                ))}
+                ))*/}
             </ul>
         </section>
     )

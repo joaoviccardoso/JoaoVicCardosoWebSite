@@ -2,6 +2,12 @@
     max-width: 60%;
 }
 
+@media(max-width: 1000px){
+    .secaoMotivacao{
+        max-width: 100%;
+    }
+}
+
 @media(max-width: 480px){
     .secaoMotivacao{
         max-width: 100%;

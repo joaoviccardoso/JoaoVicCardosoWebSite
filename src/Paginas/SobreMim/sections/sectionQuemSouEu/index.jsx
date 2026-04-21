@@ -5,7 +5,7 @@ import imgJoaoDev from "../../../../assets/fotoDoJoaoDesenvolvedorDaPagina.png"
 function SecaoQueSouEu(){
     return(
         <section className={CssQuemSouEu.secaoQuemSouEu}>
-            <img className={CssQuemSouEu} src={imgJoaoDev} alt="Foto do desenvolvedor da pagina" />
+            <img className={CssQuemSouEu.imagemQuemSou} src={imgJoaoDev} alt="Foto do desenvolvedor da pagina" />
 
             <div className={CssQuemSouEu.divQuemSouEuTexto}>
                 <h3>Desenvolvedor focado em transformar ideias em soluções digitais</h3>
@@ -13,6 +13,7 @@ function SecaoQueSouEu(){
                 <div>
                     <BotaoCta
                         child="Conheça meus Projetos"
+                        to="/Portfolio"
                     />
                 </div>
             </div>

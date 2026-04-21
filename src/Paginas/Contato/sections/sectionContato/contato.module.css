@@ -1,6 +1,24 @@
+
+
 .containerRedesParaContato{
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 0;
+}
+
+@media(max-width: 1400px){
+    .divContainerTexto h3{
+        font-size: var(--font-size-3xl);
+    }
+}
+
+@media(max-width: 1150px){
+    .divContainerTexto h3{
+        font-size: var(--font-size-2xl);
+    }
+
+    .divContainerTexto p{
+        font-size: var(--font-size-lg);
+    }
 }

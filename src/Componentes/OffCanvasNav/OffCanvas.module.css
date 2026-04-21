@@ -7,3 +7,9 @@
     flex-direction: column;
     gap: 10px;
 }
+
+@media(max-width: 500px){
+    .offcanvas{
+        width: 70%;
+    }
+}

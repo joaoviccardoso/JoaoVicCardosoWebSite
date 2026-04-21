@@ -96,6 +96,35 @@
   background: #050505;
 }
 
+@media(max-width: 1520px){
+
+}
+
+@media(max-width: 1400px){
+    .linkLogin {
+        padding: 10px 30px 10px 14px;
+        font-size: var(--font-size-md);
+    }
+
+    .iconContainer {
+        left: 90px;
+    }
+}
+
+@media(max-width: 1200px){
+   .linkLogin {
+        padding: 10px 30px 10px 14px;
+        font-size: var(--font-size-xs);
+    } 
+
+    .iconContainer {
+        width: 20px;
+        height: 20px;
+        top: -5px;
+        left: 80px;
+    }
+}
+
 @media(max-width: 480px){
     .loginBtnCelular{
         display: inline-block;

@@ -29,9 +29,26 @@
     width: 100%;
 }
 
-@media(max-width: 480px){
+@media(max-width: 1500px){
+    .containerPassos{
+        padding: 0;
+    }
+}
+
+
+@media(max-width: 1000px){
     .containerPassos{
         flex-direction: column;
         padding: 0;
+    }
+}
+
+@media(max-width: 480px){
+    .containerTexto h3{
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-lg);
     }
 }

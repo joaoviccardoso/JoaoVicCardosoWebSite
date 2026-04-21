@@ -60,6 +60,25 @@
     font-family: var(--font-paraTextoChamativo);
 }
 
+@media(max-width: 980px){
+    .divFooter{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+
+    .footerSobre{
+        align-items: center;
+    }
+
+    .containerRedes{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+}
+
 @media(max-width: 480px){
     .divFooter{
         flex-direction: column;

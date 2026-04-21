@@ -30,6 +30,20 @@
     width: 40%;
 }
 
+@media(max-width: 1000px){
+    .containerOqueEuEntrego{
+        flex-direction: column;
+    }
+
+    .containerOqueEuEntrego img{
+        display: none;
+    }
+
+    .ulLista{
+        width: 100%;
+    }
+}
+
 @media(max-width: 480px){
     .secaoAlemDeCodigo{
         padding:0;
@@ -50,9 +64,5 @@
 
     .containerTexto p{
         font-size: var(--font-size-md);
-    }
-    
-    .ulLista{
-        width: 100%;
     }
 }

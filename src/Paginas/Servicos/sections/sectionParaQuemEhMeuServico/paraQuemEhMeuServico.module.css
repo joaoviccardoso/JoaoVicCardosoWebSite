@@ -27,14 +27,29 @@
     justify-content: center;
 }
 
-@media(max-width: 480px){
+@media(max-width: 1000px){
+
     .secaoParaQuemEh{
         text-align: center;
     }
+    
+    .ulListaParaQuemEh{
+        width: 90vw;
+    }
+}
 
+@media(max-width: 680px){
     .ulListaParaQuemEh{
         width: 90vw;
         flex-direction: column;
         gap: 2rem;
+    }
+}
+
+@media(max-width: 480px){
+    
+
+    .secaoParaQuemEh h3{
+        font-size: var(--font-size-2xl);
     }
 }

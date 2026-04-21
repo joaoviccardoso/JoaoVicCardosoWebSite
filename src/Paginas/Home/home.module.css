@@ -19,13 +19,23 @@
     clip-path: polygon(0% 10%, 100% 0, 100% 100%, 0% 100%);
 }
 
+@media(max-width: 1400px){
+    .secao1{
+        padding: 9rem 6rem 2rem 6rem;
+    }
+}
+
 @media(max-width: 480px){
+    .secao0{
+        clip-path: polygon(0% 1%, 100% 0, 100% 100%, 0% 100%);
+    }
+
     .secao1 {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         padding: 6rem 2rem 0 2rem;
     }
 
     .secao2{
-        clip-path: polygon(0% 7%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 5%, 100% 0, 100% 100%, 0% 100%);
     }
 }

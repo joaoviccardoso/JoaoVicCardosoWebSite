@@ -12,13 +12,23 @@
    gap: 3rem;
 }
 
+@media(max-width: 1520px){
+    
+}
+
+@media(max-width: 1000px){
+    .ul{
+        display: none;
+    }
+
+    .nav{
+        width: 100%;
+    }
+}
+
 @media(max-width: 480px){
     .nav{
         width: 85%;
-    }
-
-    .ul{
-        display: none;
     }
 }
 
