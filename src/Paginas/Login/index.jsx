@@ -67,17 +67,16 @@ function TelaLogin(){
                     </div>
                     
                     <div className={CssLogin.containerEsqueceuAhSenha}>
-                        <RadioGroup
-                            name="lembrar"
-                            value={form.lembrar}
-                            options={[
-                                { label: "Lembrar", value: "LandingPagesEhSitesProfissionais" },
-                            ]}
+                        <LinkParaNavegacao
+                            to="/Cadastro"
+                            child="Não tenho conta"
+                            className="linkLogin"
                         />
 
                         <LinkParaNavegacao
                             to="/"
                             child="Esqueceu sua senha"
+                            className=".linkLogin"
                         />
                     </div>
 
