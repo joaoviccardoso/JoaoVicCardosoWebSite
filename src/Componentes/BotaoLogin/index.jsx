@@ -10,7 +10,7 @@ function BtnLogin(){
             </span>
 
             <div className={CssBtnLogin.borderWrapper}>
-                <Link to="/login" className={CssBtnLogin.linkLogin}>
+                <Link to="/Login" className={CssBtnLogin.linkLogin}>
                     Fazer login
                 </Link>
             </div>

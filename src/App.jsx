@@ -1,40 +1,31 @@
 import { Route, Routes } from "react-router-dom"
-import Nav from "./Componentes/Nav"
+import Layout from "./Layout/layout"
 import Home from "./Paginas/Home"
 import Contato from "./Paginas/Contato"
 import Servicos from "./Paginas/Servicos"
 import SobreMim from "./Paginas/SobreMim"
 import Portfolio from "./Paginas/portfolio"
+import Login from "./Paginas/Login"
+import Cadastro from "./Paginas/Cadastro"
 import PaginaDetalheDosProjetos from "./Paginas/DetalheProjeto"
-import OffCanvas from "./Componentes/OffCanvasNav/OffCanvas"
 import "./style/fonteEhCores.css"
-import Footer from "./Componentes/Footer"
 
 function App() {
 
   return (
-    <>
-      <header>
-        <Nav/>
-      </header>
-
-      <main>
-        <Routes>
+    <Routes>
+        <Route element={<Layout/>}>
           <Route path="/" element={<Home/>}/>
           <Route path="/Contato" element={<Contato/>}/>
           <Route path="/Portfolio" element={<Portfolio/>}/>
           <Route path="/Portfolio/:id" element={<PaginaDetalheDosProjetos/>}/>
           <Route path="/Servicos" element={<Servicos/>}/>
           <Route path="/SobreMim" element={<SobreMim/>}/>
-        </Routes>
-      </main>
+        </Route>
 
-      <OffCanvas/>
-
-      <footer>
-        <Footer/>
-      </footer>
-    </>
+        <Route path="/Login" element={<Login/>}/>
+        <Route path="/Cadastro" element={<Cadastro/>}/>
+    </Routes>
   )
 }
 
