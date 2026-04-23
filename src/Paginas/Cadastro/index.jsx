@@ -24,9 +24,28 @@ function TelaCadastro(){
             }));
         }
     
-        function handleSubmitLogin(e) {
+        async function handleSubmitLogin(e) {
             e.preventDefault();
-            console.log(form);
+            
+            if (form.senha !== form.confirmarSenha) {
+                return alert("Senhas não conferem");
+            }
+
+            const response = await fetch("http://localhost:3000/auth/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nomeCompleto: form.primeiroNome,
+                    email: form.email,
+                    senha: form.senha,
+                    telefone: form.numero
+                })
+            });
+
+            const data = await response.json();
+            console.log(data);
         }
 
     return(

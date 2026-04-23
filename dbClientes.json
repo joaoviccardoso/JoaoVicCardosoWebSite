@@ -2,12 +2,11 @@
   "clientes": [
     {
       "id": 1,
-      "nome": "João",
-      "sobrenome": "Silva",
+      "nomeCompleto": "João",
       "email": "joao@email.com",
       "senha": "123456",
       "telefone": "11999999999",
-      "endereco": "Rua das Flores",
+      "endereco": "Rua das Flores", 
       "cep": "13600-000",
       "numeroCasa": "123"
     }
