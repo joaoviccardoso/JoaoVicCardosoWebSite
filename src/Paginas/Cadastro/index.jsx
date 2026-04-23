@@ -9,7 +9,6 @@ import voltarPagina from "../../assets/voltarPagina.svg"
 function TelaCadastro(){
     const [form, setForm] = useState({
             primeiroNome: "",
-            sobreNome: "",
             email:"",
             senha: "",
             confirmarSenha:"",
@@ -31,20 +30,23 @@ function TelaCadastro(){
         }
 
     return(
-        <section>
+        <section className={CssCadastro.secaoTelaCadastro}>
             <BemVindo
                 titulo="Bem-vindo à nossa plataforma"
                 texto="Crie sua conta e tenha acesso a ferramentas pensadas para facilitar sua rotina e organizar tudo em um só lugar."
             />
-            <section>
+            <section className={CssCadastro.secaoFormularioCadastro}>
                 <ImgLink
                     to="/"
                     srcImg={voltarPagina}
                 />
-                <form onSubmit={handleSubmitLogin} className={CssCadastro.formLogin}>
-                    <div>
+                <form onSubmit={handleSubmitLogin} className={CssCadastro.formCadastro}>
+                    <h3>Crie sua conta pessoal</h3>
+                    <p>Será enviado (solicitado) uma confirmação do cadastro por e-mail.</p>
+
+                    <div className={CssCadastro.divContainerConta}>
                         <Input
-                            label="Primeiro Nome"
+                            label="Primeiro Nome Completo"
                             type="text"
                             name="primeiroNome"
                             value={form.primeiroNome}
@@ -53,18 +55,6 @@ function TelaCadastro(){
                             placeholder="Primeiro Nome"
                         />
 
-                        <Input
-                            label="Sobre Nome"
-                            type="text"
-                            name="sobreNome"
-                            value={form.sobreNome}
-                            onChange={handleChangeLogin}
-                            className={CssCadastro.SobreNome}
-                            placeholder="Sobre Nome"
-                        />
-                    </div>
-
-                    <div>
                         <Input
                             label="E-mail"
                             name="email"
@@ -85,8 +75,8 @@ function TelaCadastro(){
                         />
 
                         <Input
-                            label="Confiramr Senha"
-                            type="number"
+                            label="Confirmar Senha"
+                            type="password"
                             name="confirmarSenha"
                             value={form.confirmarSenha}
                             onChange={handleChangeLogin}
@@ -95,7 +85,7 @@ function TelaCadastro(){
                         />
                     </div>
 
-                    <div>
+                    <div className={CssCadastro.divContainerInputNumero}>
                         <Input
                             label="Numero"
                             type="number"
