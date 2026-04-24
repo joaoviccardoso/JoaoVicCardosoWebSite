@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import { validarEmail, validarSenha } from "../../Utils/validacoes";
+import { validarFormularioLogin } from "../../Utils/validarLogin";
 import CssLogin from "./login.module.css"
 import BemVindo from "../../Componentes/MensagemBemVindo"
 import ImgLink from "../../Componentes/imgLink"
@@ -30,28 +30,18 @@ function TelaLogin(){
         }));
     }
 
-    function validarFormularioLogin(){
-        if (!validarEmail(form.email)) {
-            setErroDeLogin("E-mail inválido");
-            return false;
-        }
-
-        if (!validarSenha(form.senha)) {
-            setErroDeLogin("A senha deve ter pelo menos 3 caracteres");
-            return false;
-        }
-
-        return true
-    }
-
     //envia o formulario para o backend
     async function handleSubmitLogin(e) {
         e.preventDefault();
         setErroDeLogin("");
 
-        const isValid = validarFormularioLogin();
-
-        if (!isValid) return;
+        //chama uma funcao para validar os dados do form
+        const erroNoForm = validarFormularioLogin(form)
+        
+        if (erroNoForm) {
+            setErroDeLogin(erroNoForm);
+            return;
+        }
 
         const response = await fetch("http://localhost:3000/auth/login", {
             method: "POST",
