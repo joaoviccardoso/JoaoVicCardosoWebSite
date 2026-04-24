@@ -48,7 +48,7 @@
 }
 
 .erro {
-  color: red;
+  color: var(--vermelho-erro);
   font-size: 14px;
   margin-top: 2px;
 }
