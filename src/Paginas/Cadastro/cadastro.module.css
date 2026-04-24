@@ -33,3 +33,14 @@
     border-radius: 12px;
     padding: 2rem;
 }
+
+.divContainerInputNumero{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+}
+
+.erro{
+    color: var(--vermelho-erro);
+}

@@ -5,48 +5,73 @@ import Input from "../../Componentes/Input";
 import ImgLink from "../../Componentes/imgLink";
 import BotaoAction from "../../Componentes/BotaoAction";
 import voltarPagina from "../../assets/voltarPagina.svg"
+import { validarFormularioCadastro } from "../../Utils/validarCadastro.js";
 
 function TelaCadastro(){
+    const [erroDeCadastro, setErroDeCadastro] = useState("")
+
     const [form, setForm] = useState({
+        primeiroNome: "",
+        email:"",
+        senha: "",
+        confirmarSenha:"",
+        telefone:""
+    });
+    
+    //constrola a as alteração nos input e salva no useState form
+    function handleChangeLogin(e) {
+        const { name, value } = e.target;
+    
+        setForm((prev) => ({
+        ...prev,
+        [name]: value
+        }));
+    }
+    
+    //envia o formulario para o backend fazer o cadastro do usuario
+    async function handleSubmitLogin(e) {
+        e.preventDefault();
+        setErroDeCadastro("")
+        //faz uma validação nos dados
+        const erroForm = validarFormularioCadastro(form)
+
+        if (erroForm) {
+            setErroDeCadastro(erroForm);
+            return;
+        }
+
+        const response = await fetch("http://localhost:3000/auth/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeCompleto: form.primeiroNome,
+                email: form.email,
+                senha: form.senha,
+                telefone: form.telefone
+            })
+        });
+
+        const data = await response.json();
+
+        if(!response.ok){
+            setErroDeCadastro(data.message)
+            return
+        } 
+
+        if(response.ok){
+            alert("sucesso em cadastrar no sistema")
+        }
+
+        setForm({
             primeiroNome: "",
             email:"",
             senha: "",
             confirmarSenha:"",
-            numero:""
-        });
-    
-        function handleChangeLogin(e) {
-            const { name, value } = e.target;
-    
-            setForm((prev) => ({
-            ...prev,
-            [name]: value
-            }));
-        }
-    
-        async function handleSubmitLogin(e) {
-            e.preventDefault();
-            
-            if (form.senha !== form.confirmarSenha) {
-                return alert("Senhas não conferem");
-            }
-
-            const response = await fetch("http://localhost:3000/auth/register", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    nomeCompleto: form.primeiroNome,
-                    email: form.email,
-                    senha: form.senha,
-                    telefone: form.numero
-                })
-            });
-
-            const data = await response.json();
-            console.log(data);
-        }
+            telefone:""
+        })
+    }
 
     return(
         <section className={CssCadastro.secaoTelaCadastro}>
@@ -70,16 +95,17 @@ function TelaCadastro(){
                             name="primeiroNome"
                             value={form.primeiroNome}
                             onChange={handleChangeLogin}
-                            className={CssCadastro.primeiroNome}
+                            className={`${erroDeCadastro ? "inputErro" : ""}`}
                             placeholder="Primeiro Nome"
                         />
 
                         <Input
                             label="E-mail"
                             name="email"
+                            type="email"
                             value={form.email}
                             onChange={handleChangeLogin}
-                            className={CssCadastro.inputEmailCadastro}
+                            className={`${erroDeCadastro ? "inputErro" : ""}`}
                             placeholder="E-mail"
                         />
 
@@ -89,7 +115,7 @@ function TelaCadastro(){
                             name="senha"
                             value={form.senha}
                             onChange={handleChangeLogin}
-                            className={CssCadastro.inputSenhaCadastro}
+                            className={`${erroDeCadastro ? "inputErro" : ""}`}
                             placeholder="Senha"
                         />
 
@@ -99,22 +125,25 @@ function TelaCadastro(){
                             name="confirmarSenha"
                             value={form.confirmarSenha}
                             onChange={handleChangeLogin}
-                            className={CssCadastro.inputSenhaCadastro}
+                            className={`${erroDeCadastro ? "inputErro" : ""}`}
                             placeholder="Confirmar Senha"
+                        />
+
+                        <Input
+                            label="Telefone"
+                            type="tel"
+                            name="telefone"
+                            value={form.telefone}
+                            onChange={handleChangeLogin}
+                            className={`${erroDeCadastro ? "inputErro" : ""}`}
+                            placeholder="Telefone"
                         />
                     </div>
 
                     <div className={CssCadastro.divContainerInputNumero}>
-                        <Input
-                            label="Numero"
-                            type="number"
-                            name="numero"
-                            value={form.numero}
-                            onChange={handleChangeLogin}
-                            className={CssCadastro.inputSenhaCadastro}
-                            placeholder="Telefone"
-                        />
 
+                        {erroDeCadastro && <p className={CssCadastro.erro}>{erroDeCadastro}</p>}
+                        
                         <BotaoAction
                             child="Fazer Cadastro"
                             type="submit"
