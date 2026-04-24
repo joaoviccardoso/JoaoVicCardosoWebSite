@@ -12,6 +12,7 @@ import voltarPagina from "../../assets/voltarPagina.svg"
 function TelaLogin(){
     const navigate = useNavigate();
 
+    const [erroDeLogin, setErroDeLogin] = useState("")
     const [form, setForm] = useState({
         email: "",
         senha: ""
@@ -28,6 +29,7 @@ function TelaLogin(){
 
     async function handleSubmitLogin(e) {
         e.preventDefault();
+        setErroDeLogin("");
 
         const response = await fetch("http://localhost:3000/auth/login", {
             method: "POST",
@@ -38,6 +40,11 @@ function TelaLogin(){
         });
 
         const data = await response.json();
+
+        if(!response.ok){
+            setErroDeLogin(data.message)
+            return
+        }
 
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
@@ -72,7 +79,7 @@ function TelaLogin(){
                             name="email"
                             value={form.email}
                             onChange={handleChangeLogin}
-                            className={CssLogin.inputEmail}
+                            className={`${erroDeLogin ? "inputErro" : ""}`}
                             placeholder="E-mail"
                         />
 
@@ -82,9 +89,10 @@ function TelaLogin(){
                             name="senha"
                             value={form.senha}
                             onChange={handleChangeLogin}
-                            className={CssLogin.inputSenha}
+                            className={`${erroDeLogin ? "inputErro" : ""}`}
                             placeholder="Senha"
                         />
+                        {erroDeLogin && <p className={CssLogin.erro}>{erroDeLogin}</p>}
                     </div>
                     
                     <div className={CssLogin.containerEsqueceuAhSenha}>
