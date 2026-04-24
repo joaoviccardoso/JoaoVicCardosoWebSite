@@ -8,6 +8,9 @@ import Portfolio from "./Paginas/portfolio"
 import Login from "./Paginas/Login"
 import Cadastro from "./Paginas/Cadastro"
 import PaginaDetalheDosProjetos from "./Paginas/DetalheProjeto"
+import PrivateRoute from "./routes/PrivateRoute"
+import HomeDashborardUser from "./Paginas/DashboardUser/HomeDashboardUser"
+import HomeDashborardAdm from "./Paginas/DashboardAdm/HomeDashboardAdm"
 import "./style/fonteEhCores.css"
 
 function App() {
@@ -25,6 +28,25 @@ function App() {
 
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Cadastro" element={<Cadastro/>}/>
+
+        <Route 
+          path="/dashboard" 
+          element={
+            <PrivateRoute>
+              <HomeDashborardUser />
+            </PrivateRoute>
+          } 
+        />
+
+        {/* 🔐 DASHBOARD ADMIN */}
+        <Route 
+          path="/admin" 
+          element={
+            <PrivateRoute role="admin">
+              <HomeDashborardAdm />
+            </PrivateRoute>
+          } 
+        />
     </Routes>
   )
 }

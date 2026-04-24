@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import CssLogin from "./login.module.css"
 import BemVindo from "../../Componentes/MensagemBemVindo"
 import ImgLink from "../../Componentes/imgLink"
@@ -9,6 +10,8 @@ import LinkParaNavegacao from "../../Componentes/Links/link"
 import voltarPagina from "../../assets/voltarPagina.svg"
 
 function TelaLogin(){
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         email: "",
         senha: ""
@@ -37,7 +40,13 @@ function TelaLogin(){
         const data = await response.json();
 
         localStorage.setItem("token", data.token);
-        console.log(data);
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        if(data.user.role === "admin"){
+            navigate("/admin")
+        } else {
+            navigate("/dashboard");
+        }
     }
 
     return(
