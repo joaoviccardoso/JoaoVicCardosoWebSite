@@ -10,7 +10,7 @@ function Input({ label, type = "text", name, value, onChange, placeholder, class
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`${CssInput.inputBasic} ${className === "inputErro" ? CssInput.inputErro : ""}` }
+        className={`${CssInput.inputBasic} ${className ? CssInput[className] : ""}`}
       />
     </div>
   );
