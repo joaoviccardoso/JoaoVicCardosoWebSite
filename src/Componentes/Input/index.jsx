@@ -1,6 +1,6 @@
 import CssInput from "./input.module.css"
 
-function Input({ label, type = "text", name, value, onChange, placeholder }) {
+function Input({ label, type = "text", name, value, onChange, placeholder, className }) {
   return (
     <div className={CssInput.containerInput} >
       <label>{label}</label>
@@ -10,6 +10,7 @@ function Input({ label, type = "text", name, value, onChange, placeholder }) {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        className={`${CssInput.inputBasic} ${className ? CssInput[className] : ""}`}
       />
     </div>
   );

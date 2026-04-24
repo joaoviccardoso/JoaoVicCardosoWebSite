@@ -1,0 +1,54 @@
+.sectionLogin{
+    display: flex;
+}
+
+.containerFormularioLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 6rem;
+}
+
+.containerFormularioLogin a{
+    align-self: flex-end;
+}
+
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    background: var(--color-componente);
+    border-radius: 12px;
+    margin-top: 3rem;
+    padding: 2rem;
+    width: 70%;
+}
+
+.containerTexto{
+    text-align: center;
+}
+
+.containerTexto h3{
+    font-size: var(--font-size-2xl);
+}
+
+.containerTexto p{
+    font-size: var(--font-size-lg);
+}
+
+.containerEsqueceuAhSenha{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--font-size-md);
+    margin-bottom: 2rem;
+}
+
+.containerEsqueceuAhSenha div{
+    padding: 0;
+}
+
+.erro {
+  color: red;
+  font-size: 14px;
+  margin-top: 2px;
+}

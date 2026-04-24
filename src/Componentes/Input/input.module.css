@@ -10,11 +10,11 @@
     font-family: var(--font-paraTexto);
 }
 
-.containerInput input{
+.inputBasic{
     width: 100%;
     height: 52px;
     color: var(--cor-letraClara);
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     font-family: var(--font-paraTexto);
     padding-left: 1rem;
     border-radius: 12px;
@@ -23,8 +23,16 @@
     transition: all 0.2s ease;
 }
 
+.inputBasic.erro{
+    border:red 1px solid ; 
+}
+
+.inputErro {
+    border:red 1px solid ;
+}
+
 .containerInput input::placeholder{
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
     font-family: var(--font-paraTexto);
 }
 
@@ -42,9 +50,7 @@
     transform: scale(0.99);
 }
 
-.containerInput input.erro {
-    border: 1px solid red;
-}
+
 
 .containerInput input.erro:focus {
     box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
