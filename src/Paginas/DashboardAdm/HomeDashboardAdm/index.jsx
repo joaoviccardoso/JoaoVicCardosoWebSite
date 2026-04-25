@@ -1,8 +1,18 @@
+import { useState, useEffect } from "react"
 import CssDashborardAdm from "./dashborardAdm.module.css"
 
 function HomeDashborardAdm(){
+    const [userAdm, setUserAdm] = useState({})
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'))
+        if (user) {
+            setUserAdm(user)
+        }
+    }, [])
+
     return(
-        <section><h1>ADM</h1></section>
+        <section><h1>Bem vindo ADM:{`${userAdm.nomeCompleto}`}</h1></section>
     )
 }
 

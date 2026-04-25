@@ -4,14 +4,13 @@ import CssProduto from "./produtos.module.css"
 import LinkParaNavegacao from "../../../../Componentes/Links/link"
 import menuCelular from "../../../../assets/menuCelular.svg"
 
-
 function Produtos(){
     const [produto, setProduto] = useState([]);
 
     useEffect(() => {
         async function buscarDados() {
             try {
-                const res = await fetch("http://localhost:3000/produtos");
+                const res = await fetch("http://localhost:3001/produtos");
                 const data = await res.json();
                 setProduto(data);
             } catch (erro) {
@@ -45,7 +44,7 @@ function Produtos(){
             </div>
 
             <ul className={CssProduto.listaProdutos}>
-                {/*produto.map(p => (
+                {produto.map(p => (
                     
                     <li key={p.id}>
                         <CardProduto
@@ -55,7 +54,7 @@ function Produtos(){
                             idBtn={p.id}
                         />
                     </li>
-                ))*/}
+                ))}
             </ul>
         </section>
     )
