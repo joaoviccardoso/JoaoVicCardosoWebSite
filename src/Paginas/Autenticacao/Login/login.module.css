@@ -1,5 +1,6 @@
 .sectionLogin{
     display: flex;
+    min-height: 100vh;
 }
 
 .containerFormularioLogin{
@@ -51,4 +52,20 @@
   color: var(--vermelho-erro);
   font-size: 14px;
   margin-top: 2px;
+}
+
+@media(max-width: 800px){
+    .containerFormularioLogin{
+        padding: 3rem;
+    }
+
+    .formLogin{
+        width: 100%;
+    }
+}
+
+@media(max-width: 410px){
+    .containerFormularioLogin{
+        padding: 1rem;
+    }
 }

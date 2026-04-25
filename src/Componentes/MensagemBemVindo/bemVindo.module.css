@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: start;
     padding: 3rem 5rem;
-    height: 100vh;
+    height: 100%;
     width: 50%;
     background: var(--color-gradienteVerdeBottom);
     clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
@@ -30,7 +30,7 @@
     font-size: var(--font-size-xl);
 }
 
-@media(max-width: 580px){
+@media(max-width: 1100px){
     .sectionBemVindo{
         display: none;
     }
