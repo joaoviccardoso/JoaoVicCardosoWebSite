@@ -44,3 +44,15 @@
 .erro{
     color: var(--vermelho-erro);
 }
+
+@media(max-width: 1100px){
+    .secaoTelaCadastro{
+        justify-content: center;
+    }
+}
+
+@media(max-width: 540px){
+    .secaoFormularioCadastro{
+        padding: 2rem 1rem;
+    }
+}
