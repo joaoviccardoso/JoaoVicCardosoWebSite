@@ -1,6 +1,6 @@
 import CssFuncio from "./funcionalidades.module.css"
-import CardProduto from "../../../../Componentes/CardProdutos"
-import CardFuncionalidade from "../../../../Componentes/CardFuncionalidade"
+import CardProduto from "../../../../../Componentes/CardProdutos"
+import CardFuncionalidade from "../../../../../Componentes/CardFuncionalidade"
 
 function SecaoFuncionalidade({funcionalidade, imagens}){
     return(

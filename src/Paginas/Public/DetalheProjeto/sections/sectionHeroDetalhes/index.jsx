@@ -1,8 +1,8 @@
-import BotaoCta from "../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/BotaoCta"
 import CssFuncio from "./heroDetalhe.module.css"
-import { tecnologiasImagens } from "../../../../constants/tecnologiasImagens.js"
-import MinhasHabilidades from "../../../../Componentes/MinhasHabilidades/index.jsx"
-import logoDev from '../../../../assets/logoEscuro.png'
+import { tecnologiasImagens } from "../../../../../constants/tecnologiasImagens.js"
+import MinhasHabilidades from "../../../../../Componentes/MinhasHabilidades/index.jsx"
+import logoDev from '../../../../../assets/logoEscuro.png'
 
 function SecaoHeroDetalhes({titulo, descricao, tecnologias}){
     return(

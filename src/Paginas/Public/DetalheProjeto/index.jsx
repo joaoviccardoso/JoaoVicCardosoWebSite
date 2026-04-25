@@ -13,7 +13,7 @@ function PaginaDetalheDosProjetos(){
     useEffect(() => {
         async function buscarDados() {
             try {
-                const res = await fetch(`http://localhost:3000/produtos/${id}`);
+                const res = await fetch(`http://localhost:3001/produtos/${id}`);
                 const data = await res.json();
                 setProduto(data);
             } catch (erro) {
