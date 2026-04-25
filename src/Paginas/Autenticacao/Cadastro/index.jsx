@@ -1,11 +1,11 @@
 import { useState } from "react";
 import CssCadastro from "./cadastro.module.css"
-import BemVindo from "../../Componentes/MensagemBemVindo"
-import Input from "../../Componentes/Input";
-import ImgLink from "../../Componentes/imgLink";
-import BotaoAction from "../../Componentes/BotaoAction";
-import voltarPagina from "../../assets/voltarPagina.svg"
-import { validarFormularioCadastro } from "../../Utils/validarCadastro.js";
+import BemVindo from "../../../Componentes/MensagemBemVindo"
+import Input from "../../../Componentes/Input";
+import ImgLink from "../../../Componentes/imgLink";
+import BotaoAction from "../../../Componentes/BotaoAction";
+import voltarPagina from "../../../assets/voltarPagina.svg"
+import { validarFormularioCadastro } from "../../../Utils/validarCadastro.js";
 
 function TelaCadastro(){
     const [erroDeCadastro, setErroDeCadastro] = useState("")

@@ -1,14 +1,14 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import { validarFormularioLogin } from "../../Utils/validarLogin";
+import { validarFormularioLogin } from "../../../Utils/validarLogin";
 import CssLogin from "./login.module.css"
-import BemVindo from "../../Componentes/MensagemBemVindo"
-import ImgLink from "../../Componentes/imgLink"
-import Input from "../../Componentes/Input"
-import BotaoAction from "../../Componentes/BotaoAction"
-import RadioGroup from "../../Componentes/RadioInput"
-import LinkParaNavegacao from "../../Componentes/Links/link"
-import voltarPagina from "../../assets/voltarPagina.svg"
+import BemVindo from "../../../Componentes/MensagemBemVindo"
+import ImgLink from "../../../Componentes/imgLink"
+import Input from "../../../Componentes/Input"
+import BotaoAction from "../../../Componentes/BotaoAction"
+import RadioGroup from "../../../Componentes/RadioInput"
+import LinkParaNavegacao from "../../../Componentes/Links/link"
+import voltarPagina from "../../../assets/voltarPagina.svg"
 
 function TelaLogin(){
     const navigate = useNavigate();
