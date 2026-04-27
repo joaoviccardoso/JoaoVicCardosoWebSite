@@ -1,0 +1,9 @@
+.botaoDash{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    height: 350px;
+    width: 520px;
+    background-color: var(--color-componente);
+    border-radius: 12px;
+}

@@ -1,0 +1,19 @@
+.breadcrumbNav{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--color-componente);
+    height: 80px;
+    width: 100%;
+}
+
+.breadcrumb{
+    margin: 0;
+}
+
+.breadcrumbItem{
+    color: var(--cor-letraClara);
+    font-family: var(--font-paraTextoChamativo);
+    font-size: 30px;
+}

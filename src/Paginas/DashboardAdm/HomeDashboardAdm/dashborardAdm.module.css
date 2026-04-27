@@ -2,3 +2,41 @@
     height: 100%;
     display: flex;
 }
+
+.sectionAcoes{
+    width: 100%;
+}
+
+.divAcoes{
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+    padding: 2rem 4rem;
+}
+
+.divTabelaProjetos{
+    background: #111;
+    border-radius: 16px;
+    width: 60%;
+}
+
+.gridBotoesLinks{
+    padding: 2rem;
+}
+
+.botoesLink1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+}
+
+.botoesLink2{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botoesLink2 div{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}

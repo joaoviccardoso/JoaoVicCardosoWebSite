@@ -7,7 +7,7 @@ function ImgLink({to, srcImg}){
             to={to}
             className={CssImgLink.navLink}
         >
-            <img src={srcImg} alt="" />
+            <img src={srcImg} alt="link com imagem" />
         </Link>
     )
 }
