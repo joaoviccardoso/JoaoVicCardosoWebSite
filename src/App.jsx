@@ -29,24 +29,14 @@ function App() {
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Cadastro" element={<Cadastro/>}/>
 
-        <Route 
-          path="/dashboard" 
-          element={
-            <PrivateRoute>
-              <HomeDashborardUser />
-            </PrivateRoute>
-          } 
-        />
+        <Route element={<PrivateRoute><HomeDashborardUser /></PrivateRoute>}>
+          <Route path="/dashboard" element={<HomeDashborardUser />} />
+        </Route>
 
         {/* 🔐 DASHBOARD ADMIN */}
-        <Route 
-          path="/admin" 
-          element={
-            <PrivateRoute role="admin">
-              <HomeDashborardAdm />
-            </PrivateRoute>
-          } 
-        />
+        <Route element={<PrivateRoute role="admin"><HomeDashborardAdm /></PrivateRoute>}>
+          <Route path="/admin" element={<HomeDashborardAdm />} />
+        </Route>
     </Routes>
   )
 }

@@ -1,4 +1,4 @@
-/*import styles from "./tabelaProjetos.module.css"
+import styles from "./tabelaProjetos.module.css"
 
 const projetos = [
   { id: "001", nome: "Doceria #001", status: "dev",       statusLabel: "Em Desenvolvimento" },
@@ -58,4 +58,4 @@ function TabelaProjetos(){
     )
 }
 
-export default TabelaProjetos*/
+export default TabelaProjetos

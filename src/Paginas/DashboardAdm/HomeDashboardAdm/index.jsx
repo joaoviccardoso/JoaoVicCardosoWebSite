@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
-//import CssDashborardAdm from "./dashborardAdm.module.css"
-//import NavDash from "../../../Componentes/NavDashboard"
-//import Breadcrumb from "../../../Componentes/Breadcrumb"
-//import BotaoDash from "../../../Componentes/BotaoDashBoard"
-//import TabelaProjetos from "../../../Componentes/TabelaProjetos"
+import CssDashborardAdm from "./dashborardAdm.module.css"
+import NavDash from "../../../Componentes/NavDashboard"
+import Breadcrumb from "../../../Componentes/Breadcrumb"
+import BotaoDash from "../../../Componentes/BotaoDashBoard"
+import TabelaProjetos from "../../../Componentes/TabelaProjetos"
 
 function HomeDashborardAdm(){
     const [userAdm, setUserAdm] = useState({})
@@ -47,7 +47,7 @@ function HomeDashborardAdm(){
                             </div>
                             
                             <div className={CssDashborardAdm.divTabelaProjetos}>
-                                
+                                <TabelaProjetos/>
                             </div>
                         </div>
                         

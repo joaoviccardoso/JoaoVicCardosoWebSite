@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;  
-    height: 350px;
-    width: 520px;
+    height: 320px;
+    width: 390px;
     background-color: var(--color-componente);
     border-radius: 12px;
+    font-size: var(--font-size-3xl);
 }

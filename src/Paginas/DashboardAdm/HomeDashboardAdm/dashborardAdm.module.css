@@ -10,7 +10,7 @@
 .divAcoes{
     font-family: var(--font-paraTextoChamativo);
     color: var(--cor-letraClara);
-    padding: 2rem 4rem;
+    padding: 3rem 5rem;
 }
 
 .divTabelaProjetos{
@@ -26,13 +26,13 @@
 .botoesLink1{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 5rem;
 }
 
 .botoesLink2{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .botoesLink2 div{
