@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import CssDashborardAdm from "./dashborardAdm.module.css"
+import NavDash from "../../../Componentes/NavDashboard"
 
 function HomeDashborardAdm(){
     const [userAdm, setUserAdm] = useState({})
@@ -12,7 +13,10 @@ function HomeDashborardAdm(){
     }, [])
 
     return(
-        <section><h1>Bem vindo ADM:{`${userAdm.nomeCompleto}`}</h1></section>
+        <section className={CssDashborardAdm.homeDashborardAdm}>
+            <NavDash/>
+            <h1>Bem vindo ADM:{`${userAdm.nomeCompleto}`}</h1>
+        </section>
     )
 }
 

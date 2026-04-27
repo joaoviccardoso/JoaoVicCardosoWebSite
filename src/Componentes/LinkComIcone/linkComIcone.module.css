@@ -1,0 +1,7 @@
+.linkComIconeDiv{
+    display: flex;
+    gap: .8rem;
+    font-size: var(--font-size-2xl);
+    font-family: var(--font-paraTexto);
+    color: var(--cor-letraClara);
+}
