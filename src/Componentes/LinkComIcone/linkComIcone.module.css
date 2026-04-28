@@ -1,7 +1,24 @@
 .linkComIconeDiv{
     display: flex;
+    align-items: center;
     gap: .8rem;
     font-size: var(--font-size-2xl);
     font-family: var(--font-paraTexto);
     color: var(--cor-letraClara);
+}
+
+@media(max-width: 1725px){
+    .linkComIconeDiv{
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media(max-width: 1350px){
+    .linkComIconeDiv{
+        font-size: var(--font-size-ms);
+    }
+
+    .linkComIconeDiv img{
+        width: 40px;
+    }
 }

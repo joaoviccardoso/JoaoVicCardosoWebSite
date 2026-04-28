@@ -42,12 +42,12 @@ function TabelaProjetos(){
                       </td>
         
                       <td className={`${styles.projCell} ${styles.colAcao}`}>
-                        <button
-                          className={styles.verMaisBtn}
-                          onClick={() => verMais(projeto.nome)}
-                        >
-                          ver mais
-                        </button>
+                          <button
+                            className={styles.verMaisBtn}
+                            onClick={() => verMais(projeto.nome)}
+                          >
+                            ver mais
+                          </button>
                       </td>
         
                     </tr>

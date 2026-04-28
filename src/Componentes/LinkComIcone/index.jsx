@@ -4,7 +4,7 @@ import CssLinkIcone from "./linkComIcone.module.css"
 function LinkComIcone({imgLinkLogo, to, className, child}){
     return(
         <div className={CssLinkIcone.linkComIconeDiv}>
-            <img src={imgLinkLogo} alt="" />
+            <img src={imgLinkLogo} alt="icone" />
             <Link to={to} className={`${CssLinkIcone.navLink} ${className || ""}`}>
                 {child}
             </Link>

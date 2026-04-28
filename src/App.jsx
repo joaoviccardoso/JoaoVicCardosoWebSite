@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Layout from "./Layout/layout"
+import LayoutAdm from "./Layout/LayoutAdm"
 import Home from "./Paginas/Public/Home"
 import Contato from "./Paginas/Public/Contato"
 import Servicos from "./Paginas/Public/Servicos"
@@ -11,6 +12,7 @@ import PaginaDetalheDosProjetos from "./Paginas/Public/DetalheProjeto"
 import PrivateRoute from "./routes/PrivateRoute"
 import HomeDashborardUser from "./Paginas/DashboardUser/HomeDashboardUser"
 import HomeDashborardAdm from "./Paginas/DashboardAdm/HomeDashboardAdm"
+import SubDashAdm from "./Paginas/DashboardAdm/SubDashboardAdm"
 import "./style/fonteEhCores.css"
 
 function App() {
@@ -33,10 +35,11 @@ function App() {
           <Route path="/dashboard" element={<HomeDashborardUser />} />
         </Route>
 
-        {/* 🔐 DASHBOARD ADMIN */}
-        <Route element={<PrivateRoute role="admin"><HomeDashborardAdm /></PrivateRoute>}>
-          <Route path="/admin" element={<HomeDashborardAdm />} />
-        </Route>
+        <Route element={<LayoutAdm/>}>
+          <Route path="/admin" element={<PrivateRoute role="admin"><HomeDashborardAdm /></PrivateRoute>} />
+          <Route path="/admin/subDashAdm" element={<PrivateRoute role="admin"><SubDashAdm /></PrivateRoute>} />
+        </Route >
+        
     </Routes>
   )
 }

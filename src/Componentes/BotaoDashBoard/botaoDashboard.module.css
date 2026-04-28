@@ -2,9 +2,47 @@
     display: flex;
     justify-content: center;
     align-items: center;  
-    height: 320px;
-    width: 390px;
+    height: 220px;
+    width: 350px;
     background-color: var(--color-componente);
     border-radius: 12px;
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
 }
+
+@media(max-width: 1750px){
+    .botaoDash{ 
+        height: 200px;
+        width: 300px;
+    }  
+}
+
+@media(max-width: 1250px){
+    .botaoDash{ 
+        font-size: var(--font-size-xl);
+        height: 150px;
+        width: 250px;
+    }  
+}
+
+@media(max-width: 620px){
+    .botaoDash{ 
+        height: 150px;
+        width: 220px;
+    }  
+}
+
+@media(max-width: 550px){
+    .botaoDash{ 
+        font-size: var(--font-size-ms);
+        height: 150px;
+        width: 190px;
+    }  
+}
+
+@media(max-width: 510px){
+    .botaoDash{ 
+        height: 140px;
+        width: 150px;
+    }  
+}
+
