@@ -4,15 +4,13 @@ import CssDashborardAdm from "./dashborardAdm.module.css"
 import Breadcrumb from "../../../Componentes/Breadcrumb"
 import BotaoDash from "../../../Componentes/BotaoDashBoard"
 import TabelaProjetos from "../../../Componentes/TabelaProjetos"
+import { pegarUser } from "../../../Utils/pegarUser"
 
 function HomeDashborardAdm(){
     const [userAdm, setUserAdm] = useState({})
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('user'))
-        if (user) {
-            setUserAdm(user)
-        }
+        setUserAdm(pegarUser())
     }, [])
 
     return(
@@ -25,15 +23,15 @@ function HomeDashborardAdm(){
                         <div className={CssDashborardAdm.botoesLink1}>
                             <BotaoDash
                                 child="Clientes"
-                                to="/admin/subDashAdm"
+                                to="/admin/DashBoardCliente"
                             />
                             <BotaoDash
                                 child="Mensagem"
-                                to="/admin/subDashAdm"
+                                to="/admin/Mensagem"
                             />
                             <BotaoDash
                                 child="Projetos"
-                                to="/admin/subDashAdm"
+                                to="/admin/DashBoardProduto"
                             />
                         </div>
 

@@ -12,7 +12,9 @@ import PaginaDetalheDosProjetos from "./Paginas/Public/DetalheProjeto"
 import PrivateRoute from "./routes/PrivateRoute"
 import HomeDashborardUser from "./Paginas/DashboardUser/HomeDashboardUser"
 import HomeDashborardAdm from "./Paginas/DashboardAdm/HomeDashboardAdm"
-import SubDashAdm from "./Paginas/DashboardAdm/SubDashboardAdm"
+import SubDashAdmCliente from "./Paginas/DashboardAdm/SubDashboardClienteAdm"
+import SubDashAdmProdutos from "./Paginas/DashboardAdm/SubDashboardProdutosAdm"
+import Mensagens from "./Paginas/DashboardAdm/Mensagens"
 import "./style/fonteEhCores.css"
 
 function App() {
@@ -37,7 +39,9 @@ function App() {
 
         <Route element={<LayoutAdm/>}>
           <Route path="/admin" element={<PrivateRoute role="admin"><HomeDashborardAdm /></PrivateRoute>} />
-          <Route path="/admin/subDashAdm" element={<PrivateRoute role="admin"><SubDashAdm /></PrivateRoute>} />
+          <Route path="/admin/DashBoardCliente" element={<PrivateRoute role="admin"><SubDashAdmCliente /></PrivateRoute>} />
+          <Route path="/admin/DashBoardProduto" element={<PrivateRoute role="admin"><SubDashAdmProdutos/></PrivateRoute>} />
+          <Route path="/admin/Mensagem" element={<PrivateRoute role="admin"><Mensagens/></PrivateRoute>} />
         </Route >
         
     </Routes>

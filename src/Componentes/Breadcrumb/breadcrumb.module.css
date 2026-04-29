@@ -9,6 +9,8 @@
 }
 
 .breadcrumb{
+    display: flex;
+    gap: .6rem;
     margin: 0;
 }
 
@@ -16,4 +18,10 @@
     color: var(--cor-letraClara);
     font-family: var(--font-paraTextoChamativo);
     font-size: 30px;
+}
+
+.active {
+  color: var(--verde); /* ou sua cor de item atual */
+  pointer-events: none;
+  font-weight: 600;
 }
