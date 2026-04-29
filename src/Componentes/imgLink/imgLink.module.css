@@ -1,0 +1,12 @@
+@media(max-width: 550px){
+    .navLink{
+        width: 60px;
+    }
+}
+
+@media(max-width: 380px){
+   .navLink{
+        width: 45px;
+    }
+    
+}

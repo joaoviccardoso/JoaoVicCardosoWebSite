@@ -17,11 +17,11 @@ function SubDashAdmCliente(){
             <div>
                 <BotaoDash
                     child="Consultar Clientes"
-                    to="/admin/DashBoardCliente/ConsultarCliente"
+                    to="/admin/Cliente/ConsultarCliente"
                 />
                 <BotaoDash
                     child="Cadastrar Clientes"
-                    to="/admin/DashBoardCliente/CadastrarCliente"
+                    to="/admin/Cliente/CadastrarCliente"
                 />
             </div>
         </section>

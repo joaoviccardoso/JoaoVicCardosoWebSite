@@ -2,7 +2,6 @@
 import CssBreadcrumb from "./breadcrumb.module.css"
 import ImgLink from "../imgLink"
 import imgVoltar from "../../assets/voltarPagina.svg"
-import menuCelular from '../../assets/menuCelular.svg'
 import { useLocation, Link } from "react-router-dom"
 
 // Mapeie aqui o "slug" da URL para o nome legível
@@ -52,16 +51,6 @@ function Breadcrumb() {
           </li>
         ))}
       </ol>
-
-      <button
-        className="btn d-lg-none"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasExample"
-        aria-controls="offcanvasExample"
-      >
-        <img src={menuCelular} alt="menu para celular" />
-      </button>
     </nav>
   )
 }

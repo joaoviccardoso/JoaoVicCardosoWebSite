@@ -17,19 +17,19 @@ function SubDashAdmProdutos(){
             <div>
                 <BotaoDash
                     child="Consultar P.C"
-                    to="/admin/DashBoardProduto/ConsultaPC"
+                    to="/admin/Produto/ConsultaPC"
                 />
                 <BotaoDash
                     child="Cadastrar P.C"
-                    to="/admin/DashBoardProduto/CadastrarPC"
+                    to="/admin/Produto/CadastrarPC"
                 />
                 <BotaoDash
                     child="Consultar M.P"
-                    to="/admin/DashBoardProduto/ConsultaMP"
+                    to="/admin/Produto/ConsultaMP"
                 />
                 <BotaoDash
                     child="Cadastrar M.P"
-                    to="/admin/DashBoardProduto/CadastrarMP"
+                    to="/admin/Produto/CadastrarMP"
                 />
             </div>
         </section>

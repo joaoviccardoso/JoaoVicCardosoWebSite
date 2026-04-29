@@ -23,7 +23,7 @@ function HomeDashborardAdm(){
                         <div className={CssDashborardAdm.botoesLink1}>
                             <BotaoDash
                                 child="Clientes"
-                                to="/admin/DashBoardCliente"
+                                to="/admin/Cliente"
                             />
                             <BotaoDash
                                 child="Mensagem"
@@ -31,7 +31,7 @@ function HomeDashborardAdm(){
                             />
                             <BotaoDash
                                 child="Projetos"
-                                to="/admin/DashBoardProduto"
+                                to="/admin/Produto"
                             />
                         </div>
 

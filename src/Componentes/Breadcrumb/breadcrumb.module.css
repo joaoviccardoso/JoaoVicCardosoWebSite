@@ -1,6 +1,7 @@
 .breadcrumbNav{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
     background: var(--color-componente);
@@ -12,16 +13,58 @@
     display: flex;
     gap: .6rem;
     margin: 0;
+    padding: 0;
 }
 
 .breadcrumbItem{
     color: var(--cor-letraClara);
     font-family: var(--font-paraTextoChamativo);
-    font-size: 30px;
+    font-size: var(--font-size-2xl);
 }
 
 .active {
   color: var(--verde); /* ou sua cor de item atual */
   pointer-events: none;
   font-weight: 600;
+}
+
+@media(max-width: 980px){
+    .breadcrumbNav{
+        justify-content: start;
+        padding: 0 2rem;
+    }
+
+    .breadcrumbItem{
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media(max-width: 880px){
+    .breadcrumbItem{
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media(max-width: 780px){
+    .breadcrumbItem{
+        font-size: var(--font-size-md);
+    }
+}
+
+@media(max-width: 680px){
+    .breadcrumbItem{
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media(max-width: 635px){
+    .breadcrumbItem{
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media(max-width: 580px){
+    .breadcrumbNav{
+        padding: .8rem;
+    }
 }
