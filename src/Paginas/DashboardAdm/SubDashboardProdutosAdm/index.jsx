@@ -16,15 +16,19 @@ function SubDashAdmProdutos(){
             <p>Esse dashboard mostra tudo relacionado a projetos.</p>
             <div>
                 <BotaoDash
-                    child="Produto Clientes"
-                    to="/admin/DashBoardProduto/ProdutoClientes"
+                    child="Consultar P.C"
+                    to="/admin/DashBoardProduto/ConsultaPC"
                 />
                 <BotaoDash
-                    child="Produto MP"
-                    to="/admin/DashBoardProduto/ProdutoMP"
+                    child="Cadastrar P.C"
+                    to="/admin/DashBoardProduto/CadastrarPC"
                 />
                 <BotaoDash
-                    child="Cadastrar MP"
+                    child="Consultar M.P"
+                    to="/admin/DashBoardProduto/ConsultaMP"
+                />
+                <BotaoDash
+                    child="Cadastrar M.P"
                     to="/admin/DashBoardProduto/CadastrarMP"
                 />
             </div>
