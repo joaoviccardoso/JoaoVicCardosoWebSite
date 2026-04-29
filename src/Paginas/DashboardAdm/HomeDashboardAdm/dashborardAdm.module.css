@@ -81,7 +81,9 @@
     }
 
     .botoesLink1{
+        align-items: center;
         gap: 1rem;
+        flex-wrap: wrap;
     }
 
     .botoesLink2 div{
