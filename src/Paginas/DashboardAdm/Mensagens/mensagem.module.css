@@ -1,0 +1,12 @@
+.sectionMensagensAdm{
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+}
+
+.sectionMensagensAdm h1{
+    font-size: var(--font-size-3xl);
+}
+
+.sectionMensagensAdm p{
+    font-size: var(--font-size-lg);
+}

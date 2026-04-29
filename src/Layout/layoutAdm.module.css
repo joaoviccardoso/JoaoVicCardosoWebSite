@@ -1,0 +1,50 @@
+.sectionLatoutAdm{
+    display: grid;
+    grid-template-columns: 18% 1fr;
+    grid-template-rows: 8% 1fr;
+    grid-template-areas: 
+        "aside breadcrumb "
+        "aside main "
+    ;
+}
+
+.sectionLatoutAdm aside{
+    grid-area: aside;
+}
+
+.sectionLatoutAdm nav{
+    grid-area: breadcrumb;
+}
+
+.sectionLatoutAdm main{
+    grid-area: main;
+    margin: 1rem 4rem;
+}
+
+@media(max-width: 1750px){
+    .sectionLatoutAdm main{
+        margin: 1rem 3rem;
+    } 
+}
+
+@media(max-width: 1080px){
+    .sectionLatoutAdm{
+        grid-template-columns:1fr;
+        grid-template-rows:1fr;
+        grid-template-areas: 
+            "breadcrumb "
+            "main "
+        ;
+    }
+
+    .sectionLatoutAdm aside{
+        display: none;
+    }
+}
+
+@media(max-width: 480px){
+    .sectionLatoutAdm main{
+        margin: 0;
+        padding: 1rem;
+    } 
+}

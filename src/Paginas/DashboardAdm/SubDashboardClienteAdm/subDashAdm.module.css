@@ -1,0 +1,19 @@
+.sectionFuncoesClientes{
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+}
+
+.sectionFuncoesClientes h1{
+    font-size: var(--font-size-3xl);
+}
+
+.sectionFuncoesClientes p{
+    font-size: var(--font-size-lg);
+}
+
+.sectionFuncoesClientes div{
+    text-align: center;
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
