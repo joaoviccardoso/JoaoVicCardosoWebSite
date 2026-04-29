@@ -1,0 +1,19 @@
+.sectionProdutosAdm{
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+}
+
+.sectionProdutosAdm h1{
+    font-size: var(--font-size-3xl);    
+}
+
+.sectionProdutosAdm p{
+    font-size: var(--font-size-lg);    
+}
+
+.sectionProdutosAdm div{
+    text-align: center;
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
