@@ -30,8 +30,8 @@ function HomeDashborardUser(){
                         to="/dashboard/MeusDados"
                     />
                     <BotaoDash
-                        child="Suporte"
-                        to="/dashboard/Suporte"
+                        child="Mensagens"
+                        to="/dashboard/Mensagens"
                     />
                 </div>
 
