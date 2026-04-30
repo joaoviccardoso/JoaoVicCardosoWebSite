@@ -39,8 +39,8 @@ function App() {
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Cadastro" element={<Cadastro/>}/>
 
-        <Route element={<PrivateRoute><HomeDashborardUser /></PrivateRoute>}>
-          <Route path="/dashboard" element={<HomeDashborardUser />} />
+        <Route element={<LayoutAdm/>}>
+          <Route path="/dashboard" element={<PrivateRoute><HomeDashborardUser /></PrivateRoute>} />
         </Route>
 
         <Route element={<LayoutAdm/>}>

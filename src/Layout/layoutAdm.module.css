@@ -13,6 +13,7 @@
 }
 
 .sectionLatoutAdm nav{
+    min-height: 100%;
     grid-area: breadcrumb;
 }
 

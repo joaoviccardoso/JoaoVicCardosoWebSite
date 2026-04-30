@@ -24,29 +24,8 @@
     }  
 }
 
-@media(max-width: 620px){
-    .botaoDash{ 
-        height: 150px;
-        width: 220px;
-    }  
-}
 
-@media(max-width: 550px){
-    .botaoDash{ 
-        font-size: var(--font-size-ms);
-        height: 150px;
-        width: 190px;
-    }  
-}
-
-@media(max-width: 510px){
-    .botaoDash{ 
-        height: 140px;
-        width: 180px;
-    }  
-}
-
-@media(max-width: 410px){
+@media(max-width: 630px){
     .botaoDash{ 
         height: 140px;
         width: 100%;
