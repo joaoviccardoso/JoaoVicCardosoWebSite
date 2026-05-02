@@ -13,6 +13,7 @@
 }
 
 .sectionLatoutAdm nav{
+    min-height: 100%;
     grid-area: breadcrumb;
 }
 
@@ -23,7 +24,9 @@
 
 @media(max-width: 1750px){
     .sectionLatoutAdm main{
-        margin: 1rem 3rem;
+        margin: 1rem 2rem;
+        overflow-y: hidden;
+        overflow-x: hidden;
     } 
 }
 

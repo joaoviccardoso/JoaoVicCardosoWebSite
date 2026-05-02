@@ -1,13 +1,12 @@
 import CssNavDash from "./navDashboard.module.css"
 import LinkComIcone from "../LinkComIcone"
 import logEscuro from "../../assets/logoEscuroPequeno.svg"
-import logoClientes from "../../assets/PeopleFill.svg"
-import logoProjetos from "../../assets/PersonWorkspace.svg"
-import logoMensagem from "../../assets/MenuUp.svg"
-import logoConfiguracao from "../../assets/GearFill.svg"
-import logoSair from "../../assets/DoorOpenFill.svg"
 
-function NavDash(){
+
+function NavDash({ acoes }){
+    const top    = acoes.filter(a => a.grupo === "top");
+    const bottom = acoes.filter(a => a.grupo === "bottom");
+
     return(
         <nav className={CssNavDash.navDashboard}>
             <div>
@@ -16,30 +15,25 @@ function NavDash(){
 
             <ul className={CssNavDash.ulDashboardNav}>
                 <li>
-                    <LinkComIcone
-                        imgLinkLogo={logoClientes}
-                        child="Clientes"
-                    />
-                    <LinkComIcone
-                        imgLinkLogo={logoProjetos}
-                        child="Projetos"
-                    />
-                    <LinkComIcone
-                        imgLinkLogo={logoMensagem}
-                        child="Mensagens"
-                    />
+                    {top.map((item, i) => (
+                        <LinkComIcone
+                            key={i}
+                            to={item.to}
+                            imgLinkLogo={item.icon}
+                            child={item.acao}
+                        />
+                    ))}
                 </li>
 
                 <li>
-                    <LinkComIcone
-                        imgLinkLogo={logoConfiguracao}
-                        child="Configuração"
-                    />
-
-                    <LinkComIcone
-                        imgLinkLogo={logoSair}
-                        child="Sair"
-                    />
+                    {bottom.map((item, i) => (
+                        <LinkComIcone
+                            key={i}
+                            to={item.to}
+                            imgLinkLogo={item.icon}
+                            child={item.acao}
+                        />
+                    ))}
                 </li>
             </ul>
         </nav>

@@ -6,7 +6,6 @@ const projetos = [
   { id: "003", nome: "Doceria #003", status: "dev",       statusLabel: "Em Desenvolvimento" },
   { id: "004", nome: "Doceria #004", status: "espera",    statusLabel: "Aguardando"          },
   { id: "005", nome: "Doceria #005", status: "pausado",   statusLabel: "Pausado"             },
-  { id: "006", nome: "Doceria #006", status: "concluido", statusLabel: "Concluído"           },
 ];
 
 const statusClass = {

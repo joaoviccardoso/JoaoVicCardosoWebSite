@@ -11,6 +11,9 @@ import Cadastro from "./Paginas/Autenticacao/Cadastro"
 import PaginaDetalheDosProjetos from "./Paginas/Public/DetalheProjeto"
 import PrivateRoute from "./routes/PrivateRoute"
 import HomeDashborardUser from "./Paginas/DashboardUser/HomeDashboardUser"
+import MeusDadosUser from "./Paginas/DashboardUser/MeusDadosUser"
+import MeusProjetosUser from "./Paginas/DashboardUser/MeusProjetos"
+import MensagensUser from "./Paginas/DashboardUser/MensagensUser"
 import HomeDashborardAdm from "./Paginas/DashboardAdm/HomeDashboardAdm"
 import SubDashAdmCliente from "./Paginas/DashboardAdm/SubDashboardClienteAdm"
 import AcaoCadastraCliente from "./Paginas/DashboardAdm/SubDashboardClienteAdm/acoesClientes/cadastraCliente"
@@ -21,7 +24,32 @@ import AcaoConsultaProdutoMp from "./Paginas/DashboardAdm/SubDashboardProdutosAd
 import AcaoCadastrarProdutoPc from "./Paginas/DashboardAdm/SubDashboardProdutosAdm/acoesProdutos/cadastroPc"
 import AcaoConsultaPc from "./Paginas/DashboardAdm/SubDashboardProdutosAdm/acoesProdutos/consultaPc"
 import Mensagens from "./Paginas/DashboardAdm/Mensagens"
+import logoClientes from "./assets/PeopleFill.svg"
+import logoProjetos from "./assets/PersonWorkspace.svg"
+import logoMensagem from "./assets/MenuUp.svg"
+import logoConfiguracao from "./assets/GearFill.svg"
+import logoSair from "./assets/DoorOpenFill.svg"
+import PaginaEmDesenvilvimento from "./Paginas/PaginaEmDesenvolvimento"
 import "./style/fonteEhCores.css"
+
+const acoesCliente = [
+  { acao: "Projetos Contratados", to: "/dashboard/ProjetosContratados", grupo: "top", icon: logoProjetos},
+  { acao: "Meus dados", to: "/dashboard/MeusDados", grupo: "top", icon: logoClientes},
+  { acao: "Mensagens", to: "/dashboard/Mensagens", grupo: "top", icon: logoMensagem},
+  { acao: "Configuração", to: "/dashboard/config", grupo: "bottom", icon: logoConfiguracao},
+  { acao: "Sair", to: "/logout", grupo: "bottom", icon: logoSair},
+];
+
+const acoesAdm = [
+  // grupo: "top"
+  { acao: "Clientes",  to: "/admin/Cliente",  grupo: "top",    icon: logoClientes   },
+  { acao: "Produtos",  to: "/admin/Produto",  grupo: "top",    icon: logoProjetos   },
+  { acao: "Mensagens", to: "/admin/Mensagem", grupo: "top",    icon: logoMensagem   },
+
+  // grupo: "bottom"
+  { acao: "Configuração", to: "/admin/config", grupo: "bottom", icon: logoConfiguracao },
+  { acao: "Sair",         to: "/logout",       grupo: "bottom", icon: logoSair         }
+]
 
 function App() {
 
@@ -34,16 +62,31 @@ function App() {
           <Route path="/Portfolio/:id" element={<PaginaDetalheDosProjetos/>}/>
           <Route path="/Servicos" element={<Servicos/>}/>
           <Route path="/SobreMim" element={<SobreMim/>}/>
+          <Route path="/EmDensenvolvimento" element={<PaginaEmDesenvilvimento/>}/>
         </Route>
 
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Cadastro" element={<Cadastro/>}/>
 
-        <Route element={<PrivateRoute><HomeDashborardUser /></PrivateRoute>}>
-          <Route path="/dashboard" element={<HomeDashborardUser />} />
+        <Route 
+          element={
+            <LayoutAdm
+              acoes={acoesCliente}
+            />
+          }
+        >
+          <Route path="/dashboard" element={<PrivateRoute><HomeDashborardUser /></PrivateRoute>} />
+          <Route path="/dashboard/MeusDados" element={<PrivateRoute><MeusDadosUser /></PrivateRoute>} />
+          <Route path="/dashboard/ProjetosContratados" element={<PrivateRoute><MeusProjetosUser /></PrivateRoute>} />
+          <Route path="/dashboard/Mensagens" element={<PrivateRoute><MensagensUser /></PrivateRoute>} />
         </Route>
 
-        <Route element={<LayoutAdm/>}>
+        <Route 
+          element={
+            <LayoutAdm  
+              acoes={acoesAdm}
+            />
+          }>
           <Route path="/admin" element={<PrivateRoute role="admin"><HomeDashborardAdm /></PrivateRoute>} />
           <Route path="/admin/Cliente" element={<PrivateRoute role="admin"><SubDashAdmCliente /></PrivateRoute>} />
           <Route path="/admin/Cliente/CadastrarCliente" element={<PrivateRoute role="admin"><AcaoCadastraCliente /></PrivateRoute>} />

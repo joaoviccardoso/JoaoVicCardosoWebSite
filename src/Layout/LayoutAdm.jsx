@@ -3,7 +3,8 @@ import { Outlet } from "react-router-dom"
 import Breadcrumb from "../Componentes/Breadcrumb"
 import NavDash from "../Componentes/NavDashboard"
 
-function LayoutAdm() {
+function LayoutAdm({acoes}) {
+    console.log(acoes)
     return (
         <section className={CssLayoutAdm.sectionLatoutAdm}>
             <nav>
@@ -11,7 +12,9 @@ function LayoutAdm() {
             </nav>
 
             <aside>
-                <NavDash/>
+                <NavDash
+                    acoes={acoes}
+                />
             </aside>
 
             <main>
