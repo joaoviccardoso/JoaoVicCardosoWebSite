@@ -29,6 +29,7 @@ import logoProjetos from "./assets/PersonWorkspace.svg"
 import logoMensagem from "./assets/MenuUp.svg"
 import logoConfiguracao from "./assets/GearFill.svg"
 import logoSair from "./assets/DoorOpenFill.svg"
+import PaginaEmDesenvilvimento from "./Paginas/PaginaEmDesenvolvimento"
 import "./style/fonteEhCores.css"
 
 const acoesCliente = [
@@ -61,6 +62,7 @@ function App() {
           <Route path="/Portfolio/:id" element={<PaginaDetalheDosProjetos/>}/>
           <Route path="/Servicos" element={<Servicos/>}/>
           <Route path="/SobreMim" element={<SobreMim/>}/>
+          <Route path="/EmDensenvolvimento" element={<PaginaEmDesenvilvimento/>}/>
         </Route>
 
         <Route path="/Login" element={<Login/>}/>

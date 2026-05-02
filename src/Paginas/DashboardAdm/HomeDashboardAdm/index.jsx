@@ -39,11 +39,11 @@ function HomeDashborardAdm(){
                             <div>
                                 <BotaoDash
                                     child="Configuração"
-                                    to="/admin/subDashAdm"
+                                    to="/EmDensenvolvimento"
                                 />
                                 <BotaoDash
                                     child="Sair"
-                                    to="/admin/subDashAdm"
+                                    to="/EmDensenvolvimento"
                                 />
                             </div>
                             

@@ -17,10 +17,10 @@ function NavDash({ acoes }){
                 <li>
                     {top.map((item, i) => (
                         <LinkComIcone
-                        key={i}
-                        to={item.to}
-                        imgLinkLogo={item.icon}
-                        child={item.acao}
+                            key={i}
+                            to={item.to}
+                            imgLinkLogo={item.icon}
+                            child={item.acao}
                         />
                     ))}
                 </li>
@@ -28,10 +28,10 @@ function NavDash({ acoes }){
                 <li>
                     {bottom.map((item, i) => (
                         <LinkComIcone
-                        key={i}
-                        to={item.to}
-                        imgLinkLogo={item.icon}
-                        child={item.acao}
+                            key={i}
+                            to={item.to}
+                            imgLinkLogo={item.icon}
+                            child={item.acao}
                         />
                     ))}
                 </li>

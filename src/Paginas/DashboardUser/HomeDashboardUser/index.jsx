@@ -35,20 +35,23 @@ function HomeDashborardUser(){
                     />
                 </div>
 
-                <div className={CssDashborardUser.divBotaoAcoes2}>
-                    <BotaoDash
-                        child="Configuração"
-                        to="/dashboard/Configuracao"
-                    />
-                    <BotaoDash
-                        child="Suporte"
-                        to="/dashboard/Suporte"
-                    />
-                </div>
+                <div className={CssDashborardUser.divContainerBotaoEhTabela}> 
+                    <div className={CssDashborardUser.divBotaoAcoes2}>
+                        <BotaoDash
+                            child="Configuração"
+                            to="/EmDensenvolvimento"
+                        />
+                        <BotaoDash
+                            child="Sair"
+                            to="/EmDensenvolvimento"
+                        />
+                    </div>
 
-                <div className={CssDashborardUser.divTabelaMeusProjetos}> 
-                    <TabelaProjetos/>
+                    <div className={CssDashborardUser.divTabelaMeusProjetos}> 
+                        <TabelaProjetos/>
+                    </div>
                 </div>
+                
             </section>
         </section>
     )

@@ -7,6 +7,20 @@
     background-color: var(--color-componente);
     border-radius: 12px;
     font-size: var(--font-size-2xl);
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.botaoDash:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    filter: brightness(1.1);
+}
+
+.botaoDash:active{
+    transform: scale(0.97);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
 @media(max-width: 1750px){

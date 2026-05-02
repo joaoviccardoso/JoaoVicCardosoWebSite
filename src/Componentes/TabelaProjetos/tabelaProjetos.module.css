@@ -1,26 +1,25 @@
 .tableWrapper{
-    width: 100%;
+  min-width: 100%;
+  overflow-x: auto;
 }
 
 .projTable{
-  width: 100%;
+  min-width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .projRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
   border-bottom: 0.5px solid #2e2e2e;
 }
  
 .projRow:last-child {
   border-bottom: none;
 }
- 
+
 .projCell {
   padding: 18px 16px;
-  vertical-align: middle;
+  box-sizing: border-box;
 }
  
 .projLabel {
@@ -36,15 +35,15 @@
 }
  
 .colProjeto {
-  width: 40%;
+  min-width: auto;
 }
  
 .colStatus {
-  width: 35%;
+  width: auto
 }
  
 .colAcao {
-  width: 25%;
+  width: auto;
   text-align: center;
 }
  
