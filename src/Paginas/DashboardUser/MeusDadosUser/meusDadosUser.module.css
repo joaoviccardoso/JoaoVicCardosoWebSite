@@ -5,6 +5,7 @@
 }
 
 .sectionMeusDados div{
+    align-self: flex-start;
     font-family: var(--font-paraTextoChamativo);
     color: var(--cor-letraClara);
 }
@@ -18,6 +19,10 @@
     width: 65%;
     padding: 3rem 8rem;
     border-radius: 12px;
+}
+
+.erro{
+    color: var(--vermelho-erro);
 }
 
 @media(max-width: 960px){
