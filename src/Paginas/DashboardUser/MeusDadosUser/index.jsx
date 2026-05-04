@@ -35,11 +35,13 @@ function MeusDadosUser(){
     }
 
     return(
-        <section>
-            <h1>Bem vindo user: {`${userUser.nomeCompleto}`}</h1>
-            <p>Aqui você pode visualizar e atualizar suas informações pessoais. Mantenha seus dados sempre corretos para garantir uma melhor experiência e facilitar o contato quando necessário.</p>
+        <section className={CssMeusDados.sectionMeusDados}>
+            <div>
+                <h1>Bem vindo user: {`${userUser.nomeCompleto}`}</h1>
+                <p>Aqui você pode visualizar e atualizar suas informações pessoais. Mantenha seus dados sempre corretos para garantir uma melhor experiência e facilitar o contato quando necessário.</p>
+            </div>
             <form onSubmit={handleSubmit} className={CssMeusDados.formDadosCliete}>
-                <div>
+                
                     <Input
                         label="Nome"
                         name="nome"
@@ -48,16 +50,13 @@ function MeusDadosUser(){
                         className={CssMeusDados.inputNome}
                         placeholder={`${userUser.nomeCompleto}`}
                     />
-                </div>
-
-                <div>
                     <Input
                         label="Telefone"
                         type="tel"
                         name="telefone"
                         value={form.telefone}
                         onChange={handleChange}
-                        className={CssMeusDados.inputTelefone}
+                        className={".inputTelefoneMeusDados"}
                         placeholder={`${userUser.telefone}`}
                     />
                     <Input
@@ -69,9 +68,7 @@ function MeusDadosUser(){
                         className={CssMeusDados.inputCpf}
                         placeholder={`${userUser.cpf ? userUser.cpf : "CPF"}`}
                     />
-                </div>
 
-                <div>
                     <Input
                         label="E-mail"
                         type="email"
@@ -81,8 +78,7 @@ function MeusDadosUser(){
                         className={CssMeusDados.inputEmail}
                         placeholder={`${userUser.email}`}
                     />
-                </div>
-                <div>
+                
                     <Input
                         label="Endereço"
                         type="address"
@@ -102,14 +98,12 @@ function MeusDadosUser(){
                         className={CssMeusDados.inputCpf}
                         placeholder={`${userUser.cep ? userUser.cep : "CEP"}`}
                     />
-                </div>
 
-                <div>
+                
                     <BotaoAction
                         child="Salvar"
                         type="submit"
                     />
-                </div>
             </form>
         </section>
     )

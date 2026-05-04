@@ -1,3 +1,44 @@
+.sectionMeusDados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sectionMeusDados div{
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+}
+
+.sectionMeusDados div h1{
+    font-size: var(--font-size-3xl);
+}
+
 .formDadosCliete{
-    background-color: var();
+    background-color: var(--color-componente);
+    width: 65%;
+    padding: 3rem 8rem;
+    border-radius: 12px;
+}
+
+@media(max-width: 960px){
+    .formDadosCliete{
+        width: 65%;
+        padding: 3rem;
+    }
+}
+
+@media(max-width: 660px){
+    .sectionMeusDados{
+        padding: 1rem;
+    }
+
+    .formDadosCliete{
+        width: 90%;
+    }
+}
+
+@media(max-width: 440px){
+    .formDadosCliete{
+        width: 100%;
+    }
 }
