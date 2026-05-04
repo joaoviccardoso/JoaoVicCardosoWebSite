@@ -85,7 +85,7 @@ function MeusDadosUser(){
         <section className={CssMeusDados.sectionMeusDados}>
             <div>
                 <h1>Bem vindo user: {userUser.nomeCompleto}</h1>
-                <p>Aqui você pode visualizar e atualizar suas informações pessoais.</p>
+                <p>Aqui você pode visualizar e atualizar suas informações pessoais. Mantenha seus dados sempre corretos para garantir uma melhor experiência e facilitar o contato quando necessário.</p>
             </div>
             <form onSubmit={handleSubmit} className={CssMeusDados.formDadosCliete}>
 
@@ -98,23 +98,25 @@ function MeusDadosUser(){
                     className={`${erroParaAtualizar ? "inputErro" : ""}`}
                 />
 
-                <Input      
-                    label="Telefone"    
-                    type="tel" name="telefone"
-                    value={form.telefone} 
-                    onChange={handleChange}
-                    placeholder={userUser.telefone || "Telefone"} 
-                    className={`${erroParaAtualizar ? "inputErro" : ""}`}
-                />
+                <div className={CssMeusDados.div2}>
+                    <Input      
+                        label="Telefone"    
+                        type="tel" name="telefone"
+                        value={form.telefone} 
+                        onChange={handleChange}
+                        placeholder={userUser.telefone || "Telefone"} 
+                        className={`${erroParaAtualizar ? "inputErro" : ""}`}
+                    />
 
-                <Input 
-                    label="CPF" 
-                    type="number" 
-                    name="cpf"
-                    value={form.cpf} onChange={handleChange}
-                    placeholder={userUser.cpf || "CPF"} 
-                    className={`${erroParaAtualizar ? "inputErro" : ""}`}
-                />
+                    <Input 
+                        label="CPF" 
+                        type="number" 
+                        name="cpf"
+                        value={form.cpf} onChange={handleChange}
+                        placeholder={userUser.cpf || "CPF"} 
+                        className={`${erroParaAtualizar ? "inputErro" : ""}`}
+                    />
+                </div>
 
                 <Input 
                     label="E-mail" 
@@ -125,33 +127,36 @@ function MeusDadosUser(){
                     placeholder={userUser.email || "E-mail"} 
                 />
 
-                <Input 
-                    label="Endereço" 
-                    name="endereco" 
-                    value={form.endereco} 
-                    onChange={handleChange}
-                    placeholder={userUser.endereco || "Endereço"} 
-                    className={`${erroParaAtualizar ? "inputErro" : ""}`}
-                />
+                <div className={CssMeusDados.div3}>
+                    <Input 
+                        label="Endereço" 
+                        name="endereco" 
+                        value={form.endereco} 
+                        onChange={handleChange}
+                        placeholder={userUser.endereco || "Endereço"} 
+                        className={`${erroParaAtualizar ? "inputErro" : ""}`}
+                    />
 
-                <Input 
-                    label="CEP" 
-                    type="number" 
-                    name="cep" 
-                    value={form.cep} 
-                    onChange={handleChange}
-                    className={`${erroParaAtualizar ? "inputErro" : ""}`}
-                    placeholder={userUser.cep || "CEP"} 
-                />
+                    <Input 
+                        label="CEP" 
+                        type="number" 
+                        name="cep" 
+                        value={form.cep} 
+                        onChange={handleChange}
+                        className={`${erroParaAtualizar ? "inputErro" : ""}`}
+                        placeholder={userUser.cep || "CEP"} 
+                    />
 
-                <Input 
-                    label="Número" 
-                    name="numeroCasa"
-                    value={form.numeroCasa} 
-                    onChange={handleChange}
-                    placeholder={userUser.numeroCasa || "Número"} 
-                    className={`${erroParaAtualizar ? "inputErro" : ""}`}
-                />
+                    <Input 
+                        label="Número" 
+                        name="numeroCasa"
+                        value={form.numeroCasa} 
+                        onChange={handleChange}
+                        placeholder={userUser.numeroCasa || "Número"} 
+                        className={`${erroParaAtualizar ? "inputErro" : ""}`}
+                    />
+                </div>
+                
                 {erroParaAtualizar && <p className={CssMeusDados.erro}>{erroParaAtualizar}</p>}
                 <BotaoAction child="Salvar" type="submit" />
             </form>

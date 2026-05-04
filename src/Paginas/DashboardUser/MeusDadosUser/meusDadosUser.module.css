@@ -25,6 +25,25 @@
     color: var(--vermelho-erro);
 }
 
+.div2{
+    display: flex;
+    gap: 1rem;
+}
+
+.div2 > * {
+    flex: 1; /* cada input ocupa metade igual */
+}
+
+.div3{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.div3 > * {
+    flex: 1; /* cada input ocupa metade igual */
+}
+
 @media(max-width: 960px){
     .formDadosCliete{
         width: 65%;
