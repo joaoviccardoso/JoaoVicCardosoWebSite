@@ -56,3 +56,20 @@ export function validarCpf(cpf){
 
   return true;
 }
+
+export function validarDataEntrega(data) {
+    if (!data) return false;
+    const dataEntrega = new Date(data);
+    const hoje = new Date();
+    hoje.setHours(0, 0, 0, 0); // ignora hora
+    return dataEntrega >= hoje; // não pode ser data no passado
+}
+
+export function validarLink(link) {
+    try {
+        new URL(link); // forma nativa de validar URL
+        return true;
+    } catch {
+        return false;
+    }
+}

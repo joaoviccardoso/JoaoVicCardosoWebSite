@@ -1,0 +1,54 @@
+.sectionCadastrarPC{
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionCadastrarPC div{
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+}
+
+.sectionCadastrarPC div h1{
+    font-size: var(--font-size-3xl);
+}
+
+.formCadastrarProdutoCliente{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background-color: var(--color-componente);
+    padding: 3rem 8rem;
+    border-radius: 12px;
+}
+
+.div1{
+    display: flex;
+    gap: 1rem;
+}
+
+.div1 > * {
+    flex: 1; /* cada input ocupa metade igual */
+}
+
+.erro{
+    color: var(--vermelho-erro);
+}
+
+.listaUl{
+    display: flex;
+    flex-direction: column;
+    color: var(--cor-letraClara);
+    font-size: var(--font-size-lg);
+}
+
+.listaDiv{
+    cursor: pointer;
+    padding: 6px 0;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;  /* ← suaviza a mudança */
+}
+
+.listaDiv:hover {
+    color: var(--verde);
+    background-color: rgba(0, 0, 0, 0.4);  /* ← leve fundo no hover */
+}

@@ -63,3 +63,9 @@ input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0px 1000px var(--cor-backgroudInput) inset;
     -webkit-text-fill-color: var(--cor-letraClara);
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);  /* ← inverte a cor, preto vira branco */
+    cursor: pointer;
+    padding-right: 1rem;
+}
