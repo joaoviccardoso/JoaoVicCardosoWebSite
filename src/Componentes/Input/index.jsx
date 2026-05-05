@@ -7,7 +7,7 @@ function Input({ label, type = "text", name, value, onChange, placeholder, class
       <input
         type={type}
         name={name}
-        value={value}
+        value={value ?? ""} 
         onChange={onChange}
         placeholder={placeholder}
         className={`${CssInput.inputBasic} ${className ? CssInput[className] : ""}`}
