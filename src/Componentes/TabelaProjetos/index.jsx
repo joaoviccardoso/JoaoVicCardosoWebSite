@@ -1,6 +1,6 @@
 import styles from "./tabelaProjetos.module.css"
 
-function TabelaProjetos({projetos}){
+function TabelaProjetos({projetos, onVerMais}){
     function verMais(nome) {
         // Substitua pela sua lógica: abrir modal, navegar para rota, etc.
         alert("Ver mais: " + nome);
@@ -28,7 +28,7 @@ function TabelaProjetos({projetos}){
                       <td className={`${styles.projCell} ${styles.colAcao}`}>
                           <button
                             className={styles.verMaisBtn}
-                            onClick={() => verMais(projeto.nomeProjeto)}
+                            onClick={() => onVerMais(projeto)}
                           >
                             ver mais
                           </button>
