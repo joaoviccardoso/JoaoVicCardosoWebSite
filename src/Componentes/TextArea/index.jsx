@@ -5,11 +5,11 @@ function TextArea({ label, name, value, onChange, placeholder, className }) {
     <div className={CssTextArea.containerTextArea}>
       <label>{label}</label>
       <textarea
-        className={`${className ? CssTextArea[className] : ""}`}
         name={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        className={`${CssTextArea.textAreaDe} ${className ? CssTextArea[className] : ""}`}
       />
     </div>
   );

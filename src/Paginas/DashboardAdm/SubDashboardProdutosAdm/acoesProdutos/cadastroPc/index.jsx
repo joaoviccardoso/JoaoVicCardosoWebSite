@@ -4,6 +4,7 @@ import { pegarUser } from "../../../../../Utils/pegarUser";
 import TextArea from "../../../../../Componentes/TextArea";
 import Input from "../../../../../Componentes/Input";
 import BotaoAction from "../../../../../Componentes/BotaoAction";
+import StatusSelect from "../../../../../Componentes/Select";
 import { validarFormularioCadastrarProduto } from "../../../../../Utils/validarCadastro";
 
 function AcaoCadastrarProdutoPc(){
@@ -96,14 +97,11 @@ function AcaoCadastrarProdutoPc(){
                         className={`${erroParaCadastrarPC ? "inputErro" : ""}`}
                     />
 
-                    <Input
-                        label="Status do Projeto" 
-                        name="status" 
-                        value={form.status} 
-                        type="text"
+                    <StatusSelect
+                        label="Status do projeto"
+                        name="status"
+                        value={form.status}
                         onChange={handleChange}
-                        placeholder={"Status do projeto"} 
-                        className={`${erroParaCadastrarPC ? "inputErro" : ""}`}
                     />
                 </div>
 
