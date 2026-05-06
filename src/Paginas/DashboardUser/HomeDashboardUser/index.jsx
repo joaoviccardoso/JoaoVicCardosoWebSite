@@ -46,10 +46,6 @@ function HomeDashborardUser(){
                             to="/EmDensenvolvimento"
                         />
                     </div>
-
-                    <div className={CssDashborardUser.divTabelaMeusProjetos}> 
-                        <TabelaProjetos/>
-                    </div>
                 </div>
                 
             </section>

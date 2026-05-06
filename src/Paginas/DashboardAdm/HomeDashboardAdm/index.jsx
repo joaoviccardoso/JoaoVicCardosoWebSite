@@ -19,7 +19,7 @@ function HomeDashborardAdm(){
             try{
                 const respostas = await fetch("http://localhost:3000/produtos/todos");
                 const data = await respostas.json()
-                console.log(data)
+               
                 setProjetosAll(data)
             } catch (error){
                 alert("Erro ao buscar dados:", error);

@@ -1,0 +1,40 @@
+.sactionMeusProjetos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+}
+
+.sactionMeusProjetos div h1{
+    font-size: var(--font-size-3xl);
+}
+
+.sactionMeusProjetos div p{
+    font-size: var(--font-size-lg);
+}
+
+.filtro{
+    background-color: #000;
+    border-radius: 12px;
+    height: 90px;
+}
+
+.sectionDadosDoProjetoCliente{
+    display: flex;
+    gap: 2rem;
+}
+
+.tabelaProjetosClientes{
+    border-radius: 12px;
+    background-color: var(--color-componente);
+    width: 55%;
+}
+
+.detalhesProjetos{
+    border-radius: 12px;
+    background-color: var(--color-componente);
+    height: 800px;
+    width: 45%;
+}

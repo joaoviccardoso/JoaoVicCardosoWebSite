@@ -1,14 +1,5 @@
 import styles from "./tabelaProjetos.module.css"
 
-/*const projetos = [
-  { id: "001", nome: "Doceria #001", status: "dev",       statusLabel: "Em Desenvolvimento" },
-  { id: "002", nome: "Doceria #002", status: "concluido", statusLabel: "Concluído"           },
-  { id: "003", nome: "Doceria #003", status: "dev",       statusLabel: "Em Desenvolvimento" },
-  { id: "004", nome: "Doceria #004", status: "espera",    statusLabel: "Aguardando"          },
-  { id: "005", nome: "Doceria #005", status: "pausado",   statusLabel: "Pausado"             },
-];*/
-
-
 function TabelaProjetos({projetos}){
     function verMais(nome) {
         // Substitua pela sua lógica: abrir modal, navegar para rota, etc.
