@@ -4,6 +4,7 @@ import { pegarUser } from "../../../Utils/pegarUser"
 import Input from "../../../Componentes/Input";
 import BotaoAction from "../../../Componentes/BotaoAction";
 import { validarFormularioAtualizarDados } from "../../../Utils/validarCadastro";
+import { jwtDecode } from "jwt-decode";
 
 function MeusDadosUser(){
     const [erroParaAtualizar, setErroParaAtulizar] = useState("")
@@ -34,7 +35,6 @@ function MeusDadosUser(){
     async function handleSubmit(e) {
         e.preventDefault();
 
-
         // Verifica se ao menos um campo foi preenchido
         const algumCampoPreenchido = Object.values(form).some(v => v !== "");
         if (!algumCampoPreenchido) {
@@ -52,10 +52,16 @@ function MeusDadosUser(){
             Object.entries(form).filter(([_, v]) => v !== "")
         );
 
+        const token = localStorage.getItem("token");
+        const { id } = jwtDecode(token);
+
         try {
-            const res = await fetch(`http://localhost:3000/auth/atualizarDados/${userUser._id}`, {
+            const res = await fetch(`http://localhost:3000/auth/atualizarDados/${id}`, {
                 method: "PUT",
-                headers: { "Content-Type": "application/json" },
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}` // ✅ envia o token
+                },
                 body: JSON.stringify(dadosParaEnviar),
             });
 
@@ -63,10 +69,8 @@ function MeusDadosUser(){
 
             if (!res.ok) throw new Error(data.error || "Erro ao atualizar");
 
-            const userAtualizado = { ...userUser, ...data.user };
-            localStorage.setItem("user", JSON.stringify(userAtualizado));
-
-            setUserUser(userAtualizado);
+            // ✅ Atualiza o estado local sem usar localStorage
+            setUserUser(prev => ({ ...prev, ...data.user }));
             
             setForm({
                 nomeCompleto: "", email: "", cpf: "",

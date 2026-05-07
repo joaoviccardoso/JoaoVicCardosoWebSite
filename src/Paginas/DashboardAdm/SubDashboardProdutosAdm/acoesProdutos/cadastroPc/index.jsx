@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import CssAcaoProduto3 from "./cadastroProdutoPc.module.css"
-import { pegarUser } from "../../../../../Utils/pegarUser";
 import TextArea from "../../../../../Componentes/TextArea";
 import Input from "../../../../../Componentes/Input";
 import BotaoAction from "../../../../../Componentes/BotaoAction";
 import StatusSelect from "../../../../../Componentes/Select";
 import { validarFormularioCadastrarProduto } from "../../../../../Utils/validarCadastro";
+import { jwtDecode } from "jwt-decode";
 
 function AcaoCadastrarProdutoPc(){
     const [erroParaCadastrarPC,  setCadastrarErro] = useState("")
@@ -23,8 +23,13 @@ function AcaoCadastrarProdutoPc(){
     });
 
     useEffect(() => {
-        setUserAdm(pegarUser())
-    }, [])
+        const token = localStorage.getItem("token");
+        if (!token) return;
+        
+        // pega só o necessário do token
+        const decoded = jwtDecode(token);
+        setUserAdm(decoded); // decoded tem { id, role }
+    }, []);
     
     function handleChange(e) {
         const { name, value } = e.target;
@@ -45,13 +50,23 @@ function AcaoCadastrarProdutoPc(){
             return;
         }
 
+        const token = localStorage.getItem("token");
+        
         try {
             const response = await fetch("http://localhost:3000/produtos/criar", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
                 body: JSON.stringify(form)
             });
             const data = await response.json();
+
+            if (!response.ok) {
+                setCadastrarErro(data.error || "Erro ao cadastrar produto");
+                return;
+            }
 
             //limpa o form
             setForm({
@@ -64,6 +79,7 @@ function AcaoCadastrarProdutoPc(){
                 linkDemo: "",
                 obser: "",
             });
+
             //limpar erro 
             setCadastrarErro("")
             alert(data.message)
@@ -74,7 +90,16 @@ function AcaoCadastrarProdutoPc(){
 
     async function buscarClientes(nome) {
         if (nome.length < 2) return; // só busca a partir de 2 letras
-        const res = await fetch(`http://localhost:3000/auth/buscar?nome=${nome}`);
+
+        const token = localStorage.getItem("token");
+        
+        const res = await fetch(`http://localhost:3000/auth/buscar?nome=${nome}`, {
+                method: "GET",
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}` // ✅ envia o token
+                },
+            });;
         const data = await res.json();
         setClientesBuscados(data);
     }
@@ -82,7 +107,7 @@ function AcaoCadastrarProdutoPc(){
     return(
         <section className={CssAcaoProduto3.sectionCadastrarPC}>
             <div>
-                <h1>Bem vindo, {`${userAdm.nomeCompleto}`}</h1>
+                <h1>Bem vindo, Admin</h1>
                 <p>Nesta área você pode cadastrar novos sites ou produtos adquiridos pelos clientes e acompanhar o andamento de cada projeto. Aqui é possível atualizar o status do desenvolvimento, adicionar o link da versão de demonstração (demo) e disponibilizar o contrato relacionado. Utilize este espaço para manter as informações organizadas e permitir que o cliente acompanhe o progresso do seu projeto de forma clara e transparente.</p>
             </div>
             <form onSubmit={handleSubmit} className={CssAcaoProduto3.formCadastrarProdutoCliente}>

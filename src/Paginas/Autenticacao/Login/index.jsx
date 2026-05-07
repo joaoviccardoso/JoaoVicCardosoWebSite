@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { validarFormularioLogin } from "../../../Utils/validarLogin";
+import { jwtDecode } from "jwt-decode";
 import CssLogin from "./login.module.css"
 import BemVindo from "../../../Componentes/MensagemBemVindo"
 import ImgLink from "../../../Componentes/imgLink"
@@ -43,29 +44,32 @@ function TelaLogin(){
             return;
         }
 
+        try {
         const response = await fetch("http://localhost:3000/auth/login", {
             method: "POST",
-            headers: {
-            "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(form)
         });
 
         const data = await response.json();
 
-        if(!response.ok){
-            setErroDeLogin(data.message)
-            return
+        if (!response.ok) {
+            setErroDeLogin(data.message);
+            return;
         }
 
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
-
-        if(data.user.role === "admin"){
-            navigate("/admin")
+        const decoded = jwtDecode(data.token);
+        if (decoded.role === "admin") {
+            navigate("/admin");
         } else {
             navigate("/dashboard");
         }
+
+    } catch {
+        setErroDeLogin("Erro de conexão. Tente novamente.");
+    }
     }
 
     return(

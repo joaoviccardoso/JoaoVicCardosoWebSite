@@ -30,8 +30,6 @@ function MeusProjetosUser(){
             } catch(error){
                 alert(`erro para pegar os produtos do cliente ${error}`)
             }
-       
-        
         }
         getProdutosClientes();
     }, [userUser._id])
