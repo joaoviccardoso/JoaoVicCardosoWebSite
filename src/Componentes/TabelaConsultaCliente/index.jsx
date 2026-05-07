@@ -13,13 +13,13 @@ function TabelaConsultaCliente({clientes, onVerMais}){
                   {clientes.map((projeto) => (
                     <tr key={projeto._id} className={styles.projRow}>
 
-                      <td className={`${styles.projCell} ${styles.colProjeto}`}>
+                      <td className={`${styles.projCell} ${styles.colProjeto} ${styles.colImgCliente}`}>
                         <div className={styles.imgCliente}></div>
                       </td>
         
                       <td className={`${styles.projCell} ${styles.colProjeto}`}>
-                        <div className={styles.clietLabel}>Cliente</div>
-                        <div className={styles.clietName}>{projeto.nomeCliente}</div>
+                        <div className={styles.clietLabel}>{projeto.role == "admin" ? "Admin" : "Cliente"}</div>
+                        <div className={styles.clietName}>{projeto.nomeCompleto}</div>
                       </td>
         
                       <td className={`${styles.projCell} ${styles.colProjeto}`}>
@@ -27,9 +27,9 @@ function TabelaConsultaCliente({clientes, onVerMais}){
                         <div className={styles.clietName}>{projeto.email}</div>
                       </td>
 
-                      <td className={`${styles.projCell} ${styles.colProjeto}`}>
+                      <td className={`${styles.projCell} ${styles.colProjeto} ${styles.colTelefone}`}>
                         <div className={styles.clietLabel}>Telefone</div>
-                        <div className={styles.clietName}>{projeto.Telefone}</div>
+                        <div className={styles.clietName}>{projeto.telefone}</div>
                       </td>
         
                       <td className={`${styles.projCell} ${styles.colAcao}`}>

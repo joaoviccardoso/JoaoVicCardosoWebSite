@@ -107,7 +107,7 @@ function AcaoCadastrarProdutoPc(){
     return(
         <section className={CssAcaoProduto3.sectionCadastrarPC}>
             <div>
-                <h1>Bem vindo, Admin</h1>
+                <h1>Bem vindo, {userAdm.role}</h1>
                 <p>Nesta área você pode cadastrar novos sites ou produtos adquiridos pelos clientes e acompanhar o andamento de cada projeto. Aqui é possível atualizar o status do desenvolvimento, adicionar o link da versão de demonstração (demo) e disponibilizar o contrato relacionado. Utilize este espaço para manter as informações organizadas e permitir que o cliente acompanhe o progresso do seu projeto de forma clara e transparente.</p>
             </div>
             <form onSubmit={handleSubmit} className={CssAcaoProduto3.formCadastrarProdutoCliente}>

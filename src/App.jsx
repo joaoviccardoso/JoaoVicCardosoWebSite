@@ -89,7 +89,7 @@ function App() {
           }>
           <Route path="/admin" element={<PrivateRoute role="admin"><HomeDashborardAdm /></PrivateRoute>} />
           <Route path="/admin/Cliente" element={<PrivateRoute role="admin"><SubDashAdmCliente /></PrivateRoute>} />
-          <Route path="/admin/Cliente/CadastrarCliente" element={<PrivateRoute role="admin"><AcaoCadastraCliente /></PrivateRoute>} />
+          <Route path="/Cadastro" element={<PrivateRoute role="admin"><Cadastro/></PrivateRoute>} />
           <Route path="/admin/Cliente/ConsultarCliente" element={<PrivateRoute role="admin"><AcaoConsultaCliente /></PrivateRoute>} />
           <Route path="/admin/Produto" element={<PrivateRoute role="admin"><SubDashAdmProdutos/></PrivateRoute>} />
           <Route path="/admin/Produto/CadastrarMP" element={<PrivateRoute role="admin"><AcaoCadastroProdutoMp/></PrivateRoute>} />

@@ -1,22 +1,35 @@
 import { useEffect, useState } from "react"
-import { pegarUser } from "../../../../../Utils/pegarUser"
 import CssAcao2 from "./consultaCliente.module.css"
 import TabelaConsultaCliente from "../../../../../Componentes/TabelaConsultaCliente"
+import { jwtDecode } from "jwt-decode"
 
 function AcaoConsultaCliente(){
     const [userAdm, setUserAdm] = useState({})
     const [allCliente, setCliente] = useState([])
-    useEffect(()=>{
-        setUserAdm(pegarUser())
-    },[])
+
+    useEffect(() => {
+            const token = localStorage.getItem("token");
+            if (!token) return;
+            
+            // pega só o necessário do token
+            const decoded = jwtDecode(token);
+            setUserAdm(decoded); // decoded tem { id, role }
+        }, []);
 
     useEffect(()=>{
         async function getAllCliente(){
+            const token = localStorage.getItem("token");
             try{
-                const resposta = await fetch(`http://localhost:3000/auth/users`)
-
+                const resposta = await fetch(`http://localhost:3000/auth/users`,{
+                    method: "GET",
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}` // envia o token
+                    },
+                })
+                
                 if (!resposta.ok) {
-                    setCliente([]) // ✅ Sem projetos, array vazio
+                    setCliente([]) // Sem projetos, array vazio
                     return
                 }
 
@@ -31,18 +44,17 @@ function AcaoConsultaCliente(){
     },[])
 
     return(
-        <section>
-            <div>
-                <h1>Bem vindo, {`${userAdm.nomeCompleto}`}</h1>
+        <section className={CssAcao2.sectionConsultarCliente}>
+            <div className={CssAcao2.divTextoEhTitulo}>
+                <h1>Bem vindo, {`${userAdm.role}`}</h1>
                 <p>Nesta área você pode visualizar, cadastrar e gerenciar todos os clientes do sistema. Utilize os filtros e a busca para encontrar clientes rapidamente e manter as informações sempre organizadas.</p>
             </div>
             
-            <div>
+            <div className={CssAcao2.divFiltroCliente}>
 
             </div>
 
-            <div>
-                {console.log(allCliente)}
+            <div className={CssAcao2.divTabelaClientes}>
                 <TabelaConsultaCliente
                     clientes={allCliente}
                 />
