@@ -1,10 +1,8 @@
+import { Link } from "react-router-dom";
 import styles from "./tabelaConsultaCliente.module.css"
 
-function TabelaConsultaCliente({clientes, onVerMais}){
-    function verMais(nome) {
-        // Substitua pela sua lógica: abrir modal, navegar para rota, etc.
-        alert("Ver mais: " + nome);
-    }
+function TabelaConsultaCliente({clientes}){
+
 
     return (
         <div className={styles.tableWrapper}>
@@ -33,12 +31,9 @@ function TabelaConsultaCliente({clientes, onVerMais}){
                       </td>
         
                       <td className={`${styles.projCell} ${styles.colAcao}`}>
-                          <button
-                            className={styles.verMaisBtn}
-                            onClick={() => onVerMais(projeto)}
-                          >
-                            ver mais
-                          </button>
+                          <Link to={`/admin/Cliente/ConsultarCliente/Editar/${projeto._id}`} className={styles.botaoLink}> 
+                            Ver mais
+                          </Link>
                       </td>
         
                     </tr>

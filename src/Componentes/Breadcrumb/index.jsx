@@ -19,18 +19,22 @@ function Breadcrumb() {
   // Quebra a URL em segmentos, ex: "/admin/subDashAdm" → ["admin", "subDashAdm"]
   const segmentos = location.pathname.split("/").filter(Boolean)
 
+  // 👇 Remove segmentos que sejam IDs do MongoDB
+  const segmentosSemId = segmentos.filter(seg => !seg.match(/^[0-9a-fA-F]{24}$/))
+  console.log(segmentosSemId)
+
   // Monta os itens com o path acumulado
-  const itens = segmentos.map((segmento, index) => {
-    const path = "/" + segmentos.slice(0, index + 1).join("/")
+  const itens = segmentosSemId.map((segmento, index) => {
+    const path = "/" + segmentosSemId.slice(0, index + 1).join("/")
     const label = rotaLabels[segmento] || segmento
-    const isUltimo = index === segmentos.length - 1
+    const isUltimo = index === segmentosSemId.length - 1
 
     return { label, path, isUltimo }
   })
 
   // Define o link de "voltar": segmento anterior ou "/"
-  const linkVoltar = segmentos.length > 1
-    ? "/" + segmentos.slice(0, -1).join("/")
+  const linkVoltar = segmentosSemId.length > 1
+    ? "/" + segmentosSemId.slice(0, -1).join("/")
     : "/"
 
   return (
