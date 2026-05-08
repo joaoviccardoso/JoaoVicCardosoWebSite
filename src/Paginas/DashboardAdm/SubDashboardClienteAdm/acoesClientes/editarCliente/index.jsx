@@ -6,7 +6,7 @@ import Input from "../../../../../Componentes/Input"
 import BotaoAction from "../../../../../Componentes/BotaoAction"
 import StatusSelect from "../../../../../Componentes/Select"
 import { validarFormularioAtualizarDados } from "../../../../../Utils/validarCadastro"
-import { atualizarUsuario } from "../../../../../services/authServices"
+import { atualizarUsuario, getUsuarioPorId } from "../../../../../services/authServices"
 
 const STATUS_OPTIONS = [
   { value: "admin", label: "Adimin" },
@@ -87,19 +87,8 @@ function AcaoEditarCliente(){
     
     useEffect(() => {
         async function getClientePorId() {
-            const token = localStorage.getItem("token")
             try {
-                const resposta = await fetch(`http://localhost:3000/auth/user/${id}`, {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${token}`
-                    },
-                })
-
-                if (!resposta.ok) return
-
-                const data = await resposta.json()
+                const data = await getUsuarioPorId(id)
                 setClienteAtual(data)
             } catch (error) {
                 alert(`Erro ao buscar cliente: ${error}`)

@@ -24,6 +24,7 @@ import AcaoConsultaProdutoMp from "./Paginas/DashboardAdm/SubDashboardProdutosAd
 import AcaoCadastrarProdutoPc from "./Paginas/DashboardAdm/SubDashboardProdutosAdm/acoesProdutos/cadastroPc"
 import AcaoConsultaPc from "./Paginas/DashboardAdm/SubDashboardProdutosAdm/acoesProdutos/consultaPc"
 import Mensagens from "./Paginas/DashboardAdm/Mensagens"
+import LogoHome from "./assets/iconeHome.svg"
 import logoClientes from "./assets/PeopleFill.svg"
 import logoProjetos from "./assets/PersonWorkspace.svg"
 import logoMensagem from "./assets/MenuUp.svg"
@@ -33,6 +34,7 @@ import PaginaEmDesenvilvimento from "./Paginas/PaginaEmDesenvolvimento"
 import "./style/fonteEhCores.css"
 
 const acoesCliente = [
+  { acao: "Dashboard", to: "/dashboard", grupo: "top", icon: LogoHome},
   { acao: "Projetos Contratados", to: "/dashboard/ProjetosContratados", grupo: "top", icon: logoProjetos},
   { acao: "Meus dados", to: "/dashboard/MeusDados", grupo: "top", icon: logoClientes},
   { acao: "Mensagens", to: "/dashboard/Mensagens", grupo: "top", icon: logoMensagem},
@@ -42,6 +44,7 @@ const acoesCliente = [
 
 const acoesAdm = [
   // grupo: "top"
+  { acao: "Dashboard",  to: "/admin",  grupo: "top",    icon: LogoHome   },
   { acao: "Clientes",  to: "/admin/Cliente",  grupo: "top",    icon: logoClientes   },
   { acao: "Produtos",  to: "/admin/Produto",  grupo: "top",    icon: logoProjetos   },
   { acao: "Mensagens", to: "/admin/Mensagem", grupo: "top",    icon: logoMensagem   },

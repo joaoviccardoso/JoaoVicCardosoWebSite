@@ -54,9 +54,10 @@ function MeusDadosUser(){
         );
 
         try {
+            //chama a api para atualizar os dados
             const data = await atualizarUsuario(dadosParaEnviar)
-
-            const userAtualizado = atualizarUserLocal(dadosParaEnviar) // 👈 atualiza o localStorage
+            // atualiza o localStorage
+            const userAtualizado = atualizarUserLocal(dadosParaEnviar) 
             setUserUser(userAtualizado)
             setForm({
                 nomeCompleto: "", email: "", cpf: "",
