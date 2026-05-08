@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
+import { jwtDecode } from "jwt-decode"
+import { getAllUsuarios } from "../../../../../services/authServices"
 import CssAcao2 from "./consultaCliente.module.css"
 import TabelaConsultaCliente from "../../../../../Componentes/TabelaConsultaCliente"
-import { jwtDecode } from "jwt-decode"
+
 
 function AcaoConsultaCliente(){
     const [userAdm, setUserAdm] = useState({})
@@ -17,30 +19,16 @@ function AcaoConsultaCliente(){
         }, []);
 
     useEffect(()=>{
-        async function getAllCliente(){
-            const token = localStorage.getItem("token");
+        async function fetchClientes(){
             try{
-                const resposta = await fetch(`http://localhost:3000/auth/users`,{
-                    method: "GET",
-                    headers: { 
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${token}` // envia o token
-                    },
-                })
-                
-                if (!resposta.ok) {
-                    setCliente([]) // Sem projetos, array vazio
-                    return
-                }
-
-                const data = await resposta.json()
+                const data = await getAllUsuarios()
                 setCliente(data)
             } catch(error){
                 alert(`erro para pegar os produtos do cliente ${error}`)
             }
         }
 
-        getAllCliente();
+        fetchClientes();
     },[])
 
     return(

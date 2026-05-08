@@ -11,21 +11,10 @@
     transition: all 0.15s ease;
 }
 
-.linkComIconeDiv::after{
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background-color: #0A0A0A;
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-    box-shadow:
-    0 0 6px #0A0A0A,
-    0 0 12px #0A0A0A,
-    0 0 24px rgba(10, 10, 10, 0.7),
-    0 0 48px rgba(10, 10, 10, 0.4);
+.linkComIconeDiv:hover{
+    transform: scale(0.95);
+    color: #00FF9C;
+    text-shadow: 0 0 8px rgba(0, 255, 156, 0.8);
 }
 
 .linkComIconeDiv:active {

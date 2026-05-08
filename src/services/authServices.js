@@ -8,6 +8,20 @@ export function getIdDoToken() {
     return id
 }
 
+//Pega todos os usuarios
+export async function getAllUsuarios() {
+    return apiFetch("/auth/users", {
+        method: "GET",
+    })
+}
+
+//pego usuario pelo id
+export async function getUsuarioPorId(id) {
+    return apiFetch(`/auth/user/${id}`, {
+        method: "GET",
+    })
+}
+
 export async function atualizarUsuario(dados, idExterno = null) {
     const id = idExterno || getIdDoToken()
     return apiFetch(`/auth/atualizarDados/${id}`, {
