@@ -4,6 +4,14 @@
     padding-bottom: 1rem;
 }
 
+.containerSelect{
+        width: 100%;
+    }
+
+    .selectWrapper{
+        width: 100%;
+    }
+
 .containerSelect label{
     color: var(--cor-letraClara);
     font-size: var(--font-size-xl);
@@ -27,3 +35,37 @@
 .selectBasic option{
     background-color: var(--Verde);
 }
+
+.inputErro {
+    border:var(--vermelho-erro) 1px solid ;
+}
+
+@media(max-width: 960px){
+    .selectBasic::placeholder{
+        font-size: var(--font-size-md);
+    }
+
+    .selectBasic{
+        font-size: var(--font-size-md);
+    }
+}
+
+@media(max-width: 550px){
+    .containerSelect{
+        width: 100%;
+    }
+
+    .selectWrapper{
+        width: 100%;
+    }
+
+    .selectBasic::placeholder{
+        font-size: var(--font-size-sm);
+    }
+
+    .selectBasic{
+        font-size: var(--font-size-sm);
+    }
+}
+
+    

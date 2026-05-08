@@ -70,3 +70,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     padding-right: 1rem;
 }
+
+@media(max-width: 960px){
+    .containerInput input::placeholder{
+        font-size: var(--font-size-md);
+    }
+
+    .inputBasic{
+        font-size: var(--font-size-md);
+    }
+}
+
+@media(max-width: 550px){
+    .containerInput{
+        width: 100%;
+    }
+
+    .containerInput input::placeholder{
+        font-size: var(--font-size-sm);
+    }
+
+    .inputBasic{
+        font-size: var(--font-size-sm);
+    }
+}

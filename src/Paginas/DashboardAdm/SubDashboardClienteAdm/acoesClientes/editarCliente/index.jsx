@@ -9,7 +9,7 @@ import { validarFormularioAtualizarDados } from "../../../../../Utils/validarCad
 import { atualizarUsuario } from "../../../../../services/authServices"
 
 const STATUS_OPTIONS = [
-  { value: "admim", label: "Adimin" },
+  { value: "admin", label: "Adimin" },
   { value: "socio", label: "Sócio(a)" },
   { value: "user", label: "Cliente" },
 ]
@@ -191,6 +191,7 @@ function AcaoEditarCliente(){
                         value={form.role}
                         onChange={handleChange}
                         STATUS_OPTIONS={STATUS_OPTIONS}
+                        className={`${erroParaAtualizar ? "inputErro" : ""}`}
                     />
                 </div>
                 
