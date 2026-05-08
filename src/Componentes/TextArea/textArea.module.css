@@ -10,7 +10,7 @@
     font-family: var(--font-paraTexto);
 }
 
-.containerTextArea textarea{
+.textAreaDe{
     height: 170px;
     color: var(--cor-letraClara);
     font-size: var(--font-size-xl);
@@ -20,6 +20,17 @@
     border: #C7C7C7 1px solid;
     background: var(--cor-backgroudInput);
     transition: all 0.2s ease;
+}
+
+.textAreaDe::placeholder{
+    font-size: var(--font-size-lg);
+    color: var(--cor-letraClara);
+    font-family: var(--font-paraTexto);
+}
+
+
+.inputErro {
+    border:var(--vermelho-erro) 1px solid ;
 }
 
 .containerTextArea textarea::placeholder{

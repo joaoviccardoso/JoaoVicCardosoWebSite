@@ -8,10 +8,28 @@ import { pegarUser } from "../../../Utils/pegarUser"
 
 function HomeDashborardAdm(){
     const [userAdm, setUserAdm] = useState({})
+    const [projetosAll, setProjetosAll] = useState([])
 
     useEffect(() => {
         setUserAdm(pegarUser())
     }, [])
+
+    useEffect(()  => {
+        async function fetchData(){
+            try{
+                const respostas = await fetch("http://localhost:3000/produtos/todos");
+                const data = await respostas.json()
+               
+                setProjetosAll(data)
+            } catch (error){
+                alert("Erro ao buscar dados:", error);
+            }
+        }
+        
+        fetchData();
+    }, [])
+
+    
 
     return(
         <section className={CssDashborardAdm.homeDashborardAdm}>
@@ -48,7 +66,9 @@ function HomeDashborardAdm(){
                             </div>
                             
                             <div className={CssDashborardAdm.divTabelaProjetos}>
-                                <TabelaProjetos/>
+                                <TabelaProjetos
+                                    projetos={projetosAll}
+                                />
                             </div>
                         </div>
                         

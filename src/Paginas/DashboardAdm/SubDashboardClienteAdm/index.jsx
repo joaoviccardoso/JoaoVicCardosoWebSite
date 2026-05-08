@@ -21,7 +21,7 @@ function SubDashAdmCliente(){
                 />
                 <BotaoDash
                     child="Cadastrar Clientes"
-                    to="/admin/Cliente/CadastrarCliente"
+                    to="/Cadastro"
                 />
             </div>
         </section>

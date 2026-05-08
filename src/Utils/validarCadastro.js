@@ -1,4 +1,4 @@
-import { validarEmail, validarNome, validarSenha, validarTelefone } from "./validacoes";
+import { validarCpf, validarDataEntrega, validarEmail, validarLink, validarNome, validarSenha, validarTelefone } from "./validacoes";
 
 export function validarFormularioCadastro(form) {
     if (!validarNome(form.primeiroNome)) {
@@ -23,3 +23,59 @@ export function validarFormularioCadastro(form) {
 
     return null
 }
+
+export function validarFormularioAtualizarDados(form){
+       // Só valida se o campo não estiver vazio
+    if (form.nomeCompleto && !validarNome(form.nomeCompleto)) {
+        return "O nome deve ter pelo menos 5 caracteres";
+    }
+
+    if (form.email && !validarEmail(form.email)) {
+        return "E-mail inválido";
+    }
+
+    if (form.cpf && !validarCpf(form.cpf)) {
+        return "CPF inválido";
+    }
+
+    if (form.telefone && !validarTelefone(form.telefone)) {
+        return "O número não está no padrão do Brasil";
+    }
+}
+
+export function validarFormularioCadastrarProduto(form){
+    if (!form.nomeProjeto) {
+        return "O nome do projeto é obrigatório";
+    }
+
+    if (!validarNome(form.nomeProjeto)) {
+        return "O nome deve ter pelo menos 5 caracteres";
+    } 
+
+    if (!form.status) {
+        return "O status do projeto é obrigatório";
+    }
+
+    if (!form.cliente) {
+        return "Selecione um cliente da lista";  // garante que veio o _id
+    }
+
+    if (!form.dateEntrega) {
+        return "A data de entrega é obrigatória";
+    }
+
+    if (!validarDataEntrega(form.dateEntrega)) {
+        return "A data de entrega não pode ser no passado";
+    }
+
+     // Campos opcionais — só valida se preenchido
+    if (form.linkContrato && !validarLink(form.linkContrato)) {
+        return "O link do contrato é inválido";
+    }
+
+    if (form.linkDemo && !validarLink(form.linkDemo)) {
+        return "O link da demo é inválido";
+    }
+
+    return null; // null = sem erros
+}   

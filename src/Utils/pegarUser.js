@@ -5,3 +5,10 @@ export function pegarUser(){
         return user
     }
 }
+
+export function atualizarUserLocal(novosDados){
+    const userAtual = pegarUser() || {}
+    const userAtualizado = { ...userAtual, ...novosDados }
+    localStorage.setItem('user', JSON.stringify(userAtualizado))
+    return userAtualizado
+}

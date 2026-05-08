@@ -1,23 +1,24 @@
-.sectionMeusDados{
+.secaoTelaCadastro{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.sectionMeusDados div{
+.secaoTelaCadastro div{
     align-self: flex-start;
     font-family: var(--font-paraTextoChamativo);
     color: var(--cor-letraClara);
 }
 
-.sectionMeusDados div h1{
+.secaoTelaCadastro div h1{
     font-size: var(--font-size-3xl);
 }
 
 .formDadosCliete{
     background-color: var(--color-componente);
     width: 65%;
-    padding: 3rem 8rem;
+    padding: 3rem 4rem;
     border-radius: 12px;
 }
 
@@ -45,15 +46,9 @@
 }
 
 @media(max-width: 960px){
-    .formDadosCliete{
-        width: 65%;
+    .secaoTelaCadastro{
+        width: 100%;
         padding: 3rem;
-    }
-}
-
-@media(max-width: 660px){
-    .sectionMeusDados{
-        padding: 1rem;
     }
 
     .formDadosCliete{
@@ -61,8 +56,44 @@
     }
 }
 
-@media(max-width: 440px){
+@media(max-width: 660px){
+    .secaoTelaCadastro{
+        padding: 1rem;
+    }
+
     .formDadosCliete{
         width: 100%;
     }
+}
+
+@media(max-width: 550px){
+    .div2{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .div2 > * {
+        flex: 0; /* cada input ocupa metade igual */
+    }
+
+    .div3{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .secaoTelaCadastro div h1{
+        font-size: var(--font-size-2xl);
+    }
+
+    .secaoTelaCadastro div p{
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media(max-width: 400px){
+    .formDadosCliete{
+        padding: 1rem;
+    }
+
+    
 }

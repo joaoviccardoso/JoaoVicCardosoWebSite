@@ -16,7 +16,7 @@ import MeusProjetosUser from "./Paginas/DashboardUser/MeusProjetos"
 import MensagensUser from "./Paginas/DashboardUser/MensagensUser"
 import HomeDashborardAdm from "./Paginas/DashboardAdm/HomeDashboardAdm"
 import SubDashAdmCliente from "./Paginas/DashboardAdm/SubDashboardClienteAdm"
-import AcaoCadastraCliente from "./Paginas/DashboardAdm/SubDashboardClienteAdm/acoesClientes/cadastraCliente"
+import AcaoEditarCliente from "./Paginas/DashboardAdm/SubDashboardClienteAdm/acoesClientes/editarCliente"
 import AcaoConsultaCliente from "./Paginas/DashboardAdm/SubDashboardClienteAdm/acoesClientes/consultaCliente"
 import SubDashAdmProdutos from "./Paginas/DashboardAdm/SubDashboardProdutosAdm"
 import AcaoCadastroProdutoMp from "./Paginas/DashboardAdm/SubDashboardProdutosAdm/acoesProdutos/cadastroMp"
@@ -89,10 +89,11 @@ function App() {
           }>
           <Route path="/admin" element={<PrivateRoute role="admin"><HomeDashborardAdm /></PrivateRoute>} />
           <Route path="/admin/Cliente" element={<PrivateRoute role="admin"><SubDashAdmCliente /></PrivateRoute>} />
-          <Route path="/admin/Cliente/CadastrarCliente" element={<PrivateRoute role="admin"><AcaoCadastraCliente /></PrivateRoute>} />
+          <Route path="/Cadastro" element={<PrivateRoute role="admin"><Cadastro/></PrivateRoute>} />
           <Route path="/admin/Cliente/ConsultarCliente" element={<PrivateRoute role="admin"><AcaoConsultaCliente /></PrivateRoute>} />
+          <Route path="/admin/Cliente/ConsultarCliente/Editar/:id" element={<PrivateRoute role="admin"><AcaoEditarCliente /></PrivateRoute>} />
           <Route path="/admin/Produto" element={<PrivateRoute role="admin"><SubDashAdmProdutos/></PrivateRoute>} />
-          <Route path="/admin/Produto/CadastrarMP" element={<PrivateRoute role="admin"><AcaoCadastroProdutoMp/></PrivateRoute>} />
+          <Route path="/admin/Produto/CadastrarMP/" element={<PrivateRoute role="admin"><AcaoCadastroProdutoMp/></PrivateRoute>} />
           <Route path="/admin/Produto/ConsultaMP" element={<PrivateRoute role="admin"><AcaoConsultaProdutoMp/></PrivateRoute>} />
           <Route path="/admin/Produto/CadastrarPC" element={<PrivateRoute role="admin"><AcaoCadastrarProdutoPc/></PrivateRoute>} />
           <Route path="/admin/Produto/ConsultaPC" element={<PrivateRoute role="admin"><AcaoConsultaPc/></PrivateRoute>} />

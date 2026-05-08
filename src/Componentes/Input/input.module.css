@@ -33,7 +33,8 @@
 }
 
 .containerInput input::placeholder{
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
+    color: var(--cor-letraClara);
     font-family: var(--font-paraTexto);
 }
 
@@ -64,3 +65,32 @@ input:-webkit-autofill:active {
     -webkit-text-fill-color: var(--cor-letraClara);
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);  /* ← inverte a cor, preto vira branco */
+    cursor: pointer;
+    padding-right: 1rem;
+}
+
+@media(max-width: 960px){
+    .containerInput input::placeholder{
+        font-size: var(--font-size-md);
+    }
+
+    .inputBasic{
+        font-size: var(--font-size-md);
+    }
+}
+
+@media(max-width: 550px){
+    .containerInput{
+        width: 100%;
+    }
+
+    .containerInput input::placeholder{
+        font-size: var(--font-size-sm);
+    }
+
+    .inputBasic{
+        font-size: var(--font-size-sm);
+    }
+}

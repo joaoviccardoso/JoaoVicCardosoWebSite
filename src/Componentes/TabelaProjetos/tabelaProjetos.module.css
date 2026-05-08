@@ -55,23 +55,33 @@
   font-weight: 400;
 }
  
-.statusDev {
+.green {
   background: #1D9E75;
   color: #E1F5EE;
 }
  
-.statusConcluido {
+.blue {
   background: #185FA5;
   color: #E6F1FB;
 }
  
-.statusEspera {
+.orange {
   background: #BA7517;
   color: #FAEEDA;
 }
  
-.statusPausado {
+.gray {
   background: #5F5E5A;
+  color: #F1EFE8;
+}
+
+.pink{
+  background: #f80ff8;
+  color: #F1EFE8;
+}
+
+.purple{
+  background: #790779;
   color: #F1EFE8;
 }
  
