@@ -1,15 +1,6 @@
 import CssStatusSelect from "./statusSelect.module.css"
- 
-const STATUS_OPTIONS = [
-  { value: "desenvolvimento", label: "Desenvolvimento" },
-  { value: "testes", label: "Testes" },
-  { value: "criando_o_design", label: "Criando o design" },
-  { value: "concluido", label: "Concluído" },
-  { value: "pausado", label: "Pausado" },
-]
 
- 
-function StatusSelect({ label, name, value, onChange}) {
+function StatusSelect({ label, name, value, onChange, STATUS_OPTIONS}) {
   return (
     <div className={CssStatusSelect.containerSelect}>
       <label>{label}</label>

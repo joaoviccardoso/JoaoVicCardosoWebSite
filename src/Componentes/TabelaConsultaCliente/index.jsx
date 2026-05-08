@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import styles from "./tabelaConsultaCliente.module.css"
 
 function TabelaConsultaCliente({clientes}){
-
-
     return (
         <div className={styles.tableWrapper}>
               <table className={styles.projTable}>

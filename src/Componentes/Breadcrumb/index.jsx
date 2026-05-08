@@ -21,7 +21,6 @@ function Breadcrumb() {
 
   // 👇 Remove segmentos que sejam IDs do MongoDB
   const segmentosSemId = segmentos.filter(seg => !seg.match(/^[0-9a-fA-F]{24}$/))
-  console.log(segmentosSemId)
 
   // Monta os itens com o path acumulado
   const itens = segmentosSemId.map((segmento, index) => {

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
+import { atualizarUserLocal, pegarUser } from "../../../Utils/pegarUser"
+import { validarFormularioAtualizarDados } from "../../../Utils/validarCadastro";
+import { atualizarUsuario } from "../../../services/authServices";
 import CssMeusDados from "./meusDadosUser.module.css"
-import { pegarUser } from "../../../Utils/pegarUser"
 import Input from "../../../Componentes/Input";
 import BotaoAction from "../../../Componentes/BotaoAction";
-import { validarFormularioAtualizarDados } from "../../../Utils/validarCadastro";
-import { jwtDecode } from "jwt-decode";
+
 
 function MeusDadosUser(){
     const [erroParaAtualizar, setErroParaAtulizar] = useState("")
@@ -52,36 +53,19 @@ function MeusDadosUser(){
             Object.entries(form).filter(([_, v]) => v !== "")
         );
 
-        const token = localStorage.getItem("token");
-        const { id } = jwtDecode(token);
-
         try {
-            const res = await fetch(`http://localhost:3000/auth/atualizarDados/${id}`, {
-                method: "PUT",
-                headers: { 
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}` // ✅ envia o token
-                },
-                body: JSON.stringify(dadosParaEnviar),
-            });
+            const data = await atualizarUsuario(dadosParaEnviar)
 
-            const data = await res.json();
-
-            if (!res.ok) throw new Error(data.error || "Erro ao atualizar");
-
-            // ✅ Atualiza o estado local sem usar localStorage
-            setUserUser(prev => ({ ...prev, ...data.user }));
-            
+            const userAtualizado = atualizarUserLocal(dadosParaEnviar) // 👈 atualiza o localStorage
+            setUserUser(userAtualizado)
             setForm({
                 nomeCompleto: "", email: "", cpf: "",
                 cep: "", endereco: "", numeroCasa: "", telefone: "",
-            });
-
+            })
             setErroParaAtulizar("")
-
-            alert("Dados atualizados com sucesso!");
+            alert(data.message)
         } catch (err) {
-            alert(err.message);
+            alert(err.message)
         }
     }
 

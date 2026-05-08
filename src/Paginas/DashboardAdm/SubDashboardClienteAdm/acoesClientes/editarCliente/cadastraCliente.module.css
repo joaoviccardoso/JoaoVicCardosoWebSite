@@ -1,0 +1,45 @@
+.sectionMeusDados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sectionMeusDados div{
+    align-self: flex-start;
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+}
+
+.sectionMeusDados div h1{
+    font-size: var(--font-size-3xl);
+}
+
+.formDadosCliete{
+    background-color: var(--color-componente);
+    width: 65%;
+    padding: 3rem 8rem;
+    border-radius: 12px;
+}
+
+.erro{
+    color: var(--vermelho-erro);
+}
+
+.div2{
+    display: flex;
+    gap: 1rem;
+}
+
+.div2 > * {
+    flex: 1; /* cada input ocupa metade igual */
+}
+
+.div3{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.div3 > * {
+    flex: 1; /* cada input ocupa metade igual */
+}

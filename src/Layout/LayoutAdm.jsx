@@ -4,7 +4,6 @@ import Breadcrumb from "../Componentes/Breadcrumb"
 import NavDash from "../Componentes/NavDashboard"
 
 function LayoutAdm({acoes}) {
-    console.log(acoes)
     return (
         <section className={CssLayoutAdm.sectionLatoutAdm}>
             <nav>

@@ -7,6 +7,14 @@ import StatusSelect from "../../../../../Componentes/Select";
 import { validarFormularioCadastrarProduto } from "../../../../../Utils/validarCadastro";
 import { jwtDecode } from "jwt-decode";
 
+const STATUS_OPTIONS = [
+  { value: "desenvolvimento", label: "Desenvolvimento" },
+  { value: "testes", label: "Testes" },
+  { value: "criando_o_design", label: "Criando o design" },
+  { value: "concluido", label: "Concluído" },
+  { value: "pausado", label: "Pausado" },
+]
+
 function AcaoCadastrarProdutoPc(){
     const [erroParaCadastrarPC,  setCadastrarErro] = useState("")
     const [userAdm, setUserAdm] = useState({})
@@ -127,6 +135,7 @@ function AcaoCadastrarProdutoPc(){
                         name="status"
                         value={form.status}
                         onChange={handleChange}
+                        STATUS_OPTIONS={STATUS_OPTIONS}
                     />
                 </div>
 
