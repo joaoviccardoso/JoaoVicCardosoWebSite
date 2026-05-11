@@ -38,7 +38,6 @@ const acoesCliente = [
   { acao: "Projetos Contratados", to: "/dashboard/ProjetosContratados", grupo: "top", icon: logoProjetos},
   { acao: "Meus dados", to: "/dashboard/MeusDados", grupo: "top", icon: logoClientes},
   { acao: "Mensagens", to: "/dashboard/Mensagens", grupo: "top", icon: logoMensagem},
-  { acao: "Configuração", to: "/dashboard/config", grupo: "bottom", icon: logoConfiguracao},
   { acao: "Sair", to: "/logout", grupo: "bottom", icon: logoSair},
 ];
 
