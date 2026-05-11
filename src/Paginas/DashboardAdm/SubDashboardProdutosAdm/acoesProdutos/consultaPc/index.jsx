@@ -4,7 +4,6 @@ import TabelaConsultaProjetosPC from "../../../../../Componentes/TabelaProdutosP
 import CssAcaoProduto4 from "./consultaProdutoPc.module.css"
 import { getAllProdutosPC } from "../../../../../services/produtosServices";
 
-
 function AcaoConsultaPc(){
     const [userAdm, setUserAdm] = useState({});
     const [allProjetosPC, setProjetosPc] = useState([])
@@ -22,7 +21,6 @@ function AcaoConsultaPc(){
         async function fetchData(){
             try{
                 const allProdutos = await getAllProdutosPC()
-                console.log(allProdutos)
                 setProjetosPc(allProdutos)
             } catch (error){
                 alert("Erro ao buscar dados:", error);

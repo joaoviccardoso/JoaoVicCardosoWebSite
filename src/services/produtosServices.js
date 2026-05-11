@@ -20,3 +20,18 @@ export async function postProdutosPC(dados){
         body: JSON.stringify(dados),
     })
 }
+
+// Busca um produto pelo id
+export async function getProdutoPorId(id) {
+    return apiFetch(`/produtos/produtoPorId/${id}`, { 
+        method: "GET" 
+    })
+}
+
+// Atualiza um produto pelo id
+export async function putProdutoPC(id, dados) {
+    return apiFetch(`/produtos/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(dados),
+    })
+}

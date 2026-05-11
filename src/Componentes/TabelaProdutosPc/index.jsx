@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import styles from "./tabelaConsultaProdutosPc.module.css"
 
 function TabelaConsultaProjetosPC({produtos}){
-    console.log(produtos)
     return (
         <div className={styles.tableWrapper}>
               <table className={styles.projTable}>
@@ -32,7 +31,8 @@ function TabelaConsultaProjetosPC({produtos}){
                         </td>
         
                       <td className={`${styles.projCell} ${styles.colAcao}`}>
-                          <Link to={`/admin/Produto/ConsultarPC/Editar/${projeto._id}`} className={styles.botaoLink}> 
+                        {console.log(projeto._id)}
+                          <Link to={`/admin/Produto/ConsultaPC/Editar/${projeto._id}`} className={styles.botaoLink}> 
                             Ver mais
                           </Link>
                       </td>
