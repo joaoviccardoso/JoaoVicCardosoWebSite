@@ -13,3 +13,10 @@ export async function getAllProdutosPC(){
         method: "GET",
     })
 }
+
+export async function postProdutosPC(dados){
+    return apiFetch("/produtos/criar", {
+        method: "POST",
+        body: JSON.stringify(dados),
+    })
+}

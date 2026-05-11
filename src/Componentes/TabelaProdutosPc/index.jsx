@@ -32,7 +32,7 @@ function TabelaConsultaProjetosPC({produtos}){
                         </td>
         
                       <td className={`${styles.projCell} ${styles.colAcao}`}>
-                          <Link to={`/admin/Cliente/ConsultarCliente/Editar/${projeto._id}`} className={styles.botaoLink}> 
+                          <Link to={`/admin/Produto/ConsultarPC/Editar/${projeto._id}`} className={styles.botaoLink}> 
                             Ver mais
                           </Link>
                       </td>

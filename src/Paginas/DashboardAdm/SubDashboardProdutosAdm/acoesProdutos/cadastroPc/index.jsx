@@ -6,6 +6,8 @@ import BotaoAction from "../../../../../Componentes/BotaoAction";
 import StatusSelect from "../../../../../Componentes/Select";
 import { validarFormularioCadastrarProduto } from "../../../../../Utils/validarCadastro";
 import { jwtDecode } from "jwt-decode";
+import { postProdutosPC } from "../../../../../services/produtosServices";
+import { getUserPorNome } from "../../../../../services/authServices";
 
 const STATUS_OPTIONS = [
   { value: "desenvolvimento", label: "Desenvolvimento" },
@@ -57,40 +59,17 @@ function AcaoCadastrarProdutoPc(){
             setCadastrarErro(erroParaAtualizar)
             return;
         }
-
-        const token = localStorage.getItem("token");
         
         try {
-            const response = await fetch("http://localhost:3000/produtos/criar", {
-                method: "POST",
-                headers: { 
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
-                },
-                body: JSON.stringify(form)
-            });
-            const data = await response.json();
-
-            if (!response.ok) {
-                setCadastrarErro(data.error || "Erro ao cadastrar produto");
-                return;
-            }
+            //chama a rota para fazer o cadastro passado o formulario
+            const cadastrado = await postProdutosPC(form)
 
             //limpa o form
-            setForm({
-                nomeProjeto: "",
-                status: "",
-                cliente: "",
-                dateEntrega: "",
-                clienteNome: "",
-                linkContrato: "",
-                linkDemo: "",
-                obser: "",
-            });
+            setForm({nomeProjeto: "",status: "",cliente: "",dateEntrega: "",clienteNome: "",linkContrato: "",linkDemo: "",obser: "",});
 
             //limpar erro 
             setCadastrarErro("")
-            alert(data.message)
+            alert(cadastrado.message)
         } catch (error) {
             alert(`Erro ao cadastrar produto ${error}`);
         }
@@ -98,18 +77,12 @@ function AcaoCadastrarProdutoPc(){
 
     async function buscarClientes(nome) {
         if (nome.length < 2) return; // só busca a partir de 2 letras
-
-        const token = localStorage.getItem("token");
-        
-        const res = await fetch(`http://localhost:3000/auth/buscar?nome=${nome}`, {
-                method: "GET",
-                headers: { 
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}` // ✅ envia o token
-                },
-            });;
-        const data = await res.json();
-        setClientesBuscados(data);
+        try{
+            const data = await getUserPorNome(nome);
+            setClientesBuscados(data);
+        } catch (error) {
+            alert(`Erro ao buscar cliente ${error}`);
+        }
     }
     
     return(

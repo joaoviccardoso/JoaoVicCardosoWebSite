@@ -99,6 +99,7 @@ function App() {
           <Route path="/admin/Produto/ConsultaMP" element={<PrivateRoute role="admin"><AcaoConsultaProdutoMp/></PrivateRoute>} />
           <Route path="/admin/Produto/CadastrarPC" element={<PrivateRoute role="admin"><AcaoCadastrarProdutoPc/></PrivateRoute>} />
           <Route path="/admin/Produto/ConsultaPC" element={<PrivateRoute role="admin"><AcaoConsultaPc/></PrivateRoute>} />
+          <Route path="/admin/Produto/ConsultaPC/Editar" element={<PrivateRoute role="admin"><AcaoCadastrarProdutoPc/></PrivateRoute>} />
           <Route path="/admin/Mensagem" element={<PrivateRoute role="admin"><Mensagens/></PrivateRoute>} />
         </Route >
         

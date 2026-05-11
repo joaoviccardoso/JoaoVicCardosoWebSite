@@ -22,6 +22,13 @@ export async function getUsuarioPorId(id) {
     })
 }
 
+//Pega usuario pelo nome digitado
+export async function getUserPorNome(nome){
+    return apiFetch(`/auth/buscar?nome=${nome}`, {
+        method: "GET",
+    })
+}
+
 export async function atualizarUsuario(dados, idExterno = null) {
     const id = idExterno || getIdDoToken()
     return apiFetch(`/auth/atualizarDados/${id}`, {
