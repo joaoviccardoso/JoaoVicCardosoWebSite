@@ -2,3 +2,17 @@
     background-color: var(--color-componente);
     border-radius: 12px;
 }
+
+.divTextoEhTitulo{
+    color: var(--cor-letraClara);
+}
+
+.divTextoEhTitulo h1{
+    font-family: var(--font-paraTextoChamativo);
+    font-size: var(--font-size-3xl);
+}
+
+.divTextoEhTitulo p{
+    font-size: var(--font-size-lg);
+    margin-bottom: 1rem;
+}

@@ -9,6 +9,8 @@ import { jwtDecode } from "jwt-decode";
 import { postProdutosPC, getProdutoPorId, putProdutoPC } from "../../../../../services/produtosServices";
 import { getUserPorNome } from "../../../../../services/authServices";
 import { useParams } from "react-router-dom";
+import ModalAviso from "../../../../../Componentes/ModalAviso";
+import useModalAviso from "../../../../../hooks/useModalAviso";
 
 const STATUS_OPTIONS = [
   { value: "desenvolvimento", label: "Desenvolvimento" },
@@ -30,6 +32,7 @@ const FORM_VAZIO = {
 }
 
 function AcaoCadastrarProdutoPc(){
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const { id } = useParams() // undefined na rota de cadastro, preenchido na de edição
     const modoEdicao = Boolean(id)
 
@@ -72,7 +75,7 @@ function AcaoCadastrarProdutoPc(){
                     obser: produto.obser || "",
                 })
             } catch (error) {
-                setCadastrarErro("Erro ao carregar produto para edição.")
+                abrirAviso("Erro ao carregar produto para edição.")
             } finally {
                 setCarregando(false)
             }
@@ -101,6 +104,7 @@ function AcaoCadastrarProdutoPc(){
             if (modoEdicao) {
                 // Chama PUT/PATCH para atualizar
                 resposta = await putProdutoPC(id, form)
+                abrirAviso("Produto atualizado")
             } else {
                 // Chama POST para criar
                 resposta = await postProdutosPC(form)
@@ -108,9 +112,9 @@ function AcaoCadastrarProdutoPc(){
             }
 
             setCadastrarErro("")
-            alert(resposta.message)
+            abrirAviso(resposta.message)
         } catch (error) {
-            setCadastrarErro(error.message || "Erro ao salvar produto")
+            abrirAviso(error.message)
         }
     }
 
@@ -120,7 +124,7 @@ function AcaoCadastrarProdutoPc(){
             const data = await getUserPorNome(nome);
             setClientesBuscados(data);
         } catch (error) {
-            alert(`Erro ao buscar cliente: ${error}`);
+            abrirAviso(`Erro ao buscar cliente: ${error}`);
         }
     }
 
@@ -128,7 +132,7 @@ function AcaoCadastrarProdutoPc(){
 
     return(
         <section className={CssAcaoProduto3.sectionCadastrarPC}>
-            <div>
+            <div className={CssAcaoProduto3.divTitulo}>
                 <h1>{modoEdicao ? "Editar Projeto" : `Bem vindo, ${userAdm.role}`}</h1>
                 <p>
                     {modoEdicao
@@ -206,6 +210,12 @@ function AcaoCadastrarProdutoPc(){
                 {/* Botão muda de texto conforme o modo */}
                 <BotaoAction child={modoEdicao ? "Atualizar" : "Salvar"} type="submit" />
             </form>
+
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
     )
 }

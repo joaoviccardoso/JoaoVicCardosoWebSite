@@ -30,8 +30,15 @@ export async function getProdutoPorId(id) {
 
 // Atualiza um produto pelo id
 export async function putProdutoPC(id, dados) {
-    return apiFetch(`/produtos/${id}`, {
+    return apiFetch(`/produtos/atualizar/${id}`, {
         method: "PUT",
         body: JSON.stringify(dados),
+    })
+}
+
+// deleta um produto pelo id
+export async function deleteProdutoPorId(id) {
+    return apiFetch(`/produtos/deletar/${id}`, { 
+        method: "DELETE" 
     })
 }

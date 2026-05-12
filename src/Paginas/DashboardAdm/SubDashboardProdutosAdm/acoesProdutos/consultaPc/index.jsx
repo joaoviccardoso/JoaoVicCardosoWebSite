@@ -8,6 +8,10 @@ function AcaoConsultaPc(){
     const [userAdm, setUserAdm] = useState({});
     const [allProjetosPC, setProjetosPc] = useState([])
 
+    const handleDeletar = (id) => {
+        setProjetosPc(prev => prev.filter(p => p._id !== id));
+    };
+
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) return;
@@ -44,6 +48,7 @@ function AcaoConsultaPc(){
             <div className={CssAcaoProduto4.divTabelaConsutaProduto}>
                 <TabelaConsultaProjetosPC
                     produtos={allProjetosPC}
+                    onDeletar={handleDeletar}
                 />
             </div>
         </section>
