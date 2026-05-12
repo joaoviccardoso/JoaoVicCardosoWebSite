@@ -28,6 +28,13 @@ export async function getProdutoPorId(id) {
     })
 }
 
+// Busca  produto pelo id do cliente
+export async function getProdutoPorIdCliente(id) {
+    return apiFetch(`/produtos/cliente/${id}`, { 
+        method: "GET" 
+    })
+}
+
 // Atualiza um produto pelo id
 export async function putProdutoPC(id, dados) {
     return apiFetch(`/produtos/atualizar/${id}`, {

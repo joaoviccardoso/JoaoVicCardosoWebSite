@@ -6,8 +6,11 @@ import ImgLink from "../../../Componentes/imgLink";
 import BotaoAction from "../../../Componentes/BotaoAction";
 import voltarPagina from "../../../assets/voltarPagina.svg"
 import { validarFormularioCadastro } from "../../../Utils/validarCadastro.js";
+import ModalAviso from "../../../Componentes/ModalAviso/index.jsx";
+import useModalAviso from "../../../hooks/useModalAviso.js";
 
 function TelaCadastro(){
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const [erroDeCadastro, setErroDeCadastro] = useState("")
 
     const [form, setForm] = useState({
@@ -56,12 +59,12 @@ function TelaCadastro(){
         const data = await response.json();
 
         if(!response.ok){
-            setErroDeCadastro(data.message)
+            abrirAviso(data.message)
             return
         } 
 
         if(response.ok){
-            alert("sucesso em cadastrar no sistema")
+            abrirAviso("sucesso em cadastrar no sistema")
         }
 
         setForm({
@@ -151,6 +154,12 @@ function TelaCadastro(){
                     </div>
                 </form>
             </section>
+
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
     )
 }

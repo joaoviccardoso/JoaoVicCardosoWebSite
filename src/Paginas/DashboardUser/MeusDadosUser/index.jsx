@@ -5,9 +5,12 @@ import { atualizarUsuario } from "../../../services/authServices";
 import CssMeusDados from "./meusDadosUser.module.css"
 import Input from "../../../Componentes/Input";
 import BotaoAction from "../../../Componentes/BotaoAction";
+import useModalAviso from "../../../hooks/useModalAviso";
+import ModalAviso from "../../../Componentes/ModalAviso";
 
 
 function MeusDadosUser(){
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const [erroParaAtualizar, setErroParaAtulizar] = useState("")
     const [userUser, setUserUser] = useState({})
     const [form, setForm] = useState({
@@ -64,9 +67,9 @@ function MeusDadosUser(){
                 cep: "", endereco: "", numeroCasa: "", telefone: "",
             })
             setErroParaAtulizar("")
-            alert(data.message)
+            abrirAviso(data.message)
         } catch (err) {
-            alert(err.message)
+            abrirAviso(err.message)
         }
     }
 
@@ -149,7 +152,13 @@ function MeusDadosUser(){
                 {erroParaAtualizar && <p className={CssMeusDados.erro}>{erroParaAtualizar}</p>}
                 <BotaoAction child="Salvar" type="submit" />
             </form>
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
+
     )
 }
 
