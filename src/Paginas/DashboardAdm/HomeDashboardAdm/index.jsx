@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react"
 import CssDashborardAdm from "./dashborardAdm.module.css"
-
 import Breadcrumb from "../../../Componentes/Breadcrumb"
 import BotaoDash from "../../../Componentes/BotaoDashBoard"
 import TabelaProjetos from "../../../Componentes/TabelaProjetos"
 import { pegarUser } from "../../../Utils/pegarUser"
 import { getAllProdutosPC } from "../../../services/produtosServices"
+import { logout } from "../../../services/authServices"
+import { useNavigate } from "react-router-dom"
+
 
 function HomeDashborardAdm(){
+    const navigate = useNavigate() 
     const [userAdm, setUserAdm] = useState({})
     const [projetosAll, setProjetosAll] = useState([])
 
@@ -27,6 +30,11 @@ function HomeDashborardAdm(){
         
         fetchData();
     }, [])
+
+    function handleSair(navigateFn) {
+        logout()            // apaga o token
+        navigateFn("/")      // manda para a home (ou /Login)
+    }
 
     return(
         <section className={CssDashborardAdm.homeDashborardAdm}>
@@ -58,7 +66,8 @@ function HomeDashborardAdm(){
                                 />
                                 <BotaoDash
                                     child="Sair"
-                                    to="/EmDensenvolvimento"
+                                    to="/"
+                                    onClick={handleSair}
                                 />
                             </div>
                             

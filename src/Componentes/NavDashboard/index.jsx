@@ -1,6 +1,7 @@
 import CssNavDash from "./navDashboard.module.css"
 import LinkComIcone from "../LinkComIcone"
 import logEscuro from "../../assets/logoEscuroPequeno.svg"
+import { logout } from "../../services/authServices";
 
 
 function NavDash({ acoes }){
@@ -32,6 +33,10 @@ function NavDash({ acoes }){
                             to={item.to}
                             imgLinkLogo={item.icon}
                             child={item.acao}
+                            onClick={(navigate) => {
+                                logout()
+                                navigate("/")
+                            }}
                         />
                     ))}
                 </li>

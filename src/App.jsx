@@ -38,7 +38,7 @@ const acoesCliente = [
   { acao: "Projetos Contratados", to: "/dashboard/ProjetosContratados", grupo: "top", icon: logoProjetos},
   { acao: "Meus dados", to: "/dashboard/MeusDados", grupo: "top", icon: logoClientes},
   { acao: "Mensagens", to: "/dashboard/EmDensenvolvimento", grupo: "top", icon: logoMensagem},
-  { acao: "Sair", to: "/logout", grupo: "bottom", icon: logoSair},
+  { acao: "Sair", to: "/", grupo: "bottom", icon: logoSair},
 ];
 
 const acoesAdm = [
@@ -50,7 +50,7 @@ const acoesAdm = [
 
   // grupo: "bottom"
   { acao: "Configuração", to: "/admin/EmDensenvolvimento", grupo: "bottom", icon: logoConfiguracao },
-  { acao: "Sair",         to: "/logout",       grupo: "bottom", icon: logoSair         }
+  { acao: "Sair",         to: "/",       grupo: "bottom", icon: logoSair         }
 ]
 
 function App() {

@@ -5,7 +5,7 @@ function TabelaProjetos({projetos, onVerMais}){
         // Substitua pela sua lógica: abrir modal, navegar para rota, etc.
         alert("Ver mais: " + nome);
     }
-    console.log(projetos)
+    
     return (
         <div className={styles.tableWrapper}>
               <table className={styles.projTable}>
