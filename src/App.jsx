@@ -37,7 +37,7 @@ const acoesCliente = [
   { acao: "Dashboard", to: "/dashboard", grupo: "top", icon: LogoHome},
   { acao: "Projetos Contratados", to: "/dashboard/ProjetosContratados", grupo: "top", icon: logoProjetos},
   { acao: "Meus dados", to: "/dashboard/MeusDados", grupo: "top", icon: logoClientes},
-  { acao: "Mensagens", to: "/dashboard/Mensagens", grupo: "top", icon: logoMensagem},
+  { acao: "Mensagens", to: "/dashboard/EmDensenvolvimento", grupo: "top", icon: logoMensagem},
   { acao: "Sair", to: "/logout", grupo: "bottom", icon: logoSair},
 ];
 
@@ -46,10 +46,10 @@ const acoesAdm = [
   { acao: "Dashboard",  to: "/admin",  grupo: "top",    icon: LogoHome   },
   { acao: "Clientes",  to: "/admin/Cliente",  grupo: "top",    icon: logoClientes   },
   { acao: "Produtos",  to: "/admin/Produto",  grupo: "top",    icon: logoProjetos   },
-  { acao: "Mensagens", to: "/admin/Mensagem", grupo: "top",    icon: logoMensagem   },
+  { acao: "Mensagens", to: "/admin/EmDensenvolvimento", grupo: "top",    icon: logoMensagem   },
 
   // grupo: "bottom"
-  { acao: "Configuração", to: "/admin/config", grupo: "bottom", icon: logoConfiguracao },
+  { acao: "Configuração", to: "/admin/EmDensenvolvimento", grupo: "bottom", icon: logoConfiguracao },
   { acao: "Sair",         to: "/logout",       grupo: "bottom", icon: logoSair         }
 ]
 
@@ -79,7 +79,7 @@ function App() {
           <Route path="/dashboard" element={<PrivateRoute><HomeDashborardUser /></PrivateRoute>} />
           <Route path="/dashboard/MeusDados" element={<PrivateRoute><MeusDadosUser /></PrivateRoute>} />
           <Route path="/dashboard/ProjetosContratados" element={<PrivateRoute><MeusProjetosUser /></PrivateRoute>} />
-          <Route path="/dashboard/Mensagens" element={<PrivateRoute><MensagensUser /></PrivateRoute>} />
+          <Route path="/dashboard/EmDensenvolvimento" element={<PrivateRoute><PaginaEmDesenvilvimento/>{/*<MensagensUser />*/}</PrivateRoute>} />
         </Route>
 
         <Route 
@@ -94,12 +94,12 @@ function App() {
           <Route path="/admin/Cliente/ConsultarCliente" element={<PrivateRoute role="admin"><AcaoConsultaCliente /></PrivateRoute>} />
           <Route path="/admin/Cliente/ConsultarCliente/Editar/:id" element={<PrivateRoute role="admin"><AcaoEditarCliente /></PrivateRoute>} />
           <Route path="/admin/Produto" element={<PrivateRoute role="admin"><SubDashAdmProdutos/></PrivateRoute>} />
-          <Route path="/admin/Produto/CadastrarMP/" element={<PrivateRoute role="admin"><AcaoCadastroProdutoMp/></PrivateRoute>} />
-          <Route path="/admin/Produto/ConsultaMP" element={<PrivateRoute role="admin"><AcaoConsultaProdutoMp/></PrivateRoute>} />
+          <Route path="/admin/Produto/EmDensenvolvimento" element={<PrivateRoute role="admin"><PaginaEmDesenvilvimento/>{/*<AcaoCadastroProdutoMp/>*/}</PrivateRoute>} />
+          <Route path="/admin/Produto/EmDensenvolvimento" element={<PrivateRoute role="admin"><PaginaEmDesenvilvimento/>{/*<AcaoConsultaProdutoMp/>*/}</PrivateRoute>} />
           <Route path="/admin/Produto/CadastrarPC" element={<PrivateRoute role="admin"><AcaoCadastrarProdutoPc/></PrivateRoute>} />
           <Route path="/admin/Produto/ConsultaPC" element={<PrivateRoute role="admin"><AcaoConsultaPc/></PrivateRoute>} />
           <Route path="/admin/Produto/ConsultaPC/Editar/:id" element={<PrivateRoute role="admin"><AcaoCadastrarProdutoPc/></PrivateRoute>} />
-          <Route path="/admin/Mensagem" element={<PrivateRoute role="admin"><Mensagens/></PrivateRoute>} />
+          <Route path="/admin/EmDensenvolvimento" element={<PrivateRoute role="admin"><PaginaEmDesenvilvimento/>{/*<Mensagens/>*/}</PrivateRoute>} />
         </Route >
         
     </Routes>

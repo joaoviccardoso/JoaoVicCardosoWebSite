@@ -42,7 +42,7 @@ function HomeDashborardAdm(){
                             />
                             <BotaoDash
                                 child="Mensagem"
-                                to="/admin/Mensagem"
+                                to="/admin/EmDensenvolvimento"
                             />
                             <BotaoDash
                                 child="Projetos"
@@ -54,7 +54,7 @@ function HomeDashborardAdm(){
                             <div>
                                 <BotaoDash
                                     child="Configuração"
-                                    to="/EmDensenvolvimento"
+                                    to="/admin/EmDensenvolvimento"
                                 />
                                 <BotaoDash
                                     child="Sair"

@@ -31,7 +31,7 @@ function HomeDashborardUser(){
                     />
                     <BotaoDash
                         child="Mensagens"
-                        to="/dashboard/Mensagens"
+                        to="/dashboard/EmDensenvolvimento"
                     />
                 </div>
 
