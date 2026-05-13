@@ -1,12 +1,10 @@
 import CssBemVindo from "./bemVindo.module.css"
 import ImgLink from "../imgLink"
 import imgPaginaEmConstrucao from "../../assets/PaginaEmConstrucao.svg"
-import imgLogoEscuro from "../../assets/logoEscuroPequeno.svg"
 
 function BemVindo({titulo, texto}){
     return(
         <section className={CssBemVindo.sectionBemVindo}>
-            <img src={imgLogoEscuro} alt="Logo da marca em formado escuro" />
             <div>
                 <div>
                     <h1>{titulo}</h1>

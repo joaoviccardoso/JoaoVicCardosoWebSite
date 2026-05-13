@@ -2,6 +2,7 @@
     align-items: center;
     display: flex;
     width: 100vw;
+    padding: 4rem 10rem;
 }
 
 .secaoFormularioCadastro{
@@ -45,14 +46,40 @@
     color: var(--vermelho-erro);
 }
 
+@media(max-width: 1260px){
+    .secaoFormularioCadastro{ 
+        padding: 0 2rem;
+    }
+}
+
 @media(max-width: 1100px){
     .secaoTelaCadastro{
         justify-content: center;
     }
 }
 
+@media(max-width: 1100px){
+    .secaoTelaCadastro{
+        padding: 4rem;
+    }   
+}
+
 @media(max-width: 540px){
+    .secaoTelaCadastro{
+        padding: 1rem;
+    }   
+
     .secaoFormularioCadastro{
         padding: 2rem 1rem;
+    }
+}
+
+@media(max-width: 370px){
+    .secaoFormularioCadastro h3{
+        font-size: var(--font-size-xl);
+    }
+
+    .secaoFormularioCadastro p {
+        font-size: var(--font-size-md);
     }
 }

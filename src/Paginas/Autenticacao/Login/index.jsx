@@ -82,10 +82,6 @@ function TelaLogin(){
                 texto="Faça login para continuar e aproveitar todos os recursos disponíveis na plataforma."
             />
             <section className={CssLogin.containerFormularioLogin}>
-                <ImgLink
-                    to="/"
-                    srcImg={voltarPagina}
-                />
                 <form onSubmit={handleSubmitLogin} className={CssLogin.formLogin}>
                     <div className={CssLogin.containerTexto}>
                         <h3>Bem-vindo de volta</h3>

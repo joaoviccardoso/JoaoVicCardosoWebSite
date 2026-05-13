@@ -65,10 +65,9 @@ function App() {
           <Route path="/Servicos" element={<Servicos/>}/>
           <Route path="/SobreMim" element={<SobreMim/>}/>
           <Route path="/EmDensenvolvimento" element={<PaginaEmDesenvilvimento/>}/>
+          <Route path="/Login" element={<Login/>}/>
+          <Route path="/Cadastro" element={<Cadastro/>}/>
         </Route>
-
-        <Route path="/Login" element={<Login/>}/>
-        <Route path="/Cadastro" element={<Cadastro/>}/>
 
         <Route 
           element={

@@ -5,6 +5,8 @@
     height: 100px;
     margin: 1.5rem 0 0 0;
     background: #000;
+    position: relative;
+    z-index: 10;
 }
 
 .ul{

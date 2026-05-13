@@ -4,7 +4,6 @@ import BemVindo from "../../../Componentes/MensagemBemVindo"
 import Input from "../../../Componentes/Input";
 import ImgLink from "../../../Componentes/imgLink";
 import BotaoAction from "../../../Componentes/BotaoAction";
-import voltarPagina from "../../../assets/voltarPagina.svg"
 import { validarFormularioCadastro } from "../../../Utils/validarCadastro.js";
 import ModalAviso from "../../../Componentes/ModalAviso/index.jsx";
 import useModalAviso from "../../../hooks/useModalAviso.js";
@@ -83,10 +82,6 @@ function TelaCadastro(){
                 texto="Crie sua conta e tenha acesso a ferramentas pensadas para facilitar sua rotina e organizar tudo em um só lugar."
             />
             <section className={CssCadastro.secaoFormularioCadastro}>
-                <ImgLink
-                    to="/"
-                    srcImg={voltarPagina}
-                />
                 <form onSubmit={handleSubmitLogin} className={CssCadastro.formCadastro}>
                     <h3>Crie sua conta pessoal</h3>
                     <p>Será enviado (solicitado) uma confirmação do cadastro por e-mail.</p>
