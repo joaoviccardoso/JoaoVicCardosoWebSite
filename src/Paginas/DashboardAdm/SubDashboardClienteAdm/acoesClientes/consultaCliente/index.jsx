@@ -24,6 +24,7 @@ function AcaoConsultaCliente(){
     useEffect(()=>{
         async function fetchClientes(){
             try{
+                //pega os dados de todos os clientes
                 const data = await getAllUsuarios()
                 setCliente(data)
             } catch(error){

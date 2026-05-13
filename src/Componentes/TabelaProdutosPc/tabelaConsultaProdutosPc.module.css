@@ -46,7 +46,7 @@
 }
  
 .colProjeto {
-  min-width: auto;
+  width: auto;
 }
  
 .colStatus {
@@ -142,4 +142,20 @@
   display: flex;
   justify-content: center;
   gap: .5rem;
+  
+}
+
+@media(max-width: 800px){
+    .clietLabel {
+        font-size: var(--font-size-md);
+    }
+    
+    .clietName {
+        font-size: var(--font-size-sm);
+    }
+
+    .colBotoes{
+      min-height: 100px;
+      padding: 2rem;
+    }
 }

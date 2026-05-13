@@ -23,6 +23,7 @@ const STATUS_OPTIONS = [
 const FORM_VAZIO = {
     nomeProjeto: "",
     status: "",
+    statusCor: "",
     cliente: "",
     clienteNome: "",
     dateEntrega: "",
@@ -102,6 +103,7 @@ function AcaoCadastrarProdutoPc(){
             let resposta;
 
             if (modoEdicao) {
+                console.log(form)
                 // Chama PUT/PATCH para atualizar
                 resposta = await putProdutoPC(id, form)
                 abrirAviso("Produto atualizado")

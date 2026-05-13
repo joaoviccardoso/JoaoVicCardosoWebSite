@@ -86,61 +86,15 @@
 
 @media(max-width: 800px){
     .clietLabel {
+        font-size: var(--font-size-md);
+    }
+    
+    .clietName {
         font-size: var(--font-size-sm);
     }
-    
-    .clietName {
-        font-size: var(--font-size-xs);
-    }
 }
 
-@media(max-width: 700px){
-    .verMaisBtn {
-        padding: 8px 16px;
-        font-size: var(--font-size-xs);
-    }
 
-    .imgCliente{
-        display: none;
 
-    }
-}
 
-@media(max-width: 580px){
-    .verMaisBtn {
-        padding: 5px 8px;
-        font-size: var(--font-size-xs);
-    }
-
-    .imgCliente{
-        display: none;
-    }
-
-    .colTelefone{
-        display: none;
-    }
-
-    .colImgCliente{
-        padding: 0;
-    }
-
-    .projCell {
-        padding: 6px 8px;
-        box-sizing: border-box;
-    }
-}
-
-@media(max-width: 370px){
-    .clietLabel {
-        font-size: 12px;
-    }
-    
-    .clietName {
-        font-size: 8px;
-    }
-
-    .verMaisBtn {
-        font-size: 12px;
-    }
-}
 
