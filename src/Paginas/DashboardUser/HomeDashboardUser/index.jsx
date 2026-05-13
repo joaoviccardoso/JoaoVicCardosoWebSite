@@ -3,14 +3,21 @@ import CssDashborardUser from "./dashborardUser.module.css"
 import { pegarUser } from "../../../Utils/pegarUser"
 import BotaoDash from "../../../Componentes/BotaoDashBoard"
 import TabelaProjetos from "../../../Componentes/TabelaProjetos"
+import { logout } from "../../../services/authServices"
+import { useNavigate } from "react-router-dom"
 
 function HomeDashborardUser(){
+    const navigate = useNavigate() 
     const [userUser, setUserUser] = useState({})
     
     useEffect(() => {
         setUserUser(pegarUser())
     }, [])
     
+    function handleSair(navigateFn) {
+            logout()            // apaga o token
+            navigateFn("/")      // manda para a home (ou /Login)
+        }
 
     return(
         <section className={CssDashborardUser.sectionDashboardUser}>
@@ -39,7 +46,8 @@ function HomeDashborardUser(){
                     <div className={CssDashborardUser.divBotaoAcoes2}>
                         <BotaoDash
                             child="Sair"
-                            to="/EmDensenvolvimento"
+                            to="/"
+                            onClick={handleSair}
                         />
                     </div>
                 </div>
