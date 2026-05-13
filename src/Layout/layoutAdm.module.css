@@ -20,12 +20,12 @@
 .sectionLatoutAdm main{
     grid-area: main;
     margin: 1rem 4rem;
+    overflow-y: hidden;
 }
 
 @media(max-width: 1750px){
     .sectionLatoutAdm main{
         margin: 1rem 2rem;
-        overflow-y: hidden;
         overflow-x: hidden;
     } 
 }

@@ -5,6 +5,7 @@ import Breadcrumb from "../../../Componentes/Breadcrumb"
 import BotaoDash from "../../../Componentes/BotaoDashBoard"
 import TabelaProjetos from "../../../Componentes/TabelaProjetos"
 import { pegarUser } from "../../../Utils/pegarUser"
+import { getAllProdutosPC } from "../../../services/produtosServices"
 
 function HomeDashborardAdm(){
     const [userAdm, setUserAdm] = useState({})
@@ -17,10 +18,8 @@ function HomeDashborardAdm(){
     useEffect(()  => {
         async function fetchData(){
             try{
-                const respostas = await fetch("http://localhost:3000/produtos/todos");
-                const data = await respostas.json()
-               
-                setProjetosAll(data)
+                const allProdutos = await getAllProdutosPC()
+                setProjetosAll(allProdutos)
             } catch (error){
                 alert("Erro ao buscar dados:", error);
             }
@@ -28,8 +27,6 @@ function HomeDashborardAdm(){
         
         fetchData();
     }, [])
-
-    
 
     return(
         <section className={CssDashborardAdm.homeDashborardAdm}>
@@ -45,7 +42,7 @@ function HomeDashborardAdm(){
                             />
                             <BotaoDash
                                 child="Mensagem"
-                                to="/admin/Mensagem"
+                                to="/admin/EmDensenvolvimento"
                             />
                             <BotaoDash
                                 child="Projetos"
@@ -57,7 +54,7 @@ function HomeDashborardAdm(){
                             <div>
                                 <BotaoDash
                                     child="Configuração"
-                                    to="/EmDensenvolvimento"
+                                    to="/admin/EmDensenvolvimento"
                                 />
                                 <BotaoDash
                                     child="Sair"

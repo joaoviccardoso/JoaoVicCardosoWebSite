@@ -81,7 +81,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 }
 
-@media(max-width: 550px){
+@media(max-width: 560px){
     .containerInput{
         width: 100%;
     }
@@ -92,5 +92,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
     .inputBasic{
         font-size: var(--font-size-sm);
+    }
+
+    .containerInput label{
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media(max-width: 460px){
+    .containerInput label{
+        font-size: var(--font-size-md);
+    }
+
+    .containerInput input::placeholder{
+        font-size: var(--font-size-xs);
+    }
+
+    .inputBasic{
+        font-size: var(--font-size-xs);
     }
 }

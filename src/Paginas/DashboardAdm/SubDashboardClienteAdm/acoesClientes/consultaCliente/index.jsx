@@ -3,9 +3,12 @@ import { jwtDecode } from "jwt-decode"
 import { getAllUsuarios } from "../../../../../services/authServices"
 import CssAcao2 from "./consultaCliente.module.css"
 import TabelaConsultaCliente from "../../../../../Componentes/TabelaConsultaCliente"
+import useModalAviso from "../../../../../hooks/useModalAviso"
+import ModalAviso from "../../../../../Componentes/ModalAviso"
 
 
 function AcaoConsultaCliente(){
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const [userAdm, setUserAdm] = useState({})
     const [allCliente, setCliente] = useState([])
 
@@ -21,10 +24,11 @@ function AcaoConsultaCliente(){
     useEffect(()=>{
         async function fetchClientes(){
             try{
+                //pega os dados de todos os clientes
                 const data = await getAllUsuarios()
                 setCliente(data)
             } catch(error){
-                alert(`erro para pegar os produtos do cliente ${error}`)
+                abrirAviso(`erro para pegar os produtos do cliente ${error}`)
             }
         }
 
@@ -47,6 +51,12 @@ function AcaoConsultaCliente(){
                     clientes={allCliente}
                 />
             </div>
+
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
     )
 }

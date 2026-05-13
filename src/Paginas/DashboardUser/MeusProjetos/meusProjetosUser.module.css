@@ -30,6 +30,7 @@
     border-radius: 12px;
     background-color: var(--color-componente);
     width: 55%;
+    padding: 1rem;
 }
 
 .detalhesProjetos{

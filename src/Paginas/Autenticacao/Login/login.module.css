@@ -1,13 +1,18 @@
 .sectionLogin{
     display: flex;
-    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    position: relative;
+    padding: 4rem 10rem;
 }
 
 .containerFormularioLogin{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 6rem;
+    width: 50%;
+    padding: 3rem;
 }
 
 .containerFormularioLogin a{
@@ -19,9 +24,8 @@
     flex-direction: column;
     background: var(--color-componente);
     border-radius: 12px;
-    margin-top: 3rem;
     padding: 2rem;
-    width: 70%;
+    width: 100%;
 }
 
 .containerTexto{
@@ -54,18 +58,50 @@
   margin-top: 2px;
 }
 
-@media(max-width: 800px){
+@media(max-width: 1100px){
     .containerFormularioLogin{
         padding: 3rem;
+        width: 100%;
     }
 
     .formLogin{
         width: 100%;
     }
+
+    .sectionLogin{
+        padding: 1rem 4rem;
+    }
 }
 
-@media(max-width: 410px){
+@media(max-width: 600px){
     .containerFormularioLogin{
         padding: 1rem;
     }
+
+    .sectionLogin{
+        padding: 1rem;
+    }
 }
+
+@media(max-width: 430px){
+    .containerTexto h3{
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-md);
+    }  
+}
+
+@media(max-width: 310px){
+    .containerTexto h3{
+        font-size: var(--font-size-xl);
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-md);
+    }  
+
+
+}
+

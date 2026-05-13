@@ -1,15 +1,24 @@
 import CssEmDev from "./EmDesenvilvimento.module.css"
 
-function PaginaEmDesenvilvimento(){
+function PaginaEmDesenvolvimento(){
     return(
-        <section className={CssEmDev.sectionNaoEstaPronto}>
-            <h1>Estamos trabalhando nessa funcionalidade! <br/>
+        <section className={CssEmDev.container}>
+            <div className={CssEmDev.card}>
+                <h1>🚧 Em desenvolvimento</h1>
 
-            Ela ainda não está disponível porque o projeto está em fase de demonstração, mas estamos evoluindo tudo com muito cuidado para entregar a melhor experiência possível.<br/>
+                <p>
+                    Essa funcionalidade ainda não está disponível.
+                </p>
 
-            Em breve você já poderá utilizar essa parte</h1>
+                <p>
+                    O projeto está em fase de demonstração e estamos trabalhando
+                    para entregar a melhor experiência possível.
+                </p>
+
+                <span>Em breve você poderá utilizar essa parte 🚀</span>
+            </div>
         </section>
     )
 }
 
-export default PaginaEmDesenvilvimento
+export default PaginaEmDesenvolvimento

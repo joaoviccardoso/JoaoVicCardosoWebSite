@@ -11,13 +11,27 @@ function OffCanvas(){
     useEffect(() => {
         const offcanvasElement = document.getElementById('offcanvasExample')
 
-        if (offcanvasElement) {
-            const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvasElement)
-            
-            if (bsOffcanvas) {
-                bsOffcanvas.hide()
-            }
+        if (!offcanvasElement) return
+
+        const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvasElement)
+
+        if (!bsOffcanvas) return
+
+        // Aguarda o offcanvas fechar completamente antes de limpar o backdrop
+        const handleHidden = () => {
+            document.querySelectorAll('.offcanvas-backdrop').forEach(el => el.remove())
+            document.body.classList.remove('modal-open', 'offcanvas-open')
+            document.body.style.overflow = ''
+            document.body.style.paddingRight = ''
         }
+
+        offcanvasElement.addEventListener('hidden.bs.offcanvas', handleHidden)
+        bsOffcanvas.hide()
+
+        return () => {
+            offcanvasElement.removeEventListener('hidden.bs.offcanvas', handleHidden)
+        }
+
     }, [location])
     
     return(

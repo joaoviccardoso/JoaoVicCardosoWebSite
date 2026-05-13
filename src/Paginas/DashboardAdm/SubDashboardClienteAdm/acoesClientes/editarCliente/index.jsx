@@ -7,6 +7,8 @@ import BotaoAction from "../../../../../Componentes/BotaoAction"
 import StatusSelect from "../../../../../Componentes/Select"
 import { validarFormularioAtualizarDados } from "../../../../../Utils/validarCadastro"
 import { atualizarUsuario, getUsuarioPorId } from "../../../../../services/authServices"
+import useModalAviso from "../../../../../hooks/useModalAviso"
+import ModalAviso from "../../../../../Componentes/ModalAviso"
 
 const STATUS_OPTIONS = [
   { value: "admin", label: "Adimin" },
@@ -15,6 +17,7 @@ const STATUS_OPTIONS = [
 ]
 
 function AcaoEditarCliente(){
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const { id } = useParams()
     const [clienteAtual, setClienteAtual] = useState({})
     const [erroParaAtualizar, setErroParaAtulizar] = useState("")
@@ -79,9 +82,9 @@ function AcaoEditarCliente(){
                     role: "",
                 })
                 setErroParaAtulizar("")
-                alert(data.message)
+                abrirAviso(data.message)
             } catch (err) {
-                alert(err.message)
+                abrirAviso(err.message)
             }
         }
     
@@ -91,7 +94,7 @@ function AcaoEditarCliente(){
                 const data = await getUsuarioPorId(id)
                 setClienteAtual(data)
             } catch (error) {
-                alert(`Erro ao buscar cliente: ${error}`)
+                abrirAviso(`Erro ao buscar cliente: ${error}`)
             }
         }
 
@@ -188,6 +191,11 @@ function AcaoEditarCliente(){
                 <BotaoAction child="Salvar" type="submit" />
             </form>
 
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
     )
 }

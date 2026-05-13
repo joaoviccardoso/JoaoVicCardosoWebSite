@@ -2,8 +2,11 @@ import { useState, useEffect } from "react"
 import CssProjetosUser from "./meusProjetosUser.module.css"
 import { pegarUser } from "../../../Utils/pegarUser"
 import TabelaProjetos from "../../../Componentes/TabelaProjetos"
+import useModalAviso from "../../../hooks/useModalAviso";
+import ModalAviso from "../../../Componentes/ModalAviso";
 
 function MeusProjetosUser(){
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const [userUser, setUserUser] = useState({})
     const [produtoUser, setProdutoUser] = useState([])
     const [projetoSelecionado, setProjetoSelecionado] = useState(null)
@@ -12,13 +15,20 @@ function MeusProjetosUser(){
         setUserUser(pegarUser())
     }, [])
 
+    const token = localStorage.getItem("token")
+
     useEffect(()=>{
 
         if (!userUser._id) return;
 
         async function getProdutosClientes(){
             try{
-                const resposta = await fetch(`http://localhost:3000/produtos/cliente/${userUser._id}`)
+                const resposta = await fetch(`http://localhost:3000/produtos/cliente/${userUser._id}`,{
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
 
                 if (!resposta.ok) {
                     setProdutoUser([]) // ✅ Sem projetos, array vazio
@@ -28,7 +38,7 @@ function MeusProjetosUser(){
                 const data = await resposta.json()
                 setProdutoUser(data)
             } catch(error){
-                alert(`erro para pegar os produtos do cliente ${error}`)
+                abrirAviso(`erro para pegar os produtos do cliente ${error}`)
             }
         }
         getProdutosClientes();
@@ -47,10 +57,8 @@ function MeusProjetosUser(){
 
             <section className={CssProjetosUser.sectionDadosDoProjetoCliente}>
                 <div className={CssProjetosUser.tabelaProjetosClientes}>
-                    <TabelaProjetos
-                        projetos={produtoUser}
-                        onVerMais={setProjetoSelecionado}
-                    />
+                    {console.log(produtoUser.length)}
+                    {produtoUser.length == 0 ? "Vamos começar um projeto?" : <TabelaProjetos projetos={produtoUser} onVerMais={setProjetoSelecionado}/>}
                 </div>
 
                 <div className={CssProjetosUser.detalhesProjetos}>
@@ -83,7 +91,11 @@ function MeusProjetosUser(){
                     )}
                 </div>
             </section>
-            
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
     )
 }

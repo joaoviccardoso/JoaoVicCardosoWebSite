@@ -31,16 +31,12 @@ function HomeDashborardUser(){
                     />
                     <BotaoDash
                         child="Mensagens"
-                        to="/dashboard/Mensagens"
+                        to="/dashboard/EmDensenvolvimento"
                     />
                 </div>
 
                 <div className={CssDashborardUser.divContainerBotaoEhTabela}> 
                     <div className={CssDashborardUser.divBotaoAcoes2}>
-                        <BotaoDash
-                            child="Configuração"
-                            to="/EmDensenvolvimento"
-                        />
                         <BotaoDash
                             child="Sair"
                             to="/EmDensenvolvimento"

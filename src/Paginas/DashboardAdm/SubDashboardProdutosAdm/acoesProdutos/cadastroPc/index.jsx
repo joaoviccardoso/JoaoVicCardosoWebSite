@@ -6,6 +6,11 @@ import BotaoAction from "../../../../../Componentes/BotaoAction";
 import StatusSelect from "../../../../../Componentes/Select";
 import { validarFormularioCadastrarProduto } from "../../../../../Utils/validarCadastro";
 import { jwtDecode } from "jwt-decode";
+import { postProdutosPC, getProdutoPorId, putProdutoPC } from "../../../../../services/produtosServices";
+import { getUserPorNome } from "../../../../../services/authServices";
+import { useParams } from "react-router-dom";
+import ModalAviso from "../../../../../Componentes/ModalAviso";
+import useModalAviso from "../../../../../hooks/useModalAviso";
 
 const STATUS_OPTIONS = [
   { value: "desenvolvimento", label: "Desenvolvimento" },
@@ -15,108 +20,127 @@ const STATUS_OPTIONS = [
   { value: "pausado", label: "Pausado" },
 ]
 
+const FORM_VAZIO = {
+    nomeProjeto: "",
+    status: "",
+    statusCor: "",
+    cliente: "",
+    clienteNome: "",
+    dateEntrega: "",
+    linkContrato: "",
+    linkDemo: "",
+    obser: "",
+}
+
 function AcaoCadastrarProdutoPc(){
-    const [erroParaCadastrarPC,  setCadastrarErro] = useState("")
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
+    const { id } = useParams() // undefined na rota de cadastro, preenchido na de edição
+    const modoEdicao = Boolean(id)
+
+    const [erroParaCadastrarPC, setCadastrarErro] = useState("")
     const [userAdm, setUserAdm] = useState({})
     const [clientesBuscados, setClientesBuscados] = useState([]);
-    const [form, setForm] = useState({
-        nomeProjeto: "",
-        status: "",
-        cliente: "",    // ← guarda o _id
-        clienteNome: "",  // ← guarda só o nome para exibir no input
-        dateEntrega: "",
-        linkContrato: "",
-        linkDemo: "",
-        obser: "",
-    });
+    const [carregando, setCarregando] = useState(false)
+    const [form, setForm] = useState(FORM_VAZIO);
 
+    // Pega dados do token
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) return;
-        
-        // pega só o necessário do token
         const decoded = jwtDecode(token);
-        setUserAdm(decoded); // decoded tem { id, role }
+        setUserAdm(decoded);
     }, []);
-    
+
+    // Se tiver id, busca o produto e preenche o form
+    useEffect(() => {
+        if (!modoEdicao) return;
+
+        async function carregarProduto() {
+            setCarregando(true)
+            try {
+                const produto = await getProdutoPorId(id)
+
+                // Formata a data para yyyy-MM-dd que o input type="date" exige
+                const dataFormatada = produto.dateEntrega
+                    ? new Date(produto.dateEntrega).toISOString().split("T")[0]
+                    : ""
+
+                setForm({
+                    nomeProjeto: produto.nomeProjeto || "",
+                    status: produto.status || "",
+                    cliente: produto.cliente?._id || "",
+                    clienteNome: produto.cliente?.nomeCompleto || "",
+                    dateEntrega: dataFormatada,
+                    linkContrato: produto.linkContrato || "",
+                    linkDemo: produto.linkDemo || "",
+                    obser: produto.obser || "",
+                })
+            } catch (error) {
+                abrirAviso("Erro ao carregar produto para edição.")
+            } finally {
+                setCarregando(false)
+            }
+        }
+
+        carregarProduto()
+    }, [id])
+
     function handleChange(e) {
         const { name, value } = e.target;
-    
-        setForm((prev) => ({
-        ...prev,
-        [name]: value
-        }));
+        setForm((prev) => ({ ...prev, [name]: value }));
     }
 
-    //envia o formulario para a api para realizar o cadastro.
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const erroParaAtualizar = validarFormularioCadastrarProduto(form)
-        if(erroParaAtualizar){
-            setCadastrarErro(erroParaAtualizar)
+        const erro = validarFormularioCadastrarProduto(form)
+        if (erro) {
+            setCadastrarErro(erro)
             return;
         }
 
-        const token = localStorage.getItem("token");
-        
         try {
-            const response = await fetch("http://localhost:3000/produtos/criar", {
-                method: "POST",
-                headers: { 
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
-                },
-                body: JSON.stringify(form)
-            });
-            const data = await response.json();
+            let resposta;
 
-            if (!response.ok) {
-                setCadastrarErro(data.error || "Erro ao cadastrar produto");
-                return;
+            if (modoEdicao) {
+                console.log(form)
+                // Chama PUT/PATCH para atualizar
+                resposta = await putProdutoPC(id, form)
+                abrirAviso("Produto atualizado")
+            } else {
+                // Chama POST para criar
+                resposta = await postProdutosPC(form)
+                setForm(FORM_VAZIO) // limpa só no cadastro
             }
 
-            //limpa o form
-            setForm({
-                nomeProjeto: "",
-                status: "",
-                cliente: "",
-                dateEntrega: "",
-                clienteNome: "",
-                linkContrato: "",
-                linkDemo: "",
-                obser: "",
-            });
-
-            //limpar erro 
             setCadastrarErro("")
-            alert(data.message)
+            abrirAviso(resposta.message)
         } catch (error) {
-            alert(`Erro ao cadastrar produto ${error}`);
+            abrirAviso(error.message)
         }
     }
 
     async function buscarClientes(nome) {
-        if (nome.length < 2) return; // só busca a partir de 2 letras
-
-        const token = localStorage.getItem("token");
-        
-        const res = await fetch(`http://localhost:3000/auth/buscar?nome=${nome}`, {
-                method: "GET",
-                headers: { 
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}` // ✅ envia o token
-                },
-            });;
-        const data = await res.json();
-        setClientesBuscados(data);
+        if (nome.length < 2) return;
+        try {
+            const data = await getUserPorNome(nome);
+            setClientesBuscados(data);
+        } catch (error) {
+            abrirAviso(`Erro ao buscar cliente: ${error}`);
+        }
     }
-    
+
+    if (carregando) return <p>Carregando...</p>
+
     return(
         <section className={CssAcaoProduto3.sectionCadastrarPC}>
-            <div>
-                <h1>Bem vindo, {userAdm.role}</h1>
-                <p>Nesta área você pode cadastrar novos sites ou produtos adquiridos pelos clientes e acompanhar o andamento de cada projeto. Aqui é possível atualizar o status do desenvolvimento, adicionar o link da versão de demonstração (demo) e disponibilizar o contrato relacionado. Utilize este espaço para manter as informações organizadas e permitir que o cliente acompanhe o progresso do seu projeto de forma clara e transparente.</p>
+            <div className={CssAcaoProduto3.divTitulo}>
+                <h1>{modoEdicao ? "Editar Projeto" : `Bem vindo, ${userAdm.role}`}</h1>
+                <p>
+                    {modoEdicao
+                        ? "Atualize as informações do projeto abaixo."
+                        : "Nesta área você pode cadastrar novos sites ou produtos adquiridos pelos clientes..."}
+                </p>
             </div>
             <form onSubmit={handleSubmit} className={CssAcaoProduto3.formCadastrarProdutoCliente}>
                 <div className={CssAcaoProduto3.div1}>
@@ -126,10 +150,9 @@ function AcaoCadastrarProdutoPc(){
                         value={form.nomeProjeto} 
                         type="text"
                         onChange={handleChange}
-                        placeholder={"nomeProjeto"} 
-                        className={`${erroParaCadastrarPC ? "inputErro" : ""}`}
+                        placeholder="Nome do Projeto"
+                        className={erroParaCadastrarPC ? "inputErro" : ""}
                     />
-
                     <StatusSelect
                         label="Status do projeto"
                         name="status"
@@ -148,32 +171,27 @@ function AcaoCadastrarProdutoPc(){
                             type="text"
                             onChange={(e) => {
                                 const valor = e.target.value;
-
-                                setForm(prev => ({ 
-                                    ...prev, 
-                                    clienteNome: valor,
-                                    cliente: ""  // ← limpa o ID quando digitar/apagar
-                                }));
-
-                                buscarClientes(e.target.value);
+                                setForm(prev => ({ ...prev, clienteNome: valor, cliente: "" }));
+                                buscarClientes(valor);
                             }}
-                            placeholder={"Digite o nome do cliente"} 
-                            className={`${erroParaCadastrarPC ? "inputErro" : ""}`}
+                            placeholder="Digite o nome do cliente"
+                            className={erroParaCadastrarPC ? "inputErro" : ""}
                         />
                         <ul className={CssAcaoProduto3.listaUl}>
-                            {/* Lista de sugestões */}
                             {clientesBuscados.map(user => (
-                                <div className={CssAcaoProduto3.listaDiv} key={user._id} onClick={() => {
-                                    setForm(prev => ({ ...prev, cliente: user._id, clienteNome: user.nomeCompleto }));
-                                    setClientesBuscados([]); // fecha a lista
-                                }}>
+                                <div
+                                    className={CssAcaoProduto3.listaDiv}
+                                    key={user._id}
+                                    onClick={() => {
+                                        setForm(prev => ({ ...prev, cliente: user._id, clienteNome: user.nomeCompleto }));
+                                        setClientesBuscados([]);
+                                    }}
+                                >
                                     {user.nomeCompleto} — {user.email}
                                 </div>
                             ))}
                         </ul>
                     </div>
-                    
-                    
 
                     <Input
                         label="Data de Entrega" 
@@ -181,41 +199,25 @@ function AcaoCadastrarProdutoPc(){
                         type="date"
                         value={form.dateEntrega} 
                         onChange={handleChange}
-                        className={`${erroParaCadastrarPC ? "inputErro" : ""}`}
+                        className={erroParaCadastrarPC ? "inputErro" : ""}
                     />
                 </div>
 
-                <Input
-                    label="Link do Contrato" 
-                    name="linkContrato" 
-                    type="text"
-                    value={form.linkContrato} 
-                    onChange={handleChange}
-                    placeholder={"Link do Contrato"} 
-                    className={`${erroParaCadastrarPC ? "inputErro" : ""}`}
-                />
+                <Input label="Link do Contrato" name="linkContrato" type="text" value={form.linkContrato} onChange={handleChange} placeholder="Link do Contrato" />
+                <Input label="Link da Demo" name="linkDemo" type="text" value={form.linkDemo} onChange={handleChange} placeholder="Link da Demo" />
+                <TextArea label="Observações" name="obser" value={form.obser} onChange={handleChange} placeholder="Observações" />
 
-                <Input
-                    label="Link da Demo" 
-                    name="linkDemo" 
-                    type="text"
-                    value={form.linkDemo} 
-                    onChange={handleChange}
-                    placeholder={"Link da Demo"} 
-                    className={`${erroParaCadastrarPC ? "inputErro" : ""}`}
-                />
-
-                <TextArea
-                    label="Observações"
-                    name="obser"
-                    value={form.obser}
-                    onChange={handleChange}
-                    placeholder={"Observações"}
-                    className={`${erroParaCadastrarPC ? "inputErro" : ""}`}
-                />
                 {erroParaCadastrarPC && <p className={CssAcaoProduto3.erro}>{erroParaCadastrarPC}</p>}
-                <BotaoAction child="Salvar" type="submit" />
+
+                {/* Botão muda de texto conforme o modo */}
+                <BotaoAction child={modoEdicao ? "Atualizar" : "Salvar"} type="submit" />
             </form>
+
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
     )
 }

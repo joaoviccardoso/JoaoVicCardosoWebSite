@@ -10,9 +10,12 @@ import BotaoAction from "../../../Componentes/BotaoAction"
 import RadioGroup from "../../../Componentes/RadioInput"
 import LinkParaNavegacao from "../../../Componentes/Links/link"
 import voltarPagina from "../../../assets/voltarPagina.svg"
+import useModalAviso from "../../../hooks/useModalAviso";
+import ModalAviso from "../../../Componentes/ModalAviso";
 
 function TelaLogin(){
     const navigate = useNavigate();
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
 
     const [erroDeLogin, setErroDeLogin] = useState("")
 
@@ -54,7 +57,7 @@ function TelaLogin(){
         const data = await response.json();
 
         if (!response.ok) {
-            setErroDeLogin(data.message);
+            abrirAviso(data.message);
             return;
         }
 
@@ -68,7 +71,7 @@ function TelaLogin(){
         }
 
     } catch {
-        setErroDeLogin("Erro de conexão. Tente novamente.");
+        abrirAviso("Erro de conexão. Tente novamente.");
     }
     }
 
@@ -79,10 +82,6 @@ function TelaLogin(){
                 texto="Faça login para continuar e aproveitar todos os recursos disponíveis na plataforma."
             />
             <section className={CssLogin.containerFormularioLogin}>
-                <ImgLink
-                    to="/"
-                    srcImg={voltarPagina}
-                />
                 <form onSubmit={handleSubmitLogin} className={CssLogin.formLogin}>
                     <div className={CssLogin.containerTexto}>
                         <h3>Bem-vindo de volta</h3>
@@ -132,6 +131,11 @@ function TelaLogin(){
                     />
                 </form>
             </section>
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
     )
 }

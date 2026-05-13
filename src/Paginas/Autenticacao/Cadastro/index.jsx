@@ -4,10 +4,12 @@ import BemVindo from "../../../Componentes/MensagemBemVindo"
 import Input from "../../../Componentes/Input";
 import ImgLink from "../../../Componentes/imgLink";
 import BotaoAction from "../../../Componentes/BotaoAction";
-import voltarPagina from "../../../assets/voltarPagina.svg"
 import { validarFormularioCadastro } from "../../../Utils/validarCadastro.js";
+import ModalAviso from "../../../Componentes/ModalAviso/index.jsx";
+import useModalAviso from "../../../hooks/useModalAviso.js";
 
 function TelaCadastro(){
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const [erroDeCadastro, setErroDeCadastro] = useState("")
 
     const [form, setForm] = useState({
@@ -56,12 +58,12 @@ function TelaCadastro(){
         const data = await response.json();
 
         if(!response.ok){
-            setErroDeCadastro(data.message)
+            abrirAviso(data.message)
             return
         } 
 
         if(response.ok){
-            alert("sucesso em cadastrar no sistema")
+            abrirAviso("sucesso em cadastrar no sistema")
         }
 
         setForm({
@@ -80,10 +82,6 @@ function TelaCadastro(){
                 texto="Crie sua conta e tenha acesso a ferramentas pensadas para facilitar sua rotina e organizar tudo em um só lugar."
             />
             <section className={CssCadastro.secaoFormularioCadastro}>
-                <ImgLink
-                    to="/"
-                    srcImg={voltarPagina}
-                />
                 <form onSubmit={handleSubmitLogin} className={CssCadastro.formCadastro}>
                     <h3>Crie sua conta pessoal</h3>
                     <p>Será enviado (solicitado) uma confirmação do cadastro por e-mail.</p>
@@ -151,6 +149,12 @@ function TelaCadastro(){
                     </div>
                 </form>
             </section>
+
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
     )
 }

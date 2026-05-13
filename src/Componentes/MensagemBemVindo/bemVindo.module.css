@@ -2,17 +2,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
-    padding: 3rem 5rem;
-    min-height: 100vh;
+    justify-content: center;
+    padding: 3rem;
+    height: 50%;
     width: 50%;
     background: var(--color-gradienteVerdeBottom);
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
 }
 
 .sectionBemVindo img{
     align-self: flex-start;
-    margin-bottom: 3rem;
 }
 
 .sectionBemVindo div{

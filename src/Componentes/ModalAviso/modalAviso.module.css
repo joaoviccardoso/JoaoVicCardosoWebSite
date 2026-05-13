@@ -1,0 +1,224 @@
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1050;
+  backdrop-filter: blur(2px);
+}
+
+/* Modal container */
+.modal {
+  z-index: 1055;
+}
+
+/* Botão X fechar */
+.btnClose {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.btnClose:hover {
+  opacity: 1;
+}
+
+/* Caixa do modal */
+.modalContent {
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 16px;
+  box-shadow:
+    0 0 0 1px rgba(16, 185, 129, 0.1),
+    0 24px 48px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  background-color: var(--color-componente);
+}
+
+/* Header */
+.modalHeader {
+  background-color: var(--color-componente);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Ícone decorativo no header */
+.modalHeader::before {
+  content: "⚠";
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.modalTitle {
+  color: var(--cor-letraClara);
+  font-family: var(--font-paraTexto);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Body */
+.modalBody {
+  background: var(--color-componente);
+  padding: 28px 24px;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.modalBody p {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-paraTexto);
+  font-size: var(--font-size-md);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.modalBody strong {
+  color: var(--cor-letraClara);
+  font-weight: 600;
+}
+
+/* Footer */
+.modalFooter {
+  background-color: var(--color-componente);
+  border-top: none;
+  padding: 16px 24px;
+  gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Botão cancelar */
+.botaoCancelar {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-family: var(--font-paraTexto);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.botaoCancelar:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.07);
+  color: var(--cor-letraClara);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.botaoCancelar:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Botão confirmar excluir */
+.botaoExcluir {
+  background: linear-gradient(135deg, #e53935, #c62828);
+  color: var(--cor-letraClara);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-family: var(--font-paraTexto);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+}
+
+.botaoExcluir:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ef5350, #e53935);
+  box-shadow: 0 4px 20px rgba(229, 57, 53, 0.5);
+  transform: translateY(-1px);
+}
+
+.botaoExcluir:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(229, 57, 53, 0.3);
+}
+
+.botaoExcluir:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Botão OK (ModalAviso) */
+.botaoOk {
+  background: linear-gradient(to right, var(--verde), #07533A);
+  color: var(--cor-letraClara);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 28px;
+  font-family: var(--font-paraTexto);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.botaoOk:hover {
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+  transform: translateY(-1px);
+}
+
+.botaoOk:active {
+  transform: translateY(0);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-24px) scale(0.97);
+  }
+}
+
+/* Backdrop */
+.backdropVisivel {
+  animation: fadeIn 0.25s ease forwards;
+}
+
+.backdropSaindo {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+/* Caixa do modal */
+.contentVisivel {
+  animation: slideDown 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.contentSaindo {
+  animation: slideUp 0.25s ease forwards;
+}
