@@ -1,16 +1,58 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+//import { useEffect,useState } from "react";
 import CssDetalhe from "./detalhesDoProjeto.module.css"
 import SecaoHeroDetalhes from "./sections/sectionHeroDetalhes";
 import SecaoMotivacao from "./sections/sectionMotivacao";
 import SecaoFuncionalidade from "./sections/sectionFuncionalidades";
 
+const produtos = [
+  {
+    id: 1,
+    titulo: "JV.dev />",
+    descricao: "O DevTrack é uma aplicação web desenvolvida para apresentar meus projetos, habilidades e soluções digitais. Além de funcionar como portfólio, a plataforma oferece uma área exclusiva para clientes, com dashboard interativo que permite acompanhar o andamento de seus projetos em tempo real.",
+    motivo: "Este projeto foi criado com o objetivo de centralizar meus trabalhos e demonstrar, na prática, minhas habilidades como desenvolvedor.",
+    tecnologias: ["React", "GSAP", "Bootstrap"],
+    funcionalidades: [
+      "Visualização de projetos desenvolvidos com detalhes e imagens",
+      "Dashboard do cliente para acompanhamento do status dos projetos",
+      "Interface interativa com animações modernas utilizando GSAP"
+    ],
+    imagens: [
+      "/images/TelaHomeMeuProjeto.png",
+      "/images/TelaDashBoardAdm.png",
+      "/images/TelaDeCadastros.png"
+    ]
+  },
+  {
+    id: 2,
+    titulo: "DoceGest />",
+    descricao: "O DoceGest é uma aplicação web desenvolvida para gerenciar pedidos e produtos de uma doceria. A plataforma permite visualizar o cardápio, registrar pedidos e facilitar a comunicação com clientes via WhatsApp.",
+    motivo: "Este projeto foi criado com o objetivo de ajudar pequenas docerias a organizarem seus pedidos e produtos de forma simples e eficiente.",
+    tecnologias: ["Html", "CSS", "JavaScript"],
+    funcionalidades: [
+      "Visualização de produtos com imagens, preços e descrições",
+      "Realização de pedidos com envio direto para o WhatsApp",
+      "Interface simples e responsiva para mobile e desktop"
+    ],
+    imagens: [
+      "/images/TelaHomeDoceria.png",
+      "/images/TelaDashBoardDoceria.png",
+      "/images/TelaPedidosDoceria.png"
+    ]
+  }
+]
+
+
 function PaginaDetalheDosProjetos(){
     const { id } = useParams();
 
-    const [produto, setProduto] = useState(null);
+    // Busca o produto pelo id da URL
+    const produto = produtos.find(p => p.id === Number(id));
     
-    useEffect(() => {
+    if (!produto) {
+        return <p>Projeto não encontrado.</p>;
+    }
+    /*useEffect(() => {
         async function buscarDados() {
             try {
                 const res = await fetch(`http://localhost:3001/produtos/${id}`);
@@ -22,13 +64,12 @@ function PaginaDetalheDosProjetos(){
         }
     
         buscarDados();
-    }, [id]);
+    }, [id]);*/
 
     if (!produto) {
         return <p>Carregando...</p>;
     }
 
-    console.log(produto)
     return (
         <section className={CssDetalhe}>
             <SecaoHeroDetalhes
