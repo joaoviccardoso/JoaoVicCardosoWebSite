@@ -12,6 +12,10 @@ function AcaoConsultaCliente(){
     const [userAdm, setUserAdm] = useState({})
     const [allCliente, setCliente] = useState([])
 
+    const handleDeletar = (id) => {
+        setCliente(prev => prev.filter(cliente => cliente._id !== id));
+    };
+
     useEffect(() => {
             const token = localStorage.getItem("token");
             if (!token) return;
@@ -49,6 +53,7 @@ function AcaoConsultaCliente(){
             <div className={CssAcao2.divTabelaClientes}>
                 <TabelaConsultaCliente
                     clientes={allCliente}
+                    onDeletar={handleDeletar}
                 />
             </div>
 

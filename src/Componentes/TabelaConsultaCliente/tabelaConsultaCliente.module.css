@@ -74,6 +74,29 @@
   background: #0F6E56;
 }
 
+.botaoExcluir {
+  background: #dc3545;
+  color: #E1F5EE;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: var(--font-size-md);
+  font-family: var(--font-paraTexto);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.botaoExcluir:hover {
+  color: #a71d2a;
+}
+
+.colBotoes{
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
 @media(max-width: 1200px){
     .clietLabel {
         font-size: var(--font-size-md);
@@ -91,6 +114,11 @@
     
     .clietName {
         font-size: var(--font-size-sm);
+    }
+
+    .colBotoes{
+      min-height: 100px;
+      padding: 2rem;
     }
 }
 
