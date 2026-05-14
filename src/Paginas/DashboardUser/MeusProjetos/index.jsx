@@ -57,7 +57,6 @@ function MeusProjetosUser(){
 
             <section className={CssProjetosUser.sectionDadosDoProjetoCliente}>
                 <div className={CssProjetosUser.tabelaProjetosClientes}>
-                    {console.log(produtoUser.length)}
                     {produtoUser.length == 0 ? "Vamos começar um projeto?" : <TabelaProjetos projetos={produtoUser} onVerMais={setProjetoSelecionado}/>}
                 </div>
 
@@ -66,20 +65,20 @@ function MeusProjetosUser(){
                         <>
                             <h2>{projetoSelecionado.nomeProjeto}</h2>
 
-                            <p><strong>Status:</strong> {projetoSelecionado.status}</p>
+                            <p className={CssProjetosUser.paragrafo}><strong>Status:</strong> {projetoSelecionado.status}</p>
 
-                            <p><strong>Data de entrega:</strong> {new Date(projetoSelecionado.dateEntrega).toLocaleDateString("pt-BR")}</p>
+                            <p className={CssProjetosUser.paragrafoData}><strong>Data de entrega:</strong> {new Date(projetoSelecionado.dateEntrega).toLocaleDateString("pt-BR")}</p>
 
-                            <p><strong>Observação:</strong> {projetoSelecionado.obser}</p>
+                            <p className={CssProjetosUser.paragrafo}><strong>Observação:</strong> {projetoSelecionado.obser}</p>
 
-                            <p>
+                            <p className={CssProjetosUser.paragrafo}>
                                 <strong>Contrato:</strong>{" "}
                                 <a href={projetoSelecionado.linkContrato} target="_blank" rel="noreferrer">
                                     Acessar contrato
                                 </a>
                             </p>
 
-                            <p>
+                            <p className={CssProjetosUser.paragrafo}>
                                 <strong>Demo:</strong>{" "}
                                 <a href={projetoSelecionado.linkDemo} target="_blank" rel="noreferrer">
                                     Ver demo
