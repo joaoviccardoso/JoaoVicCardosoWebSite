@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import CssBtnLogin from "./botaoLogin.module.css";
 import IconeLogin from '../../assets/IconeLogin.svg'
 import { estaLogado, getRoleDoToken } from '../../services/authServices';
+import { useEffect, useState } from 'react';
 
 
 // Mapa de role → rota do dashboard
@@ -11,18 +12,32 @@ const ROTAS_POR_ROLE = {
     // adicione outros roles aqui
 }
 
-    function BtnLogin(){
-        const navigate = useNavigate()
+function BtnLogin(){
+    const navigate = useNavigate()
+    const [islogado, setIsLogado] = useState("")
 
-        function handleClickLogin() {
-            if (estaLogado()) {
-                const role = getRoleDoToken()
-                const rota = ROTAS_POR_ROLE[role] ?? "/Dashboard"
-                navigate(rota)
-            } else {
-                navigate("/Login")
+    useEffect(()=>{
+        function isLogadoLegendaBtn(){
+            if(estaLogado()){
+                setIsLogado("Meu painel")
+            }else{
+                setIsLogado("Fazer login")
             }
+        }
+
+        isLogadoLegendaBtn()
+    }, [])
+
+    function handleClickLogin() {
+        if (estaLogado()) {
+            const role = getRoleDoToken()
+            const rota = ROTAS_POR_ROLE[role] ?? "/Dashboard"
+            navigate(rota)
+        } else {
+            navigate("/Login")
+        }
     }
+
     return(
         <div className={CssBtnLogin.loginContainer}>
             <span className={CssBtnLogin.iconContainer}>
@@ -35,7 +50,7 @@ const ROTAS_POR_ROLE = {
                     onClick={handleClickLogin}
                     className={CssBtnLogin.linkLogin}
                 >
-                    Fazer login
+                    {islogado}
                 </button>
             </div>
         </div>
