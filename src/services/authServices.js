@@ -83,3 +83,10 @@ export async function atualizarUsuario(dados, idExterno = null) {
         body: JSON.stringify(dados),
     })
 }
+
+//deleta usuario pelo id
+export async function deleteUsuarioPorId(id) {
+    return apiFetch(`/auth/delete/${id}`, {
+        method: "DELETE",
+    })
+}

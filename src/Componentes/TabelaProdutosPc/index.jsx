@@ -15,7 +15,7 @@ function TabelaConsultaProjetosPC({produtos, onDeletar}){
   const [projetoSelecionado, setProjetoSelecionado] = useState(null);
 
   const abrirModal = (projeto) => {
-    setProjetoSelecionado(projeto); // 👈 salva o projeto clicado
+    setProjetoSelecionado(projeto); // salva o projeto clicado
     setModalAberto(true);
   };
 

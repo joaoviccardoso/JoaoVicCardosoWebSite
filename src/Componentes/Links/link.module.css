@@ -55,25 +55,13 @@
 
 @media(max-width: 1240px){
     .navLink{
-        font-size: 12px;
+        font-size: 11px;
     }
 }
 
-@media(max-width: 1100px){
+
+@media(max-width: 999px){
     .navLink{
         font-size: 18px;
     }
 }
-
-@media(max-width: 620px){
-    .navLink{
-        font-size: 12px;
-    }
-}
-
-@media(max-width: 370px){
-    .navLink{
-        font-size: 8px;
-    }
-}
-

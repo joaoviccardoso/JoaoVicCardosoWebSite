@@ -119,8 +119,7 @@ function MeusDadosUser(){
                     placeholder={userUser.email || "E-mail"} 
                 />
 
-                <div className={CssMeusDados.div3}>
-                    <Input 
+                <Input 
                         label="Endereço" 
                         name="endereco" 
                         value={form.endereco} 
@@ -128,6 +127,8 @@ function MeusDadosUser(){
                         placeholder={userUser.endereco || "Endereço"} 
                         className={`${erroParaAtualizar ? "inputErro" : ""}`}
                     />
+
+                <div className={CssMeusDados.div3}>
 
                     <Input 
                         label="CEP" 
