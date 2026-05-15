@@ -42,7 +42,7 @@ function TelaCadastro(){
             return;
         }
 
-        const response = await fetch("http://localhost:3000/auth/register", {
+        const response = await fetch("https://teal-goose-884697.hostingersite.com/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

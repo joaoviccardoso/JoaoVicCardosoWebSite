@@ -48,7 +48,7 @@ function TelaLogin(){
         }
 
         try {
-        const response = await fetch("http://localhost:3000/auth/login", {
+        const response = await fetch("https://teal-goose-884697.hostingersite.com/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(form)
