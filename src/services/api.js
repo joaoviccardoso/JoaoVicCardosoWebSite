@@ -1,4 +1,4 @@
-const BASE_URL = "https://lightslategray-deer-405894.hostingersite.com/"
+const BASE_URL = "https://teal-goose-884697.hostingersite.com"  
 
 export async function apiFetch(endpoint, options = {}) {
     const token = localStorage.getItem("token")
