@@ -47,7 +47,7 @@
 .containerMinhasHabilidades img {
     position: relative;
     z-index: 2;
-    width: 230px;
+    width: 280px;
 }
 
 @media(max-width: 480px){
