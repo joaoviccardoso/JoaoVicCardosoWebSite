@@ -2,38 +2,58 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     width: 100vw; 
     background: var(--cor-containerCortado);
     height: 100vh;
-    margin-bottom: 3rem;
 }
 
-.secaoHabilidades div{
+.header {
+    width: 100vw;          /* ocupa tela inteira */
     text-align: center;
-    margin: 1rem auto 6rem auto;
 }
 
-.secaoHabilidades div h3{
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 🔥 importante */
+}
+
+.wrapper div h3{
     font-size: var(--font-size-4xl);
 }
 
-.secaoHabilidades div p{
+.wrapper div p{
     font-size: var(--font-size-xl);
 }
 
-.ulListaHabilidades{
+.ulListaHabilidades {
     display: flex;
-    gap: 4rem;
     flex-wrap: nowrap;
-    align-items: center;   
-    width: max-content;        
+    align-items: top;   
+    justify-content: center;
+    width: max-content;  
 }
 
-.divs1, .divs2, .divs3{
-    min-width: 400px;
-    height: 400px;
+.ulListaHabilidades div{
+    display: flex;
+}
+
+.divs1, .divs2, .divs3, .divs4,.divs5,.divs6,.divs7,.divs8, .divs9{
+    min-width: 450px;
+    height: 450px;
     flex-shrink: 0;
 }
+
+.divs1 { transform: translateY(50px)  translateX(200px);    }
+.divs2 { transform: translateY(500px) translateX(170px);  }
+.divs3 { transform: translateY(960px) translateX(150px);  }
+.divs4 { transform: translateY(50px) translateX(-300px);;  }
+.divs5 { transform: translateY(1400px) translateX(-300px);  }
+.divs6 { transform: translateY(500px) translateX(-750px);  }
+.divs7 { transform: translateY(950px)  translateX(-800px);  }
+.divs8 { transform: translateY(1400px) translateX(-820px); }
+.divs9 { transform: translateY(1900px) translateX(-820px); }
 
 @media(max-width: 1500px){
     .secaoHabilidades div h3{
@@ -49,19 +69,19 @@
 
 @media(max-width: 480px){
     .ulListaHabilidades{
-        height: 100vh; 
-        margin-bottom: 6rem;                     
+        gap: 0rem;                     
     }
 
     .secaoHabilidades{
         background-image: none !important;
     }
+    .header{ transform: translateY(0px) translateX(-910px); }
 
-    .secaoHabilidades div h3{
+    .header h3{
         font-size: var(--font-size-2xl);
     }
 
-    .secaoHabilidades div p{
+    .header p{
         padding: 0 1rem;
         font-size: var(--font-size-lg);
     }
@@ -71,17 +91,19 @@
         margin: 1rem auto 2rem auto;
     }
 
-    .divs1, .divs2, .divs3{
+    .divs1 { transform: translateY(0px) translateX(350px);    }
+    .divs2 { transform: translateY(300px) translateX(350px);  }
+    .divs3 { transform: translateY(570px) translateX(350px);  }
+    .divs4 { transform: translateY(150px) translateX(250px);  }
+    .divs5 { transform: translateY(420px) translateX(250px);  }
+    .divs6 { transform: translateY(1120px) translateX(-500px);  }
+    .divs7 { transform: translateY(830px) translateX(-420px);;  }
+    .divs8 { transform: translateY(700px) translateX(-250px); }
+    .divs9 { transform: translateY(1050px) translateX(-600px); }
+    
+    .divs1, .divs2, .divs3, .divs4,.divs5,.divs6,.divs7,.divs8, .divs9{
         min-width: 250px;
         height: 250px;
         flex-shrink: 0;
-    }
-
-    .divs1{
-        align-self: flex-start;
-    }
-
-    .divs3{
-        align-self: flex-end;
     }
 }

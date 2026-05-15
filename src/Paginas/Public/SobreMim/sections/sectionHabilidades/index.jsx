@@ -46,6 +46,7 @@ function SecaoHabilidades(){
 
             gsap.to(el.current, {
                 x: () => -(el.current.scrollWidth - window.innerWidth),
+                y: () => -(el.current.scrollWidth * 0.5), 
                 ease: "none",
                 scrollTrigger: {
                     trigger: containerPai.current,
@@ -70,76 +71,80 @@ function SecaoHabilidades(){
     
 
     return(
-        <section className={CssHabilidades.secaoHabilidades} ref={containerPai} style={{backgroundImage: `url(${logoDev})`,backgroundSize: '55%' ,backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat' }}>
-            <div>   
-                <h3>Habilidades Técnicas</h3>
-                <p>Aqui estão as tecnologias que uso para transformar ideias em projetos reais.</p>
+        <section className={CssHabilidades.secaoHabilidades} ref={containerPai} style={{backgroundImage: `url(${logoDev})`,backgroundSize: '80%' ,backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat' }}>
+            <div ref={el} className={CssHabilidades.wrapper}>
+                <div className={CssHabilidades.header}>   
+                    <h3>Habilidades Técnicas</h3>
+                    <p>Aqui estão as tecnologias que uso para transformar ideias em projetos reais.</p>
+                </div>
+                
+                <ul className={CssHabilidades.ulListaHabilidades}>
+
+                    <li className={CssHabilidades.divs1}>
+                        <MinhasHabilidades
+                            img={imgHtml}
+                            alt="Imagem da tecnologia HTML"
+                        />
+                    </li>
+
+                    <li className={CssHabilidades.divs2}>
+                        <MinhasHabilidades
+                            img={imgCss}
+                            alt="Imagem da tecnologia CSS"
+                        />
+                    </li>
+
+                    <li className={CssHabilidades.divs3}>
+                        <MinhasHabilidades
+                            img={imgJs}
+                            alt="Imagem da tecnologia JS"
+                        />
+                    </li>
+
+                    <li className={CssHabilidades.divs4}>
+                        <MinhasHabilidades
+                            img={imgReact}
+                            alt="Imagem da tecnologia React"
+                        />
+                    </li>
+
+                    <li className={CssHabilidades.divs5}>
+                        <MinhasHabilidades
+                            img={imgNode}
+                            alt="Imagem da tecnologia node"
+                        />
+                    </li>
+
+                    <li className={CssHabilidades.divs6}>
+                        <MinhasHabilidades
+                            img={imgUiUx}
+                            alt="Imagem da tecnologia UI e UX"
+                        />
+                    </li>
+
+                    <li className={CssHabilidades.divs7}>
+                        <MinhasHabilidades
+                            img={imgBootstrap}
+                            alt="Imagem da tecnologia Bootstrap"
+                        />
+                    </li>
+
+                    <li className={CssHabilidades.divs8}>
+                        <MinhasHabilidades
+                            img={imgFigma}
+                            alt="Imagem da tecnologia Figma"
+                        />
+                    </li>
+
+                    <li className={CssHabilidades.divs9}>
+                        <MinhasHabilidades
+                            img={imgGitHub}
+                            alt="Imagem da tecnologia GitHub"
+                        />
+                    </li>
+                </ul>
             </div>
             
-            <ul className={CssHabilidades.ulListaHabilidades} ref={el}>
-                <li className={CssHabilidades.divs1}>
-                    <MinhasHabilidades
-                        img={imgHtml}
-                        alt="Imagem da tecnologia HTML"
-                    />
-                </li>
-
-                <li className={CssHabilidades.divs2}>
-                    <MinhasHabilidades
-                        img={imgCss}
-                        alt="Imagem da tecnologia CSS"
-                    />
-                </li>
-
-                <li className={CssHabilidades.divs3}>
-                    <MinhasHabilidades
-                        img={imgJs}
-                        alt="Imagem da tecnologia JS"
-                    />
-                </li>
-
-                <li className={CssHabilidades.divs1}>
-                    <MinhasHabilidades
-                        img={imgReact}
-                        alt="Imagem da tecnologia React"
-                    />
-                </li>
-
-                <li className={CssHabilidades.divs2}>
-                    <MinhasHabilidades
-                        img={imgNode}
-                        alt="Imagem da tecnologia node"
-                    />
-                </li>
-
-                <li className={CssHabilidades.divs3}>
-                    <MinhasHabilidades
-                        img={imgUiUx}
-                        alt="Imagem da tecnologia UI e UX"
-                    />
-                </li>
-
-                <li className={CssHabilidades.divs1}>
-                    <MinhasHabilidades
-                        img={imgBootstrap}
-                        alt="Imagem da tecnologia Bootstrap"
-                    />
-                </li>
-
-                <li className={CssHabilidades.divs2}>
-                    <MinhasHabilidades
-                        img={imgFigma}
-                        alt="Imagem da tecnologia Figma"
-                    />
-                </li>
-
-                <li className={CssHabilidades.divs3}>
-                    <MinhasHabilidades
-                        img={imgGitHub}
-                        alt="Imagem da tecnologia GitHub"
-                    />
-                </li>
-            </ul>
         </section>
     )
 }

@@ -10,6 +10,7 @@ import imagemBonecoJoaoHome from "../../../../../assets/imagemBonecoJoaoHome.png
 function Hero(){
     const titleRef = useRef(null);
     const el = useRef();
+    const imgHero = useRef(null)
 
     useLayoutEffect(() => {
     gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -33,7 +34,7 @@ function Hero(){
                             end: "bottom 50%",
                         }
                     })
-                    .to("#containerImgHero", {
+                    .to(imgHero.current, {
                         y: -150,
                         opacity: .7,
                         scale: 0.95,
@@ -90,7 +91,7 @@ function Hero(){
 
     return(
         <section className={CssHero.sectionHero} ref={el}>
-                <div className={CssHero.containerImagemHero} id="containerImgHero">
+                <div className={CssHero.containerImagemHero} id="containerImgHero" ref={imgHero}>
                     <span id="containerBalaoOla">
                         <img src={balaoMensagemHola} alt="Caixa de mensagem Olá! Seja bem-vindo ao meu site."/>
                         <p>Olá! Seja bem-vindo ao meu site.</p>
