@@ -23,7 +23,7 @@ function MeusProjetosUser(){
 
         async function getProdutosClientes(){
             try{
-                const resposta = await fetch(`http://localhost:3000/produtos/cliente/${userUser._id}`,{
+                const resposta = await fetch(`https://lightslategray-deer-405894.hostingersite.com/produtos/cliente/${userUser._id}`,{
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${token}`
