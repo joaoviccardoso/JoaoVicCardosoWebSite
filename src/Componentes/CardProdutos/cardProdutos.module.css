@@ -1,91 +1,114 @@
-.containerCardProdutos{
+.containerCardProdutos {
     position: relative;
     width: 370px;
-    height: 610px; 
+    height: 610px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.containerCardProdutos img{
+.containerCardProdutos img {
     display: block;
     height: 100%;
     width: 100%;
-    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.containerTextoEhSaber{
+.containerCardProdutos:hover img {
+    transform: scale(1.06);
+}
+
+/* Overlay escuro gradiente */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(10, 10, 10, 0.65) 0%,
+        rgba(10, 10, 10, 0.15) 50%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+/* Título visível em repouso */
+.tituloPreview {
+    position: absolute;
+    bottom: 24px;
+    left: 1.4rem;
+    right: 1.4rem;
+    z-index: 1;
+    pointer-events: none;
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    transition: opacity 0.25s ease;
+}
+
+.containerCardProdutos:hover .tituloPreview {
+    opacity: 0;
+}
+
+/* Container com ponta cortada */
+.containerTextoEhSaber {
     position: absolute;
     bottom: 0;
     left: 0;
-
-    border-radius: 0px 8px 8px 8px;
-    padding: 1rem;
-
-    width: 100%;
-
-    clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%, 0 50%);
-    background-color: var(--branco-menosBranco);
+    right: 0;
+    z-index: 2;
+    padding: 1.4rem;
+    background: rgba(22, 22, 28, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+    clip-path: polygon(0 0, calc(100% - 80px) 0, 100% 80px, 100% 100%, 0 100%);
+    transform: translateY(100%);
+    opacity: 0;
+    transition:
+        transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity 0.35s ease,
+        clip-path 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.containerCardProdutos h3{
-    color: var(--color-componente); 
-    font-size: var(--font-size-xl);
-    font-family: var(--font-paraTextoChamativo); 
+.containerCardProdutos:hover .containerTextoEhSaber {
+    transform: translateY(0);
+    opacity: 1;
+    clip-path: polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%);
 }
 
-.containerCardProdutos p{
-    color: var(--color-componente);  
-    font-size: var(--font-size-sm);
-    font-family: var(--font-paraTexto); 
+.containerCardProdutos h3 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 10px;
 }
 
-@media(max-width: 1400px){
-    .containerCardProdutos{
-        width: 280px;
-        height: 500px; 
-    }
-
-    .containerCardProdutos h3{
-        font-size: var(--font-size-lg);
-    }
-
-    .containerCardProdutos p{
-        font-size: var(--font-size-xs);
-    }
+.containerCardProdutos p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.70);
+    line-height: 1.55;
+    margin: 0 0 18px;
 }
 
-@media(max-width: 1500px){
-    .containerCardProdutos{
-        width: 340px;
-        height: 560px; 
-    }
-
-    .containerCardProdutos h3{
-        font-size: var(--font-size-lg);
-    }
-
-    .containerCardProdutos p{
-        font-size: var(--font-size-xs);
-    }
+@media (max-width: 1500px) {
+    .containerCardProdutos { width: 340px; height: 560px; }
+    .containerCardProdutos h3 { font-size: 22px; }
+    .tituloPreview { font-size: 22px; }
 }
 
-@media(max-width: 888px){
-    .containerCardProdutos{
-        width: 260px;
-        height: 530px; 
-    }
-
-    .containerCardProdutos h3{
-        font-size: var(--font-size-lg);
-    }
-
-    .containerCardProdutos p{
-        font-size: var(--font-size-xs);
-    }
+@media (max-width: 1400px) {
+    .containerCardProdutos { width: 280px; height: 500px; }
+    .containerCardProdutos h3 { font-size: 20px; }
+    .tituloPreview { font-size: 20px; }
 }
 
-@media(max-width: 480px){
-    .containerCardProdutos{
-        position: relative;
-        width: 310px;
-        height: 610px; 
-    }
+@media (max-width: 888px) {
+    .containerCardProdutos { width: 260px; height: 530px; }
+}
+
+@media (max-width: 480px) {
+    .containerCardProdutos { width: 310px; height: 610px; }
 }

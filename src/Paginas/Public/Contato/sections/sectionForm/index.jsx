@@ -1,11 +1,15 @@
 import CssForm from "./form.module.css"
+import emailjs from '@emailjs/browser';
 import { useState } from "react";
 import Input from "../../../../../Componentes/Input";
 import RadioGroup from "../../../../../Componentes/RadioInput";
 import TextArea from "../../../../../Componentes/TextArea";
 import BotaoAction from "../../../../../Componentes/BotaoAction";
+import useModalAviso from "../../../../../hooks/useModalAviso";
+import ModalAviso from "../../../../../Componentes/ModalAviso";
 
 function Formulario(){
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const [form, setForm] = useState({
         nome: "",
         email: "",
@@ -25,11 +29,43 @@ function Formulario(){
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(form);
+
+        const now = new Date();
+
+        const templateParams = {
+            ...form,
+            time: now.toLocaleString()
+        };
+
+        emailjs.send(
+            "service_y0wu13j",
+            "template_sairp58",
+            templateParams,
+            "eQ_vECtnVco89DMqy"
+        )
+        .then(() => {
+            setForm({
+                nome: "",
+                email: "",
+                telefone: "",
+                mensagem: "",
+                assunto: ""
+            })
+            abrirAviso("Mensagem enviada com sucesso!");
+        })
+        .catch((err) => {
+            console.error(err);
+        });
     }
 
     return(
-        <form onSubmit={handleSubmit} className={CssForm.formulario}>
+        <form 
+            className={CssForm.formulario}
+            onSubmit={handleSubmit}
+        >
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="Novo contato do site!" />
+            <input type="hidden" name="_next" value="https://www.jvcode.tech/" />
             <div className={CssForm.containerInputDeText}>
                 <div className={CssForm.containerNomeEhTelefone}>
                     <Input
@@ -97,6 +133,11 @@ function Formulario(){
                     type="submit"
                 />
             </div>
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </form>
     )
 }

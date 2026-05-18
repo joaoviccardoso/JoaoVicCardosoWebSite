@@ -10,7 +10,7 @@ function Nav(){
         <nav className={`navbar navbar-expand-lg  container-fluid ${NavCss.nav}`}>
                 <div>
                     <Image
-                        href="http://localhost:5173/"
+                        href="https://www.jvcode.tech/"
                         src={logo}
                         alt="Logo da pagina"
                         width={90}

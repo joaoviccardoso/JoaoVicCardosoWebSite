@@ -113,7 +113,6 @@
 
 @media(max-width: 1200px){
    .linkLogin {
-        padding: 10px 30px 10px 14px;
         font-size: var(--font-size-xs);
     } 
 
@@ -125,7 +124,23 @@
     }
 }
 
+@media(max-width: 980px){
+    .linkLogin {
+        padding: 11px 50px 11px 14px;
+        font-size: var(--font-size-md);
+    }
+
+    .iconContainer {
+        width: 20px;
+        height: 20px;
+        top: -5px;
+        left: 110px;
+    }
+}
+
 @media(max-width: 480px){
+    
+
     .loginBtnCelular{
         display: inline-block;
     }

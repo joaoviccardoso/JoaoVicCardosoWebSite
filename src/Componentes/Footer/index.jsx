@@ -56,7 +56,7 @@ function Footer(){
                         />
 
                         <Image
-                            href=""
+                            href="https://web.whatsapp.com/send?phone=5519992861087"
                             src={logoWhatsapp}
                             alt="logo whatsapp"
                             width={75}
@@ -67,7 +67,7 @@ function Footer(){
 
                 <section className={CssFooter.footerSobre}>
                     <Image
-                        href="http://localhost:5173/"
+                        href="https://www.jvcode.tech/"
                         src={logoDev}
                         alt="Logo da pagina"
                         width={180}

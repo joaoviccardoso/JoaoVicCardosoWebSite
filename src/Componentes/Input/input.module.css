@@ -11,6 +11,7 @@
 }
 
 .inputBasic{
+    position: relative;
     width: 100%;
     height: 52px;
     color: var(--cor-letraClara);
@@ -22,6 +23,31 @@
     background: var(--cor-backgroudInput);
     transition: all 0.2s ease;
     caret-color: white;
+}
+
+.inputWrapper {
+    position: relative;  /* ← o botão vai se posicionar relativo a isso */
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.togglePassword {
+    position: absolute;
+    right: 0.75rem;      /* ← agora funciona pois o pai tem position: relative */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    color: var(--cor-letraClara);
+    font-size: 1.1rem;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.togglePassword:hover {
+    opacity: 1;
 }
 
 .inputBasic.erro{
