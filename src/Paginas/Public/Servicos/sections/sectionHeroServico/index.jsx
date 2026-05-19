@@ -82,7 +82,7 @@ function HeroServico(){
     return(
         <section className={CssHeroServico.secaoHeroServico} ref={el}>
             <div className={CssHeroServico.containerTexto} ref={divHero}>
-                <h1 ref={titleRef}>Sites e Sistemas Pensados <br/> para Resultado</h1>
+                <h1 ref={titleRef}>Sites e Sistemas Pensados <br/> <span>para Resultado</span></h1>
                 <p ref={textRef}>Crio landing pages estratégicas e sistemas web sob medida para transformar ideias em soluções reais e gerar resultados.</p>
                 <div className={CssHeroServico.containerBtnCtaHero} ref={divBotao}>
                     <BotaoCta

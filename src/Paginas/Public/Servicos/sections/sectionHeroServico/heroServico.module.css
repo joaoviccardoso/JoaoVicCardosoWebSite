@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    color: var(--cor-letraClara);
     padding: 8rem 0rem;
 }
 
@@ -12,17 +11,24 @@
     justify-content: center;
     gap: 1rem;
     padding-left: 2rem;
-    color: #fff;
+    
 }
 
 .containerTexto h1{
     font-size: var(--font-size-3x2);
     font-family: var(--font-paraTextoChamativo);
+    color: #fff;
 }
+
+.containerTexto span{
+    color: var(--verde);
+}
+
 
 .containerTexto p{
     font-size: var(--font-size-2xl);
     font-family: var(--font-paraTexto);
+    color: #fff;
 }
 
 .containerBtnCtaHero{

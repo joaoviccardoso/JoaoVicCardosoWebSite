@@ -8,55 +8,85 @@ import SecaoFuncionalidade from "./sections/sectionFuncionalidades";
 const produtos = [
   {
     id: 1,
-    titulo: "JVCode />",
-    descricao: "O DevTrack é uma aplicação web desenvolvida para apresentar meus projetos, habilidades e soluções digitais. Além de funcionar como portfólio, a plataforma oferece uma área exclusiva para clientes, com dashboard interativo que permite acompanhar o andamento de seus projetos em tempo real.",
-    motivo: "Este projeto foi criado com o objetivo de centralizar meus trabalhos e demonstrar, na prática, minhas habilidades como desenvolvedor.",
-    tecnologias: ["React", "GSAP", "Bootstrap"],
+    titulo: "JVcode />",
+    descricao: "Portfólio profissional desenvolvido com React + Vite para apresentar serviços, projetos e facilitar o contato com clientes. Possui área exclusiva com autenticação e dashboards para cliente e administrador.",
+    motivo: "Criado para centralizar meus projetos e demonstrar minhas habilidades como desenvolvedor front-end e UI Designer, além de gerar oportunidades com clientes reais.",
+    tecnologias: ["React", "CSS", "JavaScript"],
     funcionalidades: [
-      "Visualização de projetos desenvolvidos com detalhes e imagens",
-      "Dashboard do cliente para acompanhamento do status dos projetos",
-      "Interface interativa com animações modernas utilizando GSAP"
+      "Sistema de cadastro e login com autenticação",
+      "Dashboard do cliente para acompanhar projetos",
+      "Dashboard administrativo para gerenciamento",
+      "Exibição de projetos com detalhes",
+      "Seções de serviços, sobre mim e contato",
     ],
     imagens: [
-      "/images/TelaHomeMeuProjeto.png",
-      "/images/TelaDashBoardAdm.png",
-      "/images/TelaDeCadastros.png"
+      "/images/Login.png",
+      "/images/dashboardCliente.png",
+      "/images/dasaboardAdm.png",
+      "/images/exibicaoDeProjetos.png",
+      "/images/paginas.png"
     ]
   },
+
   {
-    id: 2,
-    titulo: "DoceGest />",
-    descricao: "O DoceGest é uma aplicação web desenvolvida para gerenciar pedidos e produtos de uma doceria. A plataforma permite visualizar o cardápio, registrar pedidos e facilitar a comunicação com clientes via WhatsApp.",
-    motivo: "Este projeto foi criado com o objetivo de ajudar pequenas docerias a organizarem seus pedidos e produtos de forma simples e eficiente.",
-    tecnologias: ["Html", "CSS", "JavaScript"],
-    funcionalidades: [
-      "Visualização de produtos com imagens, preços e descrições",
-      "Realização de pedidos com envio direto para o WhatsApp",
-      "Interface simples e responsiva para mobile e desktop"
-    ],
-    imagens: [
-      "/images/TelaHomeDoceria.png",
-      "/images/TelaDashBoardDoceria.png",
-      "/images/TelaPedidosDoceria.png"
-    ]
-  },
+  id: 2,
+  titulo: "Art Vida Capoeira",
+  descricao: "Landing page desenvolvida para a escola Art Vida Capoeira, com foco em apresentar a história, aulas e facilitar o contato com novos alunos. O site transmite tradição, cultura e profissionalismo, sendo totalmente responsivo e otimizado para SEO.",
+  motivo: "Criado para ajudar a escola a ter presença digital, atrair novos alunos e valorizar a cultura da capoeira na cidade de Conchal-SP.",
+  tecnologias: ["Html", "CSS", "JavaScript"],
+  funcionalidades: [
+    "Design moderno e totalmente responsivo",
+    "Seção de apresentação da história da escola",
+    "Exibição das turmas (adulto, kids e projetos sociais)",
+    "Carrossel interativo com imagens das aulas",
+    "Integração com Google Maps para localização"
+  ],
+  imagens: [
+    "/images/homeCapoeira.png",
+    "/images/NossaHistoria.png",
+    "/images/turmas.png",
+    "/images/carrocel.png",
+    "/images/maps.png"
+  ]
+},
+
   {
     id: 3,
-    titulo: "Capoeira Art Vida",
-    descricao: "O Capoeira Art Vida é uma aplicação web desenvolvida para apresentar o trabalho do Professor Carlos, destacando aulas, eventos e a filosofia da capoeira. O site funciona como uma vitrine digital, permitindo que novos alunos conheçam o projeto e entrem em contato بسهولة.",
-    motivo: "Este projeto foi criado com o objetivo de fortalecer a presença online do Capoeira Art Vida, facilitar o contato com novos alunos e divulgar a cultura da capoeira.",
-    tecnologias: ["Html", "CSS", "JavaScript"],
+    titulo: "Cálculo Rápido",
+    descricao: "Aplicação web desenvolvida para facilitar cálculos do dia a dia, incluindo cálculos matemáticos, financeiros, trabalhistas e acadêmicos com explicação passo a passo.",
+    motivo: "Projeto criado para praticar lógica de programação, POO e organização de código, além de oferecer uma ferramenta útil para usuários realizarem cálculos rapidamente.",
+    tecnologias: ["JavaScript", "Html", "CSS",],
     funcionalidades: [
-        "Apresentação institucional do projeto e do professor Carlos",
-        "Galeria de imagens dos treinos e eventos",
-        "Layout responsivo para celular, tablet e desktop"
+        "Interface moderna e intuitiva",
+        "Realização de diversos tipos de cálculos",
+        "Histórico de cálculos salvo no navegador",
+        "Explicação passo a passo dos cálculos"
     ],
     imagens: [
-        "/images/inicioArtVidaSite.png",
-        "/images/aulasArtVida.png",
-        "/images/mapsArtVida.png"
+      "/images/homeCalculorapido.png",
+      "/images/calculos.png",
+      "/images/historico.png",
+      "/images/comoFazer.png",
     ]
-    }
+  },
+
+  {
+    id: 4,
+    titulo: "Pokédex Interativa",
+    descricao: "Aplicação web que consome a API PokéAPI para exibir informações detalhadas dos Pokémon, incluindo sistema de equipe e cadeia evolutiva.",
+    motivo: "Projeto desenvolvido para praticar consumo de API, manipulação do DOM e lógica com JavaScript.",
+    tecnologias: ["JavaScript", "Html", "CSS"],
+    funcionalidades: [
+      "Consumo de API para buscar dados dos Pokémon",
+      "Exibição de cadeia evolutiva",
+      "Sistema de criação de equipe com limite de 6 Pokémon"
+    ],
+    imagens: [
+      "/images/PokemonsHome.png",
+      "/images/cadeiaEvolutiva.png",
+      "/images/equipePokemon.png"
+    ]
+  }
 ]
 
 

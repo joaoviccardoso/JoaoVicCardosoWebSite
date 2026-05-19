@@ -42,9 +42,9 @@ span{
     flex-wrap: wrap;
 }
 
-@media(max-width: 1300px){
+@media(max-width: 1320px){
     .secaoProdutos{
-        padding: 2rem 5rem;
+        padding: 2rem 4rem;
         width: 100%;
         background: transparent;
         filter: drop-shadow(var(--verde) 1.95px 1.95px 2.6px);

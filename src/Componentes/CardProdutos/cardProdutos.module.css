@@ -93,13 +93,7 @@
     margin: 0 0 18px;
 }
 
-@media (max-width: 1500px) {
-    .containerCardProdutos { width: 340px; height: 560px; }
-    .containerCardProdutos h3 { font-size: 22px; }
-    .tituloPreview { font-size: 22px; }
-}
-
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
     .containerCardProdutos { width: 280px; height: 500px; }
     .containerCardProdutos h3 { font-size: 20px; }
     .tituloPreview { font-size: 20px; }

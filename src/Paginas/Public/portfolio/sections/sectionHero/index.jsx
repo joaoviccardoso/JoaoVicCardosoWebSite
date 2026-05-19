@@ -70,7 +70,7 @@ function HeroProdutos(){
     return (
         <section  ref={el}>
             <div className={CssHero.secaoHeroProdutos} ref={divHero}>
-                <h1 ref={titleRef}>Soluções reais desenvolvidas com tecnologia e estratégia</h1>
+                <h1 ref={titleRef}>Soluções reais desenvolvidas com <span>tecnologia e estratégia</span></h1>
                 <p ref={textRef}>Cada projeto foi pensado para resolver problemas de forma prática,<br/> com código limpo, design funcional e foco em resultado.</p>
                 <div ref={divBotao}>
                     <BotaoCta

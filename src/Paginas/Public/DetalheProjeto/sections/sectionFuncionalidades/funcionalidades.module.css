@@ -1,42 +1,193 @@
-.secaoFuncionalidade{
-    text-align: center;
-    padding: 3rem 12rem;
+.secaoFuncionalidade {
+    padding: 5rem 12rem;
+    overflow: hidden;
 }
 
-.ulFuncionalidade{
+/* ─── Cabeçalho ──────────────────────────────────────────── */
+.cabecalho {
     display: flex;
-    justify-content: space-around;
-    padding: 2rem 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-@media(max-width: 1570px){
-    .secaoFuncionalidade{
-        padding: 3rem 6rem;
+.cabecalhoTexto {
+    flex: 1;
+}
+
+.titulo {
+    font-family: var(--font-paraTextoChamativo);
+    font-size: var(--font-size-3xl);
+    color: var(--cor-letraClara);
+    margin-bottom: 1rem;
+}
+
+.descricao {
+    font-family: var(--font-paraTexto);
+    font-size: var(--font-size-xl);
+    color: var(--cor-letraClara);
+    margin: 0;
+}
+
+/* Botões no cabeçalho — ocultos por padrão (desktop usa os laterais) */
+.botoesNavMobile {
+    display: none;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* ─── Carrossel ──────────────────────────────────────────── */
+.carrosselWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.viewport {
+    flex: 1;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.viewport:active {
+    cursor: grabbing;
+}
+
+.trilha {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.item {
+    flex: 0 0 calc(100% / 3);
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+/* ─── Botões de nav ──────────────────────────────────────── */
+.botaoNav {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border);
+    background: var(--branco-menosBranco);
+    color: var(--color-text, #1e293b);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.botaoNav:hover:not(:disabled) {
+    background: var(--color-gradienteVerdeBottom);
+    border-color: var(--branco-menosBranco);
+    color: #ffffff;
+}
+
+.botaoNav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Botões laterais — visíveis no desktop, ocultos no mobile */
+.botaoNavLateral {
+    display: flex;
+}
+
+/* ─── Indicadores ────────────────────────────────────────── */
+.indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+}
+
+.indicador {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    border: none;
+    background: var(--color-border, #cbd5e1);
+    cursor: pointer;
+    padding: 0;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.indicadorAtivo {
+    width: 1.75rem;
+    background: var(--verde);
+}
+
+/* ─── Responsivo ─────────────────────────────────────────── */
+@media (max-width: 1570px) {
+    .secaoFuncionalidade {
+        padding: 4rem 6rem;
     }
 }
 
-@media(max-width: 1380px){
-    .secaoFuncionalidade{
-        padding: 3rem;
+@media (max-width: 1380px) {
+    .secaoFuncionalidade {
+        padding: 4rem 3rem;
     }
 }
 
-@media(max-width: 880px){
-    .secaoFuncionalidade{
-        padding: 3rem 2rem;
+@media (max-width: 880px) {
+    .secaoFuncionalidade {
+        padding: 3rem 1.5rem;
     }
 
-    .ulFuncionalidade{
-        align-items: center;
+    .item {
+        flex: 0 0 calc(100% / 2);
+    }
+
+    .titulo {
+        font-size: var(--font-size-2xl, 1.5rem);
+    }
+
+    .descricao {
+        font-size: var(--font-size-sm, 0.875rem);
+    }
+}
+
+@media (max-width: 560px) {
+    .secaoFuncionalidade {
+        padding: 2.5rem 1rem;
+    }
+
+    /* Cabeçalho vira row: texto à esquerda, botões à direita */
+    .cabecalho {
+        padding: 1rem;
         flex-direction: column;
-        gap: 4rem;
+        align-items: flex-start;
+        text-align: left;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
     }
 
-    .secaoFuncionalidade h3{
-        font-size: var(--font-size-2xl);
+    /* Botões do cabeçalho aparecem no mobile */
+    .botoesNavMobile {
+        display: flex;
+        padding-top: 0.25rem;
     }
 
-    .secaoFuncionalidade p{
-        font-size: var(--font-size-lg);
+    /* Botões laterais somem no mobile */
+    .botaoNavLateral {
+        display: none;
+    }
+
+    .item {
+        flex: 0 0 100%;
     }
 }

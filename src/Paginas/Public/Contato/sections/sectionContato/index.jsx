@@ -53,7 +53,7 @@ function MeusContato(){
                 </li>
                 <li>
                     <Image
-                        href="https://web.whatsapp.com/send?phone=5519992861087"
+                        href="https://wa.me/5519992861087?text=Olá,%20vim%20pelo%20site!"
                         src={logoWhatsapp}
                         alt="logo whatsapp"
                         width={75}

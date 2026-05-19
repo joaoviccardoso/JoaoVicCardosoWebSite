@@ -1,4 +1,9 @@
 .secaoHeroProdutos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 10rem 12rem;
     color: #fff;
 }
@@ -6,46 +11,80 @@
 .secaoHeroProdutos h1{
     font-size: var(--font-size-4xl);
     font-family: var(--font-paraTextoChamativo);
+    max-width: 1500px;
+    text-align: center;
+}
+
+.secaoHeroProdutos span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: var(--verde);
+    white-space: nowrap;
 }
 
 .secaoHeroProdutos p{
-    margin:.9rem 0;
+    margin: .9rem 0;
     font-size: var(--font-size-2xl);
     font-family: var(--font-paraTexto);
 }
 
 @media(max-width: 1400px){
+    .secaoHeroProdutos{
+        text-align: center;
+        padding: 8rem 10rem;
+        color: #fff;
+    }
+}
+
+@media(max-width: 1100px){
+    .secaoHeroProdutos{
+        padding: 6rem 2rem;
+    }
+
     .secaoHeroProdutos h1{
+        text-align: center;
         font-size: var(--font-size-3xl);
     }
 
-    .containerTexto p{
-        font-size: var(--font-size-2xl);
+    .secaoHeroProdutos p{
+        font-size: var(--font-size-xl);
     }
 }
 
-@media(max-width: 1000px){
-    .secaoHeroProdutos{
-        padding: 4rem;
-    }
-}
-
-@media(max-width: 480px){
-    .secaoHeroProdutos{
-        padding: 4rem 2rem;
+@media(max-width: 640px){
+    .secaoHeroProdutos span{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        color: var(--verde);
+        white-space: nowrap;
     }
 
+    .secaoHeroProdutos{
+        justify-content: start;
+        align-items: start;
+        text-align: start;
+        padding: 4rem 3rem;
+    }
     .secaoHeroProdutos h1{
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-xl);
+        text-align: start;
     }
 
     .secaoHeroProdutos p{
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-md);
     }
 }
 
 
-@media(max-width: 320px){
+@media(max-width: 420px){
+    .secaoHeroProdutos{
+        text-align: start;
+        padding: 4rem 2rem;
+    }
+
     .secaoHeroProdutos h1{
         font-size: var(--font-size-xl);
     }
