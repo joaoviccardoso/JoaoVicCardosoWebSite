@@ -20,6 +20,14 @@ const STATUS_OPTIONS = [
   { value: "pausado", label: "Pausado" },
 ]
 
+const STATUS_COR_MAP = {
+  desenvolvimento: "blue",
+  testes: "pink",
+  criando_o_design: "purple",
+  concluido: "green",
+  pausado: "orange",
+};
+
 const FORM_VAZIO = {
     nomeProjeto: "",
     status: "",
@@ -58,16 +66,18 @@ function AcaoCadastrarProdutoPc(){
         async function carregarProduto() {
             setCarregando(true)
             try {
+                //chama api para pegar o produto
                 const produto = await getProdutoPorId(id)
 
                 // Formata a data para yyyy-MM-dd que o input type="date" exige
                 const dataFormatada = produto.dateEntrega
                     ? new Date(produto.dateEntrega).toISOString().split("T")[0]
                     : ""
-
+                console.log(produto)
                 setForm({
                     nomeProjeto: produto.nomeProjeto || "",
                     status: produto.status || "",
+                    statusCor: produto.statusCor || "",
                     cliente: produto.cliente?._id || "",
                     clienteNome: produto.cliente?.nomeCompleto || "",
                     dateEntrega: dataFormatada,
@@ -87,9 +97,15 @@ function AcaoCadastrarProdutoPc(){
 
     function handleChange(e) {
         const { name, value } = e.target;
-        setForm((prev) => ({ ...prev, [name]: value }));
+        setForm((prev) => ({
+            ...prev,
+            [name]: value,
+            // Se mudou o status, atualiza a cor junto
+            ...(name === "status" && { statusCor: STATUS_COR_MAP[value] || "gray" }),
+        }));
     }
-
+    
+    //Envia o formulario para atualizar ou cadastrar um produto novo
     async function handleSubmit(e) {
         e.preventDefault();
 
@@ -101,7 +117,6 @@ function AcaoCadastrarProdutoPc(){
 
         try {
             let resposta;
-
             if (modoEdicao) {
                 console.log(form)
                 // Chama PUT/PATCH para atualizar
