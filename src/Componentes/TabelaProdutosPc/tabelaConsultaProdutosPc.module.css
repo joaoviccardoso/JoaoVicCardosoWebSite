@@ -128,14 +128,30 @@
   color: #F1EFE8;
 }
 
-.pink{
-  background: #f80ff8;
-  color: #F1EFE8;
+.pink {
+  background: #D4537E;
+  color: #FBEAF0;
 }
 
-.purple{
-  background: #790779;
-  color: #F1EFE8;
+.purple {
+  background: #534AB7;
+  color: #EEEDFE;
+}
+
+/* Novas cores */
+.teal {
+  background: #1D9E75;
+  color: #E1F5EE;
+}
+
+.yellow {
+  background: #BA7517;
+  color: #FAEEDA;
+}
+
+.red {
+  background: #A32D2D;
+  color: #FCEBEB;
 }
  
 .colBotoes{

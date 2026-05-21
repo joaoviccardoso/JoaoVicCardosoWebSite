@@ -13,19 +13,73 @@ import ModalAviso from "../../../../../Componentes/ModalAviso";
 import useModalAviso from "../../../../../hooks/useModalAviso";
 
 const STATUS_OPTIONS = [
-  { value: "desenvolvimento", label: "Desenvolvimento" },
-  { value: "testes", label: "Testes" },
-  { value: "criando_o_design", label: "Criando o design" },
-  { value: "concluido", label: "Concluído" },
-  { value: "pausado", label: "Pausado" },
-]
+  // Pré-projeto
+  { value: "negociacao",        label: "Negociação" },
+  { value: "orcamento_enviado", label: "Orçamento enviado" },
+  { value: "aguardando_sinal",  label: "Aguardando sinal" },
+  { value: "contrato_assinado", label: "Contrato assinado" },
+
+  // Em execução
+  { value: "planejamento",      label: "Planejamento" },
+  { value: "criando_o_design",  label: "Criando o design" },
+  { value: "desenvolvimento",   label: "Desenvolvimento" },
+  { value: "testes",            label: "Testes" },
+  { value: "revisao_cliente",   label: "Revisão do cliente" },
+  { value: "ajustes",           label: "Ajustes / Correções" },
+
+  // Entrega
+  { value: "aguardando_deploy", label: "Aguardando deploy" },
+  { value: "concluido",         label: "Concluído" },
+  { value: "entregue",          label: "Entregue ao cliente" },
+
+  // Pós-entrega
+  { value: "manutencao",        label: "Manutenção" },
+  { value: "garantia",          label: "Em garantia" },
+
+  // Financeiro
+  { value: "aguardando_pagamento", label: "Aguardando pagamento" },
+  { value: "pago",              label: "Pago" },
+  { value: "inadimplente",      label: "Inadimplente" },
+
+  // Bloqueados / Encerrados
+  { value: "pausado",           label: "Pausado" },
+  { value: "cancelado",         label: "Cancelado" },
+  { value: "arquivado",         label: "Arquivado" },
+];
 
 const STATUS_COR_MAP = {
-  desenvolvimento: "blue",
-  testes: "pink",
-  criando_o_design: "purple",
-  concluido: "green",
-  pausado: "orange",
+  // Pré-projeto → tons de cinza/lilás
+  negociacao:           "gray",
+  orcamento_enviado:    "purple",
+  aguardando_sinal:     "purple",
+  contrato_assinado:    "teal",
+
+  // Em execução → azul/índigo
+  planejamento:         "blue",
+  criando_o_design:     "purple",
+  desenvolvimento:      "blue",
+  testes:               "pink",
+  revisao_cliente:      "orange",
+  ajustes:              "orange",
+
+  // Entrega → verde
+  aguardando_deploy:    "yellow",
+  concluido:            "green",
+  entregue:             "green",
+
+  // Pós-entrega → teal
+  manutencao:           "teal",
+  garantia:             "teal",
+
+  // Financeiro → âmbar/vermelho
+  aguardando_pagamento: "yellow",
+  pago:                 "green",
+  inadimplente:         "red",
+
+  // Bloqueados / Encerrados
+  pausado:              "orange",
+  cancelado:            "red",
+  arquivado:            "gray",
 };
 
 const FORM_VAZIO = {
