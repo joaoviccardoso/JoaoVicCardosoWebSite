@@ -12,6 +12,7 @@
 }
 
 .btnSair{
+    width: 100%;
     color: var(--cor-letraClara);
 }
 

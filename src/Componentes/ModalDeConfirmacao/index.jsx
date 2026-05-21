@@ -1,23 +1,23 @@
 import { createPortal } from "react-dom";
 import CssModalConfirmacao from "./modalConfirmacao.module.css";
 
-function ModalConfirmacaoExclusao({ aberto, onFechar, onConfirmar, nomeProduto, deletando }) {
+function ModalConfirmacaoExclusao({ aberto, onFechar, onConfirmar, nomeProduto, deletando, tituloHeader, textoMain, botaoDeConfirmacao}) {
  
   if (!aberto) return null;
 
   return createPortal(
     <>
       <div className={`modal fade show ${CssModalConfirmacao.modal}`} style={{ display: "block" }} tabIndex="-1">
-        <div className="modal-dialog modal-dialog-centered">
+        <div className={`modal-dialog modal-dialog-centered ${CssModalConfirmacao.modalDialog}`}>
           <div className={`modal-content ${CssModalConfirmacao.modalContent}`}>
 
             <div className={`modal-header ${CssModalConfirmacao.modalHeader}`}>
-              <h5 className={`modal-title ${CssModalConfirmacao.modalTitle}`}>Confirmar Exclusão</h5>
+              <h5 className={`modal-title ${CssModalConfirmacao.modalTitle}`}>{tituloHeader}</h5>
               <button type="button" className={`btn-close ${CssModalConfirmacao.btnClose}`} onClick={onFechar} />
             </div>
 
             <div className={`modal-body ${CssModalConfirmacao.modalBody}`}>
-              <p>Tem certeza que deseja excluir <strong>{nomeProduto}</strong>?</p>
+              <p>{textoMain} <strong>{nomeProduto}</strong>?</p>
             </div>
 
             <div className={`modal-footer ${CssModalConfirmacao.modalFooter}`}>
@@ -39,7 +39,7 @@ function ModalConfirmacaoExclusao({ aberto, onFechar, onConfirmar, nomeProduto, 
                     Excluindo...
                   </>
                 ) : (
-                  "Sim, excluir"
+                  `${botaoDeConfirmacao}`
                 )}
               </button>
             </div>

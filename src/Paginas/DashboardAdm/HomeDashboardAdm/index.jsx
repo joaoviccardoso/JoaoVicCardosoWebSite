@@ -104,6 +104,9 @@ function HomeDashborardAdm(){
                 aberto={modalAberto}
                 onFechar={fecharModal}
                 onConfirmar={confirmarSaida}
+                tituloHeader="Sair"
+                textoMain="Tem certeza que deseja sair"
+                botaoDeConfirmacao="Sim, sair"
             />
         </section>
     )

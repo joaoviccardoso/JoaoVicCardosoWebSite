@@ -87,6 +87,9 @@ function TabelaConsultaCliente({clientes,  onDeletar}){
                 onConfirmar={confirmarExclusao}
                 nomeProduto={clienteSelecionado?.nomeCompleto}
                 deletando={deletando}
+                tituloHeader="Confirmar Exclusão"
+                textoMain="Tem certeza que deseja excluir"
+                botaoDeConfirmacao="Sim, excluir"
               />
 
               <ModalAviso

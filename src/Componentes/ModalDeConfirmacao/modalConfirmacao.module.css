@@ -197,3 +197,33 @@
   /* mantém tudo que já tem + adiciona: */
   animation: fadeIn 0.25s ease forwards;
 }
+
+@media(max-width: 480px){
+  .modalDialog{
+    margin: 1.8rem;
+  }
+
+  .botaoExcluir {
+    font-size: var(--font-size-sm);
+  }
+
+  .botaoCancelar {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media(max-width: 340px){
+  .modalDialog{
+    margin: 1.2rem;
+  }
+
+  .botaoExcluir {
+    padding: 6px 16px;
+    font-size: var(--font-size-sm);
+  }
+
+  .botaoCancelar {
+    padding: 6px 16px;
+    font-size: var(--font-size-sm);
+  }
+}
