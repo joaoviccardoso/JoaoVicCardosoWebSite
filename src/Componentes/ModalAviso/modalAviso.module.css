@@ -1,5 +1,8 @@
 /* Backdrop */
 .backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.6);
@@ -11,6 +14,8 @@
 .modal {
   z-index: 1055;
 }
+
+
 
 /* Botão X fechar */
 .btnClose {
@@ -221,4 +226,11 @@
 
 .contentSaindo {
   animation: slideUp 0.25s ease forwards;
+}
+
+
+@media(max-width: 380px){
+  .dialog{
+    margin: 0 1.2rem;
+  }
 }
