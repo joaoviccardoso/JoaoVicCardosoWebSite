@@ -11,6 +11,10 @@
     font-size: var(--font-size-lg);
 }
 
+.btnSair{
+    color: var(--cor-letraClara);
+}
+
 .divTabelaProjetos{
     display: flex;
     align-items: center;

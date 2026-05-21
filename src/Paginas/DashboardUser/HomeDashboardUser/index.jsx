@@ -5,9 +5,11 @@ import BotaoDash from "../../../Componentes/BotaoDashBoard"
 import TabelaProjetos from "../../../Componentes/TabelaProjetos"
 import { logout } from "../../../services/authServices"
 import { useNavigate } from "react-router-dom"
+import ModalConfirmacaoExclusao from "../../../Componentes/ModalDeConfirmacao"
 
 function HomeDashborardUser(){
     const navigate = useNavigate() 
+    const [modalAberto, setModalAberto] = useState(false);
     const [userUser, setUserUser] = useState({})
     
     useEffect(() => {
@@ -15,9 +17,26 @@ function HomeDashborardUser(){
     }, [])
     
     function handleSair(navigateFn) {
-            logout()            // apaga o token
-            navigateFn("/")      // manda para a home (ou /Login)
+        logout()            // apaga o token
+        navigateFn("/")      // manda para a home (ou /Login)
+    }
+
+    const abrirModal = () => {
+        setModalAberto(true);
+    };
+
+    const fecharModal = () => {
+        setModalAberto(false);
+    };
+
+    const confirmarSaida = async () => {
+        try {
+            fecharModal();
+            handleSair(navigate)
+        } catch (error) {
+            console.log(error)
         }
+    };
 
     return(
         <section className={CssDashborardUser.sectionDashboardUser}>
@@ -44,15 +63,20 @@ function HomeDashborardUser(){
 
                 <div className={CssDashborardUser.divContainerBotaoEhTabela}> 
                     <div className={CssDashborardUser.divBotaoAcoes2}>
-                        <BotaoDash
-                            child="Sair"
-                            to="/"
-                            onClick={handleSair}
-                        />
+                        <button className={CssDashborardUser.btnSair} onClick={() => abrirModal() }>
+                            <BotaoDash
+                                child="Sair"
+                            />
+                        </button>
                     </div>
                 </div>
                 
             </section>
+            <ModalConfirmacaoExclusao
+                aberto={modalAberto}
+                onFechar={fecharModal}
+                onConfirmar={confirmarSaida}
+            />
         </section>
     )
 }

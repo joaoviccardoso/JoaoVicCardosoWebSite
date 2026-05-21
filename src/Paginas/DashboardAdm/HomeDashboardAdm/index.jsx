@@ -7,10 +7,11 @@ import { pegarUser } from "../../../Utils/pegarUser"
 import { getAllProdutosPC } from "../../../services/produtosServices"
 import { logout } from "../../../services/authServices"
 import { useNavigate } from "react-router-dom"
-
+import ModalConfirmacaoExclusao from "../../../Componentes/ModalDeConfirmacao"
 
 function HomeDashborardAdm(){
     const navigate = useNavigate() 
+    const [modalAberto, setModalAberto] = useState(false);
     const [userAdm, setUserAdm] = useState({})
     const [projetosAll, setProjetosAll] = useState([])
 
@@ -35,6 +36,23 @@ function HomeDashborardAdm(){
         logout()            // apaga o token
         navigateFn("/")      // manda para a home (ou /Login)
     }
+
+    const abrirModal = () => {
+        setModalAberto(true);
+    };
+
+    const fecharModal = () => {
+        setModalAberto(false);
+    };
+
+    const confirmarSaida = async () => {
+        try {
+            fecharModal();
+            handleSair(navigate)
+        } catch (error) {
+            console.log(error)
+        }
+    };
 
     return(
         <section className={CssDashborardAdm.homeDashborardAdm}>
@@ -64,11 +82,12 @@ function HomeDashborardAdm(){
                                     child="Configuração"
                                     to="/admin/EmDensenvolvimento"
                                 />
-                                <BotaoDash
-                                    child="Sair"
-                                    to="/"
-                                    onClick={handleSair}
-                                />
+                                <button className={CssDashborardAdm.btnSair} onClick={() => abrirModal() }>
+                                    <BotaoDash
+                                        child="Sair"
+                                    />
+                                </button>
+                                
                             </div>
                             
                             <div className={CssDashborardAdm.divTabelaProjetos}>
@@ -81,6 +100,11 @@ function HomeDashborardAdm(){
                     </div>
                 </div>
             </section>
+            <ModalConfirmacaoExclusao
+                aberto={modalAberto}
+                onFechar={fecharModal}
+                onConfirmar={confirmarSaida}
+            />
         </section>
     )
 }

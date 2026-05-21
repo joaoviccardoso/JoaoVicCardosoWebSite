@@ -11,6 +11,10 @@
     font-size: var(--font-size-3xl);
 }
 
+.btnSair{
+    color: var(--cor-letraClara);
+}
+
 .sectionDashboardUser p{
     font-size: var(--font-size-lg);
 }
