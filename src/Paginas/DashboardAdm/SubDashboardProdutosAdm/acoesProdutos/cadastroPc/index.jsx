@@ -73,7 +73,7 @@ function AcaoCadastrarProdutoPc(){
                 const dataFormatada = produto.dateEntrega
                     ? new Date(produto.dateEntrega).toISOString().split("T")[0]
                     : ""
-                console.log(produto)
+                
                 setForm({
                     nomeProjeto: produto.nomeProjeto || "",
                     status: produto.status || "",

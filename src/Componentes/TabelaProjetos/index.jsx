@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom"
 import styles from "./tabelaProjetos.module.css"
 
-function TabelaProjetos({projetos, onVerMais}){
+function TabelaProjetos({projetos}){
     
     return (
         <div className={styles.tableWrapper}>
@@ -22,12 +23,9 @@ function TabelaProjetos({projetos, onVerMais}){
                       </td>
         
                       <td className={`${styles.projCell} ${styles.colAcao}`}>
-                          <button
-                            className={styles.verMaisBtn}
-                            onClick={() => onVerMais(projeto)}
-                          >
-                            ver mais
-                          </button>
+                        <Link to={`/admin/Produto/ConsultaPC/Editar/${projeto._id}`} className={styles.verMaisBtn}> 
+                          Ver mais
+                        </Link>
                       </td>
         
                     </tr>
