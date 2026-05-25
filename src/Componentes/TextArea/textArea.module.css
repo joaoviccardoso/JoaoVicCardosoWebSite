@@ -54,13 +54,26 @@
 }
 
 @media(max-width: 560px){
-    
-
     .containerTextArea label{
         font-size: var(--font-size-md);
     }
 
     .textAreaDe{
         font-size: var(--font-size-md);
+    }
+}
+
+@media(max-width: 360px){
+    .containerTextArea label{
+        font-size: var(--font-size-md);
+    }
+
+    .textAreaDe{
+        font-size: var(--font-size-sm);
+    }
+
+    .containerTextArea textarea::placeholder{
+        font-size: var(--font-size-md);
+        padding-top: 0.4rem;
     }
 }

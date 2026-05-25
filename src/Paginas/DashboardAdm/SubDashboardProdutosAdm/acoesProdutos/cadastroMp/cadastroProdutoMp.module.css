@@ -6,6 +6,20 @@
     max-height: 100%;
 }
 
+.divTitulo{
+    color: var(--cor-letraClara);
+}
+
+.divTitulo h1{
+    font-size: var(--font-size-3xl); 
+    font-family: var(--font-paraTextoChamativo);
+}
+
+.divTitulo p{
+    font-size: var(--font-size-lg); 
+}
+
+
 .div2{
     display: flex;
     justify-content: space-between;
@@ -18,3 +32,14 @@
     gap: 3rem;
 }
 
+@media(max-width: 800px){
+    .div2{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .div4{
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
