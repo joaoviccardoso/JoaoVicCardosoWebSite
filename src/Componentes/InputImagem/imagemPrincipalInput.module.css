@@ -1,0 +1,274 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.groupLabel {
+    color: var(--cor-letraClara);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-paraTexto);
+}
+
+/* Zona de drop principal */
+.dropZone {
+    position: relative;
+    width: 100%;
+    min-height: 120px;
+    border: 1.5px dashed #C7C7C7;
+    border-radius: 12px;
+    background: var(--cor-backgroudInput);
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropZone:hover {
+    border-color: var(--verde);
+    box-shadow: 0 0 10px rgba(0, 255, 156, 0.1);
+}
+
+.dropZone.dragOver {
+    border-color: var(--verde);
+    background: rgba(16, 185, 129, 0.06);
+    box-shadow: var(--box-shadowInput);
+}
+
+/* Quando já tem imagem, o cursor muda */
+.dropZone.hasImage {
+    cursor: default;
+    border-style: solid;
+    min-height: unset;
+    aspect-ratio: 16 / 7;
+    border-color: #C7C7C7;
+}
+
+.dropZone.hasImage:hover {
+    border-color: var(--verde);
+}
+
+/* Input file escondido */
+.hiddenInput {
+    display: none;
+}
+
+/* ── Estado vazio (placeholder) ── */
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 2rem;
+    width: 100%;
+    animation: fadeIn 0.2s ease;
+}
+
+.iconWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    border: 1px solid #C7C7C7;
+    background: #1a1a1a;
+    color: var(--cor-letraClara);
+    opacity: 0.5;
+    transition: opacity 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.dropZone:hover .iconWrap,
+.dropZone.dragOver .iconWrap {
+    opacity: 1;
+    border-color: var(--verde);
+    color: var(--verde);
+}
+
+.uploadIcon {
+    width: 28px;
+    height: 28px;
+}
+
+.placeholderTitle {
+    font-family: var(--font-paraTexto);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--cor-letraClara);
+    opacity: 0.7;
+    margin: 0;
+    text-align: center;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.dropZone:hover .placeholderTitle,
+.dropZone.dragOver .placeholderTitle {
+    opacity: 1;
+    color: var(--verde);
+}
+
+.placeholderSub {
+    font-family: var(--font-paraTexto);
+    font-size: var(--font-size-sm);
+    color: var(--cor-letraClara);
+    opacity: 0.35;
+    margin: 0;
+    text-align: center;
+}
+
+/* ── Estado com imagem (preview) ── */
+.previewWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    animation: fadeIn 0.25s ease;
+}
+
+.previewImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Overlay que aparece no hover com os botões */
+.previewOverlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.previewWrapper:hover .previewOverlay {
+    opacity: 1;
+}
+
+.btnTrocar,
+.btnRemover {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-paraTexto);
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+}
+
+.btnTrocar {
+    background: transparent;
+    border-color: var(--verde);
+    color: var(--verde);
+}
+
+.btnTrocar:hover {
+    background: var(--verde);
+    color: #000;
+    box-shadow: var(--box-shadowInput);
+}
+
+.btnRemover {
+    background: transparent;
+    border-color: var(--vermelho-erro);
+    color: var(--vermelho-erro);
+}
+
+.btnRemover:hover {
+    background: var(--vermelho-erro);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+/* Badge com o nome do arquivo */
+.previewBadge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 99px;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    font-family: var(--font-paraTexto);
+    font-size: var(--font-size-xs);
+    color: var(--cor-letraClara);
+    opacity: 0.9;
+    max-width: calc(100% - 20px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+}
+
+.badgeDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--verde);
+    flex-shrink: 0;
+    box-shadow: 0 0 6px var(--verde);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 560px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .groupLabel {
+        font-size: var(--font-size-lg);
+    }
+
+    .placeholderTitle {
+        font-size: var(--font-size-md);
+    }
+
+    .placeholderSub {
+        font-size: var(--font-size-xs);
+    }
+
+    .btnTrocar,
+    .btnRemover {
+        padding: 8px 12px;
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 460px) {
+    .groupLabel {
+        font-size: var(--font-size-md);
+    }
+
+    .dropZone {
+        min-height: 100px;
+    }
+}

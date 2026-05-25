@@ -1,0 +1,320 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.groupLabel {
+    color: var(--cor-letraClara);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-paraTexto);
+}
+
+/* Lista de cards */
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Card de cada funcionalidade */
+.card {
+    border: 1px solid #C7C7C7;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--cor-backgroudInput);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    border-color: var(--verde);
+}
+
+/* Cabeçalho do card (clicável) */
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    cursor: pointer;
+    user-select: none;
+    background: var(--cor-backgroudInput);
+    transition: background 0.15s ease;
+}
+
+.cardHeader:hover {
+    background: #1a1a1a;
+}
+
+.cardHeaderLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.cardHeaderRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Número da funcionalidade */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--verde);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-family: var(--font-paraTexto);
+    flex-shrink: 0;
+}
+
+.cardTitulo {
+    font-size: var(--font-size-lg);
+    font-family: var(--font-paraTexto);
+    font-weight: 500;
+    color: var(--cor-letraClara);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 280px;
+}
+
+/* Botão remover */
+.btnRemover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--cor-letraClara);
+    font-size: 0.8rem;
+    padding: 4px 6px;
+    border-radius: 6px;
+    opacity: 0.5;
+    transition: color 0.15s, background 0.15s, opacity 0.15s;
+    line-height: 1;
+    font-family: var(--font-paraTexto);
+}
+
+.btnRemover:hover {
+    color: var(--vermelho-erro);
+    background: rgba(239, 68, 68, 0.12);
+    opacity: 1;
+}
+
+/* Seta de accordion */
+.chevron {
+    font-size: 1rem;
+    color: var(--cor-letraClara);
+    opacity: 0.5;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    line-height: 1;
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+    opacity: 1;
+    color: var(--verde);
+}
+
+/* Corpo do card (campos) */
+.cardBody {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 1px solid #C7C7C7;
+    background: #111111;
+    animation: slideDown 0.18s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Grupo de campo */
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fieldLabel {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    font-family: var(--font-paraTexto);
+    color: var(--cor-letraClara);
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.fieldInput,
+.fieldTextarea {
+    width: 100%;
+    padding: 0 1rem;
+    height: 52px;
+    font-size: var(--font-size-lg);
+    font-family: var(--font-paraTexto);
+    color: var(--cor-letraClara);
+    background: var(--cor-backgroudInput);
+    border: 1px solid #C7C7C7;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    caret-color: white;
+}
+
+.fieldTextarea {
+    height: auto;
+    padding: 12px 1rem;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.fieldInput::placeholder,
+.fieldTextarea::placeholder {
+    font-size: var(--font-size-lg);
+    color: var(--cor-letraClara);
+    font-family: var(--font-paraTexto);
+    opacity: 0.4;
+}
+
+.fieldInput:hover,
+.fieldTextarea:hover {
+    border-color: var(--verde);
+}
+
+.fieldInput:focus,
+.fieldTextarea:focus {
+    outline: none;
+    border: 1px solid var(--color-gradienteVerdeBottom);
+    border-color: var(--verde);
+    box-shadow: var(--box-shadowInput);
+}
+
+.fieldInput:active,
+.fieldTextarea:active {
+    transform: scale(0.99);
+}
+
+/* Botão de adicionar */
+.btnAdicionar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 16px;
+    border: 1.5px dashed #C7C7C7;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--cor-letraClara);
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    font-family: var(--font-paraTexto);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.btnAdicionar:hover:not(:disabled) {
+    border-color: var(--verde);
+    color: var(--verde);
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0, 255, 156, 0.15);
+}
+
+.btnAdicionar:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.btnAdicionarIcon {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.contador {
+    margin-left: auto;
+    font-size: var(--font-size-xs);
+    font-family: var(--font-paraTexto);
+    font-weight: 500;
+    color: var(--verde);
+    background: rgba(16, 185, 129, 0.12);
+    padding: 2px 8px;
+    border-radius: 99px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* Responsividade */
+@media (max-width: 960px) {
+    .fieldInput::placeholder,
+    .fieldTextarea::placeholder {
+        font-size: var(--font-size-md);
+    }
+
+    .fieldInput,
+    .fieldTextarea {
+        font-size: var(--font-size-md);
+    }
+
+    .cardTitulo {
+        font-size: var(--font-size-md);
+    }
+}
+
+@media (max-width: 560px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .fieldInput::placeholder,
+    .fieldTextarea::placeholder {
+        font-size: var(--font-size-sm);
+    }
+
+    .fieldInput,
+    .fieldTextarea {
+        font-size: var(--font-size-sm);
+    }
+
+    .groupLabel {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 460px) {
+    .groupLabel {
+        font-size: var(--font-size-md);
+    }
+
+    .fieldInput::placeholder,
+    .fieldTextarea::placeholder {
+        font-size: var(--font-size-xs);
+    }
+
+    .fieldInput,
+    .fieldTextarea {
+        font-size: var(--font-size-xs);
+    }
+}

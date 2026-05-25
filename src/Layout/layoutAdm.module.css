@@ -6,6 +6,7 @@
         "aside breadcrumb "
         "aside main "
     ;
+    overflow-y: hidden;
 }
 
 .sectionLatoutAdm aside{
@@ -15,12 +16,14 @@
 .sectionLatoutAdm nav{
     min-height: 100%;
     grid-area: breadcrumb;
+    overflow-y: hidden;
 }
 
 .sectionLatoutAdm main{
     grid-area: main;
     margin: 1rem 4rem;
     overflow-y: hidden;
+    max-height: 100%;
 }
 
 @media(max-width: 1750px){

@@ -1,0 +1,68 @@
+.containerInputCheckbox div {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.containerInputCheckbox input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #C7C7C7;
+    border-radius: 4px; /* quadrado, diferente do radio que é 50% */
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.containerInputCheckbox input:checked {
+    border-color: var(--cor-letraClara);
+    background-color: var(--cor-letraClara);
+}
+
+.containerInputCheckbox input:checked::after {
+    content: "";
+    width: 5px;
+    height: 10px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.containerInputCheckbox label {
+    display: flex;
+    align-items: center;
+    color: var(--cor-letraClara);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-paraTexto);
+    gap: 0.5rem;
+}
+
+@media(max-width: 1400px) {
+    .containerInputCheckbox div {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 1100px) {
+    .containerInputCheckbox label {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media(max-width: 480px) {
+    .containerInputCheckbox div {
+        padding: 0;
+        padding-bottom: 1rem;
+    }
+
+    .containerInputCheckbox label {
+        font-size: var(--font-size-md);
+    }
+}
