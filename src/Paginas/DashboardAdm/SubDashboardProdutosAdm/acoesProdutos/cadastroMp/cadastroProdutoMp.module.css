@@ -32,6 +32,10 @@
     gap: 3rem;
 }
 
+.erro{
+    color: red;
+}
+
 @media(max-width: 800px){
     .div2{
         flex-direction: column;

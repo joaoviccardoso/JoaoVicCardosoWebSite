@@ -9,6 +9,7 @@ import ImagemPrincipalInput from "../../../../../Componentes/InputImagem";
 import ModalAviso from "../../../../../Componentes/ModalAviso";
 import useModalAviso from "../../../../../hooks/useModalAviso";
 import { postProdutosMP } from "../../../../../services/produtoMp";
+import { validarFormularioParaCadastrarMP } from "../../../../../Utils/validarCadastro";
 
 const FORM_VAZIO = {
     nomeCompleto: "",
@@ -21,7 +22,7 @@ const FORM_VAZIO = {
 
 function AcaoCadastroProdutoMp(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
-    const [erroParaAtualizar, setErroParaAtulizar] = useState("")
+    const [erroParaCadastrar, setErroParaCadastrar] = useState(null)
     const modoEdicao = Boolean(false)
     const [form, setForm] = useState(FORM_VAZIO);   
 
@@ -47,6 +48,12 @@ function AcaoCadastroProdutoMp(){
 
     async function handleSubmit(e) {
         e.preventDefault();
+        
+        const erro = validarFormularioParaCadastrarMP(form)
+        if (erro) {
+            setErroParaCadastrar(erro)
+            return;
+        }
 
         const formData = new FormData();
         formData.append("nomeCompleto", form.nomeCompleto);
@@ -68,6 +75,7 @@ function AcaoCadastroProdutoMp(){
                 console.log(form)
                 // Chama POST para criar
                 resposta = await postProdutosMP(formData)
+                setErroParaCadastrar(null)
                 setForm(FORM_VAZIO) // limpa só no cadastro
             }
                 abrirAviso(resposta.message)
@@ -94,7 +102,7 @@ function AcaoCadastroProdutoMp(){
                         value={form.nomeCompleto} 
                         onChange={handleChange}
                         placeholder={"Nome completo"} 
-                        className={`${erroParaAtualizar ? "inputErro" : ""}`}
+                        className={`${erroParaCadastrar ? "inputErro" : ""}`}
                     />
                 </div>
 
@@ -105,6 +113,7 @@ function AcaoCadastroProdutoMp(){
                         onChange={handleChange}
                         value={form.descricaoCurta}
                         name="descricaoCurta"
+                        className={`${erroParaCadastrar ? "inputErro" : ""}`}
                     />
 
                     <TextArea
@@ -113,6 +122,7 @@ function AcaoCadastroProdutoMp(){
                         onChange={handleChange}
                         value={form.MotivodoProjeto}
                         name="MotivodoProjeto"
+                        className={`${erroParaCadastrar ? "inputErro" : ""}`}
                     />
                 </div>
 
@@ -153,7 +163,7 @@ function AcaoCadastroProdutoMp(){
                 </div>
                 
                 <div>
-                    {/*erroParaAtualizar && <p className={CssAcaoProduto1.erro}>{erroParaAtualizar}</p>*/}
+                    {erroParaCadastrar && <p className={CssAcaoProduto1.erro}>{erroParaCadastrar}</p>}
                     <BotaoAction child="Salvar" type="submit" />
                 </div>
             </form>

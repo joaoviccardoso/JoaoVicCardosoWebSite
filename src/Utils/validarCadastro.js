@@ -79,3 +79,29 @@ export function validarFormularioCadastrarProduto(form){
 
     return null; // null = sem erros
 }   
+
+export function validarFormularioParaCadastrarMP(form){
+    console.log(form)
+
+    if (!form.nomeCompleto) {
+        return "O nome do projeto é obrigatório";
+    }
+
+    if (!validarNome(form.descricaoCurta)) {
+        return "A descricao deve ter pelo menos 5 caracteres";
+    } 
+
+    if (!validarNome(form.MotivodoProjeto)) {
+        return "o motivo deve ter pelo menos 5 caracteres";
+    } 
+
+    if(form.tecnologias.length <= 2){
+        return "Adicione pelo menos 3 tecnologias";
+    }
+
+    if(form.funcionalidades.length < 1){
+        return "Adicione pelo menos 1 funcionalidade";
+    }
+
+    return null;
+}
