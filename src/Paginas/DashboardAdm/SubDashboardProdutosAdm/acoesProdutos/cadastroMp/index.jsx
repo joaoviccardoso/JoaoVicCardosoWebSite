@@ -6,18 +6,24 @@ import TextArea from "../../../../../Componentes/TextArea";
 import CheckboxGroup from "../../../../../Componentes/CheckBoxGroup";
 import FuncionalidadesInput from "../../../../../Componentes/InputDinamicoFuncionalidade";
 import ImagemPrincipalInput from "../../../../../Componentes/InputImagem";
+import ModalAviso from "../../../../../Componentes/ModalAviso";
+import useModalAviso from "../../../../../hooks/useModalAviso";
+import { postProdutosMP } from "../../../../../services/produtoMp";
+
+const FORM_VAZIO = {
+    nomeCompleto: "",
+    descricaoCurta: "",
+    MotivodoProjeto: "",
+    tecnologias: "",
+    funcionalidades: [],
+    imagemPrincipal: null,
+}
 
 function AcaoCadastroProdutoMp(){
+    const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const [erroParaAtualizar, setErroParaAtulizar] = useState("")
     const modoEdicao = Boolean(false)
-    const [form, setForm] = useState({
-        nomeCompleto: "",
-        descricaoCurta: "",
-        MotivodoProjeto: "",
-        tecnologias: "",
-        funcionalidades: [],
-        imagemPrincipal: null,
-    });   
+    const [form, setForm] = useState(FORM_VAZIO);   
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -41,9 +47,34 @@ function AcaoCadastroProdutoMp(){
 
     async function handleSubmit(e) {
         e.preventDefault();
-        setErroParaAtulizar("teste");
-        console.log(form)
-    }    
+
+        const formData = new FormData();
+        formData.append("nomeCompleto", form.nomeCompleto);
+        formData.append("descricaoCurta", form.descricaoCurta);
+        formData.append("motivoDoProjeto", form.MotivodoProjeto); // ← nome corrigido p/ bater com o schema
+        formData.append("tecnologias", JSON.stringify(form.tecnologias));
+        formData.append("funcionalidades", JSON.stringify(form.funcionalidades));
+
+        if (form.imagemPrincipal) {
+            formData.append("imagemPrincipal", form.imagemPrincipal);
+        }
+
+        try {
+            let resposta;
+            if (modoEdicao) {
+                console.log(formData)
+                // Chama PUT/PATCH para atualizar
+            } else {
+                console.log(form)
+                // Chama POST para criar
+                resposta = await postProdutosMP(formData)
+                setForm(FORM_VAZIO) // limpa só no cadastro
+            }
+                abrirAviso(resposta.message)
+        } catch (error) {
+            abrirAviso(error.message)
+        }
+    }
 
     return(
         <section>
@@ -126,6 +157,11 @@ function AcaoCadastroProdutoMp(){
                     <BotaoAction child="Salvar" type="submit" />
                 </div>
             </form>
+            <ModalAviso
+                aberto={avisoAberto}
+                onFechar={fecharAviso}
+                mensagem={mensagemAviso} 
+            />
         </section>
     )
 }
