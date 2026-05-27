@@ -133,8 +133,10 @@ function AcaoCadastroProdutoMp(){
                         values={form.tecnologias}
                         onChange={handleChange}
                         options={[
-                            { label: "HTML & CSS", value: "HtmlCss" },
+                            { label: "HTML", value: "Html" },
+                            { label: "CSS", value: "Css" },
                             { label: "Bootstrap", value: "Bootstrap" },
+                            { label: "Figma", value: "Figma" },
                             { label: "JavaScript", value: "JavaScript" },
                             { label: "React", value: "React" },
                             { label: "Node.js", value: "NodeJs" },

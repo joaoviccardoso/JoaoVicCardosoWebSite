@@ -95,6 +95,22 @@ export function validarFormularioParaCadastrarMP(form){
         return "o motivo deve ter pelo menos 5 caracteres";
     } 
 
+    for (let cont = 0; cont < form.funcionalidades.length; cont++){
+        const funcionalidade = form.funcionalidades[cont];
+
+        if (!funcionalidade.titulo || funcionalidade.titulo.trim() === "") {
+            return `A funcionalidade ${cont + 1} precisa ter um título`;
+        }
+
+        if (!funcionalidade.descricao || funcionalidade.descricao.trim() === "") {
+            return `A funcionalidade ${cont + 1} precisa ter uma descrição`;
+        }
+
+        if (funcionalidade.descricao.trim().length < 2) {
+            return `A descrição da funcionalidade ${cont + 1} deve ter pelo menos 2 caracteres`;
+        }
+    }
+
     if(form.tecnologias.length <= 2){
         return "Adicione pelo menos 3 tecnologias";
     }
