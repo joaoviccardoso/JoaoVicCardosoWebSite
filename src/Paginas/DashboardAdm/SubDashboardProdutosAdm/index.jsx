@@ -25,7 +25,7 @@ function SubDashAdmProdutos(){
                 />
                 <BotaoDash
                     child="Consultar M.P"
-                    to="/admin/Produto/EmDensenvolvimento"
+                    to="/admin/Produto/ConsultarMP"
                 />
                 <BotaoDash
                     child="Cadastrar M.P"

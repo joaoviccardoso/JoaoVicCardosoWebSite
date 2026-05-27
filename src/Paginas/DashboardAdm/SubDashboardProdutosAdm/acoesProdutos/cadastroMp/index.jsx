@@ -133,14 +133,14 @@ function AcaoCadastroProdutoMp(){
                         values={form.tecnologias}
                         onChange={handleChange}
                         options={[
-                            { label: "HTML", value: "Html" },
-                            { label: "CSS", value: "Css" },
-                            { label: "Bootstrap", value: "Bootstrap" },
-                            { label: "Figma", value: "Figma" },
-                            { label: "JavaScript", value: "JavaScript" },
-                            { label: "React", value: "React" },
-                            { label: "Node.js", value: "NodeJs" },
-                            { label: "GSAP (Animações)", value: "Gsap" },
+                            { label: "HTML", value: "html.svg" },
+                            { label: "CSS", value: "css.svg" },
+                            { label: "Bootstrap", value: "bootstrap.svg" },
+                            { label: "Figma", value: "figma.svg" },
+                            { label: "JavaScript", value: "js.svg" },
+                            { label: "React", value: "react.svg" },
+                            { label: "Node.js", value: "node.svg" },
+                            { label: "GSAP (Animações)", value: "gsap.png" },
                         ]}
                     />
                 </div>

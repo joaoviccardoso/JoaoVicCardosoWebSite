@@ -14,3 +14,9 @@ export async function postProdutosMP(formData) {  // recebe FormData direto
         body: formData,  // ✅ sem JSON.stringify
     })
 }
+
+export async function getAllProdutosMP() {
+    return apiFetch("/produtosMP/todos", {
+        method: "GET",
+    })
+}

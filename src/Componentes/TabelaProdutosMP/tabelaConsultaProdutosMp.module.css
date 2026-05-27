@@ -1,0 +1,186 @@
+.tableWrapper{
+  min-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.divIconeTeclogia{
+  display: flex;
+  gap: .8rem;
+}
+
+.imgTecnologias{
+  width: 40px;
+}
+
+.projTable{
+  min-width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.projRow {
+  border-bottom: 0.5px solid #2e2e2e;
+}
+ 
+.projRow:last-child {
+  border-bottom: none;
+}
+
+.imgCliente{
+    margin-left: 1rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--verde);
+}
+
+.projCell {
+  padding: 14px 12px;
+  box-sizing: border-box;
+}
+ 
+.clietLabel {
+  font-size: var(--font-size-lg);
+  color: var(--cor-letraClara);
+  margin-bottom: 4px;
+  font-family: var(--font-paraTextoChamativo);
+}
+ 
+.clietName {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  font-family: var(--font-paraTexto);
+  color: var(--cor-letraClara);
+}
+ 
+.colProjeto {
+  width: auto;
+}
+ 
+.colStatus {
+  width: auto
+}
+ 
+.colAcao {
+  width: auto;
+  text-align: center;
+}
+ 
+.botaoLink {
+  background: #1D9E75;
+  color: #E1F5EE;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: var(--font-size-md);
+  font-family: var(--font-paraTexto);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+ 
+.botaoLink:hover {
+  background: #0F6E56;
+}
+
+.botaoExcluir {
+  background: #dc3545;
+  color: #E1F5EE;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: var(--font-size-md);
+  font-family: var(--font-paraTexto);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.botaoExcluir:hover {
+  color: #a71d2a;
+}
+
+.projLabel{
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    font-family: var(--font-paraTextoChamativo);
+    color: var(--cor-letraClara);
+}
+
+.statusBadge {
+  display: inline-block;
+  font-family: var(--font-paraTexto);
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+ 
+.green {
+  background: #1D9E75;
+  color: #E1F5EE;
+}
+ 
+.blue {
+  background: #185FA5;
+  color: #E6F1FB;
+}
+ 
+.orange {
+  background: #BA7517;
+  color: #FAEEDA;
+}
+ 
+.gray {
+  background: #5F5E5A;
+  color: #F1EFE8;
+}
+
+.pink {
+  background: #D4537E;
+  color: #FBEAF0;
+}
+
+.purple {
+  background: #534AB7;
+  color: #EEEDFE;
+}
+
+/* Novas cores */
+.teal {
+  background: #1D9E75;
+  color: #E1F5EE;
+}
+
+.yellow {
+  background: #BA7517;
+  color: #FAEEDA;
+}
+
+.red {
+  background: #A32D2D;
+  color: #FCEBEB;
+}
+ 
+.colBotoes{
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  
+}
+
+@media(max-width: 800px){
+    .clietLabel {
+        font-size: var(--font-size-md);
+    }
+    
+    .clietName {
+        font-size: var(--font-size-sm);
+    }
+
+    .colBotoes{
+      min-height: 100px;
+      padding: 2rem;
+    }
+}
