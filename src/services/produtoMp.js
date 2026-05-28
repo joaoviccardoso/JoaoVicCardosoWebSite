@@ -15,6 +15,14 @@ export async function postProdutosMP(formData) {  // recebe FormData direto
     })
 }
 
+// Atualiza um produto pelo id
+export async function putProdutoMp(id, formData) {
+    return apiFetch(`/produtosMP/atualizar/${id}`, {
+        method: "PUT",
+        body: formData,
+    })
+}
+
 export async function getAllProdutosMP() {
     return apiFetch("/produtosMP/todos", {
         method: "GET",

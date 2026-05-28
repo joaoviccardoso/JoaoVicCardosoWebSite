@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./imagemPrincipalInput.module.css";
 
 /**
@@ -20,10 +20,27 @@ function ImagemPrincipalInput({
     const [dragOver, setDragOver] = useState(false);
     const [preview, setPreview] = useState(null);
 
+    useEffect(() => {
+        if (!value) {
+            setPreview(null);
+            return;
+        }
+
+        // 🟢 Se for imagem da API (string)
+        if (typeof value === "string") {
+            setPreview(value);
+            return;
+        }
+
+        // 🟢 Se for arquivo novo (File)
+        const url = URL.createObjectURL(value);
+        setPreview(url);
+
+        return () => URL.revokeObjectURL(url);
+    }, [value]);
+
     function handleFile(file) {
         if (!file || !file.type.startsWith("image/")) return;
-        const url = URL.createObjectURL(file);
-        setPreview(url);
         onChange(file);
     }
 
@@ -104,7 +121,9 @@ function ImagemPrincipalInput({
                         </div>
                         <div className={styles.previewBadge}>
                             <span className={styles.badgeDot} />
-                            {value?.name ?? "imagem selecionada"}
+                            {typeof value === "string"
+                                ? "imagem atual"
+                                : value?.name ?? "imagem selecionada"}
                         </div>
                     </div>
                 ) : (

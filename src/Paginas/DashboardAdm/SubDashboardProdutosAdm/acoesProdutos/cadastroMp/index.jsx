@@ -8,7 +8,7 @@ import FuncionalidadesInput from "../../../../../Componentes/InputDinamicoFuncio
 import ImagemPrincipalInput from "../../../../../Componentes/InputImagem";
 import ModalAviso from "../../../../../Componentes/ModalAviso";
 import useModalAviso from "../../../../../hooks/useModalAviso";
-import { getProdutoMpPorId, postProdutosMP } from "../../../../../services/produtoMp";
+import { getProdutoMpPorId, postProdutosMP, putProdutoMp } from "../../../../../services/produtoMp";
 import { validarFormularioParaCadastrarMP } from "../../../../../Utils/validarCadastro";
 import { useParams } from "react-router-dom";
 
@@ -57,23 +57,18 @@ function AcaoCadastroProdutoMp(){
                     //chama api para pegar o produto
                     const produto = await getProdutoMpPorId(id)
                     console.log(produto)
-    
-                    // Formata a data para yyyy-MM-dd que o input type="date" exige
-                    const dataFormatada = produto.dateEntrega
-                        ? new Date(produto.dateEntrega).toISOString().split("T")[0]
-                        : ""
                     
                     setForm({
-                        nomeProjeto: produto.nomeProjeto || "",
-                        status: produto.status || "",
-                        statusCor: produto.statusCor || "",
-                        cliente: produto.cliente?._id || "",
-                        clienteNome: produto.cliente?.nomeCompleto || "",
-                        dateEntrega: dataFormatada,
-                        linkContrato: produto.linkContrato || "",
-                        linkDemo: produto.linkDemo || "",
-                        obser: produto.obser || "",
+                        nomeCompleto: produto.nomeCompleto || "",
+                        descricaoCurta: produto.descricaoCurta || "",
+                        MotivodoProjeto: produto.motivoDoProjeto || "",
+                        tecnologias: produto.tecnologias || "",
+                        funcionalidades: produto.funcionalidades || [],
+                        imagemPrincipal: produto.imagemPrincipal
+                            ? `http://localhost:3000${produto.imagemPrincipal}`
+                            : null
                     })
+
                 } catch (error) {
                     abrirAviso("Erro ao carregar produto para edição.")
                 }
@@ -98,8 +93,11 @@ function AcaoCadastroProdutoMp(){
         formData.append("motivoDoProjeto", form.MotivodoProjeto); // ← nome corrigido p/ bater com o schema
         formData.append("tecnologias", JSON.stringify(form.tecnologias));
         formData.append("funcionalidades", JSON.stringify(form.funcionalidades));
+        console.log(form.imagemPrincipal)
+        console.log(form.imagemPrincipal instanceof File)
 
-        if (form.imagemPrincipal) {
+
+        if (form.imagemPrincipal instanceof File) {
             formData.append("imagemPrincipal", form.imagemPrincipal);
         }
 
@@ -108,6 +106,8 @@ function AcaoCadastroProdutoMp(){
             if (modoEdicao) {
                 console.log(formData)
                 // Chama PUT/PATCH para atualizar
+                resposta = await putProdutoMp(id, formData)
+                abrirAviso("Produto atualizado")
             } else {
                 console.log(form)
                 // Chama POST para criar
@@ -203,7 +203,7 @@ function AcaoCadastroProdutoMp(){
                 
                 <div>
                     {erroParaCadastrar && <p className={CssAcaoProduto1.erro}>{erroParaCadastrar}</p>}
-                    <BotaoAction child="Salvar" type="submit" />
+                    <BotaoAction child={modoEdicao ? "Atualizar" : "Salvar"} type="submit" />
                 </div>
             </form>
             <ModalAviso
