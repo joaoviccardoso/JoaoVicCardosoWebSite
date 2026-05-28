@@ -87,6 +87,7 @@
 .botaoExcluir {
   background: #dc3545;
   color: #E1F5EE;
+  width: auto;
   border: none;
   border-radius: 20px;
   padding: 8px 20px;
@@ -182,5 +183,77 @@
     .colBotoes{
       min-height: 100px;
       padding: 2rem;
+    }
+
+    .imgTecnologias{
+      width: 25px;
+    }
+}
+
+@media(max-width: 620px){
+    .colBotoes{
+      flex-direction: column;
+    }
+
+    .divIconeTeclogia{
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+}
+
+
+@media(max-width: 429px){
+    .colBotoes{
+      padding: .8rem;
+    }
+
+    .divIconeTeclogia{
+      gap: .4rem;
+    }
+
+    .botaoLink {
+      padding: 6px 10px;
+      font-size: var(--font-size-sm);
+    }
+
+    .botaoExcluir {
+      padding: 6px 10px;
+      font-size: var(--font-size-sm);
+    }
+
+    .clietLabel {
+        font-size: var(--font-size-sm);
+    }
+
+    .imgTecnologias{
+      width: 18px;
+    }
+}
+
+@media(max-width: 340px){
+    .colBotoes{
+      padding: .2rem;
+    }
+
+    .divIconeTeclogia{
+      gap: .2rem;
+    }
+
+    .botaoLink {
+      padding: 2px 6px;
+      font-size: var(--font-size-sm);
+    }
+
+    .botaoExcluir {
+      padding: 2px 6px;
+      font-size: var(--font-size-sm);
+    }
+
+    .imgTecnologias{
+      width: 16px;
+    }
+
+    .projCell {
+      padding: 14px 2px;
     }
 }

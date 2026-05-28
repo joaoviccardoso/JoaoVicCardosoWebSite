@@ -91,7 +91,7 @@ function AcaoCadastroProdutoMp(){
         formData.append("descricaoCurta", form.descricaoCurta);
         formData.append("motivoDoProjeto", form.MotivodoProjeto); // ← nome corrigido p/ bater com o schema
         formData.append("tecnologias", JSON.stringify(form.tecnologias));
-        formData.append("funcionalidades", JSON.stringify(form.funcionalidades));
+        formData.append("funcionalidades", JSON.stringify(form.funcionalidades)); 
 
         if (form.imagemPrincipal instanceof File) {
             formData.append("imagemPrincipal", form.imagemPrincipal);

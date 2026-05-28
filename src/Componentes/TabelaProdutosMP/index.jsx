@@ -48,10 +48,6 @@ function TabelaConsultaProjetosMP({produtos, onDeletar}){
                 <tbody>
                   {produtos.map((projeto) => (
                     <tr key={projeto._id} className={styles.projRow}>
-            
-                      <td className={`${styles.projCell} ${styles.colProjeto} ${styles.colImgCliente}`}>
-                        <div className={styles.imgCliente}></div>
-                      </td>
         
                       <td className={`${styles.projCell} ${styles.colProjeto}`}>
                         <div className={styles.clietLabel}>Projeto</div>
