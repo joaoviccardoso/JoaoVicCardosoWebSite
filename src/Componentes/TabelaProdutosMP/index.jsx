@@ -68,7 +68,7 @@ function TabelaConsultaProjetosMP({produtos, onDeletar}){
 
         
                       <td className={`${styles.projCell} ${styles.colAcao} ${styles.colBotoes}`}>
-                          <Link to={`/admin/Produto/ConsultaPC/Editar/${projeto._id}`} className={styles.botaoLink}> 
+                          <Link to={`/admin/Produto/ConsultarMP/Editar/${projeto._id}`} className={styles.botaoLink}> 
                             Ver mais
                           </Link>
 

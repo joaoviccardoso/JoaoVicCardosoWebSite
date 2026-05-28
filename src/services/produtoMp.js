@@ -20,3 +20,10 @@ export async function getAllProdutosMP() {
         method: "GET",
     })
 }
+
+// Busca um produto pelo id
+export async function getProdutoMpPorId(id) {
+    return apiFetch(`/produtosMP/produtoMpPorId/${id}`, { 
+        method: "GET" 
+    })
+}

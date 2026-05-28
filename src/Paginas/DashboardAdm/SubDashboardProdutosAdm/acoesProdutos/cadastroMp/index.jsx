@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BotaoAction from "../../../../../Componentes/BotaoAction"
 import CssAcaoProduto1 from "./cadastroProdutoMp.module.css"
 import Input from "../../../../../Componentes/Input";
@@ -8,8 +8,9 @@ import FuncionalidadesInput from "../../../../../Componentes/InputDinamicoFuncio
 import ImagemPrincipalInput from "../../../../../Componentes/InputImagem";
 import ModalAviso from "../../../../../Componentes/ModalAviso";
 import useModalAviso from "../../../../../hooks/useModalAviso";
-import { postProdutosMP } from "../../../../../services/produtoMp";
+import { getProdutoMpPorId, postProdutosMP } from "../../../../../services/produtoMp";
 import { validarFormularioParaCadastrarMP } from "../../../../../Utils/validarCadastro";
+import { useParams } from "react-router-dom";
 
 const FORM_VAZIO = {
     nomeCompleto: "",
@@ -22,8 +23,9 @@ const FORM_VAZIO = {
 
 function AcaoCadastroProdutoMp(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
+    const { id } = useParams()
     const [erroParaCadastrar, setErroParaCadastrar] = useState(null)
-    const modoEdicao = Boolean(false)
+    const modoEdicao = Boolean(id)
     const [form, setForm] = useState(FORM_VAZIO);   
 
     function handleChange(e) {
@@ -46,6 +48,41 @@ function AcaoCadastroProdutoMp(){
         setForm((prev) => ({ ...prev, imagemPrincipal: file }));
     }
 
+    useEffect(() => {
+            if (!modoEdicao) return;
+    
+            async function carregarProduto() {
+                
+                try {
+                    //chama api para pegar o produto
+                    const produto = await getProdutoMpPorId(id)
+                    console.log(produto)
+    
+                    // Formata a data para yyyy-MM-dd que o input type="date" exige
+                    const dataFormatada = produto.dateEntrega
+                        ? new Date(produto.dateEntrega).toISOString().split("T")[0]
+                        : ""
+                    
+                    setForm({
+                        nomeProjeto: produto.nomeProjeto || "",
+                        status: produto.status || "",
+                        statusCor: produto.statusCor || "",
+                        cliente: produto.cliente?._id || "",
+                        clienteNome: produto.cliente?.nomeCompleto || "",
+                        dateEntrega: dataFormatada,
+                        linkContrato: produto.linkContrato || "",
+                        linkDemo: produto.linkDemo || "",
+                        obser: produto.obser || "",
+                    })
+                } catch (error) {
+                    abrirAviso("Erro ao carregar produto para edição.")
+                }
+            }
+    
+            carregarProduto()
+        }, [id])
+
+    //envia o formulario para a api
     async function handleSubmit(e) {
         e.preventDefault();
         
