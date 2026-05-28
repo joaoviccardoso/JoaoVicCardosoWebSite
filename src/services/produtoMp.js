@@ -35,3 +35,10 @@ export async function getProdutoMpPorId(id) {
         method: "GET" 
     })
 }
+
+// deleta um produto pelo id
+export async function deleteProdutoMpPorId(id) {
+    return apiFetch(`/produtosMP/deletar/${id}`, { 
+        method: "DELETE" 
+    })
+}

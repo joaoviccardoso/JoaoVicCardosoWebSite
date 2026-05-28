@@ -6,6 +6,7 @@ import { deleteProdutoPorId } from "../../services/produtosServices";
 import ModalAviso from "../ModalAviso";
 import useModalAviso from "../../hooks/useModalAviso";
 import ModalConfirmacaoExclusao from "../ModalDeConfirmacao";
+import { deleteProdutoMpPorId } from "../../services/produtoMp";
 
 
 function TabelaConsultaProjetosMP({produtos, onDeletar}){
@@ -28,7 +29,7 @@ function TabelaConsultaProjetosMP({produtos, onDeletar}){
     setDeletando(true);
     try {
       //Chama a rota de delete
-      await deleteProdutoPorId(projetoSelecionado._id);
+      await deleteProdutoMpPorId(projetoSelecionado._id);
       fecharModal();
       //passa o projeto deletado para o pai remover do useState
       onDeletar(projetoSelecionado._id);

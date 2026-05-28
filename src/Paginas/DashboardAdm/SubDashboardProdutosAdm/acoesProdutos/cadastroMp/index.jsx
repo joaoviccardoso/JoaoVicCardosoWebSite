@@ -56,7 +56,6 @@ function AcaoCadastroProdutoMp(){
                 try {
                     //chama api para pegar o produto
                     const produto = await getProdutoMpPorId(id)
-                    console.log(produto)
                     
                     setForm({
                         nomeCompleto: produto.nomeCompleto || "",
@@ -93,9 +92,6 @@ function AcaoCadastroProdutoMp(){
         formData.append("motivoDoProjeto", form.MotivodoProjeto); // ← nome corrigido p/ bater com o schema
         formData.append("tecnologias", JSON.stringify(form.tecnologias));
         formData.append("funcionalidades", JSON.stringify(form.funcionalidades));
-        console.log(form.imagemPrincipal)
-        console.log(form.imagemPrincipal instanceof File)
-
 
         if (form.imagemPrincipal instanceof File) {
             formData.append("imagemPrincipal", form.imagemPrincipal);
@@ -104,12 +100,10 @@ function AcaoCadastroProdutoMp(){
         try {
             let resposta;
             if (modoEdicao) {
-                console.log(formData)
                 // Chama PUT/PATCH para atualizar
                 resposta = await putProdutoMp(id, formData)
                 abrirAviso("Produto atualizado")
             } else {
-                console.log(form)
                 // Chama POST para criar
                 resposta = await postProdutosMP(formData)
                 setErroParaCadastrar(null)
