@@ -21,6 +21,8 @@ const FORM_VAZIO = {
     imagemPrincipal: null,
 }
 
+const API_BASE_URL = process.env.VITE_API_URL || "http://localhost:3000";
+
 function AcaoCadastroProdutoMp(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const { id } = useParams()
@@ -64,7 +66,7 @@ function AcaoCadastroProdutoMp(){
                         tecnologias: produto.tecnologias || "",
                         funcionalidades: produto.funcionalidades || [],
                         imagemPrincipal: produto.imagemPrincipal
-                            ? `http://localhost:3000${produto.imagemPrincipal}`
+                            ? `${API_BASE_URL}${produto.imagemPrincipal}`
                             : null
                     })
 
