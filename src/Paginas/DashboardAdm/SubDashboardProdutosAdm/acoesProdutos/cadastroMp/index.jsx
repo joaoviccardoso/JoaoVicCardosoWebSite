@@ -21,7 +21,7 @@ const FORM_VAZIO = {
     imagemPrincipal: null,
 }
 
-const API_BASE_URL = process.env.VITE_API_URL || "http://localhost:3000";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 function AcaoCadastroProdutoMp(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
