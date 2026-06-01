@@ -1,46 +1,55 @@
 .secaoFuncionalidade {
+    display: flex;
+    background:  linear-gradient(to bottom, #232323, #0A0A0A);
+    justify-content: space-between;
     padding: 5rem 12rem;
     overflow: hidden;
 }
 
-/* ─── Cabeçalho ──────────────────────────────────────────── */
-.cabecalho {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto 3rem;
+.linhaVertical {
+    width: 2px;
+    height: 100vh;
+    margin: 0 40px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #787878,
+        #0A0A0A,
+        transparent
+    );
+}
+
+.divFuncionalidade{
+    width: 49%;
+    padding: 1rem;
+}
+
+.divTituloFuncionalidade{
     text-align: center;
+}
+
+.divTecnologias{
+    width: 49%;
+    padding: 1rem;
+}
+
+/* secao Funcionalidade */
+.ulHeroFuncionalidades{
+    display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.cabecalhoTexto {
-    flex: 1;
-}
-
-.titulo {
-    font-family: var(--font-paraTextoChamativo);
-    font-size: var(--font-size-3xl);
-    color: var(--cor-letraClara);
-    margin-bottom: 1rem;
-}
-
-.descricao {
-    font-family: var(--font-paraTexto);
-    font-size: var(--font-size-xl);
-    color: var(--cor-letraClara);
-    margin: 0;
+    gap: 2rem;
+    padding: 2rem 0 0 0 ;
 }
 
 /* secao Tecnologia */
 
 .ulHeroTecnologias{
-    padding: 2rem;
+    padding-top: 1rem;
     display: flex;
-    flex-direction: column;
-    width: 38%;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
 }
 
 .ulHeroTecnologias li{
@@ -48,58 +57,9 @@
     height: 200px;
 }
 
-.ulHeroTecnologias li:nth-child(1){
-    align-self: flex-end;
-}
-
-.ulHeroTecnologias li:nth-child(3){
-    align-self: flex-end;
-}
-
 .ulHeroTecnologias li div img{
-    width: 150px;
-    height: 150px;
-}
-
-/* Botões no cabeçalho — ocultos por padrão (desktop usa os laterais) */
-.botoesNavMobile {
-    display: none;
-    gap: 0.5rem;
-    flex-shrink: 0;
-}
-
-
-
-/* ─── Botões de nav ──────────────────────────────────────── */
-.botaoNav {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.75rem;
-    height: 2.75rem;
-    border-radius: 50%;
-    border: 1.5px solid var(--color-border);
-    background: var(--branco-menosBranco);
-    color: var(--color-text, #1e293b);
-    cursor: pointer;
-    transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-
-.botaoNav:hover:not(:disabled) {
-    background: var(--color-gradienteVerdeBottom);
-    border-color: var(--branco-menosBranco);
-    color: #ffffff;
-}
-
-.botaoNav:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-/* Botões laterais — visíveis no desktop, ocultos no mobile */
-.botaoNavLateral {
-    display: flex;
+    width: 130px;
+    height: 130px;
 }
 
 
@@ -114,10 +74,27 @@
     .secaoFuncionalidade {
         padding: 4rem 3rem;
     }
+
+    .ulHeroTecnologias li{
+        width: 150px;
+        height: 150px;
+    }
+
+    .ulHeroTecnologias li div img{
+        width: 90px;
+        height: 90px;
+    }
+
+    .divTituloFuncionalidade h3{
+        font-size: var(--font-size-3xl);
+    }
 }
 
 @media (max-width: 880px) {
     .secaoFuncionalidade {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 3rem 1.5rem;
     }
 
@@ -132,35 +109,44 @@
     .descricao {
         font-size: var(--font-size-sm, 0.875rem);
     }
+
+    .linhaVertical{
+        display: none;
+    }
+
+    .divFuncionalidade{
+        width: 80%;
+    }
+
+    .divTecnologias{
+        width: 100%;
+    }
 }
 
 @media (max-width: 560px) {
     .secaoFuncionalidade {
-        padding: 2.5rem 1rem;
-    }
-
-    /* Cabeçalho vira row: texto à esquerda, botões à direita */
-    .cabecalho {
-        padding: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        max-width: 100%;
-        margin-bottom: 1.5rem;
-    }
-
-    /* Botões do cabeçalho aparecem no mobile */
-    .botoesNavMobile {
-        display: flex;
-        padding-top: 0.25rem;
-    }
-
-    /* Botões laterais somem no mobile */
-    .botaoNavLateral {
-        display: none;
+        padding:1rem;
     }
 
     .item {
         flex: 0 0 100%;
+    }
+
+    .divFuncionalidade{
+        width: 100%;
+    }
+
+    .ulHeroTecnologias li{
+        width: 80px;
+        height: 80px;
+    }
+
+    .ulHeroTecnologias li div img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .divTituloFuncionalidade h3{
+        font-size: var(--font-size-2xl);
     }
 }

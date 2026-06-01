@@ -10,10 +10,10 @@ function SecaoFuncionalidade({ funcionalidades, tecnologias }) {
         <section className={CssFuncio.secaoFuncionalidade}>
             {/*Secao Funcionalidades*/}   
             <div className={CssFuncio.divFuncionalidade}>
-                <div>
+                <div className={CssFuncio.divTituloFuncionalidade}>
                     <h3>Funcionalidades Principais</h3>
                 </div>
-                <ul>
+                <ul className={CssFuncio.ulHeroFuncionalidades}>
                     {console.log(funcionalidades)}
                     {funcionalidades?.map((funci, index)=>(
                         <li key={index}>
@@ -31,7 +31,7 @@ function SecaoFuncionalidade({ funcionalidades, tecnologias }) {
 
             {/* secao tecnologias*/}
             <div className={CssFuncio.divTecnologias}>
-                <div>
+                <div className={CssFuncio.divTituloFuncionalidade}>
                     <h3>Stack Tecnológia</h3>
                 </div>
                 <ul className={CssFuncio.ulHeroTecnologias}>
