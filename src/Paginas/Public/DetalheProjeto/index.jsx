@@ -29,26 +29,35 @@ const produtos = [
   },
 
   {
-  id: 2,
-  titulo: "Art Vida Capoeira",
-  descricao: "Landing page desenvolvida para a escola Art Vida Capoeira, com foco em apresentar a história, aulas e facilitar o contato com novos alunos. O site transmite tradição, cultura e profissionalismo, sendo totalmente responsivo e otimizado para SEO.",
-  motivo: "Criado para ajudar a escola a ter presença digital, atrair novos alunos e valorizar a cultura da capoeira na cidade de Conchal-SP.",
-  tecnologias: ["Html", "CSS", "JavaScript"],
-  funcionalidades: [
-    "Design moderno e totalmente responsivo",
-    "Seção de apresentação da história da escola",
-    "Exibição das turmas (adulto, kids e projetos sociais)",
-    "Carrossel interativo com imagens das aulas",
-    "Integração com Google Maps para localização"
-  ],
-  imagens: [
-    "/images/homeCapoeira.png",
-    "/images/NossaHistoria.png",
-    "/images/turmas.png",
-    "/images/carrocel.png",
-    "/images/maps.png"
-  ]
-},
+    id: 2,
+    titulo: "Art Vida Capoeira",
+    descricao: "Landing page desenvolvida para a escola Art Vida Capoeira, com foco em apresentar a história, aulas e facilitar o contato com novos alunos. O site transmite tradição, cultura e profissionalismo, sendo totalmente responsivo e otimizado para SEO.",
+    motivo: "Criado para ajudar a escola a ter presença digital, atrair novos alunos e valorizar a cultura da capoeira na cidade de Conchal-SP.",
+    tecnologias: ["Html", "CSS", "JavaScript"],
+    funcionalidades: [
+      {
+        titulo: "Funcionalidade 1",
+        descricao : "Design moderno e totalmente responsivo"
+      },
+      {
+        titulo: "Funcionalidade 2",
+        descricao : "Seção de apresentação da história da escola"
+      },
+      {
+        titulo: "Funcionalidade 3",
+        descricao : "Dashboard administrativo para gerenciamento"
+      },
+      {
+        titulo: "Funcionalidade 4",
+        descricao : "Carrossel interativo com imagens das aulas"
+      },
+      {
+        titulo: "Funcionalidade 5",
+        descricao : "Integração com Google Maps para localização"
+      },
+    ],
+    imagens: "/images/homeArtVida.png",
+  },
 
   {
     id: 3,
@@ -130,8 +139,8 @@ function PaginaDetalheDosProjetos(){
                 />
             </div>
             <SecaoFuncionalidade
-                funcionalidade={produto.funcionalidades}
-                imagens={produto.imagens}
+                funcionalidades={produto.funcionalidades}
+                tecnologias={produto.tecnologias}
             />
         </section>
     )

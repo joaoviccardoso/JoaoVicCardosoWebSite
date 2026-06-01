@@ -1,10 +1,9 @@
 import BotaoCta from "../../../../../Componentes/BotaoCta"
 import CssFuncio from "./heroDetalhe.module.css"
-import { tecnologiasImagens } from "../../../../../constants/tecnologiasImagens.js"
 import MinhasHabilidades from "../../../../../Componentes/MinhasHabilidades/index.jsx"
 import logoDev from '../../../../../assets/logoEscuro.png'
 
-function SecaoHeroDetalhes({titulo, descricao, tecnologias}){
+function SecaoHeroDetalhes({titulo, descricao, linkProjeto, linkGithub, imgProjeto}){
     return(
         <section className={CssFuncio.secaoHeroDetalhes} style={{backgroundImage: `url(${logoDev})`,backgroundSize: '60%' ,backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
             <div className={CssFuncio.divTituloHero}>
@@ -12,22 +11,19 @@ function SecaoHeroDetalhes({titulo, descricao, tecnologias}){
                 <p>{descricao}</p>
                 <div>
                     <BotaoCta
-                        child="Entre em Contato"
+                        child="Ver Projeto Online"
+                        to={linkProjeto}
+                    />
+                    <BotaoCta
+                        child="Codigo no Github"
+                        to={linkGithub}
                     />
                 </div>
             </div>
 
-            <ul className={CssFuncio.ulHeroTecnologias}>
-                {tecnologias.map((tec)=>(
-                    <li>
-                        <MinhasHabilidades
-                            key={tec}
-                            img={tecnologiasImagens[tec]}
-                            alt="tecnologias"
-                        />
-                    </li>
-                ))}
-            </ul>
+            <div className={CssFuncio.divHeroImagemProjeto}>
+                <img src={imgProjeto} alt="Imagem do projeto " />
+            </div>
         </section>
     )
 }
