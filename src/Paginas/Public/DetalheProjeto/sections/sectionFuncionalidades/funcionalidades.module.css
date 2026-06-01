@@ -34,6 +34,33 @@
     margin: 0;
 }
 
+/* secao Tecnologia */
+
+.ulHeroTecnologias{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 38%;
+}
+
+.ulHeroTecnologias li{
+    width: 200px;
+    height: 200px;
+}
+
+.ulHeroTecnologias li:nth-child(1){
+    align-self: flex-end;
+}
+
+.ulHeroTecnologias li:nth-child(3){
+    align-self: flex-end;
+}
+
+.ulHeroTecnologias li div img{
+    width: 150px;
+    height: 150px;
+}
+
 /* Botões no cabeçalho — ocultos por padrão (desktop usa os laterais) */
 .botoesNavMobile {
     display: none;
@@ -41,38 +68,7 @@
     flex-shrink: 0;
 }
 
-/* ─── Carrossel ──────────────────────────────────────────── */
-.carrosselWrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
 
-.viewport {
-    flex: 1;
-    overflow: hidden;
-    cursor: grab;
-}
-
-.viewport:active {
-    cursor: grabbing;
-}
-
-.trilha {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    transition: transform 0.4s ease;
-    will-change: transform;
-}
-
-.item {
-    flex: 0 0 calc(100% / 3);
-    box-sizing: border-box;
-    padding: 0.5rem;
-}
 
 /* ─── Botões de nav ──────────────────────────────────────── */
 .botaoNav {
@@ -106,29 +102,6 @@
     display: flex;
 }
 
-/* ─── Indicadores ────────────────────────────────────────── */
-.indicadores {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1.75rem;
-}
-
-.indicador {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 999px;
-    border: none;
-    background: var(--color-border, #cbd5e1);
-    cursor: pointer;
-    padding: 0;
-    transition: width 0.3s ease, background 0.3s ease;
-}
-
-.indicadorAtivo {
-    width: 1.75rem;
-    background: var(--verde);
-}
 
 /* ─── Responsivo ─────────────────────────────────────────── */
 @media (max-width: 1570px) {

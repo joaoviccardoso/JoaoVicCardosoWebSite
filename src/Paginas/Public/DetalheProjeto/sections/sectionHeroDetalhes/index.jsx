@@ -22,7 +22,7 @@ function SecaoHeroDetalhes({titulo, descricao, linkProjeto, linkGithub, imgProje
             </div>
 
             <div className={CssFuncio.divHeroImagemProjeto}>
-                <img src={imgProjeto} alt="Imagem do projeto " />
+                <img className={CssFuncio.imagemProjeto} src={imgProjeto} alt="Imagem do projeto " />
             </div>
         </section>
     )

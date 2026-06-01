@@ -131,7 +131,7 @@ function PaginaDetalheDosProjetos(){
             <SecaoHeroDetalhes
                 titulo={produto.titulo}
                 descricao={produto.descricao}
-                tecnologias={produto.tecnologias}
+                imgProjeto={produto.imagens}
             />
             <div className={CssDetalhe.divVerdeMotivacao}>
                 <SecaoMotivacao

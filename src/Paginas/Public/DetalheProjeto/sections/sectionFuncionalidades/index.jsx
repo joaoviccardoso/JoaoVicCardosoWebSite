@@ -34,7 +34,7 @@ function SecaoFuncionalidade({ funcionalidades, tecnologias }) {
                 <div>
                     <h3>Stack Tecnológia</h3>
                 </div>
-                <ul>
+                <ul className={CssFuncio.ulHeroTecnologias}>
                     {tecnologias.map((tec)=>(
                         <li key={tec}>
                             <MinhasHabilidades

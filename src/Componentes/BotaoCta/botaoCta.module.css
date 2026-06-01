@@ -86,14 +86,14 @@
 @media(max-width: 480px){
     .btnCta{
         font-size: 16px;
-        padding: 32px 50px;
+        padding: 15px 18px;
     }
 }
 
 
 @media(max-width: 380px){
     .btnCta{
-        font-size: 12px;
-        padding: 32px 50px;
+        font-size: var(--font-size-xs);
+        padding: 15px;
     }
 }
