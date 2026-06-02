@@ -19,6 +19,8 @@ const FORM_VAZIO = {
     tecnologias: "",
     funcionalidades: [],
     imagemPrincipal: null,
+    linkProjetoOnline: "",
+    linkProjetoGitHub: "",
 }
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
@@ -67,7 +69,9 @@ function AcaoCadastroProdutoMp(){
                         funcionalidades: produto.funcionalidades || [],
                         imagemPrincipal: produto.imagemPrincipal
                             ? `${API_BASE_URL}${produto.imagemPrincipal}`
-                            : null
+                            : null,
+                        linkProjetoOnline: produto.linkProjetoOnline || "",
+                        linkProjetoGitHub: produto.linkProjetoGitHub || "",
                     })
 
                 } catch (error) {
@@ -93,7 +97,9 @@ function AcaoCadastroProdutoMp(){
         formData.append("descricaoCurta", form.descricaoCurta);
         formData.append("motivoDoProjeto", form.MotivodoProjeto); // ← nome corrigido p/ bater com o schema
         formData.append("tecnologias", JSON.stringify(form.tecnologias));
-        formData.append("funcionalidades", JSON.stringify(form.funcionalidades)); 
+        formData.append("funcionalidades", JSON.stringify(form.funcionalidades));
+        formData.append("linkProjetoOnline", form.linkProjetoOnline);
+        formData.append("linkProjetoGitHub", form.linkProjetoGitHub);
 
         if (form.imagemPrincipal instanceof File) {
             formData.append("imagemPrincipal", form.imagemPrincipal);
@@ -155,6 +161,26 @@ function AcaoCadastroProdutoMp(){
                         onChange={handleChange}
                         value={form.MotivodoProjeto}
                         name="MotivodoProjeto"
+                        className={`${erroParaCadastrar ? "inputErro" : ""}`}
+                    />
+                </div>
+
+                <div className={CssAcaoProduto1.linksProjeto}>
+                    <Input
+                        label="Link Projeto" 
+                        name="linkProjetoOnline" 
+                        value={form.linkProjetoOnline} 
+                        onChange={handleChange}
+                        placeholder={"Link do projeto que esta online"} 
+                        className={`${erroParaCadastrar ? "inputErro" : ""}`}
+                    />
+
+                    <Input
+                        label="Link Projeto no Github" 
+                        name="linkProjetoGitHub" 
+                        value={form.linkProjetoGitHub} 
+                        onChange={handleChange}
+                        placeholder={"Link do projeto no github"} 
                         className={`${erroParaCadastrar ? "inputErro" : ""}`}
                     />
                 </div>

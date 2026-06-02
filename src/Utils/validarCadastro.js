@@ -119,5 +119,13 @@ export function validarFormularioParaCadastrarMP(form){
         return "Adicione pelo menos 1 funcionalidade";
     }
 
+    if (form.linkProjetoOnline && !validarLink(form.linkProjetoOnline)) {
+        return "O link do projeto online é inválido";
+    }
+
+    if (form.linkProjetoGitHub && !validarLink(form.linkProjetoGitHub)) {
+        return "O link do github é inválido";
+    }
+
     return null;
 }

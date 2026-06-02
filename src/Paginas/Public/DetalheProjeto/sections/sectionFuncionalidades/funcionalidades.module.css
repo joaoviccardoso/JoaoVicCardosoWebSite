@@ -47,9 +47,10 @@
 .ulHeroTecnologias{
     padding-top: 1rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .ulHeroTecnologias li{

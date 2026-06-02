@@ -38,6 +38,7 @@ span{
     align-items: center;
     justify-content: space-around;
     gap: 3rem;
+    width: 100%;
     padding: 3rem 0;
     flex-wrap: wrap;
 }
@@ -55,8 +56,16 @@ span{
     .listaProdutos{
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: center;
         padding: 3rem 0;
+    }
+
+    .listaProdutos li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 }
 

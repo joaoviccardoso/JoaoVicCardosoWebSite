@@ -26,6 +26,17 @@
     gap: 3rem;
 }
 
+.linksProjeto{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    
+}
+
+.linksProjeto > *{
+    flex: 1;
+}
+
 .div4{
     display: flex;
     justify-content: space-between;

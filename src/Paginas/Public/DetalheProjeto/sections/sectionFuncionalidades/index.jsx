@@ -4,7 +4,7 @@ import ContainerTexto from "../../../../../Componentes/ContainerTexto"
 import { tecnologiasImagens } from "../../../../../constants/tecnologiasImagens"
 import MinhasHabilidades from "../../../../../Componentes/MinhasHabilidades"
 
-function SecaoFuncionalidade({ funcionalidades, tecnologias }) {
+function SecaoFuncionalidade({ funcionalidades = [], tecnologias = [] }) {
 
     return (
         <section className={CssFuncio.secaoFuncionalidade}>
@@ -14,7 +14,6 @@ function SecaoFuncionalidade({ funcionalidades, tecnologias }) {
                     <h3>Funcionalidades Principais</h3>
                 </div>
                 <ul className={CssFuncio.ulHeroFuncionalidades}>
-                    {console.log(funcionalidades)}
                     {funcionalidades?.map((funci, index)=>(
                         <li key={index}>
                             <ContainerTexto

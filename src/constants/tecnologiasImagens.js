@@ -1,11 +1,14 @@
+// constants/tecnologiasImagens.js
+const base = import.meta.env.BASE_URL; // '/' em dev, pode ser diferente em prod
+
 export const tecnologiasImagens = {
-  React: "/tecnologias/react.svg",
-  JavaScript: "/tecnologias/js.svg",
-  CSS: "/tecnologias/css.svg",
-  GSAP: "/tecnologias/gsap.png",
-  Bootstrap: "/tecnologias/bootstrap.svg",
-  Html: "/tecnologias/html.svg",
-  Node: "/tecnologias/node.svg",
-  UxUi: "/tecnologias/ui-ux.svg",
-  Figma: "/tecnologias/figma.svg"
+  React:      `${base}tecnologias/react.svg`,
+  JavaScript: `${base}tecnologias/js.svg`,
+  CSS:        `${base}tecnologias/css.svg`,
+  GSAP:       `${base}tecnologias/gsap.png`,
+  Bootstrap:  `${base}tecnologias/bootstrap.svg`,
+  Html:       `${base}tecnologias/html.svg`,
+  Node:       `${base}tecnologias/node.svg`,
+  UxUi:       `${base}tecnologias/ui-ux.svg`,
+  Figma:      `${base}tecnologias/figma.svg`,
 };

@@ -3,7 +3,7 @@ import CssFuncio from "./heroDetalhe.module.css"
 import MinhasHabilidades from "../../../../../Componentes/MinhasHabilidades/index.jsx"
 import logoDev from '../../../../../assets/logoEscuro.png'
 
-function SecaoHeroDetalhes({titulo, descricao, linkProjeto, linkGithub, imgProjeto}){
+function SecaoHeroDetalhes({titulo, descricao, imgProjeto, linkProjetoOnline, linkProjetoGitHub}){
     return(
         <section className={CssFuncio.secaoHeroDetalhes} style={{backgroundImage: `url(${logoDev})`,backgroundSize: '60%' ,backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
             <div className={CssFuncio.divTituloHero}>
@@ -12,11 +12,11 @@ function SecaoHeroDetalhes({titulo, descricao, linkProjeto, linkGithub, imgProje
                 <div>
                     <BotaoCta
                         child="Ver Projeto Online"
-                        to={linkProjeto}
+                        to={linkProjetoOnline}
                     />
                     <BotaoCta
                         child="Codigo no Github"
-                        to={linkGithub}
+                        to={linkProjetoGitHub}
                     />
                 </div>
             </div>
