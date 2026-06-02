@@ -27,7 +27,6 @@ function SecaoFuncionalidade({ funcionalidades = [], tecnologias = [] }) {
 
             {/*Linha vertical*/}   
             <span className={CssFuncio.linhaVertical}></span>
-
             {/* secao tecnologias*/}
             <div className={CssFuncio.divTecnologias}>
                 <div className={CssFuncio.divTituloFuncionalidade}>
@@ -36,8 +35,9 @@ function SecaoFuncionalidade({ funcionalidades = [], tecnologias = [] }) {
                 <ul className={CssFuncio.ulHeroTecnologias}>
                     {tecnologias.map((tec)=>(
                         <li key={tec}>
+                           
                             <MinhasHabilidades
-                                img={tecnologiasImagens[tec]}
+                                img={`/tecnologias/${tec}`}
                                 alt="tecnologias"
                             />
                         </li>
