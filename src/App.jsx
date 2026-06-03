@@ -31,7 +31,9 @@ import logoMensagem from "./assets/MenuUp.svg"
 import logoConfiguracao from "./assets/GearFill.svg"
 import logoSair from "./assets/DoorOpenFill.svg"
 import PaginaEmDesenvilvimento from "./Paginas/PaginaEmDesenvolvimento"
+import VerificarEmail from "./Paginas/VerificacaoEmail"
 import "./style/fonteEhCores.css"
+
 
 const acoesCliente = [
   { acao: "Dashboard", to: "/dashboard", grupo: "top", icon: LogoHome},
@@ -67,6 +69,7 @@ function App() {
           <Route path="/EmDensenvolvimento" element={<PaginaEmDesenvilvimento/>}/>
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Cadastro" element={<Cadastro/>}/>
+          <Route path="/:id/verify/:token" element={<VerificarEmail />} />
         </Route>
 
         <Route 

@@ -9,9 +9,10 @@ import Input from "../../../Componentes/Input"
 import BotaoAction from "../../../Componentes/BotaoAction"
 import RadioGroup from "../../../Componentes/RadioInput"
 import LinkParaNavegacao from "../../../Componentes/Links/link"
-import voltarPagina from "../../../assets/voltarPagina.svg"
 import useModalAviso from "../../../hooks/useModalAviso";
 import ModalAviso from "../../../Componentes/ModalAviso";
+const BASE_URL = import.meta.env.VITE_API_URL
+
 
 function TelaLogin(){
     const navigate = useNavigate();
@@ -48,7 +49,7 @@ function TelaLogin(){
         }
 
         try {
-        const response = await fetch("https://lightslategray-deer-405894.hostingersite.com/auth/login", {
+        const response = await fetch(`${BASE_URL}/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(form)
@@ -57,6 +58,13 @@ function TelaLogin(){
         const data = await response.json();
 
         if (!response.ok) {
+
+            // CASO ESPECIAL: email não verificado
+            if (data.message.includes("Verifique seu email")) {
+                abrirAviso("Você ainda não verificou seu email. Verifique sua caixa de entrada 📧");
+                return;
+            }
+
             abrirAviso(data.message);
             return;
         }

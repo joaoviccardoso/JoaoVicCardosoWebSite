@@ -7,6 +7,7 @@ import BotaoAction from "../../../Componentes/BotaoAction";
 import { validarFormularioCadastro } from "../../../Utils/validarCadastro.js";
 import ModalAviso from "../../../Componentes/ModalAviso/index.jsx";
 import useModalAviso from "../../../hooks/useModalAviso.js";
+const BASE_URL = import.meta.env.VITE_API_URL
 
 function TelaCadastro(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
@@ -24,55 +25,56 @@ function TelaCadastro(){
     function handleChangeLogin(e) {
         const { name, value } = e.target;
     
-        setForm((prev) => ({
-        ...prev,
-        [name]: value
-        }));
-    }
+            setForm((prev) => ({
+            ...prev,
+            [name]: value
+            }));
+        }
     
-    //envia o formulario para o backend fazer o cadastro do usuario
-    async function handleSubmitLogin(e) {
+        //envia o formulario para o backend fazer o cadastro do usuario
+        async function handleSubmitLogin(e) {
         e.preventDefault();
         setErroDeCadastro("")
-        //faz uma validação nos dados
-        const erroForm = validarFormularioCadastro(form)
 
+        const erroForm = validarFormularioCadastro(form)
         if (erroForm) {
             setErroDeCadastro(erroForm);
             return;
         }
 
-        const response = await fetch("https://lightslategray-deer-405894.hostingersite.com/auth/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nomeCompleto: form.primeiroNome,
-                email: form.email,
-                senha: form.senha,
-                telefone: form.telefone
-            })
-        });
+        try {                                          // ✅ adicionado try/catch
+            const response = await fetch(`${BASE_URL}/auth/register`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    nomeCompleto: form.primeiroNome,
+                    email: form.email,
+                    senha: form.senha,
+                    telefone: form.telefone
+                })
+            });
 
-        const data = await response.json();
+            const data = await response.json();
 
-        if(!response.ok){
-            abrirAviso(data.message)
-            return
-        } 
+            if (!response.ok) {
+                abrirAviso(data.message);
+                return;
+            }
 
-        if(response.ok){
-            abrirAviso("sucesso em cadastrar no sistema")
+            // ✅ usa a mensagem do backend: "Usuário criado! Verifique seu email."
+            abrirAviso(data.message);
+
+            setForm({
+                primeiroNome: "",
+                email: "",
+                senha: "",
+                confirmarSenha: "",
+                telefone: ""
+            });
+
+        } catch {
+            abrirAviso("Erro de conexão. Tente novamente.");   // ✅ erro de rede
         }
-
-        setForm({
-            primeiroNome: "",
-            email:"",
-            senha: "",
-            confirmarSenha:"",
-            telefone:""
-        })
     }
 
     return(
