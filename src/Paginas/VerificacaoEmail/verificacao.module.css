@@ -1,0 +1,34 @@
+.divVerificacao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem;
+    color: var(--cor-letraClara);
+}
+
+.divVerificacao h2{
+    font-size: var(--font-size-3xl);
+    font-family: var(--font-paraTextoChamativo);
+    
+}
+
+.divVerificacao img{
+    width: 300px;
+}
+
+@media(max-width: 480px){
+    .divVerificacao h2{
+        font-size: var(--font-size-2xl);
+        font-family: var(--font-paraTextoChamativo);
+    }
+
+    .divVerificacao img{
+        width: 200px;
+    }
+
+    .divVerificacao p{
+        font-size: var(--font-size-lg);
+    }
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import CssVerificacao from "./verificacao.module.css"
 
 const BASE_URL = import.meta.env.VITE_API_URL
 
@@ -8,6 +9,7 @@ function VerificarEmail() {
   const navigate = useNavigate();
 
   const [mensagem, setMensagem] = useState("Verificando...");
+  const [icone, setIcone] = useState("")
   const [erro, setErro] = useState(false);
 
   useEffect(() => {
@@ -18,16 +20,18 @@ function VerificarEmail() {
 
         if (!res.ok) {
           setErro(true);
+          setIcone("/images/botao-x.png")
           setMensagem(data.message || "Link inválido");
           return;
         }
 
+        setIcone("/images/verificado.png")
         setMensagem("Email verificado com sucesso!");
 
         // Redireciona após 3s
         setTimeout(() => {
           navigate("/login");
-        }, 3000);
+        }, [30000]); //lembrar de colocar  5 seg.
 
       } catch {
         setErro(true);
@@ -39,7 +43,8 @@ function VerificarEmail() {
   }, [id, token, navigate]);
 
   return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
+    <div className={CssVerificacao.divVerificacao} style={{ textAlign: "center", marginTop: "100px" }}>
+      <img src={icone} alt="icone de verificação"/>
       <h2>{mensagem}</h2>
       {erro && <p>Tente novamente ou solicite outro link.</p>}
     </div>
