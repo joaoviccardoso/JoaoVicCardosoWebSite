@@ -31,7 +31,7 @@ function VerificarEmail() {
         // Redireciona após 3s
         setTimeout(() => {
           navigate("/login");
-        }, [30000]); //lembrar de colocar  5 seg.
+        }, [3000]);
 
       } catch {
         setErro(true);
