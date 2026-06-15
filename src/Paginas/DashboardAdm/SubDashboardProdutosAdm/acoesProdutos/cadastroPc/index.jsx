@@ -151,6 +151,7 @@ function AcaoCadastrarProdutoPc(){
 
     function handleChange(e) {
         const { name, value } = e.target;
+        console.log(STATUS_COR_MAP)
         setForm((prev) => ({
             ...prev,
             [name]: value,

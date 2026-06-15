@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import CssProjetosUser from "./meusProjetosUser.module.css"
 import { pegarUser } from "../../../Utils/pegarUser"
-import TabelaProjetos from "../../../Componentes/TabelaProjetos"
+import TabelaProjetos from "../../../Componentes/TabelaProdutosCliente";
 import useModalAviso from "../../../hooks/useModalAviso";
 import ModalAviso from "../../../Componentes/ModalAviso";
 
