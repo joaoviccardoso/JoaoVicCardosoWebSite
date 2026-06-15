@@ -28,4 +28,6 @@
 .divTabelaClientes{
     background-color: var(--color-componente);
     border-radius: 12px;
+    min-height: 100%;
+    margin-bottom: 3rem;
 }

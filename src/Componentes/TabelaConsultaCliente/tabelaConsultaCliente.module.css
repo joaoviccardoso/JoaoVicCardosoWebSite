@@ -1,10 +1,12 @@
 .tableWrapper{
   min-width: 100%;
+  max-height: 100%;
   overflow-x: auto;
 }
 
 .projTable{
   min-width: 100%;
+  max-height: 100%;
   border-collapse: collapse;
   table-layout: fixed;
 }

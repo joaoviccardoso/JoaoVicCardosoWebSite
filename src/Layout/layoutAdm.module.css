@@ -1,7 +1,7 @@
 .sectionLatoutAdm{
     display: grid;
     grid-template-columns: 18% 1fr;
-    grid-template-rows: 8% 1fr;
+    grid-template-rows: 8% 100%;
     grid-template-areas: 
         "aside breadcrumb "
         "aside main "
