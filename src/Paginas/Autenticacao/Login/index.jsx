@@ -127,7 +127,7 @@ function TelaLogin(){
                         />
 
                         <LinkParaNavegacao
-                            to="/EmDensenvolvimento"
+                            to="/requestPassword"
                             child="Esqueceu sua senha"
                             className=".linkLogin"
                         />

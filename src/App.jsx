@@ -33,6 +33,8 @@ import logoSair from "./assets/DoorOpenFill.svg"
 import PaginaEmDesenvilvimento from "./Paginas/PaginaEmDesenvolvimento"
 import VerificarEmail from "./Paginas/VerificacaoEmail"
 import "./style/fonteEhCores.css"
+import MudarSenha from "./Paginas/Autenticacao/MudarSenha"
+import ResetSenha from "./Paginas/Autenticacao/ResetSenha"
 
 
 const acoesCliente = [
@@ -69,6 +71,8 @@ function App() {
           <Route path="/EmDensenvolvimento" element={<PaginaEmDesenvilvimento/>}/>
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Cadastro" element={<Cadastro/>}/>
+          <Route path="/requestPassword" element={<MudarSenha />} />
+          <Route path="/resetPassword/:token" element={<ResetSenha />} />
           <Route path="/:id/verify/:token" element={<VerificarEmail />} />
         </Route>
 
