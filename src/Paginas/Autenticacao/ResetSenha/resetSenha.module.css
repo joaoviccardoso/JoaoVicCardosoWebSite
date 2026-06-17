@@ -1,40 +1,40 @@
-.sectionContainerMudarSenha{
+.sectionResetSenha{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 60vh;
-    margin: 5rem 0rem;
+    margin: 10rem 0rem;
     color: var(--cor-letraClara);
 }
 
-.formLogin h2{
-    font-family: var(--font-paraTextoChamativo);
-    font-size: var(--font-size-2xl);
-    text-align: center;
-}
-
-.formLogin p{
-    text-align: center;
-    font-family: var(--font-paraTexto);
-    font-size: var(--font-size-lg);
-}
-
-.divInput{
-    width: 100%;
-}
-
-.formLogin{
+.formResetSenha{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 20%;
     border-radius: 12px;
     background: var(--color-componente);
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
+}
+
+.formResetSenha h2{
+    font-family: var(--font-paraTextoChamativo);
+    font-size: var(--font-size-2xl);
+    text-align: center;
+}
+
+.formResetSenha p{
+    text-align: center;
+    font-family: var(--font-paraTexto);
+    font-size: var(--font-size-lg);
+}
+
+.formResetSenha div{
+    width: 100%;
 }
 
 @media (max-width: 570px){
-   .formLogin{
+   .formResetSenha{
         width: 80%;
     } 
 }

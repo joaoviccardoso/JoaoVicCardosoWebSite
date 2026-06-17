@@ -48,27 +48,29 @@ function MudarSenha(){
     }
 
     return(
-        <section>
+        <section className={CssTelaMudarSenha.sectionContainerMudarSenha}> 
             <form onSubmit={handleSubmitLogin} className={CssTelaMudarSenha.formLogin}>
-
-                    <div className={CssTelaMudarSenha}>
-                        <Input
-                            label="E-mail"
-                            type="email"
-                            name="email"
-                            value={form.email}
-                            onChange={handleChangeLogin}
-                            className={`${erroDeLogin ? "inputErro" : ""}`}
-                            placeholder="E-mail"
-                        />
-                        {erroDeLogin && <p className={CssTelaMudarSenha.erro}>{erroDeLogin}</p>}
-                    </div>
-
-                    <BotaoAction
-                        child="Fazer Login"
-                        type="submit"
+                <img src="/images/esqueceuSenha.png" alt="imagem ilustrativa de um cadeado" />
+                <h2>Esqueceu sua senha?</h2>
+                <p>Não se preocupe! Informe seu e-mail e enviaremos um link para você criar uma nova senha com segurança.</p>
+                <div className={CssTelaMudarSenha.divInput}>
+                    <Input
+                        label="E-mail"
+                        type="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChangeLogin}
+                        className={`${erroDeLogin ? "inputErro" : ""}`}
+                        placeholder="E-mail"
                     />
-                </form>
+                    {erroDeLogin && <p className={CssTelaMudarSenha.erro}>{erroDeLogin}</p>}
+                </div>
+
+                <BotaoAction
+                    child="Enviar Email"
+                    type="submit"
+                />
+            </form>
             <ModalAviso
                 aberto={avisoAberto}
                 onFechar={fecharAviso}
