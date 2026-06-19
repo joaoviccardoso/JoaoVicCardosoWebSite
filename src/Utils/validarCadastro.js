@@ -9,9 +9,10 @@ export function validarFormularioCadastro(form) {
         return "E-mail inválido";
     } 
 
-    if (!validarSenha(form.senha)) {
-        return "A senha deve ter pelo menos 3 caracteres"
-    } 
+    const validarSenhaMensagem = validarSenha(form.senha)
+    if (validarSenhaMensagem){
+        return validarSenhaMensagem
+    }
 
     if (form.senha !== form.confirmarSenha) {
         return "Senhas não conferem";

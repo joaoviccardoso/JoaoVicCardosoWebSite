@@ -13,7 +13,6 @@ import useModalAviso from "../../../hooks/useModalAviso";
 import ModalAviso from "../../../Componentes/ModalAviso";
 const BASE_URL = import.meta.env.VITE_API_URL
 
-
 function TelaLogin(){
     const navigate = useNavigate();
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();

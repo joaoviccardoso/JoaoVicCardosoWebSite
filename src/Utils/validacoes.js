@@ -3,8 +3,36 @@ export function validarEmail(email) {
   return regex.test(email);
 }
 
+export function validarSenhaLogin(senha) {
+  if (!senha) {
+    return "A senha é obrigatória.";
+  }
+  return null;
+}
+
 export function validarSenha(senha) {
-  return senha.length >= 3;
+  console.log(senha)
+  if (!senha) {
+    return "A senha é obrigatória.";
+  }
+
+  if (senha.length < 8) {
+    return "A senha deve ter no mínimo 8 caracteres.";
+  }
+
+  if (!/[A-Z]/.test(senha)) {
+    return "A senha deve conter pelo menos uma letra maiúscula.";
+  }
+
+  if (!/[0-9]/.test(senha)) {
+    return "A senha deve conter pelo menos um número.";
+  }
+
+  if (!/[^A-Za-z0-9]/.test(senha)) {
+    return "A senha deve conter pelo menos um caractere especial (ex: !@#$%).";
+  }
+
+  return null;
 }
 
 export function validarNome(nome) {

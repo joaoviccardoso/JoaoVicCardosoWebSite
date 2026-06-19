@@ -5,6 +5,7 @@ import Input from "../../../Componentes/Input";
 import BotaoAction from "../../../Componentes/BotaoAction";
 import useModalAviso from "../../../hooks/useModalAviso";
 import ModalAviso from "../../../Componentes/ModalAviso";
+import { validarSenha } from "../../../Utils/validacoes";
 const BASE_URL = import.meta.env.VITE_API_URL
 
 function ResetSenha() {
@@ -28,6 +29,12 @@ function ResetSenha() {
             return;
         }
 
+        const validarNovaSenha = validarSenha(form.novaSenha)
+        if(validarNovaSenha){
+            setErro(validarNovaSenha)
+            return;
+        }
+
         try {
             const res = await fetch(`${BASE_URL}/auth/resetPassword/${token}`, {
                 method: "POST",
@@ -38,14 +45,14 @@ function ResetSenha() {
             const data = await res.json();
 
             if (!res.ok) {
-                setErro(data.message || "Link inválido ou expirado.");
+                abrirAviso(data.message || "Link inválido ou expirado.");
                 return;
             }
 
             abrirAviso("Senha redefinida com sucesso! Faça login novamente.");
             setTimeout(() => navigate("/Login"), 2000);
         } catch {
-            setErro("Erro de conexão. Tente novamente.");
+            abrirAviso("Erro de conexão. Tente novamente.");
         }
     }
 

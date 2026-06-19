@@ -4,6 +4,7 @@ import useModalAviso from "../../../hooks/useModalAviso";
 import ModalAviso from "../../../Componentes/ModalAviso";
 import Input from "../../../Componentes/Input";
 import BotaoAction from "../../../Componentes/BotaoAction";
+import { validarEmailMudarSenha } from "../../../Utils/validarLogin";
 const BASE_URL = import.meta.env.VITE_API_URL
 
 function MudarSenha(){
@@ -27,6 +28,14 @@ function MudarSenha(){
     async function handleSubmitLogin(e) {
         e.preventDefault();
         setErroDeLogin("");
+
+        //valida o email
+        const erroNoForm = validarEmailMudarSenha(form)
+        if (erroNoForm) {
+            setErroDeLogin(erroNoForm);
+            return;
+        }
+
         try {
             const res = await fetch(`${BASE_URL}/auth/requestPassword`, {
                 method: "POST",
@@ -37,13 +46,13 @@ function MudarSenha(){
             const data = await res.json();
 
             if (!res.ok) {
-                setErroDeLogin(data.message || "Erro ao solicitar redefinição.");
+                abrirAviso(data.message || "Erro ao solicitar redefinição.");
                 return;
             }
 
             abrirAviso("Se o e-mail existir, enviamos um link de redefinição. Verifique sua caixa de entrada 📧");
     } catch {
-            setErroDeLogin("Erro de conexão. Tente novamente.");
+            abrirAviso("Erro de conexão. Tente novamente.");
     }
     }
 
