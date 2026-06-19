@@ -33,6 +33,12 @@
     width: 100%;
 }
 
+@media (max-width: 1570px){
+   .formResetSenha{
+        width: 42%;
+    } 
+}
+
 @media (max-width: 570px){
    .formResetSenha{
         width: 80%;

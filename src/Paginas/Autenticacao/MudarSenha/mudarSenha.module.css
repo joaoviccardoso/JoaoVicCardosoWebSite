@@ -33,6 +33,12 @@
     padding: 2rem 1rem;
 }
 
+@media (max-width: 1570px){
+   .formLogin{
+        width: 42%;
+    } 
+}
+
 @media (max-width: 570px){
    .formLogin{
         width: 80%;
