@@ -10,6 +10,7 @@ const BASE_URL = import.meta.env.VITE_API_URL
 
 function ResetSenha() {
     const { token } = useParams();
+    const [carregando, setCarregando] = useState(false)
     const navigate = useNavigate();
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const [erro, setErro] = useState("");
@@ -35,6 +36,7 @@ function ResetSenha() {
             return;
         }
 
+        setCarregando(true);
         try {
             const res = await fetch(`${BASE_URL}/auth/resetPassword/${token}`, {
                 method: "POST",
@@ -53,6 +55,8 @@ function ResetSenha() {
             setTimeout(() => navigate("/Login"), 2000);
         } catch {
             abrirAviso("Erro de conexão. Tente novamente.");
+        }finally {
+            setCarregando(false);
         }
     }
 
@@ -67,7 +71,12 @@ function ResetSenha() {
                     <Input label="Confirmar nova senha" type="password" name="confirmarSenha" value={form.confirmarSenha} onChange={handleChange} />
                 </div>
                 {erro && <p>{erro}</p>}
-                <BotaoAction child="Redefinir senha" type="submit" />
+                <BotaoAction 
+                    child="Redefinir senha" 
+                    type="submit" 
+                    loading={carregando}
+                    disabled={carregando}
+                />
             </form>
             <ModalAviso aberto={avisoAberto} onFechar={fecharAviso} mensagem={mensagemAviso} />
         </section>

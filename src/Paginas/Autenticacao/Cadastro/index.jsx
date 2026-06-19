@@ -11,6 +11,7 @@ const BASE_URL = import.meta.env.VITE_API_URL
 
 function TelaCadastro(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
+    const [carregando, setCarregando] = useState(false)
     const [erroDeCadastro, setErroDeCadastro] = useState("")
 
     const [form, setForm] = useState({
@@ -42,6 +43,7 @@ function TelaCadastro(){
             return;
         }
 
+        setCarregando(true);
         try {                                          // ✅ adicionado try/catch
             const response = await fetch(`${BASE_URL}/auth/register`, {
                 method: "POST",
@@ -74,6 +76,8 @@ function TelaCadastro(){
 
         } catch {
             abrirAviso("Erro de conexão. Tente novamente.");   // ✅ erro de rede
+        }   finally {
+            setCarregando(false);
         }
     }
 
@@ -147,6 +151,8 @@ function TelaCadastro(){
                         <BotaoAction
                             child="Fazer Cadastro"
                             type="submit"
+                            loading={carregando}
+                            disabled={carregando}
                         />
                     </div>
                 </form>

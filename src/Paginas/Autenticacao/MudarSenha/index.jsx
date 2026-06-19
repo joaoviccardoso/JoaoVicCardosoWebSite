@@ -10,6 +10,7 @@ const BASE_URL = import.meta.env.VITE_API_URL
 function MudarSenha(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const [erroDeLogin, setErroDeLogin] = useState("")
+    const [carregando, setCarregando] = useState(false)
     const [form, setForm] = useState({
         email: "",
     });
@@ -36,6 +37,7 @@ function MudarSenha(){
             return;
         }
 
+        setCarregando(true);
         try {
             const res = await fetch(`${BASE_URL}/auth/requestPassword`, {
                 method: "POST",
@@ -51,9 +53,11 @@ function MudarSenha(){
             }
 
             abrirAviso("Se o e-mail existir, enviamos um link de redefinição. Verifique sua caixa de entrada 📧");
-    } catch {
-            abrirAviso("Erro de conexão. Tente novamente.");
-    }
+            } catch {
+                abrirAviso("Erro de conexão. Tente novamente.");
+            } finally {
+                setCarregando(false);
+            }
     }
 
     return(
@@ -78,6 +82,8 @@ function MudarSenha(){
                 <BotaoAction
                     child="Enviar Email"
                     type="submit"
+                    loading={carregando}
+                    disabled={carregando}
                 />
             </form>
             <ModalAviso
