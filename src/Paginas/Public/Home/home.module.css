@@ -1,6 +1,5 @@
 .secao0{
-    background: var(--cor-containerCortado);
-    clip-path: polygon(0% 2%, 100% 0, 100% 100%, 0% 100%);
+    background: var(--background-segunda-camada);
 }
 
 .secao1{
