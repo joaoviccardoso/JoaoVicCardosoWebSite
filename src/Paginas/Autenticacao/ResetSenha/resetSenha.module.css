@@ -40,7 +40,17 @@
 }
 
 @media (max-width: 570px){
+    .sectionResetSenha{
+        height: 90vh;
+        margin: 2rem 0rem;
+    }
+
    .formResetSenha{
         width: 80%;
+        padding: 1rem;
     } 
+
+    .formResetSenha p{
+        font-size: var(--font-size-md);
+    }
 }

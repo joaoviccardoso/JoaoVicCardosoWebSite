@@ -40,7 +40,16 @@
 }
 
 @media (max-width: 570px){
+    .sectionContainerMudarSenha{
+        height: 90vh;
+        margin: 0rem 0rem;
+    }
+
    .formLogin{
         width: 80%;
     } 
+
+    .formLogin p{
+        font-size: var(--font-size-md);
+    }
 }
