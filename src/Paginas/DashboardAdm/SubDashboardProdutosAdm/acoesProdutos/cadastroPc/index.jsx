@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import CssAcaoProduto3 from "./cadastroProdutoPc.module.css"
 import TextArea from "../../../../../Componentes/TextArea";
 import Input from "../../../../../Componentes/Input";
-import BotaoAction from "../../../../../Componentes/BotaoAction";
+import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction";
 import StatusSelect from "../../../../../Componentes/Select";
 import { validarFormularioCadastrarProduto } from "../../../../../Utils/validarCadastro";
 import { jwtDecode } from "jwt-decode";

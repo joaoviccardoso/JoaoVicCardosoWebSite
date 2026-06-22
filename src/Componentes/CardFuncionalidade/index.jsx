@@ -1,5 +1,5 @@
 import CssCardFunci from "./cardFuncionalidade.module.css"
-import BotaoLink from "../BotaoLink"
+import BotaoLink from "../Buttons/BotaoLink"
 
 function CardFuncionalidade ({imgUrl, titulo, descricao}){
     return(

@@ -1,5 +1,5 @@
 import CssQuemSouEu from "./quemSouEu.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import imgJoaoDev from "../../../../../assets/fotoDoJoaoDesenvolvedorDaPagina.png"
 
 function SecaoQueSouEu(){

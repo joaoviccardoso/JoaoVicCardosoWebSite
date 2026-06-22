@@ -3,7 +3,7 @@ import CssCadastro from "./cadastro.module.css"
 import BemVindo from "../../../Componentes/MensagemBemVindo"
 import Input from "../../../Componentes/Input";
 import ImgLink from "../../../Componentes/imgLink";
-import BotaoAction from "../../../Componentes/BotaoAction";
+import BotaoAction from "../../../Componentes/Buttons/BotaoAction/index.jsx";
 import { validarFormularioCadastro } from "../../../Utils/validarCadastro.js";
 import ModalAviso from "../../../Componentes/ModalAviso/index.jsx";
 import useModalAviso from "../../../hooks/useModalAviso.js";

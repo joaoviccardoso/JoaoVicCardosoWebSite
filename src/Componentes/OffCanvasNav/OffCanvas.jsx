@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import ListaNav from "../ListaNav"
 import CssOffCanva from "./OffCanvas.module.css"
-import BtnLogin from "../BotaoLogin"
+import BtnLogin from "../Buttons/BotaoLogin"
 import logoDev from "../../assets/logoDev.svg"
 
 function OffCanvas(){

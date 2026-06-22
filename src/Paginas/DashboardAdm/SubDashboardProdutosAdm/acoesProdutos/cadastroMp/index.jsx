@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BotaoAction from "../../../../../Componentes/BotaoAction"
+import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction"
 import CssAcaoProduto1 from "./cadastroProdutoMp.module.css"
 import Input from "../../../../../Componentes/Input";
 import TextArea from "../../../../../Componentes/TextArea";

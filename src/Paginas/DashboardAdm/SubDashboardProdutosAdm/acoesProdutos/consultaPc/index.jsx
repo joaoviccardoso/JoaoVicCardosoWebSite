@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import TabelaConsultaProjetosPC from "../../../../../Componentes/TabelaProdutosPc";
+import TabelaConsultaProjetosPC from "../../../../../Componentes/Tables/TabelaProdutosPc";
 import CssAcaoProduto4 from "./consultaProdutoPc.module.css"
 import { getAllProdutosPC } from "../../../../../services/produtosServices";
 

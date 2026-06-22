@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CssResetSenha from "./resetSenha.module.css"
 import Input from "../../../Componentes/Input";
-import BotaoAction from "../../../Componentes/BotaoAction";
+import BotaoAction from "../../../Componentes/Buttons/BotaoAction";
 import useModalAviso from "../../../hooks/useModalAviso";
 import ModalAviso from "../../../Componentes/ModalAviso";
 import { validarSenha } from "../../../Utils/validacoes";

@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import CssSobreMim from "./heroSobreMim.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import imgPersonagemHero from "../../../../../assets/personagemPaginaSobreMim.png"
 import useLayoutEffectHeroPadrao from "../../../../../hooks/useScrollAnimationHeroPadrao"
 

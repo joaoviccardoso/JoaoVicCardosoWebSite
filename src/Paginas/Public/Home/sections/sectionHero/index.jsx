@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitText from "gsap/src/SplitText";
 import CssHero from "./hero.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import balaoMensagemHola from "../../../../../assets/balaoOlaHome.png"
 import imagemBonecoJoaoHome from "../../../../../assets/imagemBonecoJoaoHome.png"
 

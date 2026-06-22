@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import CssForaDaInternet from "./foraDaInternet.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import personagemComDuvida from '../../../../../assets/personagemComDuvida.png'
 import { useScrollAnimation } from '../../../../../hooks/useScrollAnimation';
 

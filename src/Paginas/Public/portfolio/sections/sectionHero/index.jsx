@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitText from "gsap/src/SplitText";
 import CssHero from "./heroProdutos.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 
 function HeroProdutos(){
     const el = useRef(null)

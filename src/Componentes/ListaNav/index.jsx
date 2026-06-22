@@ -1,5 +1,5 @@
 import LinkParaNavegacao from '../Links/link'
-import BtnLogin from '../BotaoLogin'
+import BtnLogin from '../Buttons/BotaoLogin'
 
 function ListaNav({className}){
     return(

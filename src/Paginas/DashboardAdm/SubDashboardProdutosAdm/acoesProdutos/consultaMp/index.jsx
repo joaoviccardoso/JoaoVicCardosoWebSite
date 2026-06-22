@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import CssAcaoProduto2 from "./consultaProdutoMp.module.css"
 import { jwtDecode } from "jwt-decode";
 import { getAllProdutosMP } from "../../../../../services/produtoMp";
-import TabelaConsultaProjetosPC from "../../../../../Componentes/TabelaProdutosPc";
-import TabelaConsultaProjetosMP from "../../../../../Componentes/TabelaProdutosMP";
+import TabelaConsultaProjetosPC from "../../../../../Componentes/Tables/TabelaProdutosPc";
+import TabelaConsultaProjetosMP from "../../../../../Componentes/Tables/TabelaProdutosMP";
 
 function AcaoConsultaProdutoMp(){
     const [userAdm, setUserAdm] = useState({});

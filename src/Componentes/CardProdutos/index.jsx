@@ -1,5 +1,5 @@
 import CssCardProdutos from "./cardProdutos.module.css"
-import BotaoLink from "../BotaoLink"
+import BotaoLink from "../Buttons/BotaoLink"
 
 function CardProduto ({imgUrl, titulo, descricao, idBtn}){
     return(

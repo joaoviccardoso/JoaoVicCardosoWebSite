@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import CssBtnLogin from "./botaoLogin.module.css";
-import IconeLogin from '../../assets/IconeLogin.svg'
-import { estaLogado, getRoleDoToken } from '../../services/authServices';
+import IconeLogin from '../../../assets/IconeLogin.svg'
+import { estaLogado, getRoleDoToken } from '../../../services/authServices';
 import { useEffect, useState } from 'react';
 
 

@@ -1,5 +1,5 @@
 import CssContainerComBotao from "./containerTextoComBotao.module.css"
-import BotaoAction from "../BotaoAction"
+import BotaoAction from "../Buttons/BotaoAction"
 
 function ContainerComBotao({id, titulo, texto /*child idBtn*/}){
     return(

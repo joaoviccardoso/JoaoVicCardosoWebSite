@@ -3,7 +3,7 @@ import ListaNav from '../ListaNav'
 import Image from '../Img'
 import logo from "../../assets/logoDev.svg"
 import menuCelular from '../../assets/menuCelular.svg'
-import BtnLogin from '../BotaoLogin'
+import BtnLogin from '../Buttons/BotaoLogin'
 
 function Nav(){
     return(

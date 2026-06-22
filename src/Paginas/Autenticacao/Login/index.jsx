@@ -6,7 +6,7 @@ import CssLogin from "./login.module.css"
 import BemVindo from "../../../Componentes/MensagemBemVindo"
 import ImgLink from "../../../Componentes/imgLink"
 import Input from "../../../Componentes/Input"
-import BotaoAction from "../../../Componentes/BotaoAction"
+import BotaoAction from "../../../Componentes/Buttons/BotaoAction"
 import RadioGroup from "../../../Componentes/RadioInput"
 import LinkParaNavegacao from "../../../Componentes/Links/link"
 import useModalAviso from "../../../hooks/useModalAviso";

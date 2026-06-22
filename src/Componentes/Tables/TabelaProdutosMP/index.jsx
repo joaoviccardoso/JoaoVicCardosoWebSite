@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./tabelaConsultaProdutosPc.module.css"
-import { deleteProdutoPorId } from "../../services/produtosServices";
+import styles from "./tabelaConsultaProdutosMp.module.css"
+import { deleteProdutoPorId } from "../../../services/produtosServices"; 
 
-import ModalAviso from "../ModalAviso";
-import useModalAviso from "../../hooks/useModalAviso";
-import ModalConfirmacaoExclusao from "../ModalDeConfirmacao";
+import ModalAviso from "../../ModalAviso";
+import useModalAviso from "../../../hooks/useModalAviso";
+import ModalConfirmacaoExclusao from "../../ModalDeConfirmacao";
+import { deleteProdutoMpPorId } from "../../../services/produtoMp";
 
 
-function TabelaConsultaProjetosPC({produtos, onDeletar}){
+function TabelaConsultaProjetosMP({produtos, onDeletar}){
   const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
   const [modalAberto, setModalAberto] = useState(false);
   const [deletando, setDeletando] = useState(false);
@@ -28,7 +29,7 @@ function TabelaConsultaProjetosPC({produtos, onDeletar}){
     setDeletando(true);
     try {
       //Chama a rota de delete
-      await deleteProdutoPorId(projetoSelecionado._id);
+      await deleteProdutoMpPorId(projetoSelecionado._id);
       fecharModal();
       //passa o projeto deletado para o pai remover do useState
       onDeletar(projetoSelecionado._id);
@@ -47,30 +48,24 @@ function TabelaConsultaProjetosPC({produtos, onDeletar}){
                 <tbody>
                   {produtos.map((projeto) => (
                     <tr key={projeto._id} className={styles.projRow}>
-
-                      <td className={`${styles.projCell} ${styles.colProjeto} ${styles.colImgCliente}`}>
-                        <div className={styles.imgCliente}></div>
-                      </td>
         
                       <td className={`${styles.projCell} ${styles.colProjeto}`}>
                         <div className={styles.clietLabel}>Projeto</div>
-                        <div className={styles.clietName}>{projeto.nomeProjeto}</div>
+                        <div className={styles.clietName}>{projeto.nomeCompleto}</div>
                       </td>
         
                       <td className={`${styles.projCell} ${styles.colProjeto}`}>
-                        <div className={styles.clietLabel}>Cliente</div>
-                        <div className={styles.clietName}>{projeto.cliente?.nomeCompleto ?? "Sem Cliente"}</div>
+                        <div className={styles.clietLabel}>Tecnologia</div>
+                        <div className={styles.divIconeTeclogia}>
+                            {projeto.tecnologias.map((tecnologia) => (
+                                <img key={tecnologia} src={`/tecnologias/${tecnologia}`} alt="tecnologia" className={styles.imgTecnologias}/>
+                            ))}
+                        </div>
                       </td>
 
-                        <td className={`${styles.projCell} ${styles.colStatus}`}>
-                            <div className={styles.projLabel}>Status</div>
-                            <span className={`${styles.statusBadge} ${styles[projeto.statusCor]}`}>
-                                {projeto.status}
-                            </span>
-                        </td>
         
                       <td className={`${styles.projCell} ${styles.colAcao} ${styles.colBotoes}`}>
-                          <Link to={`/admin/Produto/ConsultaPC/Editar/${projeto._id}`} className={styles.botaoLink}> 
+                          <Link to={`/admin/Produto/ConsultarMP/Editar/${projeto._id}`} className={styles.botaoLink}> 
                             Ver mais
                           </Link>
 
@@ -82,6 +77,7 @@ function TabelaConsultaProjetosPC({produtos, onDeletar}){
                     </tr>
                   ))}
                 </tbody>
+
               </table>
 
               <ModalConfirmacaoExclusao
@@ -104,4 +100,4 @@ function TabelaConsultaProjetosPC({produtos, onDeletar}){
     )
 }
 
-export default TabelaConsultaProjetosPC
+export default TabelaConsultaProjetosMP

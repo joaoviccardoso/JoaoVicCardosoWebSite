@@ -4,7 +4,7 @@ import { useState } from "react";
 import Input from "../../../../../Componentes/Input";
 import RadioGroup from "../../../../../Componentes/RadioInput";
 import TextArea from "../../../../../Componentes/TextArea";
-import BotaoAction from "../../../../../Componentes/BotaoAction";
+import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction";
 import useModalAviso from "../../../../../hooks/useModalAviso";
 import ModalAviso from "../../../../../Componentes/ModalAviso";
 

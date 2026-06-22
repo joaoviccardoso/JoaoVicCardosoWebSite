@@ -1,4 +1,4 @@
-import BotaoCta from "../../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta/index.jsx"
 import CssFuncio from "./heroDetalhe.module.css"
 import MinhasHabilidades from "../../../../../Componentes/MinhasHabilidades/index.jsx"
 import logoDev from '../../../../../assets/logoEscuro.png'

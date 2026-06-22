@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import CssSubDashAdm from "./subDashAdm.module.css"
 import { pegarUser } from "../../../Utils/pegarUser"
-import BotaoDash from "../../../Componentes/BotaoDashBoard"
+import BotaoDash from "../../../Componentes/Buttons/BotaoDashBoard"
 
 function SubDashAdmCliente(){
     const [userAdm, setUserAdm] = useState({})

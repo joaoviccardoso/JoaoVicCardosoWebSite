@@ -4,7 +4,7 @@ import { validarFormularioAtualizarDados } from "../../../Utils/validarCadastro"
 import { atualizarUsuario } from "../../../services/authServices";
 import CssMeusDados from "./meusDadosUser.module.css"
 import Input from "../../../Componentes/Input";
-import BotaoAction from "../../../Componentes/BotaoAction";
+import BotaoAction from "../../../Componentes/Buttons/BotaoAction";
 import useModalAviso from "../../../hooks/useModalAviso";
 import ModalAviso from "../../../Componentes/ModalAviso";
 

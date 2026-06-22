@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitText from "gsap/src/SplitText";
 import img from "../../../../../assets/iconePaginaWeb.svg"
 import CssHeroServico from "./heroServico.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 
 function HeroServico(){
     const titleRef = useRef(null);

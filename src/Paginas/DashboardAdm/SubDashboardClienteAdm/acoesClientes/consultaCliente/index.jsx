@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { jwtDecode } from "jwt-decode"
 import { getAllUsuarios } from "../../../../../services/authServices"
 import CssAcao2 from "./consultaCliente.module.css"
-import TabelaConsultaCliente from "../../../../../Componentes/TabelaConsultaCliente"
+import TabelaConsultaCliente from "../../../../../Componentes/Tables/TabelaConsultaCliente"
 import useModalAviso from "../../../../../hooks/useModalAviso"
 import ModalAviso from "../../../../../Componentes/ModalAviso"
 
