@@ -1,11 +1,10 @@
 import { useRef } from 'react';
-import ContainerTexto from '../../../../../Componentes/ContainerTexto';
 import CssComoTranformoIdeia from "./comoTranformoIdeia.module.css"
 import CardBlackMedio from '../../../../../Componentes/ComponetesCards/CardBlackMedio';
 import CardVerde from '../../../../../Componentes/ComponetesCards/CardVerde';
 import { useScrollAnimationLeftAndRight } from '../../../../../hooks/useScrollAnimationLeftAndRight';
 
-function ComoTranformoIdeia(){
+function ConstruindoExperiencias(){
 
     const el = useRef();
 
@@ -47,4 +46,4 @@ function ComoTranformoIdeia(){
     )
 }
 
-export default ComoTranformoIdeia
+export default ConstruindoExperiencias

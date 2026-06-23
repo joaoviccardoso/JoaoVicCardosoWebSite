@@ -1,68 +1,97 @@
-.secaoAlemDeCodigo{
+/* alemDeCodigo.module.css */
+
+.secaoAlemDeCodigo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding:0;
+    padding: 0;
 }
 
-.containerTexto{
+.containerTexto h3 {
+    font-size: var(--font-size-4x2);
+    color: var(--verde);
+}
+
+.containerTexto {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.containerOqueEuEntrego{
+.containerOqueEuEntrego {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 12rem;
 }
 
-.containerOqueEuEntrego img{
-    width: 580px;
-    height: 750px;
-}
-
-.ulLista{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+/* ── Baralho de cartas ── */
+.ulLista {
+    list-style: none;
     padding: 0;
-    width: 40%;
+    margin: 0;
+    position: relative;
+    /* Ajuste width/height ao tamanho real do seu CardVertical */
+    width: 280px;
+    height: 380px;
 }
 
-@media(max-width: 1000px){
-    .containerOqueEuEntrego{
-        flex-direction: column;
-    }
-
-    .containerOqueEuEntrego img{
-        display: none;
-    }
-
-    .ulLista{
-        width: 100%;
-    }
+.ulLista li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center bottom;
+    transition: transform 0.3s ease;
 }
 
-@media(max-width: 480px){
-    .secaoAlemDeCodigo{
-        padding:0;
+/* Carta de baixo — mais inclinada para a esquerda */
+.ulLista li:nth-child(1) {
+    transform: rotate(-20deg) translateX(-30px) translateY(-58px);
+    z-index: 1;
+}
+
+/* Carta do meio — levemente inclinada */
+.ulLista li:nth-child(2) {
+    transform: rotate(-8deg) translateX(-10px) translateY(-64px);
+    z-index: 2;
+}
+
+/* Carta da frente — reta, no topo */
+.ulLista li:nth-child(3) {
+    transform: rotate(5deg) translateX(10px) translateY(-64px);
+    z-index: 3;
+}
+
+/* ── Hover: espalha as cartas ── */
+.ulLista:hover li:nth-child(1) {
+    transform: rotate(-32deg) translateX(-55px) translateY(-58px);
+}
+
+.ulLista:hover li:nth-child(2) {
+    transform: rotate(-12deg) translateX(-18px) translateY(-64px);
+}
+
+.ulLista:hover li:nth-child(3) {
+    transform: rotate(20deg) translateX(28px) translateY(-64px);
+}
+
+@media (max-width: 480px) {
+    .secaoAlemDeCodigo {
+        padding: 0;
     }
 
-    .containerOqueEuEntrego{
-        flex-direction: column;
-    }
-
-    .containerOqueEuEntrego img{
-        display: none;
-    }
-
-    .containerTexto h3{
+    .containerTexto h3 {
         font-size: var(--font-size-2xl);
-       
     }
 
-    .containerTexto p{
+    .containerTexto p {
         font-size: var(--font-size-md);
+    }
+
+    .ulLista {
+        width: 240px;
+        height: 340px;
     }
 }
