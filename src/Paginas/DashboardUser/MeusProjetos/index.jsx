@@ -3,7 +3,7 @@ import CssProjetosUser from "./meusProjetosUser.module.css"
 import { pegarUser } from "../../../Utils/pegarUser"
 import TabelaProjetos from "../../../Componentes/Tables/TabelaProdutosCliente";
 import useModalAviso from "../../../hooks/useModalAviso";
-import ModalAviso from "../../../Componentes/ModalAviso";
+import ModalAviso from "../../../Componentes/Modals/ModalAviso";
 
 function MeusProjetosUser(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();

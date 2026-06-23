@@ -1,9 +1,9 @@
 import NavCss from './nav.module.css' 
 import ListaNav from '../ListaNav'
-import Image from '../Img'
-import logo from "../../assets/logoDev.svg"
-import menuCelular from '../../assets/menuCelular.svg'
-import BtnLogin from '../Buttons/BotaoLogin'
+import Image from '../../ImgLogo'
+import logo from "../../../assets/logoDev.svg"
+import menuCelular from '../../../assets/menuCelular.svg'
+import BtnLogin from '../../Buttons/BotaoLogin'
 
 function Nav(){
     return(

@@ -1,7 +1,7 @@
 import CssLayoutAdm from "./layoutAdm.module.css"
 import { Outlet } from "react-router-dom"
-import Breadcrumb from "../Componentes/Breadcrumb"
-import NavDash from "../Componentes/NavDashboard"
+import Breadcrumb from "../Componentes/Inputs/Breadcrumb"
+import NavDash from "../Componentes/Layouts/NavDashboard"
 import { useLimparOffCanvas } from "../hooks/useLimparOffCanvas"
 
 function LayoutAdm({acoes}) {

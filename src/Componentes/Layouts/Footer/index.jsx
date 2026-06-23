@@ -1,12 +1,12 @@
 import CssFooter from "./footer.module.css"
 import ListaNav from "../ListaNav";
-import Image from "../Img";
-import logoLinkedin from '../../assets/linkedin.svg'
-import logoGithub from '../../assets/github.svg'
-import logInstagram from '../../assets/instagram.svg'
-import logoGmail from '../../assets/gmail.svg'
-import logoWhatsapp from '../../assets/whatsapp.svg'
-import logoDev from '../../assets/logoDev.svg'
+import Image from "../../ImgLogo";
+import logoLinkedin from '../../../assets/linkedin.svg'
+import logoGithub from '../../../assets/github.svg'
+import logInstagram from '../../../assets/instagram.svg'
+import logoGmail from '../../../assets/gmail.svg'
+import logoWhatsapp from '../../../assets/whatsapp.svg'
+import logoDev from '../../../assets/logoDev.svg'
 
 function Footer(){
 

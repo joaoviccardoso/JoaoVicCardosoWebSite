@@ -1,7 +1,7 @@
 // breadcrumb.jsx
 import CssBreadcrumb from "./breadcrumb.module.css"
-import ImgLink from "../imgLink"
-import imgVoltar from "../../assets/voltarPagina.svg"
+import ImgLink from "../../imgLink"
+import imgVoltar from "../../../assets/voltarPagina.svg"
 import { useLocation, Link } from "react-router-dom"
 
 // Mapeie aqui o "slug" da URL para o nome legível

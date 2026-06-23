@@ -3,8 +3,8 @@ import styles from "./tabelaConsultaCliente.module.css"
 import { useState } from "react";
 import useModalAviso from "../../../hooks/useModalAviso";
 import { deleteUsuarioPorId } from "../../../services/authServices";
-import ModalConfirmacaoExclusao from "../../ModalDeConfirmacao";
-import ModalAviso from "../../ModalAviso";
+import ModalConfirmacaoExclusao from "../../Modals/ModalDeConfirmacao";
+import ModalAviso from "../../Modals/ModalAviso";
 
 function TabelaConsultaCliente({clientes,  onDeletar}){
   const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import CardProduto from "../../../../../Componentes/CardProdutos"
 import CssProduto from "./produtos.module.css"
-import LinkParaNavegacao from "../../../../../Componentes/Links/link"
+import LinkParaNavegacao from "../../../../../Componentes/Layouts/Links/link"
 import { buildImageUrl } from "../../../../../Utils/buildImagens"
 //import menuCelular from "../../../../../assets/menuCelular.svg"
 

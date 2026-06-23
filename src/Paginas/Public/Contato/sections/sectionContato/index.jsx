@@ -1,5 +1,5 @@
 import CssContato from "./contato.module.css"
-import Image from "../../../../../Componentes/Img"
+import Image from "../../../../../Componentes/ImgLogo"
 import logoLinkedin from "../../../../../assets/linkedin.svg"
 import logoGithub from "../../../../../assets/github.svg"
 import logInstagram from '../../../../../assets/instagram.svg'

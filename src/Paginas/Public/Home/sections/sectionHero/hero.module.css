@@ -85,7 +85,7 @@
     color: #fff;
 }
 
-.containerTextoHero h1 span{
+#textoColorido{
     color: var(--verde);
 }
 
@@ -170,6 +170,13 @@
 }
 
 @media(max-width: 500px){
+    .sectionHero{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .containerImagemHero{
         top: 42px;
         width: 100%;
@@ -181,7 +188,7 @@
     }
 
     .containerImagemHero p{
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-md);
         width: 120px;
     }
 
@@ -189,26 +196,32 @@
         width: 110px;
     }
 
-    .containerBalaoOla{
-        display: block;
+    .containerTextoHero{
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
     }
 
     .containerTextoHero h1{
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-3xl);
     }
 
     .containerTextoHero p{
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-lg);
         padding:0;
     }
 }
 
-@media(max-width: 420px){
+@media(max-width: 350px){
+    .containerTextoHero h1{
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media(max-width: 250px){
     .containerTextoHero h1{
         font-size: var(--font-size-xl);
-    }
-
-    .containerTextoHero p{
-        font-size: var(--font-size-sm);
     }
 }

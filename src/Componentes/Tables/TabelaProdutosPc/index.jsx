@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import styles from "./tabelaConsultaProdutosPc.module.css"
 import { deleteProdutoPorId } from "../../../services/produtosServices";
 
-import ModalAviso from "../../ModalAviso";
+import ModalAviso from "../../Modals/ModalAviso";
 import useModalAviso from "../../../hooks/useModalAviso";
-import ModalConfirmacaoExclusao from "../../ModalDeConfirmacao";
+import ModalConfirmacaoExclusao from "../../Modals/ModalDeConfirmacao";
 
 
 function TabelaConsultaProjetosPC({produtos, onDeletar}){

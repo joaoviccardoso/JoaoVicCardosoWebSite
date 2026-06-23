@@ -4,7 +4,7 @@ import { getAllUsuarios } from "../../../../../services/authServices"
 import CssAcao2 from "./consultaCliente.module.css"
 import TabelaConsultaCliente from "../../../../../Componentes/Tables/TabelaConsultaCliente"
 import useModalAviso from "../../../../../hooks/useModalAviso"
-import ModalAviso from "../../../../../Componentes/ModalAviso"
+import ModalAviso from "../../../../../Componentes/Modals/ModalAviso"
 
 
 function AcaoConsultaCliente(){

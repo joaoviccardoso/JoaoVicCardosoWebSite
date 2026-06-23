@@ -1,8 +1,8 @@
 import { useState } from "react";
 import CssTelaMudarSenha from "./mudarSenha.module.css"
 import useModalAviso from "../../../hooks/useModalAviso";
-import ModalAviso from "../../../Componentes/ModalAviso";
-import Input from "../../../Componentes/Input";
+import ModalAviso from "../../../Componentes/Modals/ModalAviso";
+import Input from "../../../Componentes/Inputs/Input";
 import BotaoAction from "../../../Componentes/Buttons/BotaoAction";
 import { validarEmailMudarSenha } from "../../../Utils/validarLogin";
 const BASE_URL = import.meta.env.VITE_API_URL

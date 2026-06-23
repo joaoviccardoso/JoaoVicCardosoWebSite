@@ -5,7 +5,7 @@ import BotaoDash from "../../../Componentes/Buttons/BotaoDashBoard"
 import TabelaProjetos from "../../../Componentes/Tables/TabelaProjetos"
 import { logout } from "../../../services/authServices"
 import { useNavigate } from "react-router-dom"
-import ModalConfirmacaoExclusao from "../../../Componentes/ModalDeConfirmacao"
+import ModalConfirmacaoExclusao from "../../../Componentes/Modals/ModalDeConfirmacao"
 
 function HomeDashborardUser(){
     const navigate = useNavigate() 

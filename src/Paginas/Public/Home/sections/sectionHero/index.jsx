@@ -101,7 +101,7 @@ function Hero(){
                 </div>
 
                 <div className={CssHero.containerTextoHero} id="containerTituloHero">
-                    <h1 ref={titleRef}>Eu ajudo negócios a crescer <br/><span>na internet</span></h1>
+                    <h1 ref={titleRef}>Eu ajudo negócios a crescer <br/>na internet</h1>
                     <p id="subtituloHero">Desenvolvo sites que conectam sua empresa a mais clientes, de <br/> forma simples e profissional.</p>
                 </div>
 

@@ -2,13 +2,13 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import CssAcao1 from "./cadastraCliente.module.css"
 import { pegarUser } from "../../../../../Utils/pegarUser"
-import Input from "../../../../../Componentes/Input"
+import Input from "../../../../../Componentes/Inputs/Input"
 import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction"
-import StatusSelect from "../../../../../Componentes/Select"
+import StatusSelect from "../../../../../Componentes/Inputs/Select"
 import { validarFormularioAtualizarDados } from "../../../../../Utils/validarCadastro"
 import { atualizarUsuario, getUsuarioPorId } from "../../../../../services/authServices"
 import useModalAviso from "../../../../../hooks/useModalAviso"
-import ModalAviso from "../../../../../Componentes/ModalAviso"
+import ModalAviso from "../../../../../Componentes/Modals/ModalAviso"
 
 const STATUS_OPTIONS = [
   { value: "admin", label: "Adimin" },
