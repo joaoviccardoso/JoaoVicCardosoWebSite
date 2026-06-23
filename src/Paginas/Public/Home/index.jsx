@@ -2,7 +2,7 @@ import CssHome from "./home.module.css"
 import Hero from "./sections/sectionHero" 
 import CardVerde from "../../../Componentes/ComponetesCards/CardVerde"
 import CardBlackGrande from "../../../Componentes/ComponetesCards/CardBlackGrande"
-import ComoTranformoIdeia from "./sections/sectionComoTransformoIdeia"
+import ComoTranformoIdeia from "./sections/ConstruindoExperiencias"
 import AlemDeCodigo from "./sections/sectionEntregoAlemDeCodigo"
 import GerarValor from "./sections/sectionGerarValor"
 import ProntoParaComecar from "./sections/sectionProntoParaComecar"
@@ -24,7 +24,6 @@ function Home(){
                         titulo={"85% dos consumidores pesquisam online antes de comprar."}
                         texto={"Se seu negócio não tem presença digital, você está perdendo oportunidades todos os dias."}
                     />
-                    
                     <ComoTranformoIdeia/>
                     <AlemDeCodigo/>
                 </div>

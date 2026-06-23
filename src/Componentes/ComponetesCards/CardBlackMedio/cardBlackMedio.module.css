@@ -1,0 +1,53 @@
+.wrapper {
+    width: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.containerTexto{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .6rem;
+    background-color: var(--background);
+    padding: 3rem 1rem 3rem 3rem;
+    height: auto;
+    color: white;
+    border-radius: 16px;
+    box-shadow: 0px 3px 4px 1px rgba(14, 169, 119, 1);
+    -webkit-box-shadow: 0px 3px 4px 1px rgba(14, 169, 119, 1);
+}
+
+.containerTexto span{
+    font-size: var(--font-size-md);
+    font-family: var(--font-paraTextoChamativo);
+    background-color: var(--color-tag);
+    border-radius: 8px;
+    color: var(--verde);
+    max-width: 50%;
+    padding-left: 1.8rem;
+}
+
+.containerTexto h3{
+    max-width: 100%;
+    font-size: var(--font-size-3xl);
+    font-family: var(--font-paraTextoChamativo);
+}
+
+.containerTexto p{
+    max-width: 70%;
+    font-size: var(--font-size-xl);
+    font-family: var(--font-paraTexto);
+}
+
+.containerTexto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    background: var(--color-gradienteVerdeBottom);
+    border-radius: 6px 0 0 6px;
+}
