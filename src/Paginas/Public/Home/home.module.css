@@ -4,6 +4,9 @@
 
 .secao1{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
     width: 100%;
     height: 100%;
     padding: 9rem 12rem 2rem 12rem;
