@@ -1,0 +1,8 @@
+.botaoLinkA{
+    background: var(--color-gradienteVerdeBottom);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-paraTexto);
+    color: var(--cor-letraClara);
+    border-radius: 16px;
+    padding: 10px 60px;
+}

@@ -1,7 +1,7 @@
 import CssHome from "./home.module.css"
 import Hero from "./sections/sectionHero" 
-import PresencaDigital from "./sections/sectionPresencaDigital"
-import ForaDaInternet from "./sections/sectionForaDaInternet"
+import CardVerde from "../../../Componentes/ComponetesCards/CardVerde"
+import CardBlackGrande from "../../../Componentes/ComponetesCards/CardBlackGrande"
 import ComoTranformoIdeia from "./sections/sectionComoTransformoIdeia"
 import AlemDeCodigo from "./sections/sectionEntregoAlemDeCodigo"
 import GerarValor from "./sections/sectionGerarValor"
@@ -14,8 +14,17 @@ function Home(){
 
             <div className={CssHome.secao0}>
                 <div className={CssHome.secao1}>
-                    <PresencaDigital/>
-                    <ForaDaInternet></ForaDaInternet>
+                    <CardVerde
+                        tag={"Seja encontrado na internet"}
+                        titulo={"Presença Digital Não é Luxo É Necessidade."}
+                        texto={"Em um mundo onde a primeira impressão é online, não ter um site é como não ter um número de telefone."}
+                    />
+                    <CardBlackGrande
+                        tag={"Comportamento do consumidor"}
+                        titulo={"85% dos consumidores pesquisam online antes de comprar."}
+                        texto={"Se seu negócio não tem presença digital, você está perdendo oportunidades todos os dias."}
+                    />
+                    
                     <ComoTranformoIdeia/>
                     <AlemDeCodigo/>
                 </div>

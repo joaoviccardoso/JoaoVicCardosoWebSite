@@ -13,9 +13,11 @@
     /*novas Cores*/
     --background: #0A0A0A;
     --background-segunda-camada: #010101;
-
-    /*Cores*/
+    --color-tag: #0F2D1C;
     --verde:#10B981;
+    
+    /*Cores*/
+    
     --branco-menosBranco: #F2F2F2;
     --vermelho-erro: #EF4444;
     --cor-letraClara: #FFFFFF;
