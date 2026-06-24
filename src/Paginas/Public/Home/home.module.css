@@ -1,8 +1,11 @@
 .secao0{
+    position: relative;   /* ← obrigatório para o canvas absolute ficar contido aqui */
+    overflow: hidden;     /* ← garante que o canvas não vaza */
     background: var(--background-segunda-camada);
+    z-index: 1;
 }
 
-.secao1{
+.secao1 {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -10,6 +13,22 @@
     width: 100%;
     height: 100%;
     padding: 9rem 12rem 2rem 12rem;
+    z-index: 1;
+}
+
+.secao0 > *:not(canvas) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Troca fixed → absolute, e remove o seletor global canvas */
+.secao0 canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0;
 }
 
 .secao2{
@@ -18,7 +37,9 @@
     width: 100%;
     height: 100%;
     padding: 4rem 0;
+    z-index: 1;
 }
+
 
 @media(max-width: 1400px){
     .secao1{

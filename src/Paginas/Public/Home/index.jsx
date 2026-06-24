@@ -6,6 +6,7 @@ import ConstruindoExperiencias from "./sections/ConstruindoExperiencias"
 import AlemDeCodigo from "./sections/sectionEntregoAlemDeCodigo"
 import GerarValor from "./sections/sectionGerarValor"
 import ProntoParaComecar from "./sections/sectionProntoParaComecar"
+import ParticlesBackground from "./ParticulasHome"
 
 function Home(){
     return(
@@ -13,6 +14,7 @@ function Home(){
             <Hero/>
 
             <div className={CssHome.secao0}>
+                <ParticlesBackground/>
                 <div className={CssHome.secao1}>
                     <CardVerde
                         tag={"Seja encontrado na internet"}
@@ -27,12 +29,11 @@ function Home(){
                     <ConstruindoExperiencias/>
                     <AlemDeCodigo/>
                 </div>
-
-                <div className={CssHome.secao2}>
-                    <GerarValor/>
-                </div>
             </div>
             
+            <div className={CssHome.secao2}>
+                    <GerarValor/>
+            </div>
             <ProntoParaComecar/>
         </section>
     )
