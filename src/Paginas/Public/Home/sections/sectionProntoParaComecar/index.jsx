@@ -14,11 +14,13 @@ function ProntoParaComecar(){
             <div className={CssProntoParaComecar.containerTexto} ref={el}>
                 <h3 id='tituloPaginaProntoParaComecar'>Pronto para transformar suas ideias em realidade?</h3>
                 <p id='textoPaginaProntoParaComecar'>Seja para um projeto, uma parceria ou só trocar uma ideia, será um prazer conversar com você.</p>
-                <BotaoCta
-                    child="Entre em contato"
-                    to="Contato"
-                    id="btnCtaSecaoProntoParaComecar"
-                />
+                <div>
+                    <BotaoCta
+                        child="Entre em contato"
+                        to="Contato"
+                        id="btnCtaSecaoProntoParaComecar"
+                    />
+                </div>
             </div>
             <img src={iconePagina} alt="imagem ilustrativa de uma pagina web" />
         </section>

@@ -2,7 +2,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 4rem 20rem;
+    margin: 12rem 20rem;
+}
+
+.containerTexto{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.containerTexto h3{
+    font-size: var(--font-size-3x2);
+}
+
+.containerTexto p{
+    font-size: var(--font-size-xl);
 }
 
 @media(max-width: 1400px){
