@@ -2,16 +2,16 @@ import { useRef } from 'react';
 import CssComoTranformoIdeia from "./comoTranformoIdeia.module.css"
 import CardBlackMedio from '../../../../../Componentes/ComponetesCards/CardBlackMedio';
 import CardVerde from '../../../../../Componentes/ComponetesCards/CardVerde';
-import { useScrollAnimationLeftAndRight } from '../../../../../hooks/useScrollAnimationLeftAndRight';
+//import { useScrollAnimationLeftAndRight } from '../../../../../hooks/useScrollAnimationLeftAndRight';
 
 function ConstruindoExperiencias(){
 
     const el = useRef();
 
-    useScrollAnimationLeftAndRight(el, ["#item1TrasnformoIdeias","#item2TrasnformoIdeias", "#item3TrasnformoIdeias"])
+    //useScrollAnimationLeftAndRight(el, ["#item1TrasnformoIdeias","#item2TrasnformoIdeias", "#item3TrasnformoIdeias", parentAnim])
 
     return(
-        <section className={CssComoTranformoIdeia.secaoComoTransformoIdeias}>
+        <section className={CssComoTranformoIdeia.secaoComoTransformoIdeias} >
             <div className={CssComoTranformoIdeia.containerTituloDaSecao}>
                 <h3>Construindo Experiências <br/>Digitais que Geram Resultados</h3>
                 <p>Meu trabalho vai além da programação. É um processo <br/>estratégico que combina os três pilares</p>

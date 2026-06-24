@@ -13,7 +13,7 @@ export default function ParticlesBackground() {
 
   const options = useMemo(() => ({
   particles: {
-    number: { value: 50 },
+    number: { value: 200 },
     color: { value: "#ffffff" },
     opacity: {
       value: { min: 0.1, max: 0.5 }

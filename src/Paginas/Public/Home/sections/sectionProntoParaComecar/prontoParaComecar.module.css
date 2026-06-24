@@ -1,8 +1,12 @@
 .secaoProntoParaComecar{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 12rem 20rem;
+    height: 100vh;
+    padding: 0 20rem;
+    background: var(--background);
+    z-index: 3;
 }
 
 .containerTexto{

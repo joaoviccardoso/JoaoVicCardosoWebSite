@@ -31,7 +31,7 @@ function Hero(){
                             trigger: el.current,
                             scrub: 2,
                             start: "top 80%",
-                            end: "bottom 50%",
+                            end: "bottom 30%",
                         }
                     })
                     .to(imgHero.current, {
