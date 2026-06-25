@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-export default function ParticlesBackground() {
+export default function ParticlesBackground({position,zIndex}) {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -12,14 +12,26 @@ export default function ParticlesBackground() {
   }, []);
 
   const options = useMemo(() => ({
+     fullScreen: { enable: false },
   particles: {
     number: { value: 200 },
     color: { value: "#ffffff" },
     opacity: {
-      value: { min: 0.1, max: 0.5 }
+      value: { min: 0.1, max: 0.5 },
+       animation: {
+          enable: true,
+          speed: 1,
+          minimumValue: 0.5,
+          sync: false
+       }
+    },
+    shadow: {
+      enable: true,
+      blur: 8,
+      color: "#ffffff"
     },
     size: {
-      value: { min: 1, max: 2 }
+      value: { min: 2, max: 3 }
     },
     links: {
       enable: false
@@ -54,12 +66,12 @@ export default function ParticlesBackground() {
   return (
     <Particles
         style={{
-            position: "absolute",
+            position,
             top: 0,
             left: 0,
             width: "100%",
             height: "100%",
-            zIndex: 0,
+            zIndex,
         }}
         options={options}
     />

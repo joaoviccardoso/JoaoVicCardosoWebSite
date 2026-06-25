@@ -14,42 +14,79 @@ import { ScrollTrigger } from "gsap/all"
 function Home(){
     const secao0Ref = useRef(null)
     const secao2Ref = useRef(null)
+    const teste = useRef(null)
+    const ctxRef = useRef(null)
 
     useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
     ScrollTrigger.config({
         autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
-        ignoreMobileResize: true, // ignora resize da barra do browser mobile
+        ignoreMobileResize: true,
     })
 
-    const ctx = gsap.context(() => {
+    // ✅ Garante que o scroll já foi restaurado pelo browser antes de inicializar
+    const init = () => {
+        // Double rAF: garante que o browser pintou E restaurou o scroll
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
 
-        // Efeito 1: secao0 começa abaixo da viewport e sobe cobrindo o Hero
-        gsap.fromTo(
-            secao0Ref.current,
-            { y: "0vh" },
-            {
-                y: "-100vh",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: secao0Ref.current,
-                    start: "top bottom",
-                    end: "top top",
-                    scrub: 1,
-                },
-            }
-        )
-    })
+                const ctx = gsap.context(() => {
+
+                    gsap.fromTo(
+                        secao0Ref.current,
+                        { y: "0vh" },
+                        {
+                            y: "-100vh",
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: secao0Ref.current,
+                                start: "top bottom",
+                                end: "top top",
+                                scrub: 1,
+                            },
+                        }
+                    )
+
+                    gsap.fromTo(
+                        teste.current,
+                        { y: "-100vh" },
+                        {
+                            y: "-200vh",
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: secao2Ref.current,
+                                start: "top bottom",
+                                end: "top top",
+                                scrub: 1,
+                            },
+                        }
+                    )
+
+                })
+
+                // ✅ Força recalculo depois de tudo registrado
+                ScrollTrigger.refresh()
+
+                // Guarda ctx no ref pra cleanup
+                ctxRef.current = ctx
+            })
+        })
+    }
+
+    if (document.readyState === "complete") {
+        init()
+    } else {
+        window.addEventListener("load", init, { once: true })
+    }
 
     return () => {
-        ctx.revert()
-        // Restaura o padrão ao desmontar (boa prática)
+        ctxRef.current?.revert()
         ScrollTrigger.config({
             autoRefreshEvents: "visibilitychange,DOMContentLoaded,load,resize"
         })
     }
-}, [])
+    }, [])
 
     return(
         <section className={CssHome.sectionContainerHero}>
@@ -58,8 +95,8 @@ function Home(){
             </div>
 
             <div ref={secao0Ref} className={CssHome.secao0}>
-                <ParticlesBackground/>
                 <div className={CssHome.secao1}>
+                    <ParticlesBackground position="fixed" zIndex={10} />
                     <CardVerde
                         tag={"Seja encontrado na internet"}
                         titulo={"Presença Digital Não é Luxo É Necessidade."}
@@ -72,10 +109,11 @@ function Home(){
                     />
                     <ConstruindoExperiencias/>
                     <AlemDeCodigo/>
-                </div>
-                    
+                </div>       
             </div>
-
+            <div ref={teste} className={CssHome.teste}>
+                <ParticlesBackground position="absolute" zIndex={10} />
+            </div>
 
             <div ref={secao2Ref} className={CssHome.secao2}>
                 <GerarValor/>

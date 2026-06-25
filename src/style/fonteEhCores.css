@@ -12,8 +12,16 @@
     --font-size-4x2: 7.5rem;
 
     /*novas Cores*/
-    --background: #0A0A0A;
+    --background:  #111111;
     --background-segunda-camada: #010101;
+    --background-saida: linear-gradient(
+        to bottom,
+        var(--background-segunda-camada) 0%,
+        var(--background-segunda-camada) 70%,
+        rgba(1, 1, 1, 0.7) 80%,
+        rgba(1, 1, 1, 0.35) 90%,
+        transparent 100%
+    );
     --color-tag: #0F2D1C;
     --verde:#10B981;
     

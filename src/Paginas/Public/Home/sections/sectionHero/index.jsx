@@ -35,19 +35,19 @@ function Hero(){
                         }
                     })
                     .to(imgHero.current, {
-                        y: -150,
+                        y: 150,
                         opacity: .7,
                         scale: 0.95,
                         filter: "blur(5px)"
                     },1)
                     .to("#containerTituloHero", {
-                        y: -150,
+                        y: 150,
                         opacity: .7,
                         scale: 0.95,
                         filter: "blur(5px)"
                     }, 1)
                     .to("#containerBotaoHero", {
-                        y: -150,
+                        y: 150,
                         opacity: .7,
                         scale: 0.95,
                         filter: "blur(5px)"
