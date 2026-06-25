@@ -2,7 +2,7 @@ import { useRef } from "react"
 import CssComoEuPenso from "./comoEuPenso.module.css"
 import ContainerTexto from "../../../../../Componentes/ContainerTexto"
 import { useScrollAnimation } from "../../../../../hooks/useScrollAnimation";
-import { useScrollAnimationRight } from "../../../../../hooks/useScrollAnimationRight";
+import { useScrollAnimationUp } from "../../../../../hooks/useScrollAnimationUp";
 
 function ComoEuPenso(){
    
@@ -10,7 +10,7 @@ function ComoEuPenso(){
     const elr = useRef(null);
 
     useScrollAnimation(ell, ["#containerPasso1", "#containerPasso2", "#containerPasso3"])
-    useScrollAnimationRight(elr, ["#containerPasso4", "#containerPasso5"])
+    useScrollAnimationUp(elr, ["#containerPasso4", "#containerPasso5"])
  
     
     return(

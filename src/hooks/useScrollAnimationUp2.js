@@ -2,7 +2,7 @@ import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export function useScrollAnimationUp(el, ids) {
+export function useScrollAnimationUp2(el, ids) {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
@@ -16,8 +16,8 @@ export function useScrollAnimationUp(el, ids) {
                     trigger: elements[0] ?? el.current,
                     markers:true,
                     scrub: 1,
-                    start: "-20% 100%",
-                    end: "top 60%",
+                    start: "-350% 100%",
+                    end: "-300% 60%",
                 },
             });
 

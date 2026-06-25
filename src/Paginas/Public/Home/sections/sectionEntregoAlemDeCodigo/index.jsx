@@ -1,14 +1,16 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 //import { useScrollAnimationUp } from '../../../../../hooks/useScrollAnimationUp';
 import CssAlemDeCodigo from './alemDeCodigo.module.css'
 import ContainerTexto from '../../../../../Componentes/ContainerTexto'
 import CardVertical from '../../../../../Componentes/ComponetesCards/CardVertical';
 
 function AlemDeCodigo(){
-
+    const [aberto, setAberto] = useState(false);
     const el = useRef(null);
     //useScrollAnimationUp(el,["#container-1", "#container-2", "#container-3"])
-                    
+    function toggleCards() {
+        setAberto(prev => !prev);
+    }       
     return(
         <section className={CssAlemDeCodigo.secaoAlemDeCodigo}>
             <div className={CssAlemDeCodigo.containerTexto}>
@@ -16,7 +18,7 @@ function AlemDeCodigo(){
             </div>
 
             <div className={CssAlemDeCodigo.containerOqueEuEntrego}>
-                <ul className={CssAlemDeCodigo.ulLista} ref={el}>
+                <ul className={`${CssAlemDeCodigo.ulLista} ${aberto ? CssAlemDeCodigo.ativo : ''}`} ref={el} onClick={toggleCards}>
                     <li id='container-1'>
                         <CardVertical
                             tag={"Como Transformo Ideia"}

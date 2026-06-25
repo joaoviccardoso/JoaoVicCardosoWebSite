@@ -1,9 +1,9 @@
 import CssCardVerde from "./cardVerde.module.css"
 
-function CardVerde({tag, titulo, texto}){
+function CardVerde({ref, tag, titulo, texto,}){
 
     return(
-        <div className={CssCardVerde.wrapper}>
+        <div className={CssCardVerde.wrapper} ref={ref}>
             <div className={CssCardVerde.cardVerde}>
                 <span>
                     {tag}

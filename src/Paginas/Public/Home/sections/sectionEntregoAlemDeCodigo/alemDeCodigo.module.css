@@ -34,16 +34,52 @@
     /* Ajuste width/height ao tamanho real do seu CardVertical */
     width: 280px;
     height: 380px;
+    margin-bottom: 5rem;
+    cursor: pointer;
 }
 
 .ulLista li {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 280px;
+    height: 380px;
     transform-origin: center bottom;
     transition: transform 0.3s ease;
+}
+
+/* Quando clicar */
+.ativo {
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+    width: auto;
+    height: 380px; 
+}
+
+/* Remove posicionamento absoluto */
+.ativo li {
+    position: relative;
+    transform: none !important;
+    width: 280px;
+    height: auto;
+}
+
+.ativo li:nth-child(1) {
+    transform: translateX(-320px) rotate(0deg);
+}
+
+.ativo li:nth-child(2) {
+    transform: translateX(0px) rotate(0deg);
+}
+
+.ativo li:nth-child(3) {
+    transform: translateX(320px) rotate(0deg);
+}
+
+/* Opcional: animação suave */
+.ulLista li {
+    transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
 /* Carta de baixo — mais inclinada para a esquerda */

@@ -17,11 +17,13 @@
     --background-saida: linear-gradient(
         to bottom,
         var(--background-segunda-camada) 0%,
-        var(--background-segunda-camada) 70%,
-        rgba(1, 1, 1, 0.7) 80%,
-        rgba(1, 1, 1, 0.35) 90%,
+        var(--background-segunda-camada) 45%,
+        rgba(1, 1, 1, 0.85) 60%,
+        rgba(1, 1, 1, 0.6) 70%,
+        rgba(1, 1, 1, 0.35) 80%,
+        rgba(1, 1, 1, 0.15) 90%,
         transparent 100%
-    );
+        );
     --color-tag: #0F2D1C;
     --verde:#10B981;
     

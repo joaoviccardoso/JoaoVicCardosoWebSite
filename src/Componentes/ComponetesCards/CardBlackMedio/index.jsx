@@ -1,9 +1,9 @@
 import CssCardMedio from "./cardBlackMedio.module.css"
 
-function CardBlackMedio({tag, titulo, texto}){
+function CardBlackMedio({tag, titulo, texto, ref}){
 
     return(
-        <div className={CssCardMedio.wrapper}>
+        <div className={CssCardMedio.wrapper} ref={ref}>
             <div className={CssCardMedio.containerTexto}>
                 <span>
                     {tag}
