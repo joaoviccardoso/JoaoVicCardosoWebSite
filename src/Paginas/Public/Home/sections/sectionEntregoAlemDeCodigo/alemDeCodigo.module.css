@@ -102,13 +102,14 @@ transform: translateX(360px) rotate(0deg);
 /* ───── RESPONSIVO ───── */
 /* ───────────────────────── */
 
-@media (max-width: 1250px) {
+@media (max-width: 700px) {
+
 .secaoAlemDeCodigo {
 padding: 0;
 }
 
 .containerTexto h3 {
-    font-size: var(--font-size-2xl);
+font-size: var(--font-size-xl);
 }
 
 .containerOqueEuEntrego {
@@ -116,59 +117,78 @@ margin-bottom: 2rem;
 }
 
 .containerTexto p {
-    font-size: var(--font-size-md);
+font-size: var(--font-size-sm);
 }
 
 .ulLista {
-    height: 420px; /* aumenta espaço vertical */
+height: 420px;
+width: 100%;
 }
 
+/* Cartas menores */
 .ulLista li {
-    width: 240px;
-    height: 340px;
+width: 130px;
+height: 250px;
 }
 
-.ativo {
-    height: 1500px;
-}
-
-/* ── Estado inicial já mais vertical ── */
+/* ── Estado inicial (empilhado) ── */
 .ulLista li:nth-child(1) {
-    transform: rotate(-10deg) translateY(-40px);
+transform: rotate(-20deg) translateX(-60px) translateY(-58px);
+z-index: 1;
 }
 
 .ulLista li:nth-child(2) {
-    transform: rotate(0deg) translateY(-50px);
+transform: rotate(-8deg) translateX(-30px) translateY(-61px);
+z-index: 2;
 }
 
 .ulLista li:nth-child(3) {
-    transform: rotate(10deg) translateY(-40px);
+transform: rotate(5deg) translateX(-0px) translateY(-60px);
+z-index: 3;
 }
 
-/* ── Hover mais suave (opcional mobile/tablet) ── */
+/* ── Hover (só quando NÃO está ativo) ── */
 .ulLista:not(.ativo):hover li:nth-child(1) {
-    transform: rotate(-15deg) translateY(-50px);
+transform: rotate(-20deg) translateX(-60px) translateY(-58px);
+z-index: 1;
 }
 
 .ulLista:not(.ativo):hover li:nth-child(2) {
-    transform: rotate(0deg) translateY(-60px);
+transform: rotate(-8deg) translateX(-30px) translateY(-61px);
+z-index: 2;
 }
 
 .ulLista:not(.ativo):hover li:nth-child(3) {
-    transform: rotate(15deg) translateY(-50px);
+transform: rotate(5deg) translateX(-0px) translateY(-60px);
+z-index: 3;
 }
 
-/* ── Estado ativo (AGORA VERTICAL COM ANIMAÇÃO) ── */
+/* ── Estado ativo (DESKTOP - lado a lado) ── */
+.ativo {
+cursor: default;
+}
+
+.ativo li {
+position: absolute;
+}
+
 .ativo li:nth-child(1) {
-    transform: translateY(0px) rotate(0deg);
+transform: translateX(-210px) rotate(0deg);
 }
 
 .ativo li:nth-child(2) {
-    transform: translateY(500px) rotate(0deg);
+transform: translateX(-60px) rotate(0deg);
 }
 
 .ativo li:nth-child(3) {
-    transform: translateY(1000px) rotate(0deg);
+transform: translateX(90px) rotate(0deg);
 }
 
+}
+
+@media (max-width: 470px) {
+    .ulLista li {
+        width: 120px;
+        height: 250px;
+    }
 }
