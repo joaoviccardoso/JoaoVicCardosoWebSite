@@ -1,133 +1,174 @@
 /* alemDeCodigo.module.css */
 
 .secaoAlemDeCodigo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 0 6rem 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 3rem 0 6rem 0;
 }
 
 .containerTexto h3 {
-    font-size: var(--font-size-4x2);
-    color: var(--verde);
+font-size: var(--font-size-4x2);
+color: var(--verde);
 }
 
 .containerTexto {
-    text-align: center;
-    margin-bottom: 2rem;
+text-align: center;
+margin-bottom: 2rem;
 }
 
 .containerOqueEuEntrego {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12rem;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 12rem;
 }
 
 /* ── Baralho de cartas ── */
 .ulLista {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    /* Ajuste width/height ao tamanho real do seu CardVertical */
-    width: 280px;
-    height: 380px;
-    margin-bottom: 5rem;
-    cursor: pointer;
+list-style: none;
+padding: 0;
+margin: 0;
+position: relative;
+width: 280px;
+height: 380px;
+margin-bottom: 5rem;
+cursor: pointer;
 }
 
+/* Cartas */
 .ulLista li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 280px;
-    height: 380px;
-    transform-origin: center bottom;
-    transition: transform 0.3s ease;
+position: absolute;
+top: 0;
+left: 0;
+width: 280px;
+height: 380px;
+transform-origin: center bottom;
+transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
-/* Quando clicar */
+/* ── Estado inicial (empilhado) ── */
+.ulLista li:nth-child(1) {
+transform: rotate(-20deg) translateX(-30px) translateY(-58px);
+z-index: 1;
+}
+
+.ulLista li:nth-child(2) {
+transform: rotate(-8deg) translateX(-10px) translateY(-64px);
+z-index: 2;
+}
+
+.ulLista li:nth-child(3) {
+transform: rotate(5deg) translateX(10px) translateY(-64px);
+z-index: 3;
+}
+
+/* ── Hover (só quando NÃO está ativo) ── */
+.ulLista:not(.ativo):hover li:nth-child(1) {
+transform: rotate(-32deg) translateX(-55px) translateY(-58px);
+}
+
+.ulLista:not(.ativo):hover li:nth-child(2) {
+transform: rotate(-12deg) translateX(-18px) translateY(-64px);
+}
+
+.ulLista:not(.ativo):hover li:nth-child(3) {
+transform: rotate(20deg) translateX(28px) translateY(-64px);
+}
+
+/* ── Estado ativo (DESKTOP - lado a lado) ── */
 .ativo {
-    display: flex;
-    flex-direction: row;
-    gap: 6rem;
-    width: auto;
-    height: 380px; 
+cursor: default;
 }
 
-/* Remove posicionamento absoluto */
 .ativo li {
-    position: relative;
-    transform: none !important;
-    width: 280px;
-    height: auto;
+position: absolute;
 }
 
 .ativo li:nth-child(1) {
-    transform: translateX(-320px) rotate(0deg);
+transform: translateX(-360px) rotate(0deg);
 }
 
 .ativo li:nth-child(2) {
-    transform: translateX(0px) rotate(0deg);
+transform: translateX(0px) rotate(0deg);
 }
 
 .ativo li:nth-child(3) {
-    transform: translateX(320px) rotate(0deg);
+transform: translateX(360px) rotate(0deg);
 }
 
-/* Opcional: animação suave */
+/* ───────────────────────── */
+/* ───── RESPONSIVO ───── */
+/* ───────────────────────── */
+
+@media (max-width: 1250px) {
+.secaoAlemDeCodigo {
+padding: 0;
+}
+
+.containerTexto h3 {
+    font-size: var(--font-size-2xl);
+}
+
+.containerOqueEuEntrego {
+margin-bottom: 2rem;
+}
+
+.containerTexto p {
+    font-size: var(--font-size-md);
+}
+
+.ulLista {
+    height: 420px; /* aumenta espaço vertical */
+}
+
 .ulLista li {
-    transition: transform 0.4s ease, opacity 0.3s ease;
+    width: 240px;
+    height: 340px;
 }
 
-/* Carta de baixo — mais inclinada para a esquerda */
+.ativo {
+    height: 1500px;
+}
+
+/* ── Estado inicial já mais vertical ── */
 .ulLista li:nth-child(1) {
-    transform: rotate(-20deg) translateX(-30px) translateY(-58px);
-    z-index: 1;
+    transform: rotate(-10deg) translateY(-40px);
 }
 
-/* Carta do meio — levemente inclinada */
 .ulLista li:nth-child(2) {
-    transform: rotate(-8deg) translateX(-10px) translateY(-64px);
-    z-index: 2;
+    transform: rotate(0deg) translateY(-50px);
 }
 
-/* Carta da frente — reta, no topo */
 .ulLista li:nth-child(3) {
-    transform: rotate(5deg) translateX(10px) translateY(-64px);
-    z-index: 3;
+    transform: rotate(10deg) translateY(-40px);
 }
 
-/* ── Hover: espalha as cartas ── */
-.ulLista:hover li:nth-child(1) {
-    transform: rotate(-32deg) translateX(-55px) translateY(-58px);
+/* ── Hover mais suave (opcional mobile/tablet) ── */
+.ulLista:not(.ativo):hover li:nth-child(1) {
+    transform: rotate(-15deg) translateY(-50px);
 }
 
-.ulLista:hover li:nth-child(2) {
-    transform: rotate(-12deg) translateX(-18px) translateY(-64px);
+.ulLista:not(.ativo):hover li:nth-child(2) {
+    transform: rotate(0deg) translateY(-60px);
 }
 
-.ulLista:hover li:nth-child(3) {
-    transform: rotate(20deg) translateX(28px) translateY(-64px);
+.ulLista:not(.ativo):hover li:nth-child(3) {
+    transform: rotate(15deg) translateY(-50px);
 }
 
-@media (max-width: 480px) {
-    .secaoAlemDeCodigo {
-        padding: 0;
-    }
+/* ── Estado ativo (AGORA VERTICAL COM ANIMAÇÃO) ── */
+.ativo li:nth-child(1) {
+    transform: translateY(0px) rotate(0deg);
+}
 
-    .containerTexto h3 {
-        font-size: var(--font-size-2xl);
-    }
+.ativo li:nth-child(2) {
+    transform: translateY(500px) rotate(0deg);
+}
 
-    .containerTexto p {
-        font-size: var(--font-size-md);
-    }
+.ativo li:nth-child(3) {
+    transform: translateY(1000px) rotate(0deg);
+}
 
-    .ulLista {
-        width: 240px;
-        height: 340px;
-    }
 }

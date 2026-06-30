@@ -52,3 +52,113 @@
     background: var(--color-gradienteVerdeBottom);
     border-radius: 22px 0 0 22px;
 }
+
+@media (max-width: 1350px) {
+    .containerTexto {
+        padding: 2.5rem 1.5rem;
+        height: 480px;
+    }
+
+    .containerTexto span {
+        max-width: 100%;
+        display: block;
+    }
+
+     .containerTexto span {
+        font-size: var(--font-size-sm);
+        max-width: 80%;
+    }
+
+    .containerTexto p {
+        font-size: var(--font-size-md);
+    }
+}
+
+@media (max-width: 800px) {
+    .containerTexto {
+        padding: 2rem 1.2rem;
+    }
+
+    .containerTexto span {
+        font-size: var(--font-size-sm);
+        max-width: 80%;
+    }
+
+    .containerTexto p {
+        font-size: var(--font-size-md);
+    }
+}
+
+/* Mobile grande */
+@media (max-width: 680px) {
+    .containerTexto {
+        padding: 2rem 1.2rem;
+    }
+
+    .containerTexto span {
+        font-size: var(--font-size-sm);
+        max-width: 80%;
+    }
+
+    .containerTexto p {
+        font-size: var(--font-size-md);
+    }
+}
+
+/* Mobile padrão */
+@media (max-width: 480px) {
+    .ulLista {
+        grid-template-columns: 1fr; /* 🔥 força 1 coluna */
+    }
+
+    .containerTexto {
+        padding: 1.5rem 1rem;
+    }
+
+    .containerTexto h3 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .containerTexto p {
+        font-size: var(--font-size-md);
+    }
+
+    .containerTexto span {
+        font-size: var(--font-size-xs);
+        max-width: 100%;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 350px) {
+    .containerTexto h3 {
+        font-size: var(--font-size-xl);
+    }
+
+    .containerTexto p {
+        font-size: var(--font-size-sm);
+    }
+
+    .containerTexto span {
+        font-size: 10px;
+    }
+}
+
+/* Mobile muito pequeno */
+@media (max-width: 280px) {
+    .containerTexto {
+        padding: 1rem;
+    }
+
+    .containerTexto h3 {
+        font-size: var(--font-size-md);
+    }
+
+    .containerTexto p {
+        font-size: var(--font-size-xs);
+    }
+
+    .containerTexto span {
+        font-size: 8px;
+    }
+}
