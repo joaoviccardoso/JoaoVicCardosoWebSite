@@ -14,7 +14,6 @@ export function useScrollAnimationUp2(el, ids) {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: elements[0] ?? el.current,
-                    markers:true,
                     scrub: 1,
                     start: "-350% 100%",
                     end: "-300% 60%",

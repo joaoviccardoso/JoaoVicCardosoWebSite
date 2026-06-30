@@ -8,14 +8,14 @@
     padding: 3rem 0 6rem 0;
 }
 
-.containerTexto h3 {
-    font-size: var(--font-size-4x2);
-    color: var(--verde);
-}
-
 .containerTexto {
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.containerTexto h3 {
+    font-size: var(--font-size-4x2);
+    color: var(--verde);
 }
 
 .containerOqueEuEntrego {
@@ -25,19 +25,19 @@
     margin-bottom: 12rem;
 }
 
-/* ── Baralho de cartas ── */
+/* ── Container do baralho ── */
 .ulLista {
     list-style: none;
     padding: 0;
     margin: 0;
     position: relative;
-    /* Ajuste width/height ao tamanho real do seu CardVertical */
     width: 280px;
     height: 380px;
     margin-bottom: 5rem;
     cursor: pointer;
 }
 
+/* ── Cartas ── */
 .ulLista li {
     position: absolute;
     top: 0;
@@ -45,28 +45,44 @@
     width: 280px;
     height: 380px;
     transform-origin: center bottom;
-    transition: transform 0.3s ease;
+
+    /* 🔥 Animação suave e profissional */
+    transition: transform 0.5s ease;
+    will-change: transform;
 }
 
-/* Quando clicar */
-.ativo {
-    display: flex;
-    flex-direction: row;
-    gap: 6rem;
-    width: auto;
-    height: 380px; 
+/* ── Estado inicial (baralho) ── */
+.ulLista li:nth-child(1) {
+    transform: rotate(-20deg) translateX(-30px) translateY(-58px);
+    z-index: 1;
 }
 
-/* Remove posicionamento absoluto */
-.ativo li {
-    position: relative;
-    transform: none !important;
-    width: 280px;
-    height: auto;
+.ulLista li:nth-child(2) {
+    transform: rotate(-8deg) translateX(-10px) translateY(-64px);
+    z-index: 2;
 }
 
+.ulLista li:nth-child(3) {
+    transform: rotate(5deg) translateX(10px) translateY(-64px);
+    z-index: 3;
+}
+
+/* ── Hover (efeito leve antes do clique) ── */
+.ulLista:not(.ativo):hover li:nth-child(1) {
+    transform: rotate(-32deg) translateX(-55px) translateY(-58px);
+}
+
+.ulLista:not(.ativo):hover li:nth-child(2) {
+    transform: rotate(-12deg) translateX(-18px) translateY(-64px);
+}
+
+.ulLista:not(.ativo):hover li:nth-child(3) {
+    transform: rotate(20deg) translateX(28px) translateY(-64px);
+}
+
+/* ── Estado ATIVO (cards lado a lado com animação REAL) ── */
 .ativo li:nth-child(1) {
-    transform: translateX(-320px) rotate(0deg);
+    transform: translateX(-360px) rotate(0deg);
 }
 
 .ativo li:nth-child(2) {
@@ -74,45 +90,10 @@
 }
 
 .ativo li:nth-child(3) {
-    transform: translateX(320px) rotate(0deg);
+    transform: translateX(360px) rotate(0deg);
 }
 
-/* Opcional: animação suave */
-.ulLista li {
-    transition: transform 0.4s ease, opacity 0.3s ease;
-}
-
-/* Carta de baixo — mais inclinada para a esquerda */
-.ulLista li:nth-child(1) {
-    transform: rotate(-20deg) translateX(-30px) translateY(-58px);
-    z-index: 1;
-}
-
-/* Carta do meio — levemente inclinada */
-.ulLista li:nth-child(2) {
-    transform: rotate(-8deg) translateX(-10px) translateY(-64px);
-    z-index: 2;
-}
-
-/* Carta da frente — reta, no topo */
-.ulLista li:nth-child(3) {
-    transform: rotate(5deg) translateX(10px) translateY(-64px);
-    z-index: 3;
-}
-
-/* ── Hover: espalha as cartas ── */
-.ulLista:hover li:nth-child(1) {
-    transform: rotate(-32deg) translateX(-55px) translateY(-58px);
-}
-
-.ulLista:hover li:nth-child(2) {
-    transform: rotate(-12deg) translateX(-18px) translateY(-64px);
-}
-
-.ulLista:hover li:nth-child(3) {
-    transform: rotate(20deg) translateX(28px) translateY(-64px);
-}
-
+/* ── Responsivo ── */
 @media (max-width: 480px) {
     .secaoAlemDeCodigo {
         padding: 0;
@@ -129,5 +110,23 @@
     .ulLista {
         width: 240px;
         height: 340px;
+    }
+
+    .ulLista li {
+        width: 240px;
+        height: 340px;
+    }
+
+    /* Ajuste do espaçamento no mobile */
+    .ativo li:nth-child(1) {
+        transform: translateX(-260px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(2) {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(3) {
+        transform: translateX(260px) rotate(0deg);
     }
 }
