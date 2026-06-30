@@ -6,3 +6,24 @@
     border-radius: 16px;
     padding: 10px 60px;
 }
+
+@media(max-width: 400px){
+    .botaoLinkA{
+        font-size: var(--font-size-md);
+        padding: 10px 50px;
+    }
+}
+
+@media(max-width: 300px){
+    .botaoLinkA{
+        font-size: var(--font-size-md);
+        padding: 10px 40px;
+    }
+}
+
+@media(max-width: 300px){
+    .botaoLinkA{
+        font-size: var(--font-size-md);
+        padding: 10px 30px;
+    }
+}

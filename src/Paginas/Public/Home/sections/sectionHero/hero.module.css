@@ -170,7 +170,7 @@
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 520px){
     .sectionHero{
         display: flex;
         flex-direction: column;

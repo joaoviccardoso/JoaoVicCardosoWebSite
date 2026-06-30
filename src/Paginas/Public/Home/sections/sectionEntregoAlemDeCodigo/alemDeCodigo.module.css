@@ -1,16 +1,22 @@
 /* alemDeCodigo.module.css */
 
 .secaoAlemDeCodigo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 0 6rem 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 3rem 0 6rem 0;
+}
+
+
+.containerTexto h3 {
+font-size: var(--font-size-4x2);
+color: var(--verde);
 }
 
 .containerTexto {
-    text-align: center;
-    margin-bottom: 2rem;
+text-align: center;
+margin-bottom: 2rem;
 }
 
 .containerTexto h3 {
@@ -19,47 +25,71 @@
 }
 
 .containerOqueEuEntrego {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12rem;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 12rem;
 }
 
 /* ── Container do baralho ── */
 .ulLista {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    width: 280px;
-    height: 380px;
-    margin-bottom: 5rem;
-    cursor: pointer;
+list-style: none;
+padding: 0;
+margin: 0;
+position: relative;
+width: 280px;
+height: 380px;
+margin-bottom: 5rem;
+cursor: pointer;
 }
 
-/* ── Cartas ── */
+/* Cartas */
 .ulLista li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 280px;
-    height: 380px;
-    transform-origin: center bottom;
-
-    /* 🔥 Animação suave e profissional */
-    transition: transform 0.5s ease;
-    will-change: transform;
+position: absolute;
+top: 0;
+left: 0;
+width: 280px;
+height: 380px;
+transform-origin: center bottom;
+transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
-/* ── Estado inicial (baralho) ── */
+/* ── Estado inicial (empilhado) ── */
 .ulLista li:nth-child(1) {
-    transform: rotate(-20deg) translateX(-30px) translateY(-58px);
-    z-index: 1;
+transform: rotate(-20deg) translateX(-30px) translateY(-58px);
+z-index: 1;
 }
 
 .ulLista li:nth-child(2) {
-    transform: rotate(-8deg) translateX(-10px) translateY(-64px);
-    z-index: 2;
+transform: rotate(-8deg) translateX(-10px) translateY(-64px);
+z-index: 2;
+}
+
+.ulLista li:nth-child(3) {
+transform: rotate(5deg) translateX(10px) translateY(-64px);
+z-index: 3;
+}
+
+/* ── Hover (só quando NÃO está ativo) ── */
+.ulLista:not(.ativo):hover li:nth-child(1) {
+transform: rotate(-32deg) translateX(-55px) translateY(-58px);
+}
+
+.ulLista:not(.ativo):hover li:nth-child(2) {
+transform: rotate(-12deg) translateX(-18px) translateY(-64px);
+}
+
+.ulLista:not(.ativo):hover li:nth-child(3) {
+transform: rotate(20deg) translateX(28px) translateY(-64px);
+}
+
+/* ── Estado ativo (DESKTOP - lado a lado) ── */
+.ativo {
+cursor: default;
+}
+
+.ativo li {
+position: absolute;
 }
 
 .ulLista li:nth-child(3) {
@@ -82,44 +112,24 @@
 
 /* ── Estado ATIVO (cards lado a lado com animação REAL) ── */
 .ativo li:nth-child(1) {
-    transform: translateX(-360px) rotate(0deg);
+transform: translateX(-360px) rotate(0deg);
 }
 
 .ativo li:nth-child(2) {
-    transform: translateX(0px) rotate(0deg);
+transform: translateX(0px) rotate(0deg);
 }
 
 .ativo li:nth-child(3) {
-    transform: translateX(360px) rotate(0deg);
+
+transform: translateX(360px) rotate(0deg);
 }
 
-/* ── Responsivo ── */
-@media (max-width: 480px) {
-    .secaoAlemDeCodigo {
-        padding: 0;
-    }
-
-    .containerTexto h3 {
-        font-size: var(--font-size-2xl);
-    }
-
-    .containerTexto p {
-        font-size: var(--font-size-md);
-    }
-
-    .ulLista {
-        width: 240px;
-        height: 340px;
-    }
-
-    .ulLista li {
-        width: 240px;
-        height: 340px;
-    }
-
-    /* Ajuste do espaçamento no mobile */
+/* ───────────────────────── */
+/* ───── RESPONSIVO ───── */
+/* ───────────────────────── */
+@media (max-width: 1250px) {
     .ativo li:nth-child(1) {
-        transform: translateX(-260px) rotate(0deg);
+        transform: translateX(-300px) rotate(0deg);
     }
 
     .ativo li:nth-child(2) {
@@ -127,6 +137,353 @@
     }
 
     .ativo li:nth-child(3) {
-        transform: translateX(260px) rotate(0deg);
+        transform: translateX(300px) rotate(0deg);
     }
+
+    .ulLista {
+        width: 220px;
+        height: 380px;
+    }
+
+    /* Cartas */
+    .ulLista li {
+        width: 220px;
+        height: 380px;
+    }
+
+    .containerOqueEuEntrego {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 970px) {
+    .ulLista {
+        width: 190px;
+        height: 350px;
+    }
+
+    /* Cartas */
+    .ulLista li {
+        width: 190px;
+        height: 350px;
+    }
+
+    .ulLista li:nth-child(1) {
+    transform: rotate(-25deg) translateX(-70px) translateY(-48px);
+    z-index: 1;
+    }
+
+    .ulLista li:nth-child(2) {
+    transform: rotate(-2deg) translateX(0px) translateY(-40px);
+    z-index: 2;
+    }
+
+    .ulLista li:nth-child(3) {
+    transform: rotate(20deg) translateX(70px) translateY(-48px);
+    z-index: 3;
+    }
+
+    /* ── Hover (só quando NÃO está ativo) ── */
+    .ulLista:not(.ativo):hover li:nth-child(1) {
+    transform: rotate(-25deg) translateX(-70px) translateY(-48px);
+    z-index: 1;
+    }
+
+    .ulLista:not(.ativo):hover li:nth-child(2) {
+    transform: rotate(-2deg) translateX(0px) translateY(-40px);
+    z-index: 2;
+    }
+
+    .ulLista:not(.ativo):hover li:nth-child(3) {
+    transform: rotate(20deg) translateX(70px) translateY(-48px);
+    z-index: 3;
+    }
+
+    .ativo li:nth-child(1) {
+        transform: translateX(-250px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(2) {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(3) {
+        transform: translateX(250px) rotate(0deg);
+    }
+}
+
+/*Ok*/
+@media (max-width: 800px) {
+    .ulLista {
+        width: 170px;
+        height: 280px;
+    }
+
+    /* Cartas */
+    .ulLista li {
+         width: 170px;
+        height: 280px;
+    } 
+
+    .containerOqueEuEntrego {
+        margin-bottom: 9rem;
+    }
+
+    /* ── Estado inicial (empilhado) ── */
+    .ulLista li:nth-child(1) {
+    transform: rotate(-25deg) translateX(-70px) translateY(-48px);
+    z-index: 1;
+    }
+
+    .ulLista li:nth-child(2) {
+    transform: rotate(-2deg) translateX(0px) translateY(-40px);
+    z-index: 2;
+    }
+
+    .ulLista li:nth-child(3) {
+    transform: rotate(20deg) translateX(70px) translateY(-48px);
+    z-index: 3;
+    }
+
+    /* ── Hover (só quando NÃO está ativo) ── */
+    .ulLista:not(.ativo):hover li:nth-child(1) {
+    transform: rotate(-25deg) translateX(-70px) translateY(-48px);
+    z-index: 1;
+    }
+
+    .ulLista:not(.ativo):hover li:nth-child(2) {
+    transform: rotate(-2deg) translateX(0px) translateY(-40px);
+    z-index: 2;
+    }
+
+    .ulLista:not(.ativo):hover li:nth-child(3) {
+    transform: rotate(20deg) translateX(70px) translateY(-48px);
+    z-index: 3;
+    }
+
+    .ativo li:nth-child(1) {
+        transform: translateX(-220px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(2) {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(3) {
+        transform: translateX(220px) rotate(0deg);
+    }
+}
+
+/*Ok*/
+@media (max-width: 700px) {
+
+.secaoAlemDeCodigo {
+padding: 0;
+}
+
+.containerOqueEuEntrego {
+margin-bottom: 2rem;
+}
+
+.containerTexto p {
+font-size: var(--font-size-sm);
+}
+
+.ulLista {
+height: 200px;
+width: 100%;
+}
+
+/* Cartas menores */
+.ulLista li {
+width: 130px;
+height: 250px;
+}
+
+/* ── Estado inicial (empilhado) ── */
+.ulLista li:nth-child(1) {
+transform: rotate(-28deg) translateX(-20px) translateY(-48px);
+z-index: 1;
+}
+
+.ulLista li:nth-child(2) {
+transform: rotate(-2deg) translateX(-30px) translateY(-40px);
+z-index: 2;
+}
+
+.ulLista li:nth-child(3) {
+transform: rotate(20deg) translateX(-20px) translateY(-20px);
+z-index: 3;
+}
+
+/* ── Hover (só quando NÃO está ativo) ── */
+.ulLista:not(.ativo):hover li:nth-child(1) {
+transform: rotate(-28deg) translateX(-20px) translateY(-48px);
+z-index: 1;
+}
+
+.ulLista:not(.ativo):hover li:nth-child(2) {
+transform: rotate(-2deg) translateX(-30px) translateY(-40px);
+z-index: 2;
+}
+
+.ulLista:not(.ativo):hover li:nth-child(3) {
+transform: rotate(20deg) translateX(-20px) translateY(-20px);
+z-index: 3;
+}
+
+/* ── Estado ativo (DESKTOP - lado a lado) ── */
+.ativo {
+cursor: default;
+}
+
+.ativo li {
+position: absolute;
+}
+
+.ativo li:nth-child(1) {
+transform: translateX(-210px) rotate(0deg);
+}
+
+.ativo li:nth-child(2) {
+transform: translateX(-60px) rotate(0deg);
+}
+
+.ativo li:nth-child(3) {
+transform: translateX(90px) rotate(0deg);
+}
+
+}
+
+/*Ok*/
+@media (max-width: 470px) {
+    .ulLista li {
+        width: 120px;
+        height: 250px;
+    }
+
+    /* ── Estado inicial (empilhado) ── */
+    .ulLista li:nth-child(1) {
+    transform: rotate(-28deg) translateX(-20px) translateY(-48px);
+    z-index: 1;
+    }
+
+    .ulLista li:nth-child(2) {
+    transform: rotate(-5deg) translateX(-30px) translateY(-40px);
+    z-index: 2;
+    }
+
+    .ulLista li:nth-child(3) {
+    transform: rotate(20deg) translateX(-40px) translateY(-20px);
+    z-index: 3;
+    }
+
+    /* ── Hover (só quando NÃO está ativo) ── */
+    .ulLista:not(.ativo):hover li:nth-child(1) {
+    transform: rotate(-28deg) translateX(-20px) translateY(-48px);
+    z-index: 1;
+    }
+
+    .ulLista:not(.ativo):hover li:nth-child(2) {
+    transform: rotate(-5deg) translateX(-30px) translateY(-40px);
+    z-index: 2;
+    }
+
+    .ulLista:not(.ativo):hover li:nth-child(3) {
+    transform: rotate(20deg) translateX(-40px) translateY(-20px);
+    z-index: 3;
+    }
+
+    /* ── Estado ativo (DESKTOP - lado a lado) ── */
+    .ativo {
+    cursor: default;
+    }
+
+    .ativo li {
+    position: absolute;
+    }
+
+    .ativo li:nth-child(1) {
+    transform: translateX(-190px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(2) {
+    transform: translateX(-60px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(3) {
+    transform: translateX(70px) rotate(0deg);
+    }
+}
+
+/*Ok*/
+@media (max-width: 390px) {
+    .ulLista li {
+        width: 90px;
+        height: 250px;
+    }
+
+    .containerOqueEuEntrego {
+        margin-bottom: 0rem;
+    }
+
+    .containerTexto h3 {
+    font-size: var(--font-size-lg);
+    }
+
+    .containerOqueEuEntrego {
+    margin-bottom: 2rem;
+    }
+
+    .containerTexto p {
+    font-size: var(--font-size-sm);
+    }
+
+    /* ── Estado inicial (empilhado) ── */
+    .ulLista li:nth-child(1) {
+    transform: rotate(-25deg) translateX(-5px) translateY(-30px);
+    z-index: 1;
+    }
+
+    .ulLista li:nth-child(2) {
+    transform: rotate(0deg) translateX(-35px) translateY(-30px);
+    z-index: 2;
+    }
+
+    .ulLista li:nth-child(3) {
+    transform: rotate(20deg) translateX(-45px) translateY(-10px);
+    z-index: 3;
+    }
+
+    /* ── Hover (só quando NÃO está ativo) ── */
+    .ulLista:not(.ativo):hover li:nth-child(1) {
+    transform: rotate(-25deg) translateX(-5px) translateY(-30px);
+    z-index: 1;
+    }
+
+    .ulLista:not(.ativo):hover li:nth-child(2) {
+    transform: rotate(0deg) translateX(-35px) translateY(-30px);
+    z-index: 2;
+    }
+
+    .ulLista:not(.ativo):hover li:nth-child(3) {
+    transform: rotate(20deg) translateX(-45px) translateY(-10px);
+    z-index: 3;
+    }
+
+    .ativo li:nth-child(1) {
+    transform: translateX(-150px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(2) {
+    transform: translateX(-45px) rotate(0deg);
+    }
+
+    .ativo li:nth-child(3) {
+    transform: translateX(60px) rotate(0deg);
+    }
+}
+
+@media (max-width: 320px) {
+
 }

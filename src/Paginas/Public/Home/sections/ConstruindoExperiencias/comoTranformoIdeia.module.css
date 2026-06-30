@@ -41,6 +41,7 @@
     .ulLista {
         grid-template-columns: 1fr;
         padding: 0 0 3rem 0;
+        gap: 0;
         background-image: none !important;
     }
 
@@ -52,7 +53,7 @@
     }
 }
 
-@media(max-width: 480px){
+@media(max-width: 600px){
 
     .secaoComoTransformoIdeias {
         background-image: none !important;

@@ -36,7 +36,7 @@ function AlemDeCodigo(){
                     <li id='container-3'>
                         <CardVertical
                             tag={"Como Transformo Ideia"}
-                            titulo={"Atendimento próximo e humano"}
+                            titulo={"Atendimento próximo"}
                             texto={"Crio landing pages e sistemas web com design responsivo e alta performance para fortalecer sua presença online"}
                         />
                     </li>
