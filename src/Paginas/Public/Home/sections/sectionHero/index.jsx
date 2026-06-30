@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitText from "gsap/src/SplitText";
 import CssHero from "./hero.module.css"
 import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
-import balaoMensagemHola from "../../../../../assets/balaoOlaHome.png"
 import imagemBonecoJoaoHome from "../../../../../assets/imagemBonecoJoaoHome.png"
 
 function Hero(){
@@ -92,16 +91,11 @@ function Hero(){
     return(
         <section className={CssHero.sectionHero} ref={el}>
                 <div className={CssHero.containerImagemHero} id="containerImgHero" ref={imgHero}>
-                    <span id="containerBalaoOla">
-                        <img src={balaoMensagemHola} alt="Caixa de mensagem Olá! Seja bem-vindo ao meu site."/>
-                        <p>Olá! Seja bem-vindo ao meu site.</p>
-                    </span>
-
                     <img id="personagemAnimadoHero" src={imagemBonecoJoaoHome} alt="Personagem Animado do João com um labtop" />
                 </div>
 
                 <div className={CssHero.containerTextoHero} id="containerTituloHero">
-                    <h1 ref={titleRef}>Eu ajudo negócios a crescer <br/>na internet</h1>
+                    <h1 ref={titleRef}>Eu ajudo negócios a crescer <br/><span>na internet</span></h1>
                     <p id="subtituloHero">Desenvolvo sites que conectam sua empresa a mais clientes, de <br/> forma simples e profissional.</p>
                 </div>
 

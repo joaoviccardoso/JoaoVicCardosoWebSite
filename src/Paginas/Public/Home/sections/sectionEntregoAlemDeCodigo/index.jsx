@@ -44,7 +44,7 @@ function AlemDeCodigo(){
             </div>
 
             <div className={CssAlemDeCodigo.containerTexto}>
-                <p>Você não está apenas contratando um desenvolvedor</p>
+                <p>Você não está apenas contratando apenas um desenvolvedor</p>
             </div>
         </section>
     )

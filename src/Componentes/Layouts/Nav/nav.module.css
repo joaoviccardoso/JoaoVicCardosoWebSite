@@ -14,11 +14,7 @@
    gap: 3rem;
 }
 
-@media(max-width: 1520px){
-    
-}
-
-@media(max-width: 1000px){
+@media(max-width: 768px){
     .ul{
         display: none;
     }

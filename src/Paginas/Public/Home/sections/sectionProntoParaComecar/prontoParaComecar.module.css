@@ -23,9 +23,15 @@
     font-size: var(--font-size-xl);
 }
 
+@media(max-width: 1600px){
+    .secaoProntoParaComecar{
+        padding: 6rem;
+    }
+}
+
 @media(max-width: 1400px){
     .secaoProntoParaComecar{
-        margin: 4rem 8rem;
+        padding: 4rem;
     }
 }
 
@@ -34,7 +40,7 @@
         text-align: center;
         flex-direction: column;
         margin: 0;
-        padding: 3rem 2rem;
+        padding: 0rem 2rem;
     }
 }
 
@@ -46,7 +52,7 @@
     }
 
     .containerTexto{
-        text-align: start;
+        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -59,5 +65,28 @@
 
     .containerTexto p{
         font-size: var(--font-size-lg);
+    }
+}
+
+@media(max-width: 380px){
+    .secaoProntoParaComecar{
+        flex-direction: column;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .containerTexto{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .2rem;
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-lg);
+    }
+
+    .secaoProntoParaComecar img{
+        width: 250px;
     }
 }

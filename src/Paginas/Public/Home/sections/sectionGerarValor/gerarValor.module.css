@@ -13,7 +13,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     padding: 2rem 0;
     gap: 2rem;
 }
@@ -27,21 +27,34 @@
 }
 
 @media(max-width: 640px){
+    .secaoGerarValor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
     .btnLista{
         flex-direction: column;
-        width: 80%;
+        width: 100%;
     }
 
     .containerTexto h3{
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-3xl);
     }
 
     .containerTexto p{
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-md);
     }
 }
 
 @media(max-width: 480px){
+    .containerTexto h3{
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media(max-width: 380px){
     .containerTexto{
         padding: 0 1rem;
     }
