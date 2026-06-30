@@ -16,7 +16,8 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 3rem;
-    padding-bottom: 2rem;
+    width: 100%;
+    padding: 0;
 }
 
 /* 1º item - esquerda (linha 1) */
@@ -40,8 +41,8 @@
 @media(max-width: 1000px){
     .ulLista {
         grid-template-columns: 1fr;
-        padding: 0 0 3rem 0;
-        gap: 0;
+        padding:0;
+        gap: 2rem;
         background-image: none !important;
     }
 
@@ -54,6 +55,11 @@
 }
 
 @media(max-width: 600px){
+    .ulLista {
+        justify-content: center;
+        align-items: center ;
+        gap: 0rem;
+    }
 
     .secaoComoTransformoIdeias {
         background-image: none !important;
@@ -70,5 +76,24 @@
 
     .containerTituloDaSecao p{
         font-size: var(--font-size-md);
+    }
+}
+
+@media(max-width: 430px){
+    .ulLista {
+        gap: 2rem;
+    }
+
+    .containerTituloDaSecao{
+        text-align: center;
+        padding: 3rem 0;
+    }
+
+    .containerTituloDaSecao h3{
+        font-size: var(--font-size-lg);
+    }
+
+    .containerTituloDaSecao p{
+        font-size: var(--font-size-sm);
     }
 }
