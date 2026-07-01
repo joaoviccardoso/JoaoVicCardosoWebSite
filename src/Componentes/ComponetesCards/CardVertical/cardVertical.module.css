@@ -164,11 +164,11 @@
     }
 
     .wrapper {
-        width: 100%;
+        width: 125%;
         height: 200px;
     }
 
-     .containerTexto h3 {
+    .containerTexto h3 {
         font-size: 10px;
     }
 
