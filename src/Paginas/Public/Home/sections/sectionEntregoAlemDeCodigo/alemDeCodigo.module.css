@@ -59,6 +59,11 @@ transform-origin: center bottom;
 transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
+.animWrapper {
+    width: 100%;
+    height: 100%;
+}
+
 /* ── Estado inicial (empilhado) ── */
 .ulLista li:nth-child(1) {
 transform: rotate(-20deg) translateX(-30px) translateY(-58px);

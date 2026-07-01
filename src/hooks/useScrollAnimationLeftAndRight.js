@@ -16,7 +16,8 @@ export function useScrollAnimationLeftAndRight(el, ids) {
                 scrollTrigger: {
                     trigger: el.current,
                     scrub: 1,
-                    start: "-50% 100%",
+                    //markers:true,
+                    start: "-50% 93%",
                     end: "top 60%",
                 },
             });
