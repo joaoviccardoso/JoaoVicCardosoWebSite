@@ -18,7 +18,7 @@ function ConstruindoExperiencias(){
     return(
         <section className={CssComoTranformoIdeia.secaoComoTransformoIdeias} ref={el}>
             <div className={CssComoTranformoIdeia.containerTituloDaSecao}>
-                <h3>Construindo Experiências <br/>Digitais que Geram Resultados</h3>
+                <h3>Construindo Experiências <br/>que Geram Resultados</h3>
                 <p>Meu trabalho vai além da programação. É um processo <br/>estratégico que combina os três pilares</p>
             </div>
 
@@ -36,8 +36,8 @@ function ConstruindoExperiencias(){
                     <CardBlackMedio
                         ref={containerDeAnimacao4}
                         tag={"Construindo Experiências"}
-                        titulo={"Desenvolvimento Web"}
-                        texto={"Crio landing pages e sistemas web com design responsivo e alta performance para fortalecer sua presença online."}
+                        titulo={"Design UX/UI"}
+                        texto={"Desenvolvo interfaces no Figma que encantam e convertem, focadas na melhor experiência do usuário."}
                     />
                 </li>
 

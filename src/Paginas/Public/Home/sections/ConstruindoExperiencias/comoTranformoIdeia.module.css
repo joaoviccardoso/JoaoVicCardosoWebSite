@@ -88,12 +88,4 @@
         text-align: center;
         padding: 3rem 0;
     }
-
-    .containerTituloDaSecao h3{
-        font-size: var(--font-size-2xl);
-    }
-
-    .containerTituloDaSecao p{
-        font-size: var(--font-size-xs);
-    }
 }

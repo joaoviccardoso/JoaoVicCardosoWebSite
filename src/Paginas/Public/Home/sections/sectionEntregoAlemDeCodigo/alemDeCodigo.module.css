@@ -382,7 +382,7 @@ transform: translateX(90px) rotate(0deg);
     }
 
     .containerTexto h3 {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-3xl);
     }
 
     /* ── Estado inicial (empilhado) ── */
@@ -450,9 +450,6 @@ transform: translateX(90px) rotate(0deg);
         margin-bottom: 0rem;
     }
 
-    .containerTexto h3 {
-        font-size: var(--font-size-2xl);
-    }
 
     .containerOqueEuEntrego {
     margin-bottom: 2rem;

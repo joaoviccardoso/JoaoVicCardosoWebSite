@@ -137,7 +137,7 @@
     }
 
     .containerTexto h3 {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-2xl);
     }
 
     .containerTexto p {
@@ -172,16 +172,8 @@
         min-height: 140px; /* altura mínima opcional */
     }
 
-    .containerTexto h3 {
-        font-size: var(--font-size-md);
-    }
-
-    .containerTexto p {
-        font-size: var(--font-size-xs);
-    }
-
     .containerTexto span {
-        font-size: 8px;
+        font-size: var(--font-size-xs);
     }
 }
 
