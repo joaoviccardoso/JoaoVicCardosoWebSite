@@ -1,5 +1,5 @@
 import CssCssBlackGrande from "./cardBlackGrande.module.css"
-import BotaoLinkA from "../../Buttons/BotaoLinkA/INDEX.JSX"
+import BotaoLinkA from "../../Buttons/BotaoLinkA/index.jsx"
 import { forwardRef } from "react";
 
 const CardBlackGrande = forwardRef(function CardBlackGrande(props, ref) {
