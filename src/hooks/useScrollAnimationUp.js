@@ -14,9 +14,9 @@ export function useScrollAnimationUp(el, ids) {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: elements[0] ?? el.current,
-                    //markers: true,
+                    markers: true,
                     scrub: 1,
-                    start: isMobile ? "40% 100%" :"0% 100%",
+                    start: isMobile ? "20S% 100%" :"0% 100%",
                     end: isMobile ? "90% 60%" : "top 60%",
                 },
             });
