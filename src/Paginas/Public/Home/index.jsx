@@ -26,6 +26,8 @@ function Home(){
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
 
+        const isMobile = window.innerWidth <= 480;
+
         ScrollTrigger.config({
             autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
             ignoreMobileResize: true,
@@ -47,8 +49,8 @@ function Home(){
                                 ease: "none",
                                 scrollTrigger: {
                                     trigger: secao0Ref.current,
-                                    start: "top bottom",
-                                    end: "top top",
+                                    start: isMobile ? "top bottom" : "top bottom",
+                                    end: isMobile ? "top top" : "top top",
                                     scrub: 1,
                                 },
                             }
@@ -62,8 +64,9 @@ function Home(){
                                 ease: "none",
                                 scrollTrigger: {
                                     trigger: secao2Ref.current,
-                                    start: "top bottom",
-                                    end: "top top",
+                                    //markers: true,
+                                    start: isMobile ? "top 30%" : "top 30%",
+                                    end: isMobile ? "top top" : "top top",
                                     scrub: 1,
                                 },
                             }
