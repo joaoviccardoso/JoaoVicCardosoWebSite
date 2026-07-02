@@ -3,6 +3,7 @@ import CssAlemDeCodigo from './alemDeCodigo.module.css'
 import ContainerTexto from '../../../../../Componentes/ContainerTexto'
 import CardVertical from '../../../../../Componentes/ComponetesCards/CardVertical';
 import { useScrollAnimationUp2 } from '../../../../../hooks/useScrollAnimationUp2';
+import { useScrollAnimationUpAlemDeCodigo } from '../../../../../hooks/useScrollAnimationPaginaAlemDeCodigo';
 
 function AlemDeCodigo(){
     const [aberto, setAberto] = useState(false);
@@ -11,7 +12,7 @@ function AlemDeCodigo(){
     const cont3 = useRef(null)
     const el = useRef(null);
 
-    useScrollAnimationUp2(el, [cont1, cont2, cont3])
+    useScrollAnimationUpAlemDeCodigo(el, [cont1, cont2, cont3])
 
     function toggleCards() {
         setAberto(prev => !prev);

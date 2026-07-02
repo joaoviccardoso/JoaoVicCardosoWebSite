@@ -13,10 +13,10 @@ export function useScrollAnimationUp2(el, ids) {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: elements[0] ?? el.current,
-                    markers: true,
+                    //markers: true,
                     scrub: 1,
-                    start: isMobile ? "-350% 40%" : "-300% 40%",
-                    end: isMobile ? "-250% 50%" : "-150% 60%",
+                    start: isMobile ? "-350% 40%" : "-350% 40%",
+                    end: isMobile ? "-250% 50%" : "-200% 60%",
                 },
             });
 

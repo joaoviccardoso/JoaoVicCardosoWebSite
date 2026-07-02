@@ -65,7 +65,7 @@ function Home(){
                                 scrollTrigger: {
                                     trigger: secao2Ref.current,
                                     //markers: true,
-                                    start: isMobile ? "top 30%" : "top 30%",
+                                    start: isMobile ? "top 40%" : "top 30%",
                                     end: isMobile ? "top top" : "top top",
                                     scrub: 1,
                                 },
