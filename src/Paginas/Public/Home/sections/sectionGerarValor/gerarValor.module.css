@@ -49,6 +49,10 @@
 }
 
 @media(max-width: 480px){
+    .btnLista{
+        width: 80%;
+    }
+
     .containerTexto h3{
         font-size: var(--font-size-2xl);
     }
