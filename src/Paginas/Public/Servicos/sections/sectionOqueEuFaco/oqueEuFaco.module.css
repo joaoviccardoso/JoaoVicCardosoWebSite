@@ -23,9 +23,9 @@
 
 .divConteinerComOsTexto{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 2rem;
-    width: 40%;
+    width: 80%;
 }
 
 .divLogo{

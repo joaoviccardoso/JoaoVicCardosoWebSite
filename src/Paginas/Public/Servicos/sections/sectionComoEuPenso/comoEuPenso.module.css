@@ -9,24 +9,28 @@
 
 .containerPassos{
     display: flex;
-    padding: 0 9rem;
+    flex-direction: column;
+    padding: 0 3rem;
     gap: 4rem;
 }
 
 .divPasso1{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     gap: 3rem;
     width: 100%;
 }
 
 .divPasso2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     width: 100%;
+}
+
+.divPasso2 > * {
+    display: flex;
 }
 
 @media(max-width: 1500px){
