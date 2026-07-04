@@ -5,25 +5,40 @@ import gsap from "gsap"
 
 export function useSmoothScroll() {
     useEffect(() => {
+        const isMobile = window.innerWidth <= 768
+
         const lenis = new Lenis({
-            duration: 2,
+            duration: isMobile ? 0.8 : 4,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smoothWheel: true,
+            smoothWheel: !isMobile,
+            smoothTouch: isMobile,
+            touchMultiplier: isMobile ? 1.2 : 1,
         })
 
         lenis.on("scroll", ScrollTrigger.update)
 
-        // Guarda a referência da função para remover corretamente no cleanup
-        const rafCallback = (time) => {
-            lenis.raf(time * 1000)
+        let rafId
+
+        const raf = (time) => {
+            lenis.raf(time)
+            rafId = requestAnimationFrame(raf)
         }
 
-        gsap.ticker.add(rafCallback)
-        gsap.ticker.lagSmoothing(0)
+        if (isMobile) {
+            rafId = requestAnimationFrame(raf)
+        } else {
+            const rafCallback = (time) => lenis.raf(time * 1000)
+            gsap.ticker.add(rafCallback)
+
+            return () => {
+                lenis.destroy()
+                gsap.ticker.remove(rafCallback)
+            }
+        }
 
         return () => {
             lenis.destroy()
-            gsap.ticker.remove(rafCallback) // agora remove de verdade
+            cancelAnimationFrame(rafId)
         }
     }, [])
 }

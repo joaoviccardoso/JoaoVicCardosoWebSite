@@ -49,8 +49,12 @@
 }
 
 @media(max-width: 480px){
+    .secaoGerarValor{
+        padding: 3rem;
+    }
+
     .btnLista{
-        width: 80%;
+        width: 100%;
     }
 
     .containerTexto h3{
