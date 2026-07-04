@@ -361,11 +361,11 @@ position: absolute;
 }
 
 .ativo li:nth-child(1) {
-transform: translateX(-210px) rotate(0deg);
+transform: translateX(-245px) rotate(0deg);
 }
 
 .ativo li:nth-child(2) {
-transform: translateX(-60px) rotate(0deg);
+transform: translateX(-78px) rotate(0deg);
 }
 
 .ativo li:nth-child(3) {
@@ -427,15 +427,15 @@ transform: translateX(90px) rotate(0deg);
     }
 
     .ativo li:nth-child(1) {
-    transform: translateX(-190px) rotate(0deg);
+    transform: translateX(-210px) rotate(0deg);
     }
 
     .ativo li:nth-child(2) {
-    transform: translateX(-60px) rotate(0deg);
+    transform: translateX(-65px) rotate(0deg);
     }
 
     .ativo li:nth-child(3) {
-    transform: translateX(70px) rotate(0deg);
+    transform: translateX(80px) rotate(0deg);
     }
 }
 
@@ -492,15 +492,15 @@ transform: translateX(90px) rotate(0deg);
     }
 
     .ativo li:nth-child(1) {
-    transform: translateX(-180px) rotate(0deg);
+    transform: translateX(-167px) rotate(0deg);
     }
 
     .ativo li:nth-child(2) {
-    transform: translateX(-55px) rotate(0deg);
+    transform: translateX(-53px) rotate(0deg);
     }
 
     .ativo li:nth-child(3) {
-    transform: translateX(70px) rotate(0deg);
+    transform: translateX(60px) rotate(0deg);
     }
 }
 
