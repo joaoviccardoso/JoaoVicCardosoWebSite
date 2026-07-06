@@ -25,7 +25,7 @@
 .divPasso2{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 4rem;
     width: 100%;
 }
 
@@ -47,7 +47,12 @@
     }
 }
 
-@media(max-width: 480px){
+@media(max-width: 600px){
+    .divPasso2{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 4rem;
+    }
+
     .containerTexto h3{
         font-size: var(--font-size-2xl);
     }

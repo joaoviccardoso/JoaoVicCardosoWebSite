@@ -2,7 +2,6 @@ import { useRef } from "react"
 import CssOqueEuFaco from "./oqueEuFaco.module.css"
 import ContainerComBotao from "../../../../../Componentes/ContainerTextoComBotao"
 import CardBlackMedio from "../../../../../Componentes/ComponetesCards/CardBlackMedio"
-import logoEscuro from "../../../../../assets/logoDaPaginaPreto.png"
 import { useScrollAnimation } from "../../../../../hooks/useScrollAnimation"
 
 function OqueEuFaco() {

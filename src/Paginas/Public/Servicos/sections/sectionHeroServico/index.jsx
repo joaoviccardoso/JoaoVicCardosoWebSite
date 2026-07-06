@@ -85,14 +85,12 @@ function HeroServico(){
                 <h1 ref={titleRef}>Sites e Sistemas Pensados <br/> <span>para Resultado</span></h1>
                 <p ref={textRef}>Crio landing pages estratégicas e sistemas web sob medida para transformar ideias em soluções reais e gerar resultados.</p>
                 <div className={CssHeroServico.containerBtnCtaHero} ref={divBotao}>
-                    <BotaoCta
-                        child="Comece seu projeto hoje"
-                        to="/Contato"
-                    />
-                    <BotaoCta
-                        child="Ver Meus Projetos"
-                        to="/Portfolio"
-                    />
+                    <div className={CssHeroServico.containerBtn2}>
+                        <BotaoCta
+                            child="Comece seu projeto hoje"
+                            to="/Contato"
+                        />
+                    </div>
                 </div>
             </div>
 

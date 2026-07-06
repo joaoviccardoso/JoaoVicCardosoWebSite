@@ -46,7 +46,7 @@
 }
 
 .containerTexto h1{
-    font-size: var(--font-size-3x2);
+    font-size: var(--font-size-4x2);
     font-family: var(--font-paraTextoChamativo);
     color: #fff;
 }
@@ -87,24 +87,44 @@
     }
 }
 
-@media(max-width: 1000px){
+@media(max-width: 900px){
     .secaoHeroServico{
+        text-align: center;
         flex-direction: column;
-        padding: 3rem 0rem;
+        height: 80vh;
+        padding: 9rem 0rem;
+    }
+
+    .containerTexto{
+        text-align: center;
+        padding-left: 0; /* 👈 adicionar isso */
+    }
+
+    .containerTexto span{
+        display: block; /* ou inline-block */
+        width: 100%;
+        text-align: center;
+    }
+
+    .containerBtnCtaHero{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .containerBtn2{
+        width: 50%;
     }
     
     .img{
-        width: 400px;
-        height: 400px;
+        display: none;
     }
 }
 
 @media(max-width: 720px){
-    .containerBtnCtaHero{
-        text-align: center;
-        flex-direction: column;
-        gap: 2rem;
-    }
+    
 }
 
 @media(max-width: 480px){

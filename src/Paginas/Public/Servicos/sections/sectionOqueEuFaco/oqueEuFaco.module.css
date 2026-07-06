@@ -22,16 +22,10 @@
 }
 
 .divConteinerComOsTexto{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    width: 80%;
-}
-
-.divLogo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 4rem;
+    width: 100%;
 }
 
 @media(max-width: 1500px){
@@ -42,17 +36,30 @@
     }
 }
 
-@media(max-width: 1000px){
-    .divLogo{
-        display: none;
+@media(max-width: 900px){
+    .sectionOqueEuFaco{
+        padding: 0 2rem;
     }
 
     .divConteinerComOsTexto{
         width: 100%;
+        gap: 3rem;
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-lg);
+        width: 70vw;
     }
 }
 
-@media(max-width: 480px){
+@media(max-width: 600px){
+    .divConteinerComOsTexto{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 4rem;
+        width: 100%;
+    }
+
     .sectionOqueEuFaco{
         padding: 0 1rem;
     }
