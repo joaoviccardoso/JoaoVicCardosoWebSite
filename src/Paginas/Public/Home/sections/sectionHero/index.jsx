@@ -90,25 +90,27 @@ function Hero(){
 
     return(
         <section className={CssHero.sectionHero} ref={el}>
-                <div className={CssHero.containerImagemHero} id="containerImgHero" ref={imgHero}>
-                    <img id="personagemAnimadoHero" src={imagemBonecoJoaoHome} alt="Personagem Animado do João com um labtop" />
-                </div>
 
                 <div className={CssHero.containerTextoHero} id="containerTituloHero">
+                    <div className={CssHero.containerImagemHero} id="containerImgHero" ref={imgHero}>
+                        <img id="personagemAnimadoHero" src={imagemBonecoJoaoHome} alt="Personagem Animado do João com um labtop" />
+                    </div>
+                    
                     <h1 ref={titleRef}>Eu ajudo negócios a crescer <br/><span>na internet</span></h1>
                     <p id="subtituloHero">Desenvolvo sites que conectam sua empresa a mais clientes, de <br/> forma simples e profissional.</p>
+                    <div className={CssHero.containerBotaoCta} id="containerBotaoHero">
+                        <BotaoCta
+                            child="Comece seu projeto hoje"
+                            to="Contato"
+                        />
+                        <BotaoCta
+                            child="Conheça meu trabalho"
+                            to="Servicos"
+                        />
+                    </div>
                 </div>
 
-                <div className={CssHero.containerBotaoCta} id="containerBotaoHero">
-                    <BotaoCta
-                        child="Comece seu projeto hoje"
-                        to="Contato"
-                    />
-                    <BotaoCta
-                        child="Conheça meu trabalho"
-                        to="Servicos"
-                    />
-                </div>
+                
         </section>
     )
 }
