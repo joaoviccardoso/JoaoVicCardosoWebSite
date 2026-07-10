@@ -19,14 +19,6 @@
     align-items: flex-start; /* 🔥 importante */
 }
 
-.wrapper div h3{
-    font-size: var(--font-size-4xl);
-}
-
-.wrapper div p{
-    font-size: var(--font-size-xl);
-}
-
 .ulListaHabilidades {
     display: flex;
     flex-wrap: nowrap;
@@ -55,10 +47,8 @@
 .divs8 { transform: translateY(1400px) translateX(-820px); }
 .divs9 { transform: translateY(1900px) translateX(-820px); }
 
-@media(max-width: 1500px){
-    .secaoHabilidades div h3{
-        font-size: var(--font-size-3xl);
-    }
+@media(max-width: 1440px){
+
 }
 
 @media(max-width: 1000px){
@@ -76,15 +66,6 @@
         background-image: none !important;
     }
     .header{ transform: translateY(0px) translateX(-910px); }
-
-    .header h3{
-        font-size: var(--font-size-2xl);
-    }
-
-    .header p{
-        padding: 0 1rem;
-        font-size: var(--font-size-lg);
-    }
 
     .secaoHabilidades div{
         text-align: center;

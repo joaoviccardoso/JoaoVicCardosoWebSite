@@ -1,7 +1,6 @@
 .secaoHeroServico{
     display: flex;
     align-items: center;
-    gap: 2rem;
     padding: 8rem 0rem;
 }
 
@@ -41,25 +40,12 @@
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    padding-left: 2rem;
+    padding-left: 0rem;
     
-}
-
-.containerTexto h1{
-    font-size: var(--font-size-4x2);
-    font-family: var(--font-paraTextoChamativo);
-    color: #fff;
 }
 
 .containerTexto span{
     color: var(--verde);
-}
-
-
-.containerTexto p{
-    font-size: var(--font-size-2xl);
-    font-family: var(--font-paraTexto);
-    color: #fff;
 }
 
 .containerBtnCtaHero{
@@ -68,36 +54,18 @@
 }
 
 .img{
-    width: 500px;
-    height: 500px;
+    width: 310px;
+    height: 310px;
 }
 
-@media(max-width: 1700px){
-    .containerTexto h1{
-        font-size: var(--font-size-3x2);
-    }
-
-    .containerTexto p{
-        font-size: var(--font-size-xl);
-    }
-
-    .img{
-        width: 300px;
-        height: 300px;
-    }
-}
-
-@media(max-width: 1050px){
+@media(max-width: 1440px){
     .secaoHeroServico{
-        text-align: center;
         flex-direction: column;
-        height: 80vh;
-        padding: 9rem 0rem;
-    }
-
-    .containerTexto{
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        padding-left: 0; /* 👈 adicionar isso */
+        height: 100vh;
+        padding: 3rem 0rem;
     }
 
     .containerTexto span{
@@ -106,46 +74,30 @@
         text-align: center;
     }
 
-    .containerBtnCtaHero{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-
     .containerBtn2{
         width: 100%;
     }
-    
+
     .img{
         display: none;
     }
 }
 
+@media(max-width: 1024px){
+    .containerTexto{
+        text-align: center;
+        padding-left: 0; /* 👈 adicionar isso */
+    } 
+}
 
-@media(max-width: 520px){
+
+@media(max-width: 480px){
     .secaoHeroServico{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         padding: 3rem 0rem;
     }
 
     .containerTexto{
         padding: 0;
-    }
-
-    .containerTexto h1{
-        font-size: var(--font-size-3xl);
-    }
-
-    .containerTexto p {
-        font-size: var(--font-size-lg);
-    }
-
-    .img{
-        width: 500px;
-        height: 380px;
     }
 }
 

@@ -3,14 +3,6 @@
     padding: 4rem 0 3rem 0;
 }
 
-.containerTituloDaSecao h3{
-    font-size: var(--font-size-4xl);
-}
-
-.containerTituloDaSecao p{
-    font-size: var(--font-size-xl);
-}
-
 .ulLista {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -38,7 +30,7 @@
     grid-row: 2;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
     .ulLista {
         grid-template-columns: 1fr;
         padding:0;
@@ -53,7 +45,7 @@
     }
 }
 
-@media(max-width: 600px){
+@media(max-width: 768px){
     .ulLista {
         justify-content: center;
         align-items: center ;
@@ -66,14 +58,6 @@
     .containerTituloDaSecao{
         text-align: center;
         padding: 3rem 0;
-    }
-
-    .containerTituloDaSecao h3{
-        font-size: var(--font-size-3xl);
-    }
-
-    .containerTituloDaSecao p{
-        font-size: var(--font-size-md);
     }
 }
 

@@ -12,14 +12,6 @@
 
 
 @media(max-width: 1250px){
-    .divQuemSouEuTexto h3{
-        font-size: var(--font-size-2xl);
-    }  
-
-    .divQuemSouEuTexto p{
-        font-size: var(--font-size-lg);
-    }
-
     .imagemQuemSou{
         width: 60%;
     }

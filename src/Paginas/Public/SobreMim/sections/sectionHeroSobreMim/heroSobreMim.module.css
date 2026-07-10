@@ -13,16 +13,6 @@
     color: #fff;
 }
 
-.containerTextoSobreMimHero h1{
-    font-size: var(--font-size-3x2);
-    font-family: var(--font-paraTextoChamativo);
-}
-
-.containerTextoSobreMimHero p{
-    font-size: var(--font-size-2xl);
-    font-family: var(--font-paraTexto);
-}
-
 .imgSobreMim{
     width: 55%;
 }
@@ -32,30 +22,16 @@
         width: 45%;
         height: 100%;
     }
-
-    .containerTextoSobreMimHero h1{
-        font-size: var(--font-size-3xl);
-    }
-
-    .containerTextoSobreMimHero p{
-        font-size: var(--font-size-xl);
-    }
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
     .secaoHeroSobreMim{
         padding: 4rem 3rem;
     }
 }
 
-@media(max-width: 720px){
-    .containerTextoSobreMimHero h1{
-        font-size: var(--font-size-2xl);
-    }
-
-    .containerTextoSobreMimHero p{
-        font-size: var(--font-size-lg);
-    }
+@media(max-width: 768px){
+    
 }
 
 @media(max-width: 570px){
@@ -71,14 +47,6 @@
 
     .containerTextoSobreMimHero div{
         text-align: center;
-    }
-
-    .containerTextoSobreMimHero h1{
-        font-size: var(--font-size-2xl);
-    }
-
-    .containerTextoSobreMimHero p{
-        font-size: var(--font-size-lg);
     }
 
     .imgSobreMim{

@@ -9,9 +9,6 @@
 }
 
 .secaoHeroProdutos h1{
-    font-size: var(--font-size-4x2);
-    font-family: var(--font-paraTextoChamativo);
-    max-width: 1500px;
     text-align: center;
 }
 
@@ -19,26 +16,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.4rem;
+    gap: 0.9rem;
     color: var(--verde);
     white-space: nowrap;
 }
 
-.secaoHeroProdutos p{
-    margin: .9rem 0;
-    font-size: var(--font-size-2xl);
-    font-family: var(--font-paraTexto);
-}
-
-@media(max-width: 1700px){
+@media(max-width: 1440px){
     .secaoHeroProdutos{
         text-align: center;
         padding: 8rem 10rem;
         color: #fff;
-    }
-
-    .secaoHeroProdutos h1{
-        font-size: var(--font-size-3x2);
     }
 }
 
@@ -46,23 +33,17 @@
     .secaoHeroProdutos{
         padding: 6rem 2rem;
     }
-
-    .secaoHeroProdutos h1{
-        text-align: center;
-    }
-
-    .secaoHeroProdutos p{
-        font-size: var(--font-size-xl);
-    }
 }
 
-@media(max-width: 640px){
-    .secaoHeroProdutos h1{
-        font-size: var(--font-size-3xl);
-    }
-
-    .secaoHeroProdutos p{
-        font-size: var(--font-size-md);
+@media(max-width: 768px){
+    .secaoHeroProdutos span{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        color: var(--verde);
+        white-space: nowrap;
     }
 }
 
@@ -70,13 +51,5 @@
 @media(max-width: 420px){
     .secaoHeroProdutos{
         padding: 4rem 2rem;
-    }
-
-    .secaoHeroProdutos h1{
-        font-size: var(--font-size-xl);
-    }
-
-    .secaoHeroProdutos p{
-        font-size: var(--font-size-md);
     }
 }
