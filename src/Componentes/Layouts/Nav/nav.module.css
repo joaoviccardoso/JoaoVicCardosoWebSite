@@ -14,11 +14,21 @@
    gap: 3rem;
 }
 
-@media(max-width: 768px){
+.btn{
+    display: none;
+}
+
+@media(max-width: 840px){
     .ul{
         display: none;
     }
 
+    .btn{
+        display: block;
+    }
+}
+
+@media(max-width: 768px){
     .nav{
         width: 100%;
     }

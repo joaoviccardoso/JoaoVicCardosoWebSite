@@ -17,8 +17,8 @@ function SecaoHeroSobreMim(){
     return(
         <section className={CssSobreMim.secaoHeroSobreMim} ref={el}>
             <div className={CssSobreMim.containerTextoSobreMimHero} ref={divHero}>
-                <h1 ref={titleRef}>Transformo ideias em produtos digitais.</h1>
-                <p ref={textRef}>Projetos bem planejados, design estratégico e desenvolvimento focado em performance e crescimento.</p>
+                <h1 ref={titleRef}>Transformo ideias em experiências digitais</h1>
+                <p ref={textRef}>Desenvolvedor front-end focado em interfaces modernas, rápidas e bem estruturadas.</p>
                 <div ref={divBotao}>
                     <BotaoCta
                         child="Comece seu projeto hoje"

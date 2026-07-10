@@ -58,6 +58,7 @@
 
 
     /*Fonte estilo*/
-    --font-paraTextoChamativo: "Titan One", sans-serif;
-    --font-paraTexto: "Space Grotesk", sans-serif;
+    --font-paraTituloEhTexto: "Sofia Sans", sans-serif;
+    --font-paraTextoChamativo: "Sofia Sans", sans-serif; /*"Titan One", sans-serif; "Space Grotesk", sans-serif;*/
+    --font-paraTexto: "Sofia Sans", sans-serif; 
 }

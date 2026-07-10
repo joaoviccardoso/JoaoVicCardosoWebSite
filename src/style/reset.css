@@ -58,12 +58,14 @@ img {
 h1{
   font-size: var(--font-size-4x2);
   font-family: var(--font-paraTextoChamativo);
+  font-weight: 1000;
   color: #fff;
 }
 
 h3{
   font-size: var(--font-size-4x2);
   font-family: var(--font-paraTextoChamativo);
+  font-weight: 1000;
   color: #fff;
 }
 
