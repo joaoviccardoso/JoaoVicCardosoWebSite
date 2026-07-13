@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import CardProduto from "../../../../../Componentes/CardProdutos"
+import CardProduto from "../../../../../Componentes/ComponetesCards/CardProdutos"
 import CssProduto from "./produtos.module.css"
 import LinkParaNavegacao from "../../../../../Componentes/Layouts/Links/link"
 import { buildImageUrl } from "../../../../../Utils/buildImagens"

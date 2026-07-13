@@ -146,9 +146,9 @@ p{
       width: 100%;
     }
 
-    h1{
+    /*h1{
       font-size: var(--font-size-3xl);
-    }
+    }*/
 
     h3{
       font-size: var(--font-size-3xl);
@@ -156,5 +156,11 @@ p{
 
     p{
       font-size: var(--font-size-lg);
+    }
+}
+
+@media(max-width: 350px){
+    h1{
+      font-size: var(--font-size-3xl);
     }
 }
