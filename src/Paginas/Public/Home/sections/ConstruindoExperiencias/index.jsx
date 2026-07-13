@@ -12,8 +12,8 @@ function ConstruindoExperiencias(){
     const containerDeAnimacao4 = useRef(null)
     const containerDeAnimacao5 = useRef(null)
 
-    useScrollAnimationLeftAndRight(el, [containerDeAnimacao3, containerDeAnimacao4])
-    useScrollAnimationUp2(el, [containerDeAnimacao5])
+    //useScrollAnimationLeftAndRight(el, [containerDeAnimacao3, containerDeAnimacao4])
+    //useScrollAnimationUp2(el, [containerDeAnimacao5])
 
     return(
         <section className={CssComoTranformoIdeia.secaoComoTransformoIdeias} ref={el}>
@@ -22,34 +22,30 @@ function ConstruindoExperiencias(){
                 <p>Meu trabalho vai além da programação. É um processo <br/>estratégico que combina os três pilares</p>
             </div>
 
-            <ul className={CssComoTranformoIdeia.ulLista} >
-                <li className={`${CssComoTranformoIdeia.Lista1}`} id='item1TrasnformoIdeias'>
+            <div className={CssComoTranformoIdeia.ulLista} >
+                <div className={CssComoTranformoIdeia.divCardMedio}>
                     <CardBlackMedio
                         ref={containerDeAnimacao3}
                         tag={"Construindo Experiências"}
                         titulo={"Manutenção de Código"}
                         texto={"Otimizo e melhoro projetos existentes, deixando seu site mais rápido, estável e fácil de manter."}
                     />
-                </li>
 
-                <li className={`${CssComoTranformoIdeia.Lista2}`} id='item2TrasnformoIdeias'>
                     <CardBlackMedio
                         ref={containerDeAnimacao4}
                         tag={"Construindo Experiências"}
                         titulo={"Design UX/UI"}
                         texto={"Desenvolvo interfaces no Figma que encantam e convertem, focadas na melhor experiência do usuário."}
                     />
-                </li>
-
-                <li className={`${CssComoTranformoIdeia.Lista3}`} id='item3TrasnformoIdeias'>
-                    <CardVerde
-                        ref={containerDeAnimacao5}
-                        tag={"Construindo Experiências"}
-                        titulo={"Desenvolvimento Web"}
-                        texto={"Crio landing pages e sistemas web com design responsivo e alta performance para fortalecer sua presença online."}
-                    />
-                </li>
-            </ul>
+                </div>
+            
+                <CardVerde
+                    ref={containerDeAnimacao5}
+                    tag={"Construindo Experiências"}
+                    titulo={"Desenvolvimento Web"}
+                    texto={"Crio landing pages e sistemas web com design responsivo e alta performance para fortalecer sua presença online."}
+                />
+            </div>
         </section>
     )
 }
