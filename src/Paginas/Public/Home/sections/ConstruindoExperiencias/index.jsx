@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import CssComoTranformoIdeia from "./comoTranformoIdeia.module.css"
 import CardBlackMedio from '../../../../../Componentes/ComponetesCards/CardBlackMedio';
 import CardVerde from '../../../../../Componentes/ComponetesCards/CardVerde';
-import { useScrollAnimationLeftAndRight } from '../../../../../hooks/useScrollAnimationLeftAndRight';
 import { useScrollAnimationUp2 } from '../../../../../hooks/useScrollAnimationUp2';
 
 //certo
@@ -12,8 +11,7 @@ function ConstruindoExperiencias(){
     const containerDeAnimacao4 = useRef(null)
     const containerDeAnimacao5 = useRef(null)
 
-    //useScrollAnimationLeftAndRight(el, [containerDeAnimacao3, containerDeAnimacao4])
-    //useScrollAnimationUp2(el, [containerDeAnimacao5])
+    useScrollAnimationUp2(el, [containerDeAnimacao3, containerDeAnimacao4, containerDeAnimacao5])
 
     return(
         <section className={CssComoTranformoIdeia.secaoComoTransformoIdeias} ref={el}>

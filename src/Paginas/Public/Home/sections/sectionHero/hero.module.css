@@ -15,7 +15,6 @@
     width: 100%;
     height: 2px;
     background: rgba(0, 255, 80, 0.1);
-    z-index: 0;
 
     animation: scanline 6s linear infinite;
 }
@@ -38,7 +37,6 @@
         linear-gradient(rgba(0, 255, 80, 0.03) 1px, transparent 3px),
         linear-gradient(90deg, rgba(0, 255, 80, 0.03) 1px, transparent 3px);
     background-size: 60px 60px;
-    z-index: 0;
     height: 100vh;
     pointer-events: none;
 }
@@ -49,34 +47,24 @@
     display: flex;
     justify-content: start;
     width: 100%;
-    z-index: 100;
+    margin: 0;
 }
 
 .containerImagemHero img {
+    margin: 0;
     max-width: 100%;
     height: auto;
 }
 
-.containerImagemHero p{
-    width: 220px;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    color: var(--cor-letraClara);
-    font-family: var(--font-paraTexto);
-    font-size: var(--font-size-xl);
-}
-
 .containerTextoHero{
-    position: relative;
+    position: sticky;
+    top: 0;
+    transform-origin: center;
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 1rem;
-}
-
-#textoColorido{
-    color: var(--verde);
+    z-index: 10;
 }
 
 .containerBotaoCta{
@@ -85,7 +73,6 @@
     align-items: start;
     gap: 7rem;
     margin: 1rem 0 5rem 0;
-    z-index: 100;
 }
 
 /*desktop*/
@@ -121,9 +108,7 @@
     .sectionHero{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0 3rem;
+        padding: 0 2rem;
         margin-top: 2rem;
     }
 
@@ -154,16 +139,19 @@
 }
 
 /*Celular grande*/
-@media(max-width: 480px){
-    .containerImagemHero{
-        top: 52px;
-        width: 50%;
-        margin: 2rem;
+@media(max-width: 480px){  
+    .sectionHero{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: 100vh;
     }
 
-    .containerImagemHero p{
-        font-size: var(--font-size-md);
-        width: 120px;
+    .containerImagemHero{
+        top: 32px;
+        width: 50%;
     }
 
     .containerImagemHero img{

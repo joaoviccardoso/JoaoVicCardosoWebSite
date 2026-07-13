@@ -16,7 +16,7 @@ export function useScrollAnimationUpAlemDeCodigo(el, ids) {
                     //markers: true,
                     scrub: 1,
                     start: isMobile ? "-350% 50%" : "-350% 40%",
-                    end: isMobile ? "-280% 50%" : "-200% 60%",
+                    end: isMobile ? "-220% 50%" : "-200% 60%",
                 },
             });
 

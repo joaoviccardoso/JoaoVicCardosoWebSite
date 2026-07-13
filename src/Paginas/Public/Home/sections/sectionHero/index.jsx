@@ -10,6 +10,7 @@ function Hero(){
     const titleRef = useRef(null);
     const el = useRef();
     const imgHero = useRef(null)
+    const contBtn = useRef(null);
 
     useLayoutEffect(() => {
     gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -34,7 +35,7 @@ function Hero(){
                     ease: "power2.out",
                     delay: 0.5
                 })
-                .from("#personagemAnimadoHero", {
+                .from(imgHero.current, {
                     x: 50,
                     opacity: 0,
                     rotateY: -90
@@ -43,7 +44,7 @@ function Hero(){
                     opacity: 0,
                     y: 20,
                 }, "-=0.8")
-                .from("#containerBotaoHero", {
+                .from(contBtn.current, {
                     opacity: 0,
                     scale: 0.9,
                 }, "-=0.3");
@@ -54,21 +55,21 @@ function Hero(){
                     trigger: el.current,
                     //markers: true,
                     scrub: 1,
-                    start: "30% 10%",
-                    end: "80% 50%",
+                    start: "top top",
+                    end: "30% top",
                 }
             })
-            .fromTo(imgHero.current,
-                { yPercent: 0, opacity: 1, scale: 1, filter: "blur(0px)" },
-                { yPercent: 0, opacity: 0.7, scale: 0.87, filter: "blur(5px)" }
+            .fromTo(imgHero,
+                { yPercent: 0, opacity: 1,  filter: "blur(0px)" },
+                { yPercent: 0, opacity: 0.7, filter: "blur(5px)" }
             )
             .fromTo("#containerTituloHero",
-                { yPercent: 0, opacity: 1, scale: 1, filter: "blur(0px)" },
-                { yPercent: 0, opacity: 0.7, scale: 0.87, filter: "blur(5px)" }
+                { yPercent: 0, opacity: 1, filter: "blur(0px)" },
+                { yPercent: 0, opacity: 0.7, filter: "blur(5px)" }
             )
-            .fromTo("#containerBotaoHero",
-                { yPercent: 0, opacity: 1, scale: 1, filter: "blur(0px)" },
-                { yPercent: 0, opacity: 0.7, scale: 0.87, filter: "blur(5px)" }
+            .fromTo(contBtn,
+                { yPercent: 0, opacity: 1, filter: "blur(0px)" },
+                { yPercent: 0, opacity: 0.7, filter: "blur(5px)" }
             );
 
             // 🔥 força recalcular posições
@@ -84,13 +85,13 @@ function Hero(){
         <section className={CssHero.sectionHero} ref={el}>
 
                 <div className={CssHero.containerTextoHero} id="containerTituloHero">
-                    <div className={CssHero.containerImagemHero} id="containerImgHero" ref={imgHero}>
+                    <div className={CssHero.containerImagemHero} ref={imgHero}>
                         <img id="personagemAnimadoHero" src={imagemBonecoJoaoHome} alt="Personagem Animado do João com um labtop" />
                     </div>
                     
                     <h1 ref={titleRef}>Eu ajudo negócios a crescer <br/><span>na internet</span></h1>
                     <p id="subtituloHero">Desenvolvo sites que conectam sua empresa a mais clientes, de <br/> forma simples e profissional.</p>
-                    <div className={CssHero.containerBotaoCta} id="containerBotaoHero">
+                    <div className={CssHero.containerBotaoCta} ref={contBtn}>
                         <BotaoCta
                             child="Comece seu projeto hoje"
                             to="Contato"

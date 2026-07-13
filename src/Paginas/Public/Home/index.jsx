@@ -49,23 +49,24 @@ function Home(){
                                 ease: "none",
                                 scrollTrigger: {
                                     trigger: secao0Ref.current,
+                                    //markers:true,
                                     start: isMobile ? "top bottom" : "top bottom",
-                                    end: isMobile ? "+=150%" : "+=200%",
-                                    scrub: 1,
+                                    end: isMobile ? "+=110%" : "+=60%",
+                                    scrub: 2,
                                 },
                             }
                         )
 
                         gsap.fromTo(
                             teste.current,
-                            { y: "-100vh" },
+                            { y: "-101vh" },
                             {
                                 y: "-200vh",
                                 ease: "none",
                                 scrollTrigger: {
                                     trigger: secao2Ref.current,
-                                    markers: true,
-                                    start: isMobile ? "top 40%" : "top 50%",
+                                    //markers: true,
+                                    start: isMobile ? "top 60%" : "top 50%",
                                     end: isMobile ? "top top" : "top top",
                                     scrub: 1,
                                 },
