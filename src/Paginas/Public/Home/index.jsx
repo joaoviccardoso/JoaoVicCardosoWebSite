@@ -50,7 +50,7 @@ function Home(){
                                 scrollTrigger: {
                                     trigger: secao0Ref.current,
                                     start: isMobile ? "top bottom" : "top bottom",
-                                    end: isMobile ? "top top" : "top top",
+                                    end: isMobile ? "+=150%" : "+=200%",
                                     scrub: 1,
                                 },
                             }
@@ -64,8 +64,8 @@ function Home(){
                                 ease: "none",
                                 scrollTrigger: {
                                     trigger: secao2Ref.current,
-                                    //markers: true,
-                                    start: isMobile ? "top 40%" : "top 30%",
+                                    markers: true,
+                                    start: isMobile ? "top 40%" : "top 50%",
                                     end: isMobile ? "top top" : "top top",
                                     scrub: 1,
                                 },

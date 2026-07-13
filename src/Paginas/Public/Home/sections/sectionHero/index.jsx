@@ -22,37 +22,8 @@ function Hero(){
                 types: "words",
             });
 
-            const intro = gsap.timeline({
-                onComplete: () => {
-                    // 👇 ScrollTrigger só nasce aqui
-                    gsap.timeline({
-                        scrollTrigger: {
-                            trigger: el.current,
-                            scrub: 2,
-                            start: "top 80%",
-                            end: "bottom 30%",
-                        }
-                    })
-                    .to(imgHero.current, {
-                        y: 150,
-                        opacity: .7,
-                        scale: 0.95,
-                        filter: "blur(5px)"
-                    },1)
-                    .to("#containerTituloHero", {
-                        y: 150,
-                        opacity: .7,
-                        scale: 0.95,
-                        filter: "blur(5px)"
-                    }, 1)
-                    .to("#containerBotaoHero", {
-                        y: 150,
-                        opacity: .7,
-                        scale: 0.95,
-                        filter: "blur(5px)"
-                    }, 1);
-                }
-            });
+            // ✅ INTRO (continua igual)
+            const intro = gsap.timeline();
 
             intro
                 .from(split.words, {
@@ -63,11 +34,6 @@ function Hero(){
                     ease: "power2.out",
                     delay: 0.5
                 })
-                .from("#containerBalaoOla", {
-                    x: 50,
-                    opacity: 0,
-                    rotateY: -90
-                }, "-=0.8")
                 .from("#personagemAnimadoHero", {
                     x: 50,
                     opacity: 0,
@@ -81,6 +47,32 @@ function Hero(){
                     opacity: 0,
                     scale: 0.9,
                 }, "-=0.3");
+
+            // ✅ SCROLL TRIGGER (AGORA CORRETO)
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: el.current,
+                    //markers: true,
+                    scrub: 1,
+                    start: "30% 10%",
+                    end: "80% 50%",
+                }
+            })
+            .fromTo(imgHero.current,
+                { yPercent: 0, opacity: 1, scale: 1, filter: "blur(0px)" },
+                { yPercent: 0, opacity: 0.7, scale: 0.87, filter: "blur(5px)" }
+            )
+            .fromTo("#containerTituloHero",
+                { yPercent: 0, opacity: 1, scale: 1, filter: "blur(0px)" },
+                { yPercent: 0, opacity: 0.7, scale: 0.87, filter: "blur(5px)" }
+            )
+            .fromTo("#containerBotaoHero",
+                { yPercent: 0, opacity: 1, scale: 1, filter: "blur(0px)" },
+                { yPercent: 0, opacity: 0.7, scale: 0.87, filter: "blur(5px)" }
+            );
+
+            // 🔥 força recalcular posições
+            ScrollTrigger.refresh();
         });
 
     }, el);
