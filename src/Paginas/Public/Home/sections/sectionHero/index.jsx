@@ -1,5 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useRef } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitText from "gsap/src/SplitText";
 import CssHero from "./hero.module.css"

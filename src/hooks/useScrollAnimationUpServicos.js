@@ -15,8 +15,8 @@ export function useScrollAnimationUpServicos(el, ids) {
                     trigger: elements[0] ?? el.current,
                     markers: true,
                     scrub: 2,
-                    start: isMobile ? "top top" : "-90% 10%",
-                    end: isMobile ? "bottom bottom" : "bottom 10%",
+                    start: isMobile ? "-90% 10%" : "-90% 10%",
+                    end: isMobile ? "300% 10%" : "bottom 10%",
                 },
             });
 
