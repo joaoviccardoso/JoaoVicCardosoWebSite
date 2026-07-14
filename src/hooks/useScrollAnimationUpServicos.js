@@ -2,33 +2,28 @@ import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export function useScrollAnimation(el, ids) {
+export function useScrollAnimationUpServicos(el, ids) {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         const isMobile = window.innerWidth <= 480;
+        const elements = ids.map(ref => ref.current).filter(Boolean);
 
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: el.current,
+                    trigger: elements[0] ?? el.current,
+                    markers: true,
                     scrub: 2,
-                    start: "top 70%",
-                    end: "bottom 40%",
+                    start: isMobile ? "top top" : "-90% 10%",
+                    end: isMobile ? "bottom bottom" : "bottom 10%",
                 },
             });
 
             tl.fromTo(
-            ids, 
-                {
-                    opacity: 0,
-                    x: isMobile ? -100 : -220,
-                },
-                {
-                    opacity: 1,
-                    x: 0,
-                    stagger: 0.2,
-                }
+                elements,
+                { opacity: 0, y: isMobile ? 80 : 140 },
+                { opacity: 1, y: 0, stagger: 0.2, ease: "power2.out" }
             );
         }, el);
 

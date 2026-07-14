@@ -1,13 +1,10 @@
 import { useRef } from "react";
-import { useScrollAnimation } from "../../../../../hooks/useScrollAnimation";
 import CssProntoParaComecar from "./prontoParaComecar.module.css"
 import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import iconePagina from '../../../../../assets/iconePaginaWeb.svg'
 
 function ProntoParaComecar(){
     const el = useRef();
-
-    useScrollAnimation(el, ["#tituloPaginaProntoParaComecar", "#textoPaginaProntoParaComecar", "#btnCtaSecaoProntoParaComecar"])
 
     return(
         <section className={CssProntoParaComecar.secaoProntoParaComecar}>

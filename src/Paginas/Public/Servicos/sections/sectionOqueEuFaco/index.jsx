@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import CssOqueEuFaco from "./oqueEuFaco.module.css"
 import CardBlackMedio from "../../../../../Componentes/ComponetesCards/CardBlackMedio"
-import { useScrollAnimation } from "../../../../../hooks/useScrollAnimation"
+import { useScrollAnimationUpServicos } from "../../../../../hooks/useScrollAnimationUpServicos";
 
 function OqueEuFaco() {
     const el = useRef();
@@ -9,7 +9,9 @@ function OqueEuFaco() {
     const card2 = useRef();
     const card3 = useRef();
     const card4 = useRef();
-    useScrollAnimation(el,[card1, card2, card3, card4])
+
+    useScrollAnimationUpServicos(el,[card1, card2, card3, card4])
+
     return(
         <section className={CssOqueEuFaco.sectionOqueEuFaco}>
             <div className={CssOqueEuFaco.containerTexto}>

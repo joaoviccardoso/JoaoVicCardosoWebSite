@@ -2,19 +2,19 @@ import { useRef } from "react"
 import CssComoEuPenso from "./comoEuPenso.module.css"
 import CardBlackMedio from "../../../../../Componentes/ComponetesCards/CardBlackMedio";
 import CardVerde from "../../../../../Componentes/ComponetesCards/CardVerde";
-import { useScrollAnimation } from "../../../../../hooks/useScrollAnimation";
-import { useScrollAnimationUp } from "../../../../../hooks/useScrollAnimationUp";
+import { useScrollAnimationUpServicos } from "../../../../../hooks/useScrollAnimationUpServicos";
 
 function ComoEuPenso(){
    
-    const ell = useRef(null);
-    const elr = useRef(null);
-    const card1 = useRef(null)
-
-    useScrollAnimation(ell, ["#containerPasso1", "#containerPasso2", "#containerPasso3"])
-    useScrollAnimationUp(elr, ["#containerPasso4", "#containerPasso5"])
- 
+    const el = useRef(null);
+    const card1 = useRef(null) 
+    const card2 = useRef(null) 
+    const card3 = useRef(null) 
+    const card4 = useRef(null) 
+    const card5 = useRef(null) 
     
+    useScrollAnimationUpServicos(el, [card1, card2, card3, card4, card5])
+
     return(
         <section className={CssComoEuPenso.secaoComoEuPenso}>
             <div className={CssComoEuPenso.containerTexto}>
@@ -22,8 +22,8 @@ function ComoEuPenso(){
                 <p>Você não está apenas contratando um desenvolvedor. <br /> Está garantindo:</p>
             </div>
 
-            <div className={CssComoEuPenso.containerPassos} >
-                <div className={CssComoEuPenso.divPasso1} ref={ell}>
+            <div className={CssComoEuPenso.containerPassos} ref={el}>
+                <div className={CssComoEuPenso.divPasso1} >
                     <CardVerde
                         ref={card1}
                         tag={"Como eu penso"}
@@ -32,33 +32,33 @@ function ComoEuPenso(){
                     />
                 </div>
 
-                <div className={CssComoEuPenso.divPasso2} ref={elr}>
+                <div className={CssComoEuPenso.divPasso2}>
                     <CardBlackMedio
                         tag={"Como eu penso"}
                         titulo={"2. Planejamento Estratégico"}
                         texto={"Defino estrutura, funcionalidades e experiência do usuário antes de começar a desenvolver."}
-                        ref={card1}
+                        ref={card2}
                     />
 
                     <CardBlackMedio
                         tag={"Como eu penso"}
                         titulo={"3. Desenvolvimento Organizado"}
                         texto={"Defino estrutura, funcionalidades e experiência do usuário antes de começar a desenvolver."}
-                        ref={card1}
+                        ref={card3}
                     />
 
                     <CardBlackMedio
                         tag={"Como eu penso"}
                         titulo={"4. Entrega e Ajustes"}
                         texto={"Testes, melhorias e refinamentos antes da entrega final."}
-                        ref={card1}
+                        ref={card4}
                     />
 
                     <CardBlackMedio
                         tag={"Como eu penso"}
                         titulo={"5. Suporte Inicial"}
                         texto={"Acompanhamento após a entrega para garantir que tudo funcione perfeitamente"}
-                        ref={card1}
+                        ref={card5}
                     />
                 </div>
             </div>
