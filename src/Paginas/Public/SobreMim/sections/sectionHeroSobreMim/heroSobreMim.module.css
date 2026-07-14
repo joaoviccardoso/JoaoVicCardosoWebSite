@@ -1,6 +1,9 @@
 .secaoHeroSobreMim{
+    text-align: center;
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 90vh;
     padding: 4rem 12rem;
 }
 
@@ -8,16 +11,25 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
     gap: 1rem;
     padding-left: 2rem;
     color: #fff;
+}
+
+.containerTextoSobreMimHero span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    color: var(--verde);
 }
 
 .imgSobreMim{
     width: 55%;
 }
 
-@media(max-width: 1250px){
+@media(max-width: 1440px){
     .imgSobreMim{
         width: 45%;
         height: 100%;

@@ -61,6 +61,13 @@
     } 
 }
 
+@media(max-width: 768px){
+    .containerTexto{
+        text-align: center;
+        padding-left: 0;
+    } 
+}
+
 @media(max-width: 480px){
     .containerTexto{
         padding: 0;

@@ -17,6 +17,11 @@ function SecaoQueSouEu(){
                     />
                 </div>
             </div>
+
+            <div className={CssQuemSouEu.header}>   
+                <h3>Habilidades Técnicas</h3>
+                <p>Aqui estão as tecnologias que uso para transformar ideias em projetos reais.</p>
+            </div>
         </section>
     )
 }

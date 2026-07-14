@@ -12,7 +12,6 @@ import imgUiUx from "../../../../../assets/ui-ux.svg"
 import imgBootstrap from "../../../../../assets/bootstrap.svg"
 import imgFigma from "../../../../../assets/figma.svg"
 import imgGitHub from "../../../../../assets/github.svg"
-import logoDev from '../../../../../assets/logoDev.svg';
 
 function SecaoHabilidades(){
     const containerPai = useRef(null)
@@ -66,18 +65,14 @@ function SecaoHabilidades(){
         if (ctx) ctx.revert();
     };
 
-}, []);
+    }, []);
         
     
 
     return(
-        <section className={CssHabilidades.secaoHabilidades} ref={containerPai} style={{backgroundImage: `url(${logoDev})`,backgroundSize: '80%' ,backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat' }}>
+        <section className={CssHabilidades.secaoHabilidades} ref={containerPai}>
             <div ref={el} className={CssHabilidades.wrapper}>
-                <div className={CssHabilidades.header}>   
-                    <h3>Habilidades Técnicas</h3>
-                    <p>Aqui estão as tecnologias que uso para transformar ideias em projetos reais.</p>
-                </div>
-                
+        
                 <ul className={CssHabilidades.ulListaHabilidades}>
 
                     <li className={CssHabilidades.divs1}>
