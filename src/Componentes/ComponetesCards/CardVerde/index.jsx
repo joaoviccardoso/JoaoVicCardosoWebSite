@@ -8,7 +8,7 @@ function CardVerde({ref, tag, titulo, texto,}){
                 <span>
                     {tag}
                 </span>
-                <h3>{titulo}</h3>
+                <h4>{titulo}</h4>
                 <p>{texto}</p>
             </div>
         </div>

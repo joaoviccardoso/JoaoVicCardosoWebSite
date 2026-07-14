@@ -9,7 +9,7 @@ const CardBlackGrande = forwardRef(function CardBlackGrande(props, ref) {
                 <span>
                     {props.tag}
                 </span>
-                <h3>{props.titulo}</h3>
+                <h4>{props.titulo}</h4>
                 <p>{props.texto}</p>
                 <BotaoLinkA
                     texto="ver mais"

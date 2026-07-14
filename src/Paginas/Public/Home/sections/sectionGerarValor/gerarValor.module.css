@@ -19,7 +19,7 @@
 }
 
 
-@media(max-width: 640px){
+@media(max-width: 768px){
     .secaoGerarValor{
         display: flex;
         flex-direction: column;
@@ -35,7 +35,7 @@
 
 @media(max-width: 480px){
     .secaoGerarValor{
-        padding: 3rem;
+        padding: 1rem 1.5rem;
     }
 
     .btnLista{
