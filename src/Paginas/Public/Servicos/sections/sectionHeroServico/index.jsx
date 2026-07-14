@@ -5,6 +5,8 @@ import SplitText from "gsap/src/SplitText";
 import img from "../../../../../assets/iconePaginaWeb.svg"
 import CssHeroServico from "./heroServico.module.css"
 import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
+import useLayoutEffectHeroPadrao from "../../../../../hooks/useScrollAnimationHeroPadrao";
+
 
 function HeroServico(){
     const titleRef = useRef(null);
@@ -14,7 +16,9 @@ function HeroServico(){
     const divHero = useRef(null);
     const el = useRef(null);
 
-    useLayoutEffect(() => {
+    useLayoutEffectHeroPadrao(el,titleRef,textRef,imgHeroServico,divBotao, divHero)
+
+    /*useLayoutEffect(() => {
     gsap.registerPlugin(SplitText, ScrollTrigger);
 
     const ctx = gsap.context(() => {
@@ -77,7 +81,7 @@ function HeroServico(){
         }, el);
 
         return () => ctx.revert();
-    }, []);
+    }, []);*/
 
     return(
         <section className={CssHeroServico.secaoHeroServico} ref={el}>
