@@ -67,7 +67,11 @@
     }
 }
 
-@media(max-width: 350px){
+@media(max-width: 380px){
+    .secaoHeroServico{
+        padding: 2rem 1rem;
+    }
+
     .containerTexto p {
         font-size: var(--font-size-md);
     }

@@ -28,7 +28,7 @@
     width: 100%;
 }
 
-@media(max-width: 1500px){
+@media(max-width: 1440px){
     .sectionOqueEuFaco{
         display: flex;
         flex-direction: column;
@@ -36,7 +36,7 @@
     }
 }
 
-@media(max-width: 900px){
+@media(max-width: 1024px){
     .sectionOqueEuFaco{
         padding: 0 2rem;
     }
@@ -47,12 +47,16 @@
     }
 }
 
-@media(max-width: 600px){
+@media(max-width: 768px){
     .divConteinerComOsTexto{
         display: grid;
         grid-template-columns: repeat(1,1fr);
         gap: 4rem;
         width: 100%;
+    }
+
+    .containerTexto p{
+        width: 80%;
     }
 
     .sectionOqueEuFaco{
