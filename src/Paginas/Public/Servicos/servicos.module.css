@@ -6,6 +6,38 @@
     padding: 0 10rem;
 }
 
+.paginaServico::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 2px;
+    background: rgba(0, 255, 80, 0.1);
+    z-index: 0;
+
+    animation: scanline 6s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+.paginaServico::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 255, 80, 0.03) 1px, transparent 3px),
+        linear-gradient(90deg, rgba(0, 255, 80, 0.03) 1px, transparent 3px);
+    background-size: 60px 60px;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
 .secaoBackgroudServico{
     background: var(--cor-containerCortado);
     clip-path: polygon(0% 1%, 100% 0, 100% 100%, 0% 100%);
