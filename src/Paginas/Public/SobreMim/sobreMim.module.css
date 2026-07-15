@@ -1,6 +1,7 @@
 .divBackGroundVerdeQuemSouEu{
     background: var(--color-gradienteVerdeBottom);
     height: 400vh;
+    position: relative;
 }
 
 .secaoPaginaSobreMim::after {

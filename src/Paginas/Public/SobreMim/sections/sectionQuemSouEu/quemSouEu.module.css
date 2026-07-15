@@ -1,7 +1,7 @@
 .secaoQuemSouEu{
     display: flex;
     align-items: center;
-    padding: 3rem 12rem;
+    padding:0rem;
 }
 
 .secaoQuemSouEuWrapper {
@@ -12,22 +12,90 @@
   display: flex;
   align-items: start;
   width: max-content; /* a largura real vem da soma dos filhos */
+  height: 100vh;
   will-change: transform;
 }
 
-@media(max-width: 1250px){
-    .imagemQuemSou{
-        width: 60%;
-    }
+.divQuemSouEuTexto{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 23%;
+    gap: 2rem;
+    height: 100vh;
 }
 
-@media(max-width: 900px){
+.divQuemSouEuTexto h3{
+    line-height: .9;
+    width: 100%;
+}
+
+.divQuemSouEuTexto p{
+    width: 100%;
+}
+
+.containerContinue{
+    margin-top: 5rem;
+}
+
+.containerContinue p{
+    width: 100%;
+}
+
+.containerImagem{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    gap: 0;
+    height: 100vh;
+    width: 18%;
+    position: relative;
+    overflow: visible;
+}
+
+.containerImagem::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 70%, var(--color-gradienteVerdeBottom) 100%);
+    pointer-events: none;
+}
+
+.imagemQuemSou{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.containerSkills{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10rem;
+    height: 100vh;
+}
+
+.containerTitulosSkills{
+    display: flex;
+    flex-direction: column;
+     align-items: flex-start;
+    gap: 2rem;
+}
+
+@media(max-width: 1730px){
+    
+}
+
+@media(max-width: 1440px){
     .secaoQuemSouEu{
         padding: 3rem 3rem;
     }
 }
 
-@media(max-width: 700px){
+@media(max-width: 1024px){
     .secaoQuemSouEu{
         flex-direction: column-reverse;
         padding: 3rem 2rem;

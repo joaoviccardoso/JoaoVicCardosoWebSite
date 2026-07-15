@@ -48,10 +48,12 @@ function SecaoQueSouEu(){
         <section>
             <div ref={wrapperRef} className={CssQuemSouEu.secaoQuemSouEuWrapper}>
                 <section ref={trackRef} className={CssQuemSouEu.secaoQuemSouEu}>
-                    <img className={CssQuemSouEu.imagemQuemSou} src={imgJoaoDev} alt="Foto do desenvolvedor da pagina" />
-
+                    <div className={CssQuemSouEu.containerImagem}>
+                        <img className={CssQuemSouEu.imagemQuemSou} src={imgJoaoDev} alt="Foto do desenvolvedor da pagina" />
+                    </div>
+                    
                     <div className={CssQuemSouEu.divQuemSouEuTexto}>
-                        <h3>Desenvolvedor focado em transformar ideias em soluções digitais</h3>
+                        <h3>Construindo quem eu sou</h3>
                         <p>Sou João Victor, desenvolvedor front-end apaixonado por transformar ideias em produtos digitais bem estruturados. Trabalho com foco em performance, organização e crescimento constante.</p>
                         <div>
                             <BotaoCta
@@ -59,6 +61,47 @@ function SecaoQueSouEu(){
                                 to="/Portfolio"
                             />
                         </div>
+                        <div className={CssQuemSouEu.containerContinue}>
+                            <p>Continue rolando. Isso é só o começo.</p>
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+
+                    <div className={CssQuemSouEu.containerSkills}>
+
+                        {/* Habilidades */}
+                        <div className={CssQuemSouEu.boxSkills}>
+                            <div className={CssQuemSouEu.containerTitulosSkills}>
+                                <h5 className={CssQuemSouEu.tituloSkills}>
+                                    Habilidades
+                                </h5>
+
+                                <h5 className={CssQuemSouEu.tituloSkills}>
+                                    Técnico
+                                </h5>
+                            </div>
+                            
+
+                            <div className={CssQuemSouEu.linhaSkills}>
+                                <span>Performance</span>
+                                <span>UI Moderna</span>
+                                <span>Escalável</span>
+                            </div>
+                        </div>
+
+                        {/* Mentalidade */}
+                        <div className={CssQuemSouEu.boxSkills}>
+                            <h4 className={CssQuemSouEu.tituloSkills}>
+                                Mentalidade
+                            </h4>
+
+                            <div className={CssQuemSouEu.linhaSkills}>
+                                <span>Evolução constante</span>
+                                <span>Disciplina</span>
+                                <span>Curiosidade</span>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
             </div>
