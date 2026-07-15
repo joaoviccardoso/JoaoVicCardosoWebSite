@@ -18,52 +18,52 @@ function SecaoHabilidades(){
     const el = useRef(null);
 
     useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
-    let ctx;
+        let ctx;
 
-    const images = el.current.querySelectorAll("img");
-    let loaded = 0;
+        const images = el.current.querySelectorAll("img");
+        let loaded = 0;
 
-    images.forEach((img) => {
-        if (img.complete) {
+        images.forEach((img) => {
+            if (img.complete) {
+                loaded++;
+            } else {
+                img.onload = check;
+            }
+        });
+
+        function check() {
             loaded++;
-        } else {
-            img.onload = check;
+            if (loaded === images.length) initAnimation();
         }
-    });
 
-    function check() {
-        loaded++;
         if (loaded === images.length) initAnimation();
-    }
 
-    if (loaded === images.length) initAnimation();
+        function initAnimation() {
+            ctx = gsap.context(() => {
 
-    function initAnimation() {
-        ctx = gsap.context(() => {
-
-            gsap.to(el.current, {
-                x: () => -(el.current.scrollWidth - window.innerWidth),
-                y: () => -(el.current.scrollWidth * 0.5), 
-                ease: "none",
-                scrollTrigger: {
-                    trigger: containerPai.current,
-                    pin: true,
-                    start: "top top",
-                    end: () => `+=${el.current.scrollWidth}`, 
-                    scrub: 1,
-                    invalidateOnRefresh: true
-                }
+                gsap.to(el.current, {
+                    x: () => -(el.current.scrollWidth - window.innerWidth),
+                    y: () => -(el.current.scrollWidth * 0.5), 
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: containerPai.current,
+                        pin: true,
+                        start: "top top",
+                        end: () => `+=${el.current.scrollWidth}`, 
+                        scrub: 1,
+                        invalidateOnRefresh: true
+                    }
             });
         });
 
         ScrollTrigger.refresh();
-    }
+        }
 
-    return () => {
-        if (ctx) ctx.revert();
-    };
+        return () => {
+            if (ctx) ctx.revert();
+        };
 
     }, []);
         

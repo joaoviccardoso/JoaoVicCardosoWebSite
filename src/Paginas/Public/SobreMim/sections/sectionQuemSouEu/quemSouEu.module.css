@@ -4,12 +4,16 @@
     padding: 3rem 12rem;
 }
 
-.divQuemSouEuTexto{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.secaoQuemSouEuWrapper {
+  overflow: hidden; /* impede que o track "vaze" pros lados antes do pin */
 }
 
+.secaoQuemSouEu {
+  display: flex;
+  align-items: start;
+  width: max-content; /* a largura real vem da soma dos filhos */
+  will-change: transform;
+}
 
 @media(max-width: 1250px){
     .imagemQuemSou{
