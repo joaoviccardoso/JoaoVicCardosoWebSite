@@ -42,7 +42,7 @@ function SecaoQueSouEu(){
     }, wrapperRef)
 
     return () => ctx.revert()
-}, [])
+    }, [])
 
     return(
         <section>
@@ -72,33 +72,38 @@ function SecaoQueSouEu(){
                         {/* Habilidades */}
                         <div className={CssQuemSouEu.boxSkills}>
                             <div className={CssQuemSouEu.containerTitulosSkills}>
-                                <h5 className={CssQuemSouEu.tituloSkills}>
+                                <h5 className={CssQuemSouEu.tituloSkills1}>
                                     Habilidades
                                 </h5>
 
-                                <h5 className={CssQuemSouEu.tituloSkills}>
+                                <h5 className={CssQuemSouEu.tituloSkills2}>
                                     Técnico
                                 </h5>
                             </div>
                             
-
                             <div className={CssQuemSouEu.linhaSkills}>
-                                <span>Performance</span>
-                                <span>UI Moderna</span>
-                                <span>Escalável</span>
+                                <h3>Performance</h3>
+                                <h3>UI Moderna</h3>
+                                <h3>Escalável</h3>
                             </div>
                         </div>
 
                         {/* Mentalidade */}
                         <div className={CssQuemSouEu.boxSkills}>
-                            <h4 className={CssQuemSouEu.tituloSkills}>
-                                Mentalidade
-                            </h4>
+                            <div className={CssQuemSouEu.containerTitulosMentalidade}>
+                                <h5 className={CssQuemSouEu.tituloMentalidade1}>
+                                    Minha
+                                </h5>
+
+                                <h5 className={CssQuemSouEu.tituloMentalidade2}>
+                                    Mentalidade
+                                </h5>
+                            </div>
 
                             <div className={CssQuemSouEu.linhaSkills}>
-                                <span>Evolução constante</span>
-                                <span>Disciplina</span>
-                                <span>Curiosidade</span>
+                                <h3>Evolução constante</h3>
+                                <h3>Disciplina</h3>
+                                <h3>Curiosidade</h3>
                             </div>
                         </div>
 

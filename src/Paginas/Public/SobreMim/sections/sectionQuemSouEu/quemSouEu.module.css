@@ -21,7 +21,7 @@
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    width: 23%;
+    width: 12%;
     gap: 2rem;
     height: 100vh;
 }
@@ -49,7 +49,7 @@
     align-items: flex-start;
     gap: 0;
     height: 100vh;
-    width: 18%;
+    width: 10%;
     position: relative;
     overflow: visible;
 }
@@ -63,17 +63,22 @@
 }
 
 .imagemQuemSou{
-    max-width: 90%;
+    max-width: 100%;
     height: 100vh;
     object-fit: cover;
     object-position: center top;
     display: block;
 }
 
+.boxSkills{
+    display: flex;
+}
+
 .containerSkills{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8rem;
     margin-left: 10rem;
     height: 100vh;
 }
@@ -81,13 +86,54 @@
 .containerTitulosSkills{
     display: flex;
     flex-direction: column;
-     align-items: flex-start;
+    align-items: flex-start;
     gap: 2rem;
+}
+
+.tituloSkills1{
+    position: relative;
+}
+
+.tituloSkills2{
+    position: absolute;
+    top: 30%;
+    left: 28%;
+    z-index: 10;
+}
+
+.containerTitulosMentalidade{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.tituloMentalidade1{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: 10;
+}
+
+.tituloMentalidade2{
+    position: relative;
+}
+
+.linhaSkills{
+    display: flex;
+    gap: 4rem;
+    margin: 0 18rem;
 }
 
 
 @media(max-width: 1730px){
-    
+    .imagemQuemSou{
+        max-width: 90%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+    }
 }
 
 @media(max-width: 1440px){
