@@ -12,37 +12,39 @@ function SecaoQueSouEu(){
     const trackRef = useRef(null)
 
     useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-        ScrollTrigger.matchMedia({
-            "(min-width: 701px)": function() {
-                const track = trackRef.current
+        const ctx = gsap.context(() => {
+            ScrollTrigger.matchMedia({
+                "(min-width: 701px)": function() {
+                    const track = trackRef.current
 
-                const getScrollAmount = () => {
-                    return track.scrollWidth - wrapperRef.current.offsetWidth
-                }
-
-                const tween = gsap.to(track, {
-                    x: () => -getScrollAmount(),
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: wrapperRef.current,
-                        start: "top top",
-                        end: () => `+=${getScrollAmount()}`,
-                        scrub: 1,
-                        pin: true,
-                        invalidateOnRefresh: true,
+                    const getScrollAmount = () => {
+                        return track.scrollWidth - wrapperRef.current.offsetWidth
                     }
-                })
 
-                return () => tween.scrollTrigger?.kill()
-            }
-        })
+                    const tween = gsap.to(track, {
+                        x: () => -getScrollAmount(),
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: wrapperRef.current,
+                            start: "top top",
+                            end: () => `+=${getScrollAmount()}`,
+                            scrub: 1,
+                            pin: true,
+                            invalidateOnRefresh: true,
+                        }
+                    })
 
-        requestAnimationFrame(() => ScrollTrigger.refresh())
-    }, wrapperRef)
+                    return () => tween.scrollTrigger?.kill()
+                }
+            })
 
-    return () => ctx.revert()
+            requestAnimationFrame(() => ScrollTrigger.refresh())
+        }, wrapperRef)
+
+        return () => ctx.revert()
     }, [])
+
+    
 
     return(
         <section>
