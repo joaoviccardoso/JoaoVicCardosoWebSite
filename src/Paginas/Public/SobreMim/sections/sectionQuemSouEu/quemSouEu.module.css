@@ -134,7 +134,17 @@
 }
 
 @media(max-width: 1440px){
+    .tituloSkills2{
+        top: 32%;
+        left: 26%;
+        font-size: var(--font-size-3x2);
+    }
 
+    .tituloMentalidade1{
+        top: 32%;
+        left: 51%;
+        font-size: var(--font-size-3x2);
+    }
 }
 
 @media(max-width: 1024px){
