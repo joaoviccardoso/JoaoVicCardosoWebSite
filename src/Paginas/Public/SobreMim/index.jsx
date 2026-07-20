@@ -9,11 +9,10 @@ function SobreMim(){
             <SecaoHeroSobreMim/>
             <div className={CssSobreMim.divBackGroundVerdeQuemSouEu}>
                 <SecaoQueSouEu/>
-
-                <div className={CssSobreMim.secaoTituloHabilidades}>   
+            </div>
+            <div className={CssSobreMim.secaoTituloHabilidades}>   
                     <h3>Habilidades Técnicas</h3>
                     <p>Aqui estão as tecnologias que uso para transformar ideias em projetos reais.</p>
-                </div>
             </div>
             <SecaoHabilidades/>
         </section>

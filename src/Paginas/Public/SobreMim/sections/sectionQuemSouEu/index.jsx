@@ -80,18 +80,18 @@ function SecaoQueSouEu(){
                         <div className={CssQuemSouEu.boxSkills} ref={contHabili}>
                             <div className={CssQuemSouEu.containerTitulosSkills}>
                                 <h5 className={CssQuemSouEu.tituloSkills1} ref={item1}>
-                                    Habilidades
+                                    Princípios
                                 </h5>
 
                                 <h5 className={CssQuemSouEu.tituloSkills2} ref={item2}>
-                                    Técnico
+                                    Técnicos
                                 </h5>
                             </div>
                             
                             <div className={CssQuemSouEu.linhaSkills} ref={item3}>
-                                <h3>Performance</h3>
-                                <h3>UI Moderna</h3>
-                                <h3>Escalável</h3>
+                                <h3>Performance sólida</h3>
+                                <h3>Código limpo</h3>
+                                <h3>Arquitetura escalável</h3>
                             </div>
                         </div>
 
@@ -113,7 +113,6 @@ function SecaoQueSouEu(){
                                 <h3>Curiosidade</h3>
                             </div>
                         </div>
-
                     </div>
                 </section>
             </div>
