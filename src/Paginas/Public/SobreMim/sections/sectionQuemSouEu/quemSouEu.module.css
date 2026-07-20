@@ -93,8 +93,8 @@
 
 .tituloSkills2{
     position: absolute;
-    top: 27%;
-    left: 22%;
+    top: 31%;
+    left: 24%;
     font-size: var(--font-size-3x2);
 }
 
@@ -107,8 +107,8 @@
 
 .tituloMentalidade1{
     position: absolute;
-    top: 27%;
-    left: 54.5%;
+    top: 31%;
+    left: 55%;
     font-size: var(--font-size-3x2);
     z-index: 10;
 }

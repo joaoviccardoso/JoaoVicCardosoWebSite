@@ -4,17 +4,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import CssQuemSouEu from "./quemSouEu.module.css"
 import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import imgJoaoDev from "../../../../../assets/fotoDoJoaoDesenvolvedorDaPagina.png"
-//import { useFadeInScroll } from "../../../../../hooks/useScrollAnimationFadeIn"
+import { useScrollAnimationTitulosSkills } from "../../../../../hooks/useScrollAnimationTituloSkills"
+import { useScrollAnimationTitulosMentalidade } from "../../../../../hooks/useScrollAnimationTitulosMentalidade"
+
 gsap.registerPlugin(ScrollTrigger)
 
 function SecaoQueSouEu(){
     const wrapperRef = useRef(null)
     const trackRef = useRef(null)
-    const contHabili = useRef(null)
+    const contTituloSkills = useRef(null)
     const contMenta = useRef(null)
     const item1 = useRef(null)
     const item2 = useRef(null)
     const item3 = useRef(null)
+    const item4 = useRef(null)
     
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -49,7 +52,8 @@ function SecaoQueSouEu(){
         return () => ctx.revert()
     }, [])
 
-    //useFadeInScroll(contHabili)
+    useScrollAnimationTitulosSkills(contTituloSkills, [item2, item1])
+    useScrollAnimationTitulosMentalidade(contMenta, [item3, item4])
 
     return(
         <section>
@@ -77,8 +81,8 @@ function SecaoQueSouEu(){
                     <div className={CssQuemSouEu.containerSkills}>
 
                         {/* Habilidades */}
-                        <div className={CssQuemSouEu.boxSkills} ref={contHabili}>
-                            <div className={CssQuemSouEu.containerTitulosSkills}>
+                        <div className={CssQuemSouEu.boxSkills} ref={contTituloSkills}>
+                            <div className={CssQuemSouEu.containerTitulosSkills} >
                                 <h5 className={CssQuemSouEu.tituloSkills1} ref={item1}>
                                     Princípios
                                 </h5>
@@ -88,7 +92,7 @@ function SecaoQueSouEu(){
                                 </h5>
                             </div>
                             
-                            <div className={CssQuemSouEu.linhaSkills} ref={item3}>
+                            <div className={CssQuemSouEu.linhaSkills} >
                                 <h3>Performance sólida</h3>
                                 <h3>Código limpo</h3>
                                 <h3>Arquitetura escalável</h3>
@@ -98,11 +102,11 @@ function SecaoQueSouEu(){
                         {/* Mentalidade */}
                         <div className={CssQuemSouEu.boxSkills} ref={contMenta}>
                             <div className={CssQuemSouEu.containerTitulosMentalidade}>
-                                <h5 className={CssQuemSouEu.tituloMentalidade1}>
+                                <h5 className={CssQuemSouEu.tituloMentalidade1} ref={item3}>
                                     Minha
                                 </h5>
 
-                                <h5 className={CssQuemSouEu.tituloMentalidade2}>
+                                <h5 className={CssQuemSouEu.tituloMentalidade2} ref={item4}>
                                     Mentalidade
                                 </h5>
                             </div>

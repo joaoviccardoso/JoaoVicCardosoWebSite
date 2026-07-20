@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 import CssAlemDeCodigo from './alemDeCodigo.module.css'
 import CardVertical from '../../../../../Componentes/ComponetesCards/CardVertical';
-import { useScrollAnimationUp2 } from '../../../../../hooks/useScrollAnimationUp2';
 import { useScrollAnimationUpAlemDeCodigo } from '../../../../../hooks/useScrollAnimationPaginaAlemDeCodigo';
 
 function AlemDeCodigo(){

@@ -1,6 +1,6 @@
 .divBackGroundVerdeQuemSouEu{
     background: var(--color-gradienteVerdeBottom);
-    height: 1200vh;
+    height: 990vh;
     position: relative;
 }
 
@@ -50,10 +50,9 @@
 
 @media(max-width: 1440px){
     .divBackGroundVerdeQuemSouEu{
-        background: var(--color-gradienteVerdeBottom);
-        height: 930vh;
-        position: relative;
+        height: 1010vh;
     }
+
 }
 
 @media(max-width: 1024px){
