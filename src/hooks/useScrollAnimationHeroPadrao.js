@@ -27,11 +27,6 @@ export default function useLayoutEffectHeroPadrao(el,titleRef,textRef,imgHero,di
                     ease: "power2.out",
                     delay: 0.5
                 })
-                .from(imgHero.current, {
-                    x: 50,
-                    opacity: 0,
-                    rotateY: -90
-                }, "-=0.8")
                 .from(textRef.current, {
                     opacity: 0,
                     y: 20,
@@ -39,6 +34,11 @@ export default function useLayoutEffectHeroPadrao(el,titleRef,textRef,imgHero,di
                 .from(divBotao.current, {
                     opacity: 0,
                     scale: 0.9,
+                }, "-=0.8")
+                .from(imgHero.current, {
+                    x: 50,
+                    opacity: 0,
+                    rotateY: -90
                 }, "-=0.3");
 
             // ✅ SCROLL TRIGGER (AGORA CORRETO)
@@ -63,5 +63,5 @@ export default function useLayoutEffectHeroPadrao(el,titleRef,textRef,imgHero,di
     }, el);
 
     return () => ctx.revert();
-}, []);
+}, [el]);
 }

@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import CssSobreMim from "./heroSobreMim.module.css"
 import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
-//import useLayoutEffectHeroPadrao from "../../../../../hooks/useScrollAnimationHeroPadrao"
+import useScrollAnimationHeroSobreMim from "../../../../../hooks/useScrollAnimationHeroSobreMim"
 
 function SecaoHeroSobreMim(){
     const el = useRef(null)
@@ -10,7 +10,7 @@ function SecaoHeroSobreMim(){
     const divHero = useRef(null)
     const divBotao = useRef(null)
 
-    //useLayoutEffectHeroPadrao(el,titleRef,textRef,divHero,divBotao)
+    useScrollAnimationHeroSobreMim(el,titleRef,textRef,divBotao,divHero)
     
     return(
         <section className={CssSobreMim.secaoHeroSobreMim} ref={el}>

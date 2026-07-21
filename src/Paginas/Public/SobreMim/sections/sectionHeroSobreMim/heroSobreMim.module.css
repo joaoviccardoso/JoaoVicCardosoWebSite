@@ -29,6 +29,10 @@
     width: 55%;
 }
 
+.containerTextoSobreMimHero h1{
+    font-size: var(--font-size-5xl);
+}
+
 @media(max-width: 1440px){
     .imgSobreMim{
         width: 45%;
