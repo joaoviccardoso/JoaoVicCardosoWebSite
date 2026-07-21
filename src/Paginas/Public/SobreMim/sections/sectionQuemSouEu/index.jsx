@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import CssQuemSouEu from "./quemSouEu.module.css"
 import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import imgJoaoDev from "../../../../../assets/fotoDoJoaoDesenvolvedorDaPagina.png"
+import imgSetaDireta from "../../../../../assets/setaParaDireita.png"
 import { useScrollAnimationTitulosSkills } from "../../../../../hooks/useScrollAnimationTituloSkills"
 import { useScrollAnimationTitulosMentalidade } from "../../../../../hooks/useScrollAnimationTitulosMentalidade"
 import { useScrollAnimationLetrasSkills } from "../../../../../hooks/useScrollAnimationLetrasSkills"
@@ -84,7 +85,7 @@ function SecaoQueSouEu(){
                         </div>
                         <div className={CssQuemSouEu.containerContinue}>
                             <p>Continue rolando. Isso é só o começo.</p>
-                            <img src="" alt="" />
+                            <img className={CssQuemSouEu.imagemSetaDireta} src={imgSetaDireta} alt="Seta indicativa de direção" />
                         </div>
                     </div>
 

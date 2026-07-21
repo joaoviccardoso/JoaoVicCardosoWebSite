@@ -33,7 +33,7 @@
 }
 
 .containerContinue{
-    margin-top: 5rem;
+    margin-top: 3.5rem;
 }
 
 .containerContinue p{
@@ -86,6 +86,10 @@
     align-items: start;
 }
 
+.imagemSetaDireta{
+    width: 150px;
+}
+
 /* sobreposição */
 .tituloSkills1,
 .tituloSkills2 {
@@ -105,7 +109,7 @@
     font-size: var(--font-size-3x2);
     /*  ajuste fino SEM quebrar layout */
     margin-left: 5.8em;
-    transform: translateY(-1.5em);
+    transform: translateY(2.2em);
 }
 
 .containerTitulosMentalidade {

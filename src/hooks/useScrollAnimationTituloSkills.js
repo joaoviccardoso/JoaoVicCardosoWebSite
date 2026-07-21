@@ -24,7 +24,7 @@ export function useScrollAnimationTitulosSkills(el, ids) {
                 elements[0],
                 { 
                     opacity: 0,
-                    x: isMobile ? 60 : 190,
+                    x: isMobile ? 60 : -190,
                     scale: 0.85,
                     rotate: -3,
                 },
