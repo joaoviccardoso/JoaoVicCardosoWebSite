@@ -9,6 +9,7 @@ import { useScrollAnimationTitulosSkills } from "../../../../../hooks/useScrollA
 import { useScrollAnimationTitulosMentalidade } from "../../../../../hooks/useScrollAnimationTitulosMentalidade"
 import { useScrollAnimationLetrasSkills } from "../../../../../hooks/useScrollAnimationLetrasSkills"
 import { useScrollAnimationLetrasMentalidade } from "../../../../../hooks/useScrollAnimationLetrasMentalidade"
+import useLayoutEffectSobreMimTextos from "../../../../../hooks/useScrollAnimationSobreMimTextoPrincipal"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -27,6 +28,13 @@ function SecaoQueSouEu(){
     const h3Mental1 = useRef(null)
     const h3Mental2 = useRef(null)
     const h3Mental3 = useRef(null)
+
+    //ref titulo e imagem principal
+    const contTituloSobreMim = useRef(null)
+    const h3TituloSobreMim = useRef(null)
+    const pTextoSobreMim = useRef(null)
+    const divBotao = useRef(null)
+    const contSeta = useRef(null)
     
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -65,6 +73,7 @@ function SecaoQueSouEu(){
     useScrollAnimationTitulosMentalidade(contMenta, [item3, item4])
     useScrollAnimationLetrasSkills(contTituloSkills, [h3Skill1, h3Skill2, h3Skill3])
     useScrollAnimationLetrasMentalidade(contMenta, [h3Mental1, h3Mental2, h3Mental3])
+    useLayoutEffectSobreMimTextos(contTituloSobreMim, h3TituloSobreMim, pTextoSobreMim, divBotao, contSeta)
 
     return(
         <section>
@@ -74,16 +83,16 @@ function SecaoQueSouEu(){
                         <img className={CssQuemSouEu.imagemQuemSou} src={imgJoaoDev} alt="Foto do desenvolvedor da pagina" />
                     </div>
                     
-                    <div className={CssQuemSouEu.divQuemSouEuTexto}>
-                        <h3>Construindo quem eu sou</h3>
-                        <p>Sou João Victor, desenvolvedor front-end apaixonado por transformar ideias em produtos digitais bem estruturados. Trabalho com foco em performance, organização e crescimento constante.</p>
-                        <div>
+                    <div className={CssQuemSouEu.divQuemSouEuTexto} ref={contTituloSobreMim}>
+                        <h3 ref={h3TituloSobreMim}>Construindo quem eu sou</h3>
+                        <p ref={pTextoSobreMim}>Sou João Victor, desenvolvedor front-end apaixonado por transformar ideias em produtos digitais bem estruturados. Trabalho com foco em performance, organização e crescimento constante.</p>
+                        <div ref={divBotao}>
                             <BotaoCta
                                 child="Conheça meus Projetos"
                                 to="/Portfolio"
                             />
                         </div>
-                        <div className={CssQuemSouEu.containerContinue}>
+                        <div className={CssQuemSouEu.containerContinue} ref={contSeta}>
                             <p>Continue rolando. Isso é só o começo.</p>
                             <img className={CssQuemSouEu.imagemSetaDireta} src={imgSetaDireta} alt="Seta indicativa de direção" />
                         </div>

@@ -22,7 +22,7 @@ export default function useScrollAnimationHeroSobreMim(el,titleRef,textRef,divBo
                         scrollTrigger: {
                             trigger: el.current,
                             scrub: 1,
-                            markers: true,
+                            //markers: true,
                             start: "top 70%",
                             end: "bottom 50%",
                         }
