@@ -13,7 +13,7 @@ export function useScrollAnimationTitulosMentalidade(el, ids) {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: elements[0] ?? el.current,
-                    markers: true,
+                    //markers: true,
                     scrub: 1,
                     start: isMobile ? "-350% 50%" : "3500% 10%",
                     end: isMobile ? "-220% 50%" : "4000% 10%",

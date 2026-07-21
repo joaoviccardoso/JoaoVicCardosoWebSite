@@ -6,6 +6,8 @@ import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import imgJoaoDev from "../../../../../assets/fotoDoJoaoDesenvolvedorDaPagina.png"
 import { useScrollAnimationTitulosSkills } from "../../../../../hooks/useScrollAnimationTituloSkills"
 import { useScrollAnimationTitulosMentalidade } from "../../../../../hooks/useScrollAnimationTitulosMentalidade"
+import { useScrollAnimationLetrasSkills } from "../../../../../hooks/useScrollAnimationLetrasSkills"
+import { useScrollAnimationLetrasMentalidade } from "../../../../../hooks/useScrollAnimationLetrasMentalidade"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,6 +20,12 @@ function SecaoQueSouEu(){
     const item2 = useRef(null)
     const item3 = useRef(null)
     const item4 = useRef(null)
+    const h3Skill1 = useRef(null)
+    const h3Skill2 = useRef(null)
+    const h3Skill3 = useRef(null)
+    const h3Mental1 = useRef(null)
+    const h3Mental2 = useRef(null)
+    const h3Mental3 = useRef(null)
     
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -54,6 +62,8 @@ function SecaoQueSouEu(){
 
     useScrollAnimationTitulosSkills(contTituloSkills, [item2, item1])
     useScrollAnimationTitulosMentalidade(contMenta, [item3, item4])
+    useScrollAnimationLetrasSkills(contTituloSkills, [h3Skill1, h3Skill2, h3Skill3])
+    useScrollAnimationLetrasMentalidade(contMenta, [h3Mental1, h3Mental2, h3Mental3])
 
     return(
         <section>
@@ -93,9 +103,9 @@ function SecaoQueSouEu(){
                             </div>
                             
                             <div className={CssQuemSouEu.linhaSkills} >
-                                <h3>Performance sólida</h3>
-                                <h3>Código limpo</h3>
-                                <h3>Arquitetura escalável</h3>
+                                <h3 ref={h3Skill1}>Performance sólida</h3>
+                                <h3 ref={h3Skill2}>Código limpo</h3>
+                                <h3 ref={h3Skill3}>Arquitetura escalável</h3>
                             </div>
                         </div>
 
@@ -112,9 +122,9 @@ function SecaoQueSouEu(){
                             </div>
 
                             <div className={CssQuemSouEu.linhaSkills}>
-                                <h3>Evolução constante</h3>
-                                <h3>Disciplina</h3>
-                                <h3>Curiosidade</h3>
+                                <h3 ref={h3Mental1}>Evolução constante</h3>
+                                <h3 ref={h3Mental2}>Disciplina</h3>
+                                <h3 ref={h3Mental3}>Curiosidade</h3>
                             </div>
                         </div>
                     </div>
