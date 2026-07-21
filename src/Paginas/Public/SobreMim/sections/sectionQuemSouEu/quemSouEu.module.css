@@ -74,48 +74,66 @@
 .containerSkills{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8rem;
     margin-left: 10rem;
     height: 100vh;
 }
 
-.containerTitulosSkills{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
+.containerTitulosSkills {
+    display: grid;
+    justify-content: start;
+    align-items: start;
 }
 
-.tituloSkills1{
-    position: relative;
+/* sobreposição */
+.tituloSkills1,
+.tituloSkills2 {
+    grid-area: 1 / 1;
+    width: max-content;
+    display: inline-block;
 }
 
-.tituloSkills2{
-    position: absolute;
-    top: 31%;
-    left: 24%;
-    font-size: var(--font-size-3x2);
-}
-
-.containerTitulosMentalidade{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-}
-
-.tituloMentalidade1{
-    position: absolute;
-    top: 31%;
-    left: 55%;
-    font-size: var(--font-size-3x2);
+/* TEXTO GRANDE (base) */
+.tituloSkills1 {
     z-index: 10;
 }
 
+/* TEXTO MENOR (por cima) */
+.tituloSkills2 {
+    z-index: 10;
+    font-size: var(--font-size-3x2);
+    /*  ajuste fino SEM quebrar layout */
+    margin-left: 5.8em;
+    transform: translateY(-1.5em);
+}
 
-.tituloMentalidade2{
-    position: relative;
+.containerTitulosMentalidade {
+    display: grid;
+    justify-content: start;
+    align-items: start;
+}
+
+/* sobreposição */
+.tituloMentalidade1,
+.tituloMentalidade2 {
+    grid-area: 1 / 1;
+    width: max-content;
+    display: inline-block;
+}
+
+/* TEXTO  (base) */
+.tituloMentalidade1 {
+    z-index: 10;
+    font-size: var(--font-size-3x2);
+    /*  ajuste fino SEM quebrar layout */
+    margin-left: -1.2em;
+    transform: translateY(-1.6em);
+}
+
+/* TEXTO  (por cima) */
+.tituloMentalidade2 {
+    z-index: 5;
 }
 
 .linhaSkills{

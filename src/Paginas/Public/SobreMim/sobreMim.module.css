@@ -1,6 +1,7 @@
 .divBackGroundVerdeQuemSouEu{
     background: var(--color-gradienteVerdeBottom);
-    height: 990vh;
+    height: auto;
+    min-height: 100vh;
     position: relative;
 }
 
