@@ -180,6 +180,11 @@ p{
       width: 100%;
     }
 
+    h5{
+        -webkit-box-shadow: 9px 9px 1px 0px #F2F2F2; 
+        box-shadow: 9px 9px 1px 0px #F2F2F2;
+    }
+
     /*h1{
       font-size: var(--font-size-3xl);
     }*/

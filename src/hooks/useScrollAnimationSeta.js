@@ -12,7 +12,7 @@ export function useScrollAnimationSeta(el, seta) {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: el.current,
-                    markers: true,
+                    //markers: true,
                     scrub: 3,
                     start: isMobile ? "-350% 50%" : "-50% 10%",
                     end: isMobile ? "-220% 50%" : "200% 10%",

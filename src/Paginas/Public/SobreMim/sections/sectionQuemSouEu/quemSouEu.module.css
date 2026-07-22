@@ -158,6 +158,7 @@
     margin: 0 13rem;
 }
 
+
 @media(max-width: 1440px){
     .tituloSkills2{
         top: 28%;
@@ -181,12 +182,118 @@
 @media(max-width: 1024px){
     .divQuemSouEuTexto div{
         text-align: center;
-        margin-bottom:1rem; 
     };
 }
 
+@media(max-width: 780px){
+    
+}
+
 @media(max-width: 480px){
+    .secaoQuemSouEuWrapper{
+        height: auto;
+    }
+
+    .secaoQuemSouEu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        will-change: auto;
+    }
+
+    /* texto vem primeiro visualmente */
+    .divQuemSouEuTexto{
+        order: 1;
+        position: static;
+        width: 90%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+        padding-top:3rem;
+    }
+
+    /* imagem vem depois */
+    .containerImagem{
+        order: 2;
+        width: 100%;
+        height: auto;
+    }
+
     .imagemQuemSou{
         width: 100%;
+        height: 500px;
+    }
+
+    .containerSkills{
+        order: 3;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        gap: 3rem;
+        padding: 2rem 0;
+    }
+
+    .divQuemSouEuTexto h3,
+    .divQuemSouEuTexto p{
+        width: 100%;
+    }
+
+    .divQuemSouEuTexto div{
+        position: relative;
+        top: 260px;
+        width: 100%;
+    }
+
+    .boxSkills{
+        margin-top: 3rem;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .containerTitulosSkills,
+    .containerTitulosMentalidade{
+        justify-items: center;
+        text-align: center;
+    }
+
+    .tituloSkills1{
+        font-size: var(--font-size-2x2);
+        margin-left: 0;
+        transform: none;
+    }
+
+    .tituloSkills2{
+        font-size: var(--font-size-2xl);
+        margin-left:8rem;
+        transform: translateY(2.2em);
+    }
+
+    .tituloMentalidade1{
+        font-size: var(--font-size-2xl);
+        margin-left: 0;
+        margin-left: -5.2em;
+        transform: translateY(-1.8em);
+    }
+
+    .tituloMentalidade2{
+        font-size: var(--font-size-2x2);
+        margin-left: 5px;
+        transform: none;
+    }
+
+    .linhaSkills{
+        flex-direction: column;
+        margin: 5rem 0;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .containerContinue{
+        display: none;
     }
 }
