@@ -30,7 +30,7 @@ function SobreMim(){
             gsap.timeline({
                 scrollTrigger: {
                     trigger: el.current,
-                    markers: true,
+                    //markers: true,
                     scrub: 1,
                     start: "-20% 20%",
                     end: "15% 20%",
@@ -67,8 +67,8 @@ function SobreMim(){
                 <SecaoQueSouEu/>
             </div>
             <div className={CssSobreMim.secaoTituloHabilidades} ref={el}>   
-                    <h3 ref={titleRef}>Habilidades Técnicas</h3>
-                    <p ref={textRef}>Aqui estão as tecnologias que uso para transformar ideias em projetos reais.</p>
+                <h3 ref={titleRef}>Habilidades Técnicas</h3>
+                <p ref={textRef}>Aqui estão as tecnologias que uso para transformar ideias em projetos reais.</p>
             </div>
             <SecaoHabilidades/>
         </section>

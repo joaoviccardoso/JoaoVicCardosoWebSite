@@ -10,6 +10,7 @@ import { useScrollAnimationTitulosMentalidade } from "../../../../../hooks/useSc
 import { useScrollAnimationLetrasSkills } from "../../../../../hooks/useScrollAnimationLetrasSkills"
 import { useScrollAnimationLetrasMentalidade } from "../../../../../hooks/useScrollAnimationLetrasMentalidade"
 import useLayoutEffectSobreMimTextos from "../../../../../hooks/useScrollAnimationSobreMimTextoPrincipal"
+import { useScrollAnimationSeta } from "../../../../../hooks/useScrollAnimationSeta"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -35,6 +36,7 @@ function SecaoQueSouEu(){
     const pTextoSobreMim = useRef(null)
     const divBotao = useRef(null)
     const contSeta = useRef(null)
+    const seta = useRef(null)
     
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -74,6 +76,7 @@ function SecaoQueSouEu(){
     useScrollAnimationLetrasSkills(contTituloSkills, [h3Skill1, h3Skill2, h3Skill3])
     useScrollAnimationLetrasMentalidade(contMenta, [h3Mental1, h3Mental2, h3Mental3])
     useLayoutEffectSobreMimTextos(contTituloSobreMim, h3TituloSobreMim, pTextoSobreMim, divBotao, contSeta)
+    useScrollAnimationSeta(contSeta, seta)
 
     return(
         <section>
@@ -94,7 +97,7 @@ function SecaoQueSouEu(){
                         </div>
                         <div className={CssQuemSouEu.containerContinue} ref={contSeta}>
                             <p>Continue rolando. Isso é só o começo.</p>
-                            <img className={CssQuemSouEu.imagemSetaDireta} src={imgSetaDireta} alt="Seta indicativa de direção" />
+                            <img className={CssQuemSouEu.imagemSetaDireta} src={imgSetaDireta} ref={seta} alt="Seta indicativa de direção" />
                         </div>
                     </div>
 
