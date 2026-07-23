@@ -207,8 +207,10 @@
     /* texto vem primeiro visualmente */
     .divQuemSouEuTexto{
         order: 1;
-        position: static;
-        width: 90%;
+        position: relative;
+        top: 80px;
+        right: auto;
+        width: 100%;
         height: auto;
         align-items: center;
         text-align: center;
@@ -238,19 +240,25 @@
         padding: 2rem 0;
     }
 
-    .divQuemSouEuTexto h3,
     .divQuemSouEuTexto p{
-        width: 100%;
+        width: 95%;
+    }
+
+    
+    .divQuemSouEuTexto h3{
+        line-height: .9;
+        width: 95%;
+        font-size: var(--font-size-3x2);
     }
 
     .divQuemSouEuTexto div{
         position: relative;
-        top: 260px;
-        width: 100%;
+        top: 230px;
+        width: 97%;
     }
 
     .boxSkills{
-        margin-top: 3rem;
+        
         flex-direction: column;
         width: 100%;
     }
@@ -261,28 +269,32 @@
         text-align: center;
     }
 
+    .containerTitulosSkills{
+        margin-top: 6rem;
+    }
+
     .tituloSkills1{
-        font-size: var(--font-size-2x2);
+        font-size: var(--font-size-2xl);
         margin-left: 0;
         transform: none;
     }
 
     .tituloSkills2{
-        font-size: var(--font-size-2xl);
-        margin-left:8rem;
+        font-size: var(--font-size-xl);
+        margin-left:10rem;
         transform: translateY(2.2em);
     }
 
     .tituloMentalidade1{
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-xl);
         margin-left: 0;
-        margin-left: -5.2em;
+        margin-left: -5.8em;
         transform: translateY(-1.8em);
     }
 
     .tituloMentalidade2{
-        font-size: var(--font-size-2x2);
-        margin-left: 5px;
+        font-size: var(--font-size-2xl);
+        margin-left: 3.8rem;
         transform: none;
     }
 
