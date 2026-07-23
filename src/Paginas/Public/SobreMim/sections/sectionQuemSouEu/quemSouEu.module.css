@@ -216,18 +216,43 @@
         text-align: center;
         gap: 1.5rem;
         padding-top:3rem;
+        z-index: 2;
     }
 
     /* imagem vem depois */
     .containerImagem{
+        display: flex;
+        align-items: center;
+        justify-content:center ;
         order: 2;
-        width: 100%;
+        width: 93%;
         height: auto;
     }
 
-    .imagemQuemSou{
+    .containerImagem::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: 500px;
+        height: 100%;
+        transform: translate(-0%, -0%);
+        border: solid var(--verde) 4px;
+        border-radius: 3%;
+        background: radial-gradient(
+            circle,
+            var(--color-verdeImagemSobreMimClaro) 0%,
+            var(--color-verdeImagemSobreMimEscuro) 100%
+        );
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .imagemQuemSou{
+        width: 98%;
+        height: 400px;
+        position: relative;
+        z-index: 1;
     }
 
     .containerSkills{
@@ -253,7 +278,7 @@
 
     .divQuemSouEuTexto div{
         position: relative;
-        top: 230px;
+        top: 170px;
         width: 97%;
     }
 
