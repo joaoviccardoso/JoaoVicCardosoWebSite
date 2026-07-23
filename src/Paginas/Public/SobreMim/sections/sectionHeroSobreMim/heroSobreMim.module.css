@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    gap: 1rem;
+    gap: 2rem;
     
     color: #fff;
 }
@@ -62,14 +62,14 @@
     
 }
 
-@media(max-width: 570px){
+@media(max-width: 480px){
     .secaoHeroSobreMim{
-        padding: 2rem 2rem;
+        padding: 2rem 1rem;
         flex-direction: column;
     }
 
     .containerTextoSobreMimHero{
-        gap: 0.3rem;
+        gap: 1.3rem;
         padding:0;
     }
 
@@ -79,5 +79,15 @@
 
     .imgSobreMim{
         width: auto;
+    }
+
+    .containerTextoSobreMimHero h1{
+        font-size: var(--font-size-3x2);
+    }
+
+    .containerTextoSobreMimHero h1 span{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
     }
 }
