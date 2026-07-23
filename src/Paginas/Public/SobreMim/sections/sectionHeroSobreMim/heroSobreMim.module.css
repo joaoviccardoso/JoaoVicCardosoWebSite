@@ -59,7 +59,11 @@
 }
 
 @media(max-width: 768px){
-    
+    .containerTextoSobreMimHero h1 span{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
 }
 
 @media(max-width: 480px){
@@ -83,11 +87,5 @@
 
     .containerTextoSobreMimHero h1{
         font-size: var(--font-size-3x2);
-    }
-
-    .containerTextoSobreMimHero h1 span{
-        display: flex;
-        flex-direction: column;
-        gap: 0;
     }
 }

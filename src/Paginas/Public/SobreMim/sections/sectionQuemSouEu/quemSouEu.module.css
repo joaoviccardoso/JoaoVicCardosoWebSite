@@ -186,10 +186,6 @@
 }
 
 @media(max-width: 780px){
-    
-}
-
-@media(max-width: 480px){
     .secaoQuemSouEuWrapper{
         height: auto;
     }
@@ -250,7 +246,7 @@
 
     .imagemQuemSou{
         width: 98%;
-        height: 400px;
+        height: 450px;
         position: relative;
         z-index: 1;
     }
@@ -278,7 +274,7 @@
 
     .divQuemSouEuTexto div{
         position: relative;
-        top: 170px;
+        top: 190px;
         width: 97%;
     }
 
@@ -294,43 +290,130 @@
         text-align: center;
     }
 
+     .containerTitulosMentalidade{
+        padding: 0 6rem;
+     }
+
     .containerTitulosSkills{
         margin-top: 6rem;
+        padding: 0 6rem;
     }
 
     .tituloSkills1{
+        font-size: var(--font-size-3x2);
+        margin-left: 0rem;
+        transform: none;
+    }
+
+    .tituloSkills2{
+        font-size: var(--font-size-2xl);
+        transform: translateY(2.9em);
+    }
+
+    .tituloMentalidade1{
         font-size: var(--font-size-2xl);
         margin-left: 0;
+        margin-left: -7em;
+        transform: translateY(-1.8em);
+    }
+
+    .tituloMentalidade2{
+        font-size: var(--font-size-3xl);
+        margin-left:0;
+        transform: none;
+    }
+
+    .linhaSkills{
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 5rem 0;
+        gap: 5rem;
+        text-align: center;
+    }
+
+    .linhaSkills h3{
+        width: 80%;
+    }
+
+    .containerContinue{
+        display: none;
+    }
+}
+
+@media(max-width: 480px){
+    /* imagem vem depois */
+    .containerImagem{
+        order: 2;
+        width: 93%;
+        height: auto;
+    }
+
+    .imagemQuemSou{
+        width: 98%;
+        height: 400px;
+        z-index: 1;
+    }
+
+    .containerSkills{
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        gap: 3rem;
+        padding: 2rem 0;
+    }
+
+    .divQuemSouEuTexto p{
+        width: 95%;
+    }
+    
+    .divQuemSouEuTexto h3{
+        line-height: .9;
+        width: 95%;
+        font-size: var(--font-size-3x2);
+    }
+
+    .divQuemSouEuTexto div{
+        width: 97%;
+    }
+
+    .containerTitulosMentalidade{
+        padding: 0 3rem;
+    }
+
+    .containerTitulosSkills{
+        margin-top: 6rem;
+        padding: 0 3rem;
+    }
+
+    .tituloSkills1{
+        font-size: var(--font-size-2x2);
+        margin-left: 0rem;
         transform: none;
     }
 
     .tituloSkills2{
         font-size: var(--font-size-xl);
-        margin-left:10rem;
-        transform: translateY(2.2em);
+        transform: translateY(2.9em);
     }
 
     .tituloMentalidade1{
         font-size: var(--font-size-xl);
         margin-left: 0;
-        margin-left: -5.8em;
+        margin-left: -7em;
         transform: translateY(-1.8em);
     }
 
     .tituloMentalidade2{
         font-size: var(--font-size-2xl);
-        margin-left: 3.8rem;
+        margin-left:0;
         transform: none;
     }
+}
 
-    .linhaSkills{
-        flex-direction: column;
-        margin: 5rem 0;
-        gap: 1.5rem;
-        text-align: center;
-    }
-
-    .containerContinue{
-        display: none;
+@media(max-width: 380px){
+    .containerTitulosSkills{
+        margin-top: 6rem;
+        padding: 0 2rem;
     }
 }
