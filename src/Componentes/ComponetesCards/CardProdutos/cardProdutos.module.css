@@ -1,7 +1,7 @@
 .containerCardProdutos {
     position: relative;
-    width: 680px;
-    height: 450px;
+    max-width: 65%;
+    height:  600px;
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
