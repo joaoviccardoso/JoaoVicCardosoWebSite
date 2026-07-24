@@ -6,6 +6,7 @@ import SplitText from "gsap/src/SplitText";
 export default function useLayoutEffectHeroPadrao(el,titleRef,textRef,imgHero,divBotao, containerInfo) {
   useLayoutEffect(() => {
     gsap.registerPlugin(SplitText, ScrollTrigger);
+    const isMobile = window.innerWidth <= 780;
 
     const ctx = gsap.context(() => {
         let split;
@@ -41,22 +42,22 @@ export default function useLayoutEffectHeroPadrao(el,titleRef,textRef,imgHero,di
                     rotateY: -90
                 }, "-=0.3");
 
-            // ✅ SCROLL TRIGGER (AGORA CORRETO)
+            // ✅ SCROLL TRIGGER (AGORA VAIII)
             gsap.timeline({
                 scrollTrigger: {
                     trigger: el.current,
                     //markers: true,
                     scrub: 1,
-                    start: "top top",
-                    end: "30% top",
+                    start: isMobile ?"10% top" : "top top",
+                    end: isMobile ? "30% top" : "30% top",
                 }
             })
             .fromTo(containerInfo.current,
                 { yPercent: 0, opacity: 1, filter: "blur(0px)" },
-                { yPercent: 0, opacity: 0.7, filter: "blur(5px)" }
+                { yPercent: 10, opacity: 0.7, filter: "blur(5px)" }
             );
 
-            // 🔥 força recalcular posições
+            //  força recalcular posições
             ScrollTrigger.refresh();
         });
 

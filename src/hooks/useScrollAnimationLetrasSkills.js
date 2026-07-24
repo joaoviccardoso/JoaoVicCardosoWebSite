@@ -34,7 +34,7 @@ export function useScrollAnimationLetrasSkills(containerRef, targets) {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    markers: true,
+                    //markers: true,
                     scrub: 1,
                     start: isMobile ? "40% 50%" : "1000% 10%",
                     end: isMobile ? "80% 50%" : "2000% 10%",
