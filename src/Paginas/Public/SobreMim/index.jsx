@@ -14,7 +14,7 @@ function SobreMim(){
 
     useLayoutEffect(() => {
         gsap.registerPlugin(SplitText, ScrollTrigger);
-
+        const isMobile = window.innerWidth <= 780;
         const ctx = gsap.context(() => {
             let split;
 
@@ -32,8 +32,8 @@ function SobreMim(){
                     trigger: el.current,
                     //markers: true,
                     scrub: 1,
-                    start: "-20% 20%",
-                    end: "15% 20%",
+                    start: isMobile ? "-60% 20%" : "-20% 20%",
+                    end: isMobile ? "15% 20%" : "15% 20%",
                 }
             })
             .from(split.lines, {

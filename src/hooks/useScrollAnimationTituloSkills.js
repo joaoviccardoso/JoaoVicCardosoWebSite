@@ -15,8 +15,8 @@ export function useScrollAnimationTitulosSkills(el, ids) {
                     trigger: elements[0] ?? el.current,
                     //markers: true,
                     scrub: 1,
-                    start: isMobile ? "-350% 50%" : "600% 10%",
-                    end: isMobile ? "-220% 50%" : "1100% 10%",
+                    start: isMobile ? "-500% 50%" : "700% 10%",
+                    end: isMobile ? "200% 50%" : "1100% 10%",
                 },
             });
 
@@ -24,7 +24,7 @@ export function useScrollAnimationTitulosSkills(el, ids) {
                 elements[0],
                 { 
                     opacity: 0,
-                    x: isMobile ? 60 : -190,
+                    x: isMobile ? 90 : -190,
                     scale: 0.85,
                     rotate: -3,
                 },
@@ -41,7 +41,7 @@ export function useScrollAnimationTitulosSkills(el, ids) {
                 elements[1],
                 { 
                     opacity: 0,
-                    x: isMobile ? 40 : -160,
+                    x: isMobile ? 80 : -190,
                     scale: 0.85,
                     rotate: 3,
                 },

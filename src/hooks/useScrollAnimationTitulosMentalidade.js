@@ -15,8 +15,8 @@ export function useScrollAnimationTitulosMentalidade(el, ids) {
                     trigger: elements[0] ?? el.current,
                     //markers: true,
                     scrub: 1,
-                    start: isMobile ? "-350% 50%" : "4000% 10%",
-                    end: isMobile ? "-220% 50%" : "4500% 10%",
+                    start: isMobile ? "-300% 50%" : "4000% 10%",
+                    end: isMobile ? "400% 50%" : "4500% 10%",
                 },
             });
 

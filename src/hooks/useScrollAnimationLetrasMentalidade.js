@@ -36,8 +36,8 @@ export function useScrollAnimationLetrasMentalidade(containerRef, targets) {
                     trigger: containerRef.current,
                     //markers: true,
                     scrub: 1,
-                    start: isMobile ? "-350% 50%" : "3000% 10%",
-                    end: isMobile ? "-220% 50%" : "4000% 10%",
+                    start: isMobile ? "20% 50%" : "3000% 10%",
+                    end: isMobile ? "bottom 50%" : "4000% 10%",
                 },
             });
 
@@ -46,7 +46,8 @@ export function useScrollAnimationLetrasMentalidade(containerRef, targets) {
                     letras,
                     {
                         opacity: 0,
-                        y: isMobile ? -60 : -80,
+                        y: isMobile ? 40 : -80,
+
                         
                     },
                     {

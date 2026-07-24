@@ -14,8 +14,8 @@ export function useScrollAnimationSeta(el, seta) {
                     trigger: el.current,
                     //markers: true,
                     scrub: 3,
-                    start: isMobile ? "-350% 50%" : "-50% 10%",
-                    end: isMobile ? "-220% 50%" : "200% 10%",
+                    start: isMobile ? "-350% 50%" : "200% 10%",
+                    end: isMobile ? "-220% 50%" : "500% 10%",
                 },
             });
 

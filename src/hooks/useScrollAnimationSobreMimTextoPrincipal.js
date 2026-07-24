@@ -6,7 +6,12 @@ import SplitText from "gsap/src/SplitText";
 export default function useLayoutEffectSobreMimTextos(el,titleRef,textRef,divBotao,contSeta) {
   useLayoutEffect(() => {
     gsap.registerPlugin(SplitText, ScrollTrigger);
+    const isMobile = window.innerWidth <= 780;
 
+    if(isMobile){
+        return
+    }
+    
     const ctx = gsap.context(() => {
         let split;
 
@@ -24,7 +29,7 @@ export default function useLayoutEffectSobreMimTextos(el,titleRef,textRef,divBot
                     trigger: el.current,
                     //markers: true,
                     scrub: 1,
-                    start: "-20% 20%",
+                    start: isMobile ? "-20% 20%" : "-20% 20%",
                     end: "15% 20%",
                 }
             })

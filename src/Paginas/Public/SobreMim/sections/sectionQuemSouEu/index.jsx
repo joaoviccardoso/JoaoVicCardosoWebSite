@@ -5,12 +5,12 @@ import CssQuemSouEu from "./quemSouEu.module.css"
 import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import imgJoaoDev from "../../../../../assets/fotoDoJoaoDesenvolvedorDaPagina.png"
 import imgSetaDireta from "../../../../../assets/setaParaDireita.png"
-/*import { useScrollAnimationTitulosSkills } from "../../../../../hooks/useScrollAnimationTituloSkills"
+import { useScrollAnimationTitulosSkills } from "../../../../../hooks/useScrollAnimationTituloSkills"
 import { useScrollAnimationTitulosMentalidade } from "../../../../../hooks/useScrollAnimationTitulosMentalidade"
 import { useScrollAnimationLetrasSkills } from "../../../../../hooks/useScrollAnimationLetrasSkills"
 import { useScrollAnimationLetrasMentalidade } from "../../../../../hooks/useScrollAnimationLetrasMentalidade"
 import useLayoutEffectSobreMimTextos from "../../../../../hooks/useScrollAnimationSobreMimTextoPrincipal"
-import { useScrollAnimationSeta } from "../../../../../hooks/useScrollAnimationSeta"*/
+import { useScrollAnimationSeta } from "../../../../../hooks/useScrollAnimationSeta"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -71,12 +71,12 @@ function SecaoQueSouEu(){
         return () => ctx.revert()
     }, [])
 
-    /*useScrollAnimationTitulosSkills(contTituloSkills, [item2, item1])
+    useScrollAnimationTitulosSkills(contTituloSkills, [item2, item1])
     useScrollAnimationTitulosMentalidade(contMenta, [item3, item4])
     useScrollAnimationLetrasSkills(contTituloSkills, [h3Skill1, h3Skill2, h3Skill3])
     useScrollAnimationLetrasMentalidade(contMenta, [h3Mental1, h3Mental2, h3Mental3])
     useLayoutEffectSobreMimTextos(contTituloSobreMim, h3TituloSobreMim, pTextoSobreMim, divBotao, contSeta)
-    useScrollAnimationSeta(contSeta, seta)*/
+    useScrollAnimationSeta(contSeta, seta)
 
     return(
         <section>

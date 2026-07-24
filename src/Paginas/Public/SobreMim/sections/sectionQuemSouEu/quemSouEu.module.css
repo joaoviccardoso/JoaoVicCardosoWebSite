@@ -332,10 +332,6 @@
         text-align: center;
     }
 
-    .linhaSkills h3{
-        width: 80%;
-    }
-
     .containerContinue{
         display: none;
     }
@@ -371,6 +367,10 @@
         line-height: .9;
         width: 95%;
         font-size: var(--font-size-3x2);
+    }
+
+    .linhaSkills h3{
+        font-size: var(--font-size-2xl);
     }
 
     .divQuemSouEuTexto div{
