@@ -1,0 +1,124 @@
+.wrapper {
+    width: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.containerTexto{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .6rem;
+    background-color: var(--background);
+    padding: 3rem 1rem 3rem 3rem;
+    height: auto;
+    color: white;
+    border-radius: 16px;
+    box-shadow: 0px 3px 4px 1px rgba(14, 169, 119, 1);
+    -webkit-box-shadow: 0px 3px 4px 1px rgba(14, 169, 119, 1);
+}
+
+.containerTexto span{
+    font-size: var(--font-size-xl);
+    font-family: var(--font-paraTextoChamativo);
+    background-color: var(--color-tag);
+    border-radius: 8px;
+    color: var(--verde);
+    max-width: 50%;
+    padding-left: 1.8rem;
+}
+
+.containerTexto h4{
+    max-width: 80%;
+}
+
+.containerTexto p{
+    max-width: 70%;
+}
+
+.containerTexto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    background: var(--color-gradienteVerdeBottom);
+    border-radius: 6px 0 0 6px;
+}
+
+@media(max-width: 1440px){
+    .containerTexto h4{
+        max-width: 100%;
+    }
+
+    .containerTexto p{
+        max-width: 90%;
+    }
+
+    .containerTexto span{
+        display: block;
+        max-width: 60%;
+    }
+}
+
+@media(max-width: 1024px){
+    .containerTexto span{
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media(max-width: 768px){
+    .containerTexto span{
+        display: block;
+        max-width: 80%;
+    }
+}
+
+@media(max-width: 480px){
+    .containerTexto {
+        padding:1rem 1.5rem ;
+    }
+
+    .containerTexto::before {
+        width: 12px;
+    }
+
+    .containerTexto span{
+        display: block;
+        font-size: var(--font-size-md);
+        max-width: 90%;
+        padding-left: 0.4rem;
+    }
+}
+
+@media(max-width: 350px){
+    .containerTexto {
+        padding:1rem;
+    }
+
+    .containerTexto span{
+        max-width: 90%;
+    }
+}
+
+
+@media(max-width: 299px){
+    .containerTexto {
+        padding:2rem;
+    }
+
+    .containerTexto h4{
+        font-size: var(--font-size-xl);
+    }
+
+    .containerTexto p{
+        font-size: var(--font-size-md);
+    }
+
+    .containerTexto span{
+        max-width: 95%;
+        font-size: 10px;
+    }
+}

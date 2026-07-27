@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import CssAcaoProduto3 from "./cadastroProdutoPc.module.css"
-import TextArea from "../../../../../Componentes/TextArea";
-import Input from "../../../../../Componentes/Input";
-import BotaoAction from "../../../../../Componentes/BotaoAction";
-import StatusSelect from "../../../../../Componentes/Select";
+import TextArea from "../../../../../Componentes/Inputs/TextArea";
+import Input from "../../../../../Componentes/Inputs/Input";
+import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction";
+import StatusSelect from "../../../../../Componentes/Inputs/Select";
 import { validarFormularioCadastrarProduto } from "../../../../../Utils/validarCadastro";
 import { jwtDecode } from "jwt-decode";
 import { postProdutosPC, getProdutoPorId, putProdutoPC } from "../../../../../services/produtosServices";
 import { getUserPorNome } from "../../../../../services/authServices";
 import { useParams } from "react-router-dom";
-import ModalAviso from "../../../../../Componentes/ModalAviso";
+import ModalAviso from "../../../../../Componentes/Modals/ModalAviso";
 import useModalAviso from "../../../../../hooks/useModalAviso";
 
 const STATUS_OPTIONS = [

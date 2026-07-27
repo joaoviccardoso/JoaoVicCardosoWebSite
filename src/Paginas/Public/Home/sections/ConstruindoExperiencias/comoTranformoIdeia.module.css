@@ -1,0 +1,66 @@
+.containerTituloDaSecao{
+    text-align: center;
+    padding: 4rem 0 3rem 0;
+}
+
+.ulLista {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+    padding: 0;
+}
+
+.divCardMedio{
+    display: flex;
+    gap: 4rem;
+}
+
+
+@media(max-width: 1024px){
+    .ulLista {
+        grid-template-columns: 1fr;
+        background-image: none !important;
+        gap: 0;
+    }
+}
+
+@media(max-width: 768px){
+    .ulLista {
+        justify-content: center;
+        align-items: center ;
+    }
+
+    .divCardMedio{
+        flex-direction: column;
+        gap: 0;
+    }
+
+
+    .secaoComoTransformoIdeias {
+        background-image: none !important;
+    }
+
+    .containerTituloDaSecao{
+        text-align: center;
+        padding: 3rem 0;
+    }
+}
+
+@media(max-width: 480px){
+
+    .ulLista {
+        gap: 2rem;
+        padding: 0;
+    }
+    
+    .divCardMedio{
+        gap: 2rem;
+    }
+
+    .containerTituloDaSecao{
+        text-align: center;
+        padding: 3rem 0;
+    }
+
+}

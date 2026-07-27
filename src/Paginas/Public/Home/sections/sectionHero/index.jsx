@@ -1,120 +1,44 @@
-import { useLayoutEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useRef } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitText from "gsap/src/SplitText";
 import CssHero from "./hero.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
-import balaoMensagemHola from "../../../../../assets/balaoOlaHome.png"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 import imagemBonecoJoaoHome from "../../../../../assets/imagemBonecoJoaoHome.png"
+import useLayoutEffectHeroPadrao from "../../../../../hooks/useScrollAnimationHeroPadrao";
 
 function Hero(){
-    const titleRef = useRef(null);
     const el = useRef();
+    const containerInfo = useRef(null);
     const imgHero = useRef(null)
+    const titleRef = useRef(null);
+    const subTitleRef = useRef(null);
+    const contBtn = useRef(null);
 
-    useLayoutEffect(() => {
-    gsap.registerPlugin(SplitText, ScrollTrigger);
-
-    const ctx = gsap.context(() => {
-        let split;
-
-        document.fonts.ready.then(() => {
-            split = new SplitText(titleRef.current, {
-                types: "words",
-            });
-
-            const intro = gsap.timeline({
-                onComplete: () => {
-                    // 👇 ScrollTrigger só nasce aqui
-                    gsap.timeline({
-                        scrollTrigger: {
-                            trigger: el.current,
-                            scrub: 2,
-                            start: "top 80%",
-                            end: "bottom 50%",
-                        }
-                    })
-                    .to(imgHero.current, {
-                        y: -150,
-                        opacity: .7,
-                        scale: 0.95,
-                        filter: "blur(5px)"
-                    },1)
-                    .to("#containerTituloHero", {
-                        y: -150,
-                        opacity: .7,
-                        scale: 0.95,
-                        filter: "blur(5px)"
-                    }, 1)
-                    .to("#containerBotaoHero", {
-                        y: -150,
-                        opacity: .7,
-                        scale: 0.95,
-                        filter: "blur(5px)"
-                    }, 1);
-                }
-            });
-
-            intro
-                .from(split.words, {
-                    duration: 1.3,
-                    opacity: 0,
-                    y: 30,
-                    stagger: 0.08,
-                    ease: "power2.out",
-                    delay: 0.5
-                })
-                .from("#containerBalaoOla", {
-                    x: 50,
-                    opacity: 0,
-                    rotateY: -90
-                }, "-=0.8")
-                .from("#personagemAnimadoHero", {
-                    x: 50,
-                    opacity: 0,
-                    rotateY: -90
-                }, "-=0.8")
-                .from("#subtituloHero", {
-                    opacity: 0,
-                    y: 20,
-                }, "-=0.8")
-                .from("#containerBotaoHero", {
-                    opacity: 0,
-                    scale: 0.9,
-                }, "-=0.3");
-        });
-
-    }, el);
-
-    return () => ctx.revert();
-}, []);
+    useLayoutEffectHeroPadrao(el,titleRef,subTitleRef,imgHero, contBtn, containerInfo)
 
     return(
         <section className={CssHero.sectionHero} ref={el}>
-                <div className={CssHero.containerImagemHero} id="containerImgHero" ref={imgHero}>
-                    <span id="containerBalaoOla">
-                        <img src={balaoMensagemHola} alt="Caixa de mensagem Olá! Seja bem-vindo ao meu site."/>
-                        <p>Olá! Seja bem-vindo ao meu site.</p>
-                    </span>
 
-                    <img id="personagemAnimadoHero" src={imagemBonecoJoaoHome} alt="Personagem Animado do João com um labtop" />
+                <div className={CssHero.containerTextoHero} ref={containerInfo}>
+                    <div className={CssHero.containerImagemHero} ref={imgHero}>
+                        <img id="personagemAnimadoHero" src={imagemBonecoJoaoHome} alt="Personagem Animado do João com um labtop" />
+                    </div>
+                    
+                    <h1 ref={titleRef}>Eu ajudo negócios a crescer <br/><span>na internet</span></h1>
+                    <p ref={subTitleRef}>Desenvolvo sites que conectam sua empresa a mais clientes, de <br/> forma simples e profissional.</p>
+                    <div className={CssHero.containerBotaoCta} ref={contBtn}>
+                        <BotaoCta
+                            child="Comece seu projeto hoje"
+                            to="Contato"
+                        />
+                        <BotaoCta
+                            child="Conheça meu trabalho"
+                            to="Servicos"
+                        />
+                    </div>
                 </div>
 
-                <div className={CssHero.containerTextoHero} id="containerTituloHero">
-                    <h1 ref={titleRef}>Eu ajudo negócios a crescer <br/>na internet</h1>
-                    <p id="subtituloHero">Desenvolvo sites que conectam sua empresa a mais clientes, de <br/> forma simples e profissional.</p>
-                </div>
-
-                <div className={CssHero.containerBotaoCta} id="containerBotaoHero">
-                    <BotaoCta
-                        child="Comece seu projeto hoje"
-                        to="Contato"
-                    />
-                    <BotaoCta
-                        child="Conheça meu trabalho"
-                        to="Servicos"
-                    />
-                </div>
+                
         </section>
     )
 }

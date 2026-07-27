@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
-import Nav from "../Componentes/Nav"
-import Footer from "../Componentes/Footer"
-import OffCanvas from "../Componentes/OffCanvasNav/OffCanvas"
+import Nav from "../Componentes/Layouts/Nav"
+import Footer from "../Componentes/Layouts/Footer"
+import OffCanvas from "../Componentes/Layouts/OffCanvasNav/OffCanvas"
 
 function Layout() {
   return (

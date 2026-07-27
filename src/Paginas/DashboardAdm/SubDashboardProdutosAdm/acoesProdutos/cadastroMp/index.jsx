@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import BotaoAction from "../../../../../Componentes/BotaoAction"
+import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction"
 import CssAcaoProduto1 from "./cadastroProdutoMp.module.css"
-import Input from "../../../../../Componentes/Input";
-import TextArea from "../../../../../Componentes/TextArea";
-import CheckboxGroup from "../../../../../Componentes/CheckBoxGroup";
-import FuncionalidadesInput from "../../../../../Componentes/InputDinamicoFuncionalidade";
-import ImagemPrincipalInput from "../../../../../Componentes/InputImagem";
-import ModalAviso from "../../../../../Componentes/ModalAviso";
+import Input from "../../../../../Componentes/Inputs/Input";
+import TextArea from "../../../../../Componentes/Inputs/TextArea";
+import CheckboxGroup from "../../../../../Componentes/Inputs/CheckBoxGroup";
+import FuncionalidadesInput from "../../../../../Componentes/Inputs/InputDinamicoFuncionalidade";
+import ImagemPrincipalInput from "../../../../../Componentes/Inputs/InputImagem";
+import ModalAviso from "../../../../../Componentes/Modals/ModalAviso";
 import useModalAviso from "../../../../../hooks/useModalAviso";
 import { getProdutoMpPorId, postProdutosMP, putProdutoMp } from "../../../../../services/produtoMp";
 import { validarFormularioParaCadastrarMP } from "../../../../../Utils/validarCadastro";

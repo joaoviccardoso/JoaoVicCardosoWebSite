@@ -1,12 +1,17 @@
 import { useRef } from "react"
 import CssOqueEuFaco from "./oqueEuFaco.module.css"
-import ContainerComBotao from "../../../../../Componentes/ContainerTextoComBotao"
-import logoEscuro from "../../../../../assets/logoDaPaginaPreto.png"
-import { useScrollAnimation } from "../../../../../hooks/useScrollAnimation"
+import CardBlackMedio from "../../../../../Componentes/ComponetesCards/CardBlackMedio"
+import { useScrollAnimationUpServicos } from "../../../../../hooks/useScrollAnimationUpServicos";
 
 function OqueEuFaco() {
     const el = useRef();
-    useScrollAnimation(el,["#containerComBotaoSecaoOqueEuFaco1", "#containerComBotaoSecaoOqueEuFaco2", "#containerComBotaoSecaoOqueEuFaco3", "#containerComBotaoSecaoOqueEuFaco4"])
+    const card1 = useRef();
+    const card2 = useRef();
+    const card3 = useRef();
+    const card4 = useRef();
+
+    useScrollAnimationUpServicos(el,[card1, card2, card3, card4])
+
     return(
         <section className={CssOqueEuFaco.sectionOqueEuFaco}>
             <div className={CssOqueEuFaco.containerTexto}>
@@ -16,42 +21,33 @@ function OqueEuFaco() {
 
             <div className={CssOqueEuFaco.divInfoOqueEuFaco} ref={el}>
                 <div className={CssOqueEuFaco.divConteinerComOsTexto}>
-                    <ContainerComBotao
-                        id="containerComBotaoSecaoOqueEuFaco1"
-                        titulo="1.Landing Pages"
-                        texto="Criação de páginas modernas e responsivas focadas em conversão e apresentação de produtos ou serviços."
-                        child="Saber Mais"
-                        idBtn="btnActionSectionOqueEuFaco1"
+                    <CardBlackMedio
+                        tag={"Como Transformo Ideias"}
+                        titulo={"1.Landing Pages"}
+                        texto={"Criação de páginas modernas e responsivas focadas em conversão e apresentação de produtos ou serviços."}
+                        ref={card1}
                     />
 
-                    <ContainerComBotao
-                        id="containerComBotaoSecaoOqueEuFaco2"
-                        titulo="2. Blogs"
-                        texto="Desenvolvimento de blogs organizados, com leitura agradável e estrutura pensada para conteúdo e SEO."
-                        child="Saber Mais"
-                        idBtn="btnActionSectionOqueEuFaco2"
+                    <CardBlackMedio
+                        tag={"Como Transformo Ideias"}
+                        titulo={"2. Blogs"}
+                        texto={"Desenvolvimento de blogs organizados, com leitura agradável e estrutura pensada para conteúdo e SEO."}
+                        ref={card2}
                     />
 
-                    <ContainerComBotao
-                        id="containerComBotaoSecaoOqueEuFaco3"
-                        titulo="3.Sistemas de Vendas"
-                        texto="Plataformas completas com dashboard para clientes e administradores, controle de pedidos e gestão de produtos."
-                        child="Saber Mais"
-                        idBtn="btnActionSectionOqueEuFaco3"
+                    <CardBlackMedio
+                        tag={"Como Transformo Ideias"}
+                        titulo={"3.Sistemas de Vendas"}
+                        texto={"Plataformas completas com dashboard para clientes e administradores, controle de pedidos e gestão de produtos."}
+                        ref={card3}
                     />
 
-                    <ContainerComBotao
-                        id="containerComBotaoSecaoOqueEuFaco4"
-                        titulo="4.Aplicações Web"
-                        texto="Sistemas dinâmicos com lógica de programação, cálculos e interação em tempo real com o usuário."
-                        child="Saber Mais"
-                        idBtn="btnActionSectionOqueEuFaco4"
+                    <CardBlackMedio
+                        tag={"Como Transformo Ideias"}
+                        titulo={"4.Aplicações Web"}
+                        texto={"Sistemas dinâmicos com lógica de programação, cálculos e interação em tempo real com o usuário."}
+                        ref={card4}
                     />
-                </div>
-                
-
-                <div className={CssOqueEuFaco.divLogo}>
-                   <img src={logoEscuro} alt="logo da pagina cor preta" />
                 </div>
             </div>
         </section>

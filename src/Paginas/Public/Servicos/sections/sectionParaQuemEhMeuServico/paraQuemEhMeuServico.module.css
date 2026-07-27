@@ -11,7 +11,7 @@
 .ulListaParaQuemEh{
     display: flex;
     align-items: center;
-    width: 60vw;
+    width: 70vw;
     justify-content: space-between;
     text-align: center;
     color: var(--cor-letraClara);
@@ -27,29 +27,38 @@
     justify-content: center;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1440px){
+    .ulListaParaQuemEh{
+        display: grid;
+        width: 50vw;
+        grid-template-columns: 1fr 1fr; /* 2 colunas */
+        grid-template-rows: 1fr 1fr;   /* 2 linhas */
+        gap: 8px; /* espaço entre os itens */
+    }
 
     .secaoParaQuemEh{
         text-align: center;
     }
-    
+}
+
+@media(max-width: 1024px){
     .ulListaParaQuemEh{
-        width: 90vw;
+        width: 60vw;
     }
 }
 
-@media(max-width: 680px){
+@media(max-width: 768px){
     .ulListaParaQuemEh{
         width: 90vw;
         flex-direction: column;
-        gap: 2rem;
+        gap: .5rem;
     }
 }
 
 @media(max-width: 480px){
-    
-
-    .secaoParaQuemEh h3{
-        font-size: var(--font-size-2xl);
+    .ulListaParaQuemEh{
+        width: 90vw;
+        flex-direction: column;
+        gap: 2rem;
     }
 }

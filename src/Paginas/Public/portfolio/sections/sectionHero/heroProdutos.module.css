@@ -4,14 +4,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10rem 12rem;
+    gap: 2rem;
+    padding: 8rem 12rem;
     color: #fff;
 }
 
 .secaoHeroProdutos h1{
-    font-size: var(--font-size-4xl);
-    font-family: var(--font-paraTextoChamativo);
-    max-width: 1500px;
     text-align: center;
 }
 
@@ -19,18 +17,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.4rem;
+    gap: 0.9rem;
     color: var(--verde);
     white-space: nowrap;
 }
 
-.secaoHeroProdutos p{
-    margin: .9rem 0;
-    font-size: var(--font-size-2xl);
-    font-family: var(--font-paraTexto);
-}
-
-@media(max-width: 1400px){
+@media(max-width: 1440px){
     .secaoHeroProdutos{
         text-align: center;
         padding: 8rem 10rem;
@@ -42,54 +34,29 @@
     .secaoHeroProdutos{
         padding: 6rem 2rem;
     }
-
-    .secaoHeroProdutos h1{
-        text-align: center;
-        font-size: var(--font-size-3xl);
-    }
-
-    .secaoHeroProdutos p{
-        font-size: var(--font-size-xl);
-    }
 }
 
-@media(max-width: 640px){
+@media(max-width: 768px){
     .secaoHeroProdutos span{
         display: flex;
-        align-items: start;
-        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
         color: var(--verde);
-        white-space: nowrap;
-    }
-
-    .secaoHeroProdutos{
-        justify-content: start;
-        align-items: start;
-        text-align: start;
-        padding: 4rem 3rem;
-    }
-    .secaoHeroProdutos h1{
-        font-size: var(--font-size-xl);
-        text-align: start;
-    }
-
-    .secaoHeroProdutos p{
-        font-size: var(--font-size-md);
     }
 }
 
 
-@media(max-width: 420px){
+@media(max-width: 480px){
     .secaoHeroProdutos{
-        text-align: start;
         padding: 4rem 2rem;
+        line-height: 1;
     }
 
-    .secaoHeroProdutos h1{
-        font-size: var(--font-size-xl);
-    }
-
-    .secaoHeroProdutos p{
-        font-size: var(--font-size-md);
+    .secaoHeroProdutos span{
+        flex-direction: row;
+        flex-wrap: wrap;
+        line-height: 1;
     }
 }

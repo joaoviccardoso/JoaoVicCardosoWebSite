@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { pegarUser } from "../../../Utils/pegarUser"
 import CssSubDashAdmProdutos from "./subDashAdmProdutos.module.css"
-import BotaoDash from "../../../Componentes/BotaoDashBoard"
+import BotaoDash from "../../../Componentes/Buttons/BotaoDashBoard"
 
 function SubDashAdmProdutos(){
     const [userAdm, setUserAdm] = useState({})

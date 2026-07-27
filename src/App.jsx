@@ -35,6 +35,7 @@ import VerificarEmail from "./Paginas/VerificacaoEmail"
 import "./style/fonteEhCores.css"
 import MudarSenha from "./Paginas/Autenticacao/MudarSenha"
 import ResetSenha from "./Paginas/Autenticacao/ResetSenha"
+import { useSmoothScroll } from "./hooks/useSmoothScroll"
 
 
 const acoesCliente = [
@@ -58,7 +59,7 @@ const acoesAdm = [
 ]
 
 function App() {
-
+  useSmoothScroll()
   return (
     <Routes>
         <Route element={<Layout/>}>

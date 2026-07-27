@@ -1,5 +1,5 @@
 import CssGerarValor from "./gerarValor.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
 
 function GerarValor(){
     return(

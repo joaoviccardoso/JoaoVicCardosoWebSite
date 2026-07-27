@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 import CssDashborardAdm from "./dashborardAdm.module.css"
-import Breadcrumb from "../../../Componentes/Breadcrumb"
-import BotaoDash from "../../../Componentes/BotaoDashBoard"
-import TabelaProjetos from "../../../Componentes/TabelaProjetos"
+import Breadcrumb from "../../../Componentes/Inputs/Breadcrumb"
+import BotaoDash from "../../../Componentes/Buttons/BotaoDashBoard"
+import TabelaProjetos from "../../../Componentes/Tables/TabelaProjetos"
 import { pegarUser } from "../../../Utils/pegarUser"
 import { getAllProdutosPC } from "../../../services/produtosServices"
 import { logout } from "../../../services/authServices"
 import { useNavigate } from "react-router-dom"
-import ModalConfirmacaoExclusao from "../../../Componentes/ModalDeConfirmacao"
+import ModalConfirmacaoExclusao from "../../../Componentes/Modals/ModalDeConfirmacao"
 
 function HomeDashborardAdm(){
     const navigate = useNavigate() 

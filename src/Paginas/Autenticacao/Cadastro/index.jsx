@@ -1,11 +1,11 @@
 import { useState } from "react";
 import CssCadastro from "./cadastro.module.css"
 import BemVindo from "../../../Componentes/MensagemBemVindo"
-import Input from "../../../Componentes/Input";
+import Input from "../../../Componentes/Inputs/Input/index.jsx";
 import ImgLink from "../../../Componentes/imgLink";
-import BotaoAction from "../../../Componentes/BotaoAction";
+import BotaoAction from "../../../Componentes/Buttons/BotaoAction/index.jsx";
 import { validarFormularioCadastro } from "../../../Utils/validarCadastro.js";
-import ModalAviso from "../../../Componentes/ModalAviso/index.jsx";
+import ModalAviso from "../../../Componentes/Modals/ModalAviso/index.jsx";
 import useModalAviso from "../../../hooks/useModalAviso.js";
 const BASE_URL = import.meta.env.VITE_API_URL
 

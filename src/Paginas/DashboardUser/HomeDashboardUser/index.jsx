@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
 import CssDashborardUser from "./dashborardUser.module.css"
 import { pegarUser } from "../../../Utils/pegarUser"
-import BotaoDash from "../../../Componentes/BotaoDashBoard"
-import TabelaProjetos from "../../../Componentes/TabelaProjetos"
+import BotaoDash from "../../../Componentes/Buttons/BotaoDashBoard"
+import TabelaProjetos from "../../../Componentes/Tables/TabelaProjetos"
 import { logout } from "../../../services/authServices"
 import { useNavigate } from "react-router-dom"
-import ModalConfirmacaoExclusao from "../../../Componentes/ModalDeConfirmacao"
+import ModalConfirmacaoExclusao from "../../../Componentes/Modals/ModalDeConfirmacao"
 
 function HomeDashborardUser(){
     const navigate = useNavigate() 

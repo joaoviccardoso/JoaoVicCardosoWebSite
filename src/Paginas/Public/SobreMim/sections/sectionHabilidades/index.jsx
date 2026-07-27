@@ -1,5 +1,5 @@
 import CssHabilidades from "./habilidades.module.css"
-import MinhasHabilidades from "../../../../../Componentes/MinhasHabilidades";
+import MinhasHabilidades from "../../../../../Componentes/ComponetesCards/MinhasHabilidades";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,72 +12,67 @@ import imgUiUx from "../../../../../assets/ui-ux.svg"
 import imgBootstrap from "../../../../../assets/bootstrap.svg"
 import imgFigma from "../../../../../assets/figma.svg"
 import imgGitHub from "../../../../../assets/github.svg"
-import logoDev from '../../../../../assets/logoDev.svg';
 
 function SecaoHabilidades(){
     const containerPai = useRef(null)
     const el = useRef(null);
 
     useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
-    let ctx;
+        let ctx;
 
-    const images = el.current.querySelectorAll("img");
-    let loaded = 0;
+        const images = el.current.querySelectorAll("img");
+        let loaded = 0;
 
-    images.forEach((img) => {
-        if (img.complete) {
+        images.forEach((img) => {
+            if (img.complete) {
+                loaded++;
+            } else {
+                img.onload = check;
+            }
+        });
+
+        function check() {
             loaded++;
-        } else {
-            img.onload = check;
+            if (loaded === images.length) initAnimation();
         }
-    });
 
-    function check() {
-        loaded++;
         if (loaded === images.length) initAnimation();
-    }
 
-    if (loaded === images.length) initAnimation();
+        function initAnimation() {
+            ctx = gsap.context(() => {
 
-    function initAnimation() {
-        ctx = gsap.context(() => {
-
-            gsap.to(el.current, {
-                x: () => -(el.current.scrollWidth - window.innerWidth),
-                y: () => -(el.current.scrollWidth * 0.5), 
-                ease: "none",
-                scrollTrigger: {
-                    trigger: containerPai.current,
-                    pin: true,
-                    start: "top top",
-                    end: () => `+=${el.current.scrollWidth}`, 
-                    scrub: 1,
-                    invalidateOnRefresh: true
-                }
+                gsap.to(el.current, {
+                    x: () => -(el.current.scrollWidth - window.innerWidth),
+                    y: () => -(el.current.scrollWidth * 0.5), 
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: containerPai.current,
+                        pin: true,
+                        start: "top top",
+                        end: () => `+=${el.current.scrollWidth}`, 
+                        scrub: 1,
+                        invalidateOnRefresh: true
+                    }
             });
         });
 
         ScrollTrigger.refresh();
-    }
+        }
 
-    return () => {
-        if (ctx) ctx.revert();
-    };
+        return () => {
+            if (ctx) ctx.revert();
+        };
 
-}, []);
+    }, []);
         
     
 
     return(
-        <section className={CssHabilidades.secaoHabilidades} ref={containerPai} style={{backgroundImage: `url(${logoDev})`,backgroundSize: '80%' ,backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat' }}>
+        <section className={CssHabilidades.secaoHabilidades} ref={containerPai}>
             <div ref={el} className={CssHabilidades.wrapper}>
-                <div className={CssHabilidades.header}>   
-                    <h3>Habilidades Técnicas</h3>
-                    <p>Aqui estão as tecnologias que uso para transformar ideias em projetos reais.</p>
-                </div>
-                
+        
                 <ul className={CssHabilidades.ulListaHabilidades}>
 
                     <li className={CssHabilidades.divs1}>

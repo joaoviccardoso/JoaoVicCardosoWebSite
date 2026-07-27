@@ -1,71 +1,79 @@
 .secaoHeroSobreMim{
+    text-align: center;
     display: flex;
     align-items: center;
-    padding: 4rem 12rem;
+    justify-content: center;
+    height: 90vh;
+    padding: 4rem 10rem;
 }
 
 .containerTextoSobreMimHero{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
-    padding-left: 2rem;
+    width: 100%;
+    gap: 2rem;
+    
     color: #fff;
 }
 
-.containerTextoSobreMimHero h1{
-    font-size: var(--font-size-3x2);
-    font-family: var(--font-paraTextoChamativo);
-}
-
-.containerTextoSobreMimHero p{
-    font-size: var(--font-size-2xl);
-    font-family: var(--font-paraTexto);
+.containerTextoSobreMimHero span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    color: var(--verde);
 }
 
 .imgSobreMim{
     width: 55%;
 }
 
-@media(max-width: 1250px){
+.containerTextoSobreMimHero h1{
+    font-size: var(--font-size-5xl);
+}
+
+@media(max-width: 1440px){
     .imgSobreMim{
         width: 45%;
         height: 100%;
     }
 
-    .containerTextoSobreMimHero h1{
-        font-size: var(--font-size-3xl);
+    .secaoHeroSobreMim{
+        padding: 4rem 8rem;
     }
 
-    .containerTextoSobreMimHero p{
-        font-size: var(--font-size-xl);
+    .secaoHeroSobreMim{
+        padding: 4rem 2rem;
     }
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1100px){
     .secaoHeroSobreMim{
         padding: 4rem 3rem;
     }
-}
 
-@media(max-width: 720px){
     .containerTextoSobreMimHero h1{
-        font-size: var(--font-size-2xl);
-    }
-
-    .containerTextoSobreMimHero p{
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-4xl);
     }
 }
 
-@media(max-width: 570px){
+@media(max-width: 768px){
+    .containerTextoSobreMimHero h1 span{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media(max-width: 480px){
     .secaoHeroSobreMim{
-        padding: 2rem 2rem;
+        padding: 2rem 1rem;
         flex-direction: column;
     }
 
     .containerTextoSobreMimHero{
-        gap: 0.3rem;
+        gap: 1.3rem;
         padding:0;
     }
 
@@ -73,15 +81,11 @@
         text-align: center;
     }
 
-    .containerTextoSobreMimHero h1{
-        font-size: var(--font-size-2xl);
-    }
-
-    .containerTextoSobreMimHero p{
-        font-size: var(--font-size-lg);
-    }
-
     .imgSobreMim{
         width: auto;
+    }
+
+    .containerTextoSobreMimHero h1{
+        font-size: var(--font-size-3x2);
     }
 }

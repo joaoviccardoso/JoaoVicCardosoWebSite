@@ -1,34 +1,22 @@
 .secaoHeroServico{
     display: flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
     padding: 8rem 0rem;
 }
+
 
 .containerTexto{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    padding-left: 2rem;
+    padding-left: 0rem;
     
-}
-
-.containerTexto h1{
-    font-size: var(--font-size-3x2);
-    font-family: var(--font-paraTextoChamativo);
-    color: #fff;
 }
 
 .containerTexto span{
     color: var(--verde);
-}
-
-
-.containerTexto p{
-    font-size: var(--font-size-2xl);
-    font-family: var(--font-paraTexto);
-    color: #fff;
 }
 
 .containerBtnCtaHero{
@@ -37,65 +25,61 @@
 }
 
 .img{
-    width: 500px;
-    height: 500px;
+    width: 310px;
+    height: 310px;
 }
 
-@media(max-width: 1400px){
-    .containerTexto h1{
-        font-size: var(--font-size-3xl);
-    }
-
-    .containerTexto p{
-        font-size: var(--font-size-xl);
-    }
-
-    .img{
-        width: 350px;
-        height: 350px;
-    }
-}
-
-@media(max-width: 1000px){
+@media(max-width: 1440px){
     .secaoHeroServico{
         flex-direction: column;
-        padding: 3rem 0rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 80vh;
+        padding: 1rem;
     }
-    
+
+    .containerTexto span{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .containerBtn2{
+        width: 100%;
+    }
+
     .img{
-        width: 400px;
-        height: 400px;
+        display: none;
     }
 }
 
-@media(max-width: 720px){
-    .containerBtnCtaHero{
+@media(max-width: 1024px){
+    .containerTexto{
         text-align: center;
-        flex-direction: column;
-        gap: 2rem;
-    }
+        padding-left: 0;
+    } 
+}
+
+@media(max-width: 768px){
+    .containerTexto{
+        text-align: center;
+        padding-left: 0;
+    } 
 }
 
 @media(max-width: 480px){
-    .secaoHeroServico{
-        flex-direction: column;
-        padding: 3rem 0rem;
-    }
-
     .containerTexto{
         padding: 0;
     }
+}
 
-    .containerTexto h1{
-        font-size: var(--font-size-2xl);
+@media(max-width: 380px){
+    .secaoHeroServico{
+        padding: 2rem 1rem;
     }
 
     .containerTexto p {
         font-size: var(--font-size-md);
-    }
-
-    .img{
-        width: 500px;
-        height: 380px;
     }
 }

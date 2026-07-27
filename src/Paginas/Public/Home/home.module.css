@@ -1,22 +1,81 @@
-.secao0{
-    background: var(--cor-containerCortado);
+.secao0 {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background: var(--background-segunda-camada);
+    z-index: 3;
+    padding-bottom: 10.5rem;
     clip-path: polygon(0% 2%, 100% 0, 100% 100%, 0% 100%);
+    /* SEM margin-top */
 }
 
-.secao1{
+.particlesWrapper {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 4;
+    pointer-events: none; /* opcional: não bloquear hover/click dos cards */
+}
+
+.teste{
     position: relative;
+    z-index: 2;
+    background: var(--background-saida);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.heroWrapper {
+    position: relative;
+    top: 0;
+    z-index: 1;
+    height: 100vh;
+}
+
+.secao1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
     width: 100%;
     height: 100%;
-    padding: 9rem 12rem 2rem 12rem;
+    padding: 20rem 12rem 2rem 12rem;
+    z-index: 1;
 }
 
-.secao2{
+.secao0 > *:not(canvas) {
     position: relative;
+    z-index: 1;
+}
+
+/* Troca fixed → absolute, e remove o seletor global canvas */
+.secao0 canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0;
+}
+
+.secao2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: var(--color-gradienteVerdeBottom);
     width: 100%;
-    height: 100%;
-    padding: 4rem 0;
-    clip-path: polygon(0% 10%, 100% 0, 100% 100%, 0% 100%);
+    height: 100vh;
+    z-index: 1;          /* atrás de todo mundo */
+    margin-top: -200vh;  /* fica "atrás" da secao0 no espaço */
+}
+
+.secao3{
+    width: 100%;
+    height: 100vh;
+    z-index: 4;          /* atrás de todo mundo */
 }
 
 @media(max-width: 1400px){
@@ -25,17 +84,19 @@
     }
 }
 
-@media(max-width: 480px){
-    .secao0{
-        clip-path: polygon(0% 1%, 100% 0, 100% 100%, 0% 100%);
-    }
-
+@media(max-width: 700px){
     .secao1 {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         padding: 6rem 2rem 0 2rem;
     }
+}
 
-    .secao2{
-        clip-path: polygon(0% 5%, 100% 0, 100% 100%, 0% 100%);
+@media(max-width: 480px){
+    .secao1 {
+        padding: 6rem 1rem 0 1rem;
     }
+
+    .secao0 {
+        padding-bottom: 5rem;
+    }
+
 }

@@ -1,9 +1,9 @@
-import { useRef, useLayoutEffect } from "react"
-import { gsap } from "gsap";
+import { useRef } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitText from "gsap/src/SplitText";
 import CssHero from "./heroProdutos.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
+import useScrollAnimationHeroSobreMim from "../../../../../hooks/useScrollAnimationHeroSobreMim";
 
 function HeroProdutos(){
     const el = useRef(null)
@@ -12,61 +12,7 @@ function HeroProdutos(){
     const divBotao = useRef(null);
     const divHero = useRef(null);
 
-    useLayoutEffect(() => {
-    gsap.registerPlugin(SplitText, ScrollTrigger);
-
-    const ctx = gsap.context(() => {
-        let split;
-
-        document.fonts.ready.then(() => {
-            split = new SplitText(titleRef.current, {
-                types: "words",
-            });
-
-            const intro = gsap.timeline({
-                onComplete: () => {
-                    // 👇 ScrollTrigger só nasce aqui
-                    gsap.timeline({
-                        scrollTrigger: {
-                            trigger: el.current,
-                            scrub: 2,
-                            start: "top 30%",
-                            end: "bottom 50%",
-                        }
-                    })
-                    .to(divHero.current, {
-                        y: -150,
-                        opacity: .7,
-                        scale: 0.95,
-                        filter: "blur(5px)"
-                    },1)
-                }
-            });
-
-            intro
-                .from(split.words, {
-                    duration: 1.3,
-                    opacity: 0,
-                    y: 30,
-                    stagger: 0.08,
-                    ease: "power2.out",
-                    delay: 0.5
-                })
-                .from(textRef.current, {
-                    y: 30,
-                    opacity: 0,
-                }, "-=0.8")
-                .from(divBotao.current, {
-                    y: 30,
-                    opacity: 0,
-                }, "-=0.8")
-            });
-
-        }, el);
-
-        return () => ctx.revert();
-    }, []);
-
+    useScrollAnimationHeroSobreMim(el,titleRef,textRef,divBotao,divHero)
     return (
         <section  ref={el}>
             <div className={CssHero.secaoHeroProdutos} ref={divHero}>

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CssResetSenha from "./resetSenha.module.css"
-import Input from "../../../Componentes/Input";
-import BotaoAction from "../../../Componentes/BotaoAction";
+import Input from "../../../Componentes/Inputs/Input";
+import BotaoAction from "../../../Componentes/Buttons/BotaoAction";
 import useModalAviso from "../../../hooks/useModalAviso";
-import ModalAviso from "../../../Componentes/ModalAviso";
+import ModalAviso from "../../../Componentes/Modals/ModalAviso";
 import { validarSenha } from "../../../Utils/validacoes";
 const BASE_URL = import.meta.env.VITE_API_URL
 

@@ -1,8 +1,7 @@
 import CssFuncio from "./funcionalidades.module.css"
-import CardFuncionalidade from "../../../../../Componentes/CardFuncionalidade"
-import ContainerTexto from "../../../../../Componentes/ContainerTexto"
+import CardBlackMedio from "../../../../../Componentes/ComponetesCards/CardBlackMedio"
 import { tecnologiasImagens } from "../../../../../constants/tecnologiasImagens"
-import MinhasHabilidades from "../../../../../Componentes/MinhasHabilidades"
+import MinhasHabilidades from "../../../../../Componentes/ComponetesCards/MinhasHabilidades"
 
 function SecaoFuncionalidade({ funcionalidades = [], tecnologias = [] }) {
 
@@ -16,7 +15,8 @@ function SecaoFuncionalidade({ funcionalidades = [], tecnologias = [] }) {
                 <ul className={CssFuncio.ulHeroFuncionalidades}>
                     {funcionalidades?.map((funci, index)=>(
                         <li key={index}>
-                            <ContainerTexto
+                            <CardBlackMedio
+                                tag={"Funcionalidade"}
                                 titulo={funci.titulo}
                                 texto={funci.descricao}
                             />

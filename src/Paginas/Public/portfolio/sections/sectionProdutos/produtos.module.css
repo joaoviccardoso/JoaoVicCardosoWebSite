@@ -1,5 +1,5 @@
 .secaoProdutos{
-    padding: 2rem 12rem;
+    padding: 2rem;
     width: 100%;
     background: transparent;
     filter: drop-shadow(var(--verde) 1.95px 1.95px 2.6px);
@@ -41,6 +41,10 @@ span{
     width: 100%;
     padding: 3rem 0;
     flex-wrap: wrap;
+}
+
+.listaProdutos li{
+    width: 50%;
 }
 
 @media(max-width: 1320px){

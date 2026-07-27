@@ -1,24 +1,22 @@
 import { useRef } from "react"
 import CssSobreMim from "./heroSobreMim.module.css"
-import BotaoCta from "../../../../../Componentes/BotaoCta"
-import imgPersonagemHero from "../../../../../assets/personagemPaginaSobreMim.png"
-import useLayoutEffectHeroPadrao from "../../../../../hooks/useScrollAnimationHeroPadrao"
+import BotaoCta from "../../../../../Componentes/Buttons/BotaoCta"
+import useScrollAnimationHeroSobreMim from "../../../../../hooks/useScrollAnimationHeroSobreMim"
 
 function SecaoHeroSobreMim(){
     const el = useRef(null)
     const titleRef = useRef(null)
     const textRef = useRef(null)
     const divHero = useRef(null)
-    const imgHero = useRef(null)
     const divBotao = useRef(null)
 
-    useLayoutEffectHeroPadrao(el,titleRef,textRef,divHero,imgHero,divBotao)
+    useScrollAnimationHeroSobreMim(el,titleRef,textRef,divBotao,divHero)
     
     return(
         <section className={CssSobreMim.secaoHeroSobreMim} ref={el}>
             <div className={CssSobreMim.containerTextoSobreMimHero} ref={divHero}>
-                <h1 ref={titleRef}>Transformo ideias em produtos digitais.</h1>
-                <p ref={textRef}>Projetos bem planejados, design estratégico e desenvolvimento focado em performance e crescimento.</p>
+                <h1 ref={titleRef}>Transformo ideias em <span>experiências digitais</span></h1>
+                <p ref={textRef}>Desenvolvedor front-end focado em interfaces modernas, rápidas e bem estruturadas.</p>
                 <div ref={divBotao}>
                     <BotaoCta
                         child="Comece seu projeto hoje"
@@ -26,8 +24,6 @@ function SecaoHeroSobreMim(){
                     />
                 </div>
             </div>
-
-            <img src={imgPersonagemHero} className={CssSobreMim.imgSobreMim} ref={imgHero} alt="um quadrado com as borda verde com um boneco no centro" />
         </section>
     )
 }

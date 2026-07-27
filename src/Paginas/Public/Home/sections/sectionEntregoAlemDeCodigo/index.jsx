@@ -1,43 +1,62 @@
-import { useRef } from 'react';
-import { useScrollAnimationUp } from '../../../../../hooks/useScrollAnimationUp';
+import { useRef, useState } from 'react';
 import CssAlemDeCodigo from './alemDeCodigo.module.css'
-import ContainerTexto from '../../../../../Componentes/ContainerTexto'
-import bonecoMostrandoOpcoes from '../../../../../assets/BonecoMostrandoOpcoes.png'
+import CardVertical from '../../../../../Componentes/ComponetesCards/CardVertical';
+import { useScrollAnimationUpAlemDeCodigo } from '../../../../../hooks/useScrollAnimationPaginaAlemDeCodigo';
 
 function AlemDeCodigo(){
-
+    const [aberto, setAberto] = useState(false);
+    const cont1 = useRef(null)
+    const cont2 = useRef(null)
+    const cont3 = useRef(null)
     const el = useRef(null);
-    useScrollAnimationUp(el,["#container-1", "#container-2", "#container-3"])
-                    
+
+    useScrollAnimationUpAlemDeCodigo(el, [cont1, cont2, cont3])
+
+    function toggleCards() {
+        setAberto(prev => !prev);
+    }       
+
     return(
         <section className={CssAlemDeCodigo.secaoAlemDeCodigo}>
             <div className={CssAlemDeCodigo.containerTexto}>
                 <h3>O que eu entrego além de código?</h3>
-                <p>Você não está apenas contratando um desenvolvedor. Está garantindo:</p>
             </div>
 
             <div className={CssAlemDeCodigo.containerOqueEuEntrego}>
-                <img src={bonecoMostrandoOpcoes} alt="imagem de um personagem mostrandando com a mao oque eu ofereço" />
-                <ul className={CssAlemDeCodigo.ulLista} ref={el}>
+                <ul className={`${CssAlemDeCodigo.ulLista} ${aberto ? CssAlemDeCodigo.ativo : ''}`} ref={el} onClick={toggleCards}>
                     <li id='container-1'>
-                        <ContainerTexto
-                            titulo="Atendimento próximo e humano"
-                            texto="Mais do que entregar sites, ofereço uma parceria verdadeira, ouvindo suas necessidades e transformando ideias em soluções digitais claras e eficientes."
-                        />
+                        <div className={CssAlemDeCodigo.animWrapper} ref={cont1}>
+                            <CardVertical
+                                tag={"Como Transformo Ideia"}
+                                titulo={"Investimento que cabe no bolso"}
+                                texto={"Serviços acessíveis para você ter presença digital com qualidade."}
+                            />
+                        </div>
                     </li>
                     <li id='container-2'>
-                        <ContainerTexto
-                            titulo="Foco em quem quer crescer"
-                            texto="Desenvolvimento de sites pensado para pequenos e médios negócios, ajudando sua marca a conquistar espaço online com simplicidade e impacto."
-                        />
+                        <div className={CssAlemDeCodigo.animWrapper} ref={cont2}>
+                            <CardVertical
+                                tag={"Como Transformo Ideia"}
+                                titulo={"Foco em quem quer crescer"}
+                                texto={"Sites para pequenos e médios negócios, com simplicidade e impacto."}
+                            />
+                        </div>
                     </li>
                     <li id='container-3'>
-                        <ContainerTexto
-                            titulo="Investimento que cabe no bolso"
-                            texto="Serviços acessíveis para você começar a construir presença digital sem precisar gastar muito — qualidade e profissionalismo ao seu alcance."
-                        />
+                        <div className={CssAlemDeCodigo.animWrapper} ref={cont3}>
+                            <CardVertical
+                                tag={"Como Transformo Ideia"}
+                                titulo={"Atendimento próximo"}
+                                texto={"Crio landing pages e sistemas web com design responsivo e alta performance para fortalecer sua presença online"}
+                            />
+                        </div>
                     </li>
                 </ul>
+            </div>
+
+            <div className={CssAlemDeCodigo.containerTexto}>
+                <p>Clique nos cards para saber mais.</p>
+                <p>Você não está apenas contratando apenas um desenvolvedor.</p>
             </div>
         </section>
     )

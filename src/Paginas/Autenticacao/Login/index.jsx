@@ -5,12 +5,12 @@ import { jwtDecode } from "jwt-decode";
 import CssLogin from "./login.module.css"
 import BemVindo from "../../../Componentes/MensagemBemVindo"
 import ImgLink from "../../../Componentes/imgLink"
-import Input from "../../../Componentes/Input"
-import BotaoAction from "../../../Componentes/BotaoAction"
-import RadioGroup from "../../../Componentes/RadioInput"
-import LinkParaNavegacao from "../../../Componentes/Links/link"
+import Input from "../../../Componentes/Inputs/Input";
+import BotaoAction from "../../../Componentes/Buttons/BotaoAction"
+import RadioGroup from "../../../Componentes/Inputs/RadioInput";
+import LinkParaNavegacao from "../../../Componentes/Layouts/Links/link"
 import useModalAviso from "../../../hooks/useModalAviso";
-import ModalAviso from "../../../Componentes/ModalAviso";
+import ModalAviso from "../../../Componentes/Modals/ModalAviso";
 const BASE_URL = import.meta.env.VITE_API_URL
 
 function TelaLogin(){

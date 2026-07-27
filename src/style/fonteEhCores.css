@@ -5,17 +5,37 @@
     --font-size-md: 1rem;      
     --font-size-lg: 1.25rem;  
     --font-size-xl: 1.5rem;   
-    --font-size-2xl: 2rem;   
+    --font-size-2xl: 2rem; 
+    --font-size-2x2: 2.5rem;  
     --font-size-3xl: 2.8rem;
     --font-size-3x2: 3.5rem;
     --font-size-4xl: 5rem;
+    --font-size-4x2: 6rem;
+    --font-size-5xl: 7rem;
 
-    /*Cores*/
+    /*novas Cores*/
+    --background:  #111111;
+    --background-segunda-camada: #010101;
+    --color-componente: #0A0A0A;
+    --background-saida: linear-gradient(
+        to bottom,
+        var(--background-segunda-camada) 0%,
+        var(--background-segunda-camada) 45%,
+        rgba(1, 1, 1, 0.85) 60%,
+        rgba(1, 1, 1, 0.6) 70%,
+        rgba(1, 1, 1, 0.35) 80%,
+        rgba(1, 1, 1, 0.15) 90%,
+        transparent 100%
+        );
+    --color-tag: #0F2D1C;
     --verde:#10B981;
+    --color-verdeImagemSobreMimEscuro: #07533A;
+    --color-verdeImagemSobreMimClaro: #10B981;
+    /*Cores*/
+    
     --branco-menosBranco: #F2F2F2;
     --vermelho-erro: #EF4444;
     --cor-letraClara: #FFFFFF;
-    --color-componente: #0A0A0A;
     --cor-principal: #22533D;
     --cor-backgroudInput: #151515;
     --preto: #000;
@@ -37,9 +57,13 @@
     0 0 6px #00FF9C,
     0 0 14px rgba(0, 255, 156, 0.7),
     0 0 30px rgba(0, 255, 156, 0.4);
+     --box-shadowDark:
+    4px 8px 12px rgba(0, 0, 0, 0.70),
+    2px 4px 6px rgba(0, 0, 0, 0.3);
 
 
     /*Fonte estilo*/
-    --font-paraTextoChamativo: "Titan One", sans-serif;
-    --font-paraTexto: "Space Grotesk", sans-serif;
+    --font-paraTituloEhTexto: "Sofia Sans", sans-serif;
+    --font-paraTextoChamativo: "Sofia Sans", sans-serif; /*"Titan One", sans-serif; "Space Grotesk", sans-serif;*/
+    --font-paraTexto: "Sofia Sans", sans-serif; 
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import CardProduto from "../../../../../Componentes/CardProdutos"
+import CardProduto from "../../../../../Componentes/ComponetesCards/CardProdutos"
 import CssProduto from "./produtos.module.css"
-import LinkParaNavegacao from "../../../../../Componentes/Links/link"
+import LinkParaNavegacao from "../../../../../Componentes/Layouts/Links/link"
 import { buildImageUrl } from "../../../../../Utils/buildImagens"
 //import menuCelular from "../../../../../assets/menuCelular.svg"
 
@@ -14,8 +14,8 @@ function Produtos(){
         async function buscarDados() {
             try {
                 const res = await fetch(`${BASE_URL}/produtosMP/todos`);
-                console.log(res)
                 const data = await res.json();
+                console.log(data)
                 setAllProdutosMP(data);
             } catch (erro) {
                 console.log(erro);
@@ -28,8 +28,8 @@ function Produtos(){
    
     return(
         <section className={CssProduto.secaoProdutos}>
-            <div className={CssProduto.filtroProdutos}>
-                {/*<span>
+             {/*<div className={CssProduto.filtroProdutos}>
+               <span>
                     <LinkParaNavegacao
                         child="Todos"
                     />
@@ -44,21 +44,19 @@ function Produtos(){
                 </span>
                 <button className="btn d-sm-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <img src={menuCelular} alt="menu para celular" />
-                </button>*/}
-            </div>
+                </button>
+            </div>*/}
 
-            <ul className={CssProduto.listaProdutos}>
+            <div className={CssProduto.listaProdutos}>
                 {produtos.map(p => (
-                    <li key={p._id}>
                         <CardProduto
                             titulo={p.nomeCompleto}
                             descricao={p.descricaoCurta}
                             imgUrl={buildImageUrl(p.imagemPrincipal)}
                             idBtn={p._id}
                         />
-                    </li>
                 ))}
-            </ul>
+            </div>
         </section>
     )
 }

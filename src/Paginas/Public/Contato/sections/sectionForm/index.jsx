@@ -1,12 +1,12 @@
 import CssForm from "./form.module.css"
 import emailjs from '@emailjs/browser';
 import { useState } from "react";
-import Input from "../../../../../Componentes/Input";
-import RadioGroup from "../../../../../Componentes/RadioInput";
-import TextArea from "../../../../../Componentes/TextArea";
-import BotaoAction from "../../../../../Componentes/BotaoAction";
+import Input from "../../../../../Componentes/Inputs/Input";
+import RadioGroup from "../../../../../Componentes/Inputs/RadioInput";
+import TextArea from "../../../../../Componentes/Inputs/TextArea";
+import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction";
 import useModalAviso from "../../../../../hooks/useModalAviso";
-import ModalAviso from "../../../../../Componentes/ModalAviso";
+import ModalAviso from "../../../../../Componentes/Modals/ModalAviso";
 
 function Formulario(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
