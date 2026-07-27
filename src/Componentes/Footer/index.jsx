@@ -82,7 +82,7 @@ function Footer(){
             
 
             <p className={CssFooter.footerCopy}>
-                &copy; 2026 João Victor - Todos os direitos reservados.
+                &copy; 2026 João Victor - Todos os direitos reservados v1.0.
             </p>
         </div>
     )
