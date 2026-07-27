@@ -394,20 +394,36 @@
 
     .tituloSkills2{
         font-size: var(--font-size-xl);
+        margin-left: 7em;
         transform: translateY(2.9em);
     }
 
     .tituloMentalidade1{
         font-size: var(--font-size-xl);
         margin-left: 0;
-        margin-left: -7em;
+        margin-left: -11em;
         transform: translateY(-1.8em);
     }
 
     .tituloMentalidade2{
+        font-size: var(--font-size-2x2);
+        margin-left:0;
+        transform: none;
+    }
+}
+
+@media(max-width: 400px){
+    .tituloMentalidade2{
         font-size: var(--font-size-2xl);
         margin-left:0;
         transform: none;
+    }
+
+    .tituloMentalidade1{
+        font-size: var(--font-size-xl);
+        margin-left: 0;
+        margin-left: -8em;
+        transform: translateY(-1.8em);
     }
 }
 
