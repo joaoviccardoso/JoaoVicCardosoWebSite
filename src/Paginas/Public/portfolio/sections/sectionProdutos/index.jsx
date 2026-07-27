@@ -15,6 +15,7 @@ function Produtos(){
             try {
                 const res = await fetch(`${BASE_URL}/produtosMP/todos`);
                 const data = await res.json();
+                console.log(data)
                 setAllProdutosMP(data);
             } catch (erro) {
                 console.log(erro);

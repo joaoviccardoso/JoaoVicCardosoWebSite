@@ -16,6 +16,7 @@
     /*novas Cores*/
     --background:  #111111;
     --background-segunda-camada: #010101;
+    --color-componente: #0A0A0A;
     --background-saida: linear-gradient(
         to bottom,
         var(--background-segunda-camada) 0%,
@@ -35,7 +36,6 @@
     --branco-menosBranco: #F2F2F2;
     --vermelho-erro: #EF4444;
     --cor-letraClara: #FFFFFF;
-    --color-componente: #0A0A0A;
     --cor-principal: #22533D;
     --cor-backgroudInput: #151515;
     --preto: #000;

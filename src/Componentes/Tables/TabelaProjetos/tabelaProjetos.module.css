@@ -1,12 +1,15 @@
 .tableWrapper{
   min-width: 100%;
   overflow-x: auto;
+  background-color: var(--color-componente);
+  border-radius: 12px;
 }
 
 .projTable{
   min-width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+ 
 }
 
 .projRow {
