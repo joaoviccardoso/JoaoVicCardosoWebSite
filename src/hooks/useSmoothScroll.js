@@ -2,18 +2,21 @@ import { useEffect } from "react"
 import Lenis from "lenis"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from "gsap"
+import { setLenis } from "./lenisStore"
 
 export function useSmoothScroll() {
     useEffect(() => {
         const isMobile = window.innerWidth <= 768
 
         const lenis = new Lenis({
-            duration: isMobile ? 0.8 : 4,
+            duration: isMobile ? 0.8 : 3.5,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smoothWheel: !isMobile,
             smoothTouch: isMobile,
             touchMultiplier: isMobile ? 1.2 : 1,
         })
+
+        setLenis(lenis)
 
         lenis.on("scroll", ScrollTrigger.update)
 
@@ -31,12 +34,14 @@ export function useSmoothScroll() {
             gsap.ticker.add(rafCallback)
 
             return () => {
+                setLenis(null)
                 lenis.destroy()
                 gsap.ticker.remove(rafCallback)
             }
         }
 
         return () => {
+            setLenis(null)
             lenis.destroy()
             cancelAnimationFrame(rafId)
         }
