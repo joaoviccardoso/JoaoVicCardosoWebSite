@@ -49,9 +49,9 @@ function Home(){
                                 ease: "none",
                                 scrollTrigger: {
                                     trigger: secao0Ref.current,
-                                    //markers:true,
+                                    markers:true,
                                     start: isMobile ? "top bottom" : "top bottom",
-                                    end: isMobile ? "+=110%" : "+=60%",
+                                    end: isMobile ? "+=120%" : "+=60%",
                                     scrub: 2,
                                 },
                             }
