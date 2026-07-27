@@ -5,7 +5,7 @@
     align-items: center;
     text-align: center;
     gap: 2rem;
-    padding: 10rem 12rem;
+    padding: 8rem 12rem;
     color: #fff;
 }
 
@@ -44,13 +44,19 @@
         justify-content: center;
         gap: 0.4rem;
         color: var(--verde);
-        white-space: nowrap;
     }
 }
 
 
-@media(max-width: 420px){
+@media(max-width: 480px){
     .secaoHeroProdutos{
         padding: 4rem 2rem;
+        line-height: 1;
+    }
+
+    .secaoHeroProdutos span{
+        flex-direction: row;
+        flex-wrap: wrap;
+        line-height: 1;
     }
 }
