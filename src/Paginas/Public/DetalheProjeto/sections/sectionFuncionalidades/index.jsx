@@ -1,6 +1,5 @@
 import CssFuncio from "./funcionalidades.module.css"
 import CardBlackMedio from "../../../../../Componentes/ComponetesCards/CardBlackMedio"
-import { tecnologiasImagens } from "../../../../../constants/tecnologiasImagens"
 import MinhasHabilidades from "../../../../../Componentes/ComponetesCards/MinhasHabilidades"
 
 function SecaoFuncionalidade({ funcionalidades = [], tecnologias = [] }) {

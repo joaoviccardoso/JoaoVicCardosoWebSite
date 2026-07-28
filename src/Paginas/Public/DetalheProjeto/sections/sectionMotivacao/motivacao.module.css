@@ -1,17 +1,14 @@
 .secaoMotivacao{
-    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 80%;
+    height: 50vh;
 }
 
-.secaoMotivacao h3{
-    font-size: var(--font-size-3x2);
-}
 
-.secaoMotivacao p{
-    font-size: var(--font-size-2xl);
-    line-height: 1.3;
-}
-
-@media(max-width: 1000px){
+@media(max-width: 1440px){
     .secaoMotivacao{
         max-width: 100%;
     }
@@ -20,14 +17,5 @@
 @media(max-width: 480px){
     .secaoMotivacao{
         max-width: 100%;
-    }
-
-    .secaoMotivacao h3{
-        font-size: var(--font-size-3xl);
-    }
-
-    .secaoMotivacao p{
-        font-size: var(--font-size-xl);
-        line-height: 1.3;
     }
 }

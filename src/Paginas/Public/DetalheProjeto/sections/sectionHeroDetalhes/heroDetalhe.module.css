@@ -160,5 +160,6 @@
     .divHeroImagemProjeto{
         max-height: auto;
         gap: 0;
+        margin-bottom: 2rem;
     }
 }

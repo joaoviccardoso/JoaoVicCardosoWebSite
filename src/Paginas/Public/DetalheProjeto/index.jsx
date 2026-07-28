@@ -15,7 +15,6 @@ function PaginaDetalheDosProjetos(){
     useEffect(() => {
         async function buscarDados() {
             try {
-                console.log(id)
                 const res = await fetch(`${BASE_URL}/produtosMP/produtoMpPorId/${id}`);
                 const data = await res.json();
                 setProdutoMP(data);

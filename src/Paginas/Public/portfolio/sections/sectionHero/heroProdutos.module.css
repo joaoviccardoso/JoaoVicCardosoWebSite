@@ -1,4 +1,5 @@
 .secaoHeroProdutos{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,6 +8,7 @@
     gap: 2rem;
     padding: 8rem 12rem;
     color: #fff;
+    z-index: 2;
 }
 
 .secaoHeroProdutos h1{
