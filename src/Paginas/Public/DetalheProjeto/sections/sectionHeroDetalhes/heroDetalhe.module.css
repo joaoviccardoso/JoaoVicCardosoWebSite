@@ -1,7 +1,7 @@
 .secaoHeroDetalhes{
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
     gap: 3rem;
     padding: 4rem 12rem;
 }
@@ -15,17 +15,6 @@
     width: 50%;
 }
 
-.divTituloHero h1{
-    font-size: var(--font-size-4xl);
-    font-family: var(--font-paraTextoChamativo);
-}
-
-.divTituloHero p{
-    font-size: var(--font-size-xl);
-    font-family: var(--font-paraTexto);
-    line-height: 1.8;
-}
-
 .divTituloHero div{
     display: flex;
     gap: 2rem;
@@ -36,7 +25,7 @@
     align-items: center;
     border: 3px solid var(--verde);
     border-radius: 14px;
-    padding: 1rem;
+    padding: 2rem;
     max-height: 380px;
 
     position: relative;
@@ -92,7 +81,7 @@
 }
 
 .imagemProjeto {
-    max-width: 680px;
+    max-width: 100%;
     max-height: 310px;
     border-radius: 12px;
 
@@ -104,7 +93,7 @@
     transform: scale(1.05);
 }
 
-@media(max-width: 1550px){
+@media(max-width: 1440px){
     .secaoHeroDetalhes{
         flex-direction: column;
     }
@@ -114,13 +103,13 @@
     }
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1024px){
    .secaoHeroDetalhes{
         padding: 4rem 3rem;
     }
 }
 
-@media(max-width: 800px){
+@media(max-width: 768px){
     .secaoHeroDetalhes{
         background-image: none !important;
     }
@@ -130,9 +119,19 @@
         max-height: 380px;
         border-radius: 12px;
     }
+
+    .divHeroImagemProjeto {
+        padding: .8rem;
+    }
+
+    .divTituloHero div{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-@media(max-width: 580px){
+@media(max-width: 480px){
     .secaoHeroDetalhes{
         flex-direction: column;
         padding: 5rem 2rem 0rem 2rem;
@@ -140,10 +139,6 @@
 
     .divTituloHero{
         width: 100%;
-    }
-
-    .divTituloHero div{
-        text-align: center;
     }
 
     .divTituloHero h1{

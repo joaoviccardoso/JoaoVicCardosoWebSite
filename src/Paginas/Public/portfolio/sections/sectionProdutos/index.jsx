@@ -50,6 +50,7 @@ function Produtos(){
             <div className={CssProduto.listaProdutos}>
                 {produtos.map(p => (
                         <CardProduto
+                            key={p._id}
                             titulo={p.nomeCompleto}
                             descricao={p.descricaoCurta}
                             imgUrl={buildImageUrl(p.imagemPrincipal)}
