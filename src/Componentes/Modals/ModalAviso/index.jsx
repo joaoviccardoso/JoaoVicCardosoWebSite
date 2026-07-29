@@ -32,7 +32,7 @@ function ModalAviso({ aberto, onFechar, mensagem }) {
           <div className={`modal-content ${CssModal.modalContent} ${visivel ? CssModal.contentVisivel : CssModal.contentSaindo}`}>
 
             <div className={`modal-header ${CssModal.modalHeader}`}>
-              <h5 className={`modal-title ${CssModal.modalTitle}`}>Aviso</h5>
+              <h4 className={`modal-title ${CssModal.modalTitle}`}>Aviso</h4>
               <button type="button" className={`btn-close ${CssModal.btnClose}`} onClick={onFechar} />
             </div>
 

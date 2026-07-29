@@ -1,143 +1,158 @@
-# 🌐 Portfólio Web - João Victor | Desenvolvimento & Design
+# JVCode - Portfólio & Sistema Web
 
-Este é o meu portfólio profissional como **Desenvolvedor Front-end e UI Designer**, criado com **React + Vite**.  
-O objetivo é apresentar meus serviços, projetos e facilitar o contato de possíveis clientes que desejam transformar suas ideias em presença digital.
+Este é o meu projeto **JVCode**, que evoluiu de um portfólio simples para um **sistema web completo com área do cliente**.
 
----
-
-## ✨ Sobre o Projeto
-
-A **Landing Page** foi desenvolvida com foco em **freelancers** e **microempreendedores** que buscam um site moderno, rápido e adaptado para todos os dispositivos.
-
-Ela transmite profissionalismo e apresenta de forma clara os **serviços oferecidos**, **projetos desenvolvidos** e **formas de contato**.
+Desenvolvido com foco em performance, design moderno e experiência do usuário, o projeto tem como objetivo apresentar meus serviços, projetos e oferecer uma plataforma onde clientes podem acompanhar seus pedidos em tempo real.
 
 ---
 
-## 🧩 Estrutura da Página
+## Sobre o Projeto
 
-### 🏠 1. Header
-- Logo ou nome profissional: **João Victor | Desenvolvimento & Design**
-- Menu simples: Serviços | Portfólio | Depoimentos | Contato  
-- Botão de destaque: **“Solicite um orçamento”**
+O **JVCode** deixou de ser apenas uma landing page e passou a ser um **sistema com múltiplas telas e autenticação de usuários**.
 
-### 🚀 2. Hero Section
-- **Título:** “Crio sites modernos e ajudo sua marca a se destacar na internet.”  
-- **Subtítulo:** “Desenvolvimento de sites, design de layouts no Figma, SEO e presença digital nas redes sociais.”  
-- **CTA:** “Comece seu projeto hoje.”
-
-### 💼 3. Serviços
-Os serviços são apresentados como **soluções personalizadas** para cada tipo de cliente:
-
-- **Criação de Sites Responsivos** → Sites rápidos e adaptáveis.  
-- **Design de Layouts no Figma** → Visual profissional antes do código.  
-- **Manutenção de Código** → Configuração e otimização de codigo.  
-- **SEO Básico** → Seu site visível no Google.
-
-Também podem ser exibidos **pacotes combinados** (ex: *Site + SEO* ou *Design + Redes Sociais*).
-
-### ⭐ 4. Por que me contratar?
-> “Sou desenvolvedor em formação, mas já ajudo empresas e pessoas a colocarem suas ideias no ar com soluções simples, rápidas e acessíveis.”
-
-Benefícios:
-- Atendimento próximo e personalizado  
-- Entregas dentro do prazo  
-- Soluções acessíveis e escaláveis  
-
-### 🧠 5. Portfólio
-Apresentação de projetos reais e de estudo:
-
-| Projeto | Descrição |
-|----------|------------|
-| **Pokédex** | Exemplo de site interativo com consumo de API. |
-| **Cardápio Online** | Protótipo de sistema para pedidos via WhatsApp. |
-| **Calculadora Geral** | Aplicativo web com cálculos financeiros automatizados. |
-
-### 💬 6. Depoimentos
-Caso ainda não haja clientes, o espaço é usado como chamada:
-> “Seu projeto pode ser o próximo destaque aqui 👇”
-
-### 📞 7. Call to Action Final
-> “Pronto para tirar sua ideia do papel?”  
-Botões: **Fale comigo no WhatsApp** | **Formulário de contato (resposta em até 24h)**
-
-### ⚡ 8. Footer
-- Redes sociais (LinkedIn, GitHub, Instagram profissional)  
-- Copyright © João Victor – Todos os direitos reservados  
+Agora, além de apresentar serviços e projetos, o sistema permite que clientes acessem uma área exclusiva para acompanhar o andamento dos seus sites e sistemas.
 
 ---
 
-## 💻 Tecnologias Utilizadas
+## Estrutura do Sistema
 
-- [Vite](https://vitejs.dev/)
-- [React](https://react.dev/)
-- [Styled Components](https://styled-components.com/)
-- [Normalize.css](https://necolas.github.io/normalize.css/)
-- [JavaScript (ES6+)](https://developer.mozilla.org/docs/Web/JavaScript)
-- [HTML5](https://developer.mozilla.org/docs/Web/HTML)
-- [CSS3](https://developer.mozilla.org/docs/Web/CSS)
+### Páginas Públicas
 
----
+🏠 **Home**
 
-## 🧰 Serviços que Ofereço
+Apresentação principal com proposta de valor e chamada para ação.
 
-### 🖥️ Desenvolvimento Web
-- Landing pages profissionais  
-- Sites institucionais e portfólios  
-- Páginas de captura com formulário (leads)  
-- Blogs simples com CMS básico  
-- Páginas one page e de vendas  
+💼 **Serviços**
 
-### ⚙️ Sistemas e Aplicações Web
-- Sistema de controle de estoque  
-- Cadastro de clientes (CRUD)  
-- Controle financeiro pessoal  
-- Calculadoras personalizadas (juros, IMC, orçamentos etc.)  
-- Dashboards com gráficos e relatórios  
-- To-do lists, agendas e sistemas com LocalStorage ou Firebase  
+Exibição das soluções oferecidas de forma clara e objetiva.
 
-### 🛒 E-commerce
-- Catálogo de produtos  
-- Loja com carrinho e checkout via WhatsApp ou PIX  
+👨‍💻 **Sobre Mim**
 
-### 🎨 Design UI / Front-end
-- Layouts responsivos  
-- Conversão de Figma para site real  
-- Componentes modernos (cards, sliders, menus, etc.)  
-- Melhoria visual e de usabilidade em sites existentes  
+Resumo profissional, trajetória e objetivos.
 
-### 🔧 Manutenção e Ajustes
-- Correção de bugs e problemas de layout  
-- Otimização de performance e SEO  
-- Ajustes responsivos para dispositivos móveis  
-- Atualização de conteúdo e refatoração de código  
+🧠 **Portfólio**
 
-### 📣 Integrações e Marketing
-- WhatsApp, Google Maps, formulários e APIs  
-- Pixel do Facebook / Google Analytics  
-- Configuração de domínio, hospedagem e AdSense  
+Projetos desenvolvidos demonstrando habilidades técnicas.
 
-### 🚀 Extras Profissionais
-- Portfólio para profissionais  
-- Sites para academias, restaurantes, lojas e eventos  
-- “Link na Bio” personalizado (estilo Linktree)  
+📞 **Contato**
+
+Formas de comunicação com integração ao WhatsApp.
 
 ---
 
-## 📱 Contato
+### Área do Cliente
 
-📧 **Email:** joaovictor.dev@exemplo.com  
-💼 **LinkedIn:** [linkedin.com/in/joaovictor-dev](#)  
-💻 **GitHub:** [github.com/joaovictor-dev](#)  
-📲 **WhatsApp:** [Clique para conversar](#)
+🔑 **Login**
+
+Sistema de autenticação para clientes.
+
+📊 **Dashboard**
+
+Após o login, o cliente pode:
+
+- Acompanhar pedidos
+- Visualizar status dos projetos
+- Ter mais transparência sobre o andamento
+
+---
+
+## Funcionalidades
+
+- Sistema com autenticação de usuários
+- Dashboard para clientes
+- Interface moderna e responsiva
+- Estrutura escalável
+- Integração com WhatsApp e APIs
+- Apresentação de serviços e portfólio
+
+---
+
+## Projetos em Destaque
+
+- **JVCode** → Sistema completo com área do cliente
+- **Orange3D** → Projeto com foco em design moderno
+- **Art Vida Capoeira Conchal** → Site institucional com presença digital
+
+---
+
+## Tecnologias Utilizadas
+
+- Vite
+- React
+- Gsap
+- Lenis
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+
+---
+
+## Serviços que Ofereço
+
+### Desenvolvimento de Sites
+
+- Landing pages modernas e profissionais
+- Sites institucionais para empresas e negócios
+- Portfólios personalizados
+- Páginas de captura (leads) com formulário
+
+### Sistemas Web Personalizados
+
+- Desenvolvimento de sistemas sob medida
+- Painéis administrativos (dashboards) para gestão
+- Cadastro e gerenciamento de clientes (CRUD)
+- Acompanhamento de pedidos e status de projetos
+- Aplicações com lógica de negócio específica
+
+### Soluções para Vendas Online
+
+- Catálogo de produtos
+- Integração com WhatsApp e PIX
+- Estruturas simples para e-commerce
+
+### UI / Front-end
+
+- Criação de layouts responsivos
+- Transformação de design (Figma) em código
+- Interfaces modernas, rápidas e intuitivas
+- Melhoria visual e de usabilidade
+
+### Manutenção e Otimização
+
+- Correção de bugs
+- Ajustes de layout e responsividade
+- Otimização de performance
+- SEO básico para melhor posicionamento
+
+### Integrações e Recursos Extras
+
+- Integração com APIs
+- WhatsApp, Google Maps e formulários
+- Google Analytics e Pixel
+- Configuração de domínio e hospedagem
+
+---
+
+## Contato
+
+📧 Email: 
+
+💼 LinkedIn: 
+
+💻 GitHub: 
 
 ---
 
 ## 🧾 Licença
 
-Este projeto é de uso pessoal e portfólio.  
-Sinta-se à vontade para se inspirar na estrutura, mas evite o uso direto do conteúdo sem atribuição.
+Este projeto é de uso pessoal e portfólio.
+
+Sinta-se à vontade para se inspirar, mas evite copiar diretamente sem atribuição.
 
 ---
 
-Feito com 💙 por **João Victor Silva Cardoso**  
-Desenvolvedor Front-end & Designer UI.
+## ❤️ Autor
+
+Feito com 💙 por **João Victor da Silva Cardoso**
+
+Desenvolvedor Front-end & UI Designer

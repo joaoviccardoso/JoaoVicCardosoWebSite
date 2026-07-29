@@ -12,7 +12,7 @@ function ModalConfirmacaoExclusao({ aberto, onFechar, onConfirmar, nomeProduto, 
           <div className={`modal-content ${CssModalConfirmacao.modalContent}`}>
 
             <div className={`modal-header ${CssModalConfirmacao.modalHeader}`}>
-              <h5 className={`modal-title ${CssModalConfirmacao.modalTitle}`}>{tituloHeader}</h5>
+              <h4 className={`modal-title ${CssModalConfirmacao.modalTitle}`}>{tituloHeader}</h4>
               <button type="button" className={`btn-close ${CssModalConfirmacao.btnClose}`} onClick={onFechar} />
             </div>
 
