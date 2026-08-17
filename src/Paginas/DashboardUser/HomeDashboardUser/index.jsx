@@ -6,6 +6,7 @@ import TabelaProjetos from "../../../Componentes/Tables/TabelaProjetos"
 import { logout } from "../../../services/authServices"
 import { useNavigate } from "react-router-dom"
 import ModalConfirmacaoExclusao from "../../../Componentes/Modals/ModalDeConfirmacao"
+import MensagemBemVindo from "../../../Componentes/Layouts/MensagemDeBemVindo"
 
 function HomeDashborardUser(){
     const navigate = useNavigate() 
@@ -40,10 +41,11 @@ function HomeDashborardUser(){
 
     return(
         <section className={CssDashborardUser.sectionDashboardUser}>
-            <div>
-                <h1>Bem vindo user: {`${userUser.nomeCompleto}`}</h1>
-                <p>Aqui você pode visualizar um resumo geral das suas informações e acompanhar o status dos seus projetos. Utilize o painel para acessar rapidamente as principais funcionalidades e gerenciar tudo de forma simples e organizada</p>
-            </div>
+            <MensagemBemVindo
+                titulo={"Bem vindo:"}
+                user={userUser.nomeCompleto}
+                text={"Aqui você pode visualizar um resumo geral das suas informações e acompanhar o status dos seus projetos. Utilize o painel para acessar rapidamente as principais funcionalidades e gerenciar tudo de forma simples e organizada"}
+            />
             
             <section className={CssDashborardUser.sectionAcoesUser}>
                 <div className={CssDashborardUser.divBotaoAcoes1}>

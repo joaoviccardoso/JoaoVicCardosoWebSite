@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CssInput from "./input.module.css"
 
-function Input({ label, type = "text", name, value, onChange, placeholder, className }) {
+function Input({ label, type = "text", name, value, onChange, placeholder, className,disabled }) {
   const [showPassword, setShowPassword] = useState(false)
 
   const isPassword = type === "password"
@@ -17,6 +17,7 @@ function Input({ label, type = "text", name, value, onChange, placeholder, class
           value={value ?? ""}
           onChange={onChange}
           placeholder={placeholder}
+          disabled={disabled}
           className={`${CssInput.inputBasic} ${className ? CssInput[className] : ""}`}
         />
         {isPassword && (

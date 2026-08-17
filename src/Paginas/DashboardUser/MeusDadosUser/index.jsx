@@ -7,7 +7,7 @@ import Input from "../../../Componentes/Inputs/Input";
 import BotaoAction from "../../../Componentes/Buttons/BotaoAction";
 import useModalAviso from "../../../hooks/useModalAviso";
 import ModalAviso from "../../../Componentes/Modals/ModalAviso";
-
+import MensagemBemVindo from "../../../Componentes/Layouts/MensagemDeBemVindo";
 
 function MeusDadosUser(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
@@ -75,10 +75,11 @@ function MeusDadosUser(){
 
     return(
         <section className={CssMeusDados.sectionMeusDados}>
-            <div>
-                <h1>Bem vindo user: {userUser.nomeCompleto}</h1>
-                <p>Aqui você pode visualizar e atualizar suas informações pessoais. Mantenha seus dados sempre corretos para garantir uma melhor experiência e facilitar o contato quando necessário.</p>
-            </div>
+            <MensagemBemVindo
+                titulo={"Bem vindo:"}
+                user={userUser.nomeCompleto}
+                text={"Aqui você pode visualizar e atualizar suas informações pessoais. Mantenha seus dados sempre corretos para garantir uma melhor experiência e facilitar o contato quando necessário."}
+            />
             <form onSubmit={handleSubmit} className={CssMeusDados.formDadosCliete}>
 
                 <Input 
@@ -86,6 +87,7 @@ function MeusDadosUser(){
                     name="nomeCompleto" 
                     value={form.nomeCompleto} 
                     onChange={handleChange}
+                    disabled={false}
                     placeholder={userUser.nomeCompleto || "Nome completo"} 
                     className={`${erroParaAtualizar ? "inputErro" : ""}`}
                 />
@@ -96,6 +98,7 @@ function MeusDadosUser(){
                         type="tel" name="telefone"
                         value={form.telefone} 
                         onChange={handleChange}
+                        disabled={false}
                         placeholder={userUser.telefone || "Telefone"} 
                         className={`${erroParaAtualizar ? "inputErro" : ""}`}
                     />
@@ -105,6 +108,7 @@ function MeusDadosUser(){
                         type="number" 
                         name="cpf"
                         value={form.cpf} onChange={handleChange}
+                        disabled={true}
                         placeholder={userUser.cpf || "CPF"} 
                         className={`${erroParaAtualizar ? "inputErro" : ""}`}
                     />
@@ -115,18 +119,20 @@ function MeusDadosUser(){
                     type="email" 
                     name="email"
                     value={form.email} onChange={handleChange}
+                    disabled={false}
                     className={`${erroParaAtualizar ? "inputErro" : ""}`}
                     placeholder={userUser.email || "E-mail"} 
                 />
 
                 <Input 
-                        label="Endereço" 
-                        name="endereco" 
-                        value={form.endereco} 
-                        onChange={handleChange}
-                        placeholder={userUser.endereco || "Endereço"} 
-                        className={`${erroParaAtualizar ? "inputErro" : ""}`}
-                    />
+                    label="Endereço" 
+                    name="endereco" 
+                    value={form.endereco} 
+                    onChange={handleChange}
+                    disabled={true}
+                    placeholder={userUser.endereco || "Endereço"} 
+                    className={`${erroParaAtualizar ? "inputErro" : ""}`}
+                />
 
                 <div className={CssMeusDados.div3}>
 
@@ -135,6 +141,7 @@ function MeusDadosUser(){
                         type="number" 
                         name="cep" 
                         value={form.cep} 
+                        disabled={true}
                         onChange={handleChange}
                         className={`${erroParaAtualizar ? "inputErro" : ""}`}
                         placeholder={userUser.cep || "CEP"} 
@@ -145,6 +152,7 @@ function MeusDadosUser(){
                         name="numeroCasa"
                         value={form.numeroCasa} 
                         onChange={handleChange}
+                        disabled={true}
                         placeholder={userUser.numeroCasa || "Número"} 
                         className={`${erroParaAtualizar ? "inputErro" : ""}`}
                     />

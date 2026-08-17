@@ -54,6 +54,16 @@
     border: var(--vermelho-erro) 1px solid ; 
 }
 
+.inputBasic:disabled{
+    border: #ffc107 1px solid ; 
+    cursor: not-allowed;
+}
+
+.inputBasic:disabled:hover{
+    border: #ffc107 1px solid ; 
+    cursor: not-allowed;
+}
+
 .inputErro {
     border:var(--vermelho-erro) 1px solid ;
 }
