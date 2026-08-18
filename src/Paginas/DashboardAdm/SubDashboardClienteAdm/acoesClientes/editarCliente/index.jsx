@@ -9,6 +9,7 @@ import { validarFormularioAtualizarDados } from "../../../../../Utils/validarCad
 import { atualizarUsuario, getUsuarioPorId } from "../../../../../services/authServices"
 import useModalAviso from "../../../../../hooks/useModalAviso"
 import ModalAviso from "../../../../../Componentes/Modals/ModalAviso"
+import MensagemBemVindo from "../../../../../Componentes/Layouts/MensagemDeBemVindo"
 
 const STATUS_OPTIONS = [
   { value: "admin", label: "Adimin" },
@@ -103,10 +104,12 @@ function AcaoEditarCliente(){
 
     return(
         <section className={CssAcao1.secaoTelaCadastro}>
-            <div>
-                <h1>Bem vindo, {`${userAdm.nomeCompleto}`}</h1>
-                <p>Nesta área você pode visualizar, os dados do cliente e editar eles.</p>
-            </div>
+            <MensagemBemVindo
+                titulo={"Bem vindo"}
+                user={userAdm.nomeCompleto}
+                text={"Nesta área você pode visualizar, os dados do cliente e editar eles."}
+            />
+
             <form onSubmit={handleSubmit} className={CssAcao1.formDadosCliete}>
                 <Input
                     label="Nome" 

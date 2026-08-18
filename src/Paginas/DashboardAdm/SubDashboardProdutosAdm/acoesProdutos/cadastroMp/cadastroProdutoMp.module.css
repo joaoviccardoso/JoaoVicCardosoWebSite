@@ -2,7 +2,7 @@
     background-color: var(--color-componente);
     border-radius: 12px;
     padding: 1rem 2rem;
-    margin-bottom: 3rem;
+    margin: 3rem 0;
     max-height: 100%;
 }
 
@@ -18,7 +18,6 @@
 .divTitulo p{
     font-size: var(--font-size-lg); 
 }
-
 
 .div2{
     display: flex;

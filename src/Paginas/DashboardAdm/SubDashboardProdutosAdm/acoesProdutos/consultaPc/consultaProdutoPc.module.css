@@ -1,6 +1,7 @@
 .divTabelaConsutaProduto{
     background-color: var(--color-componente);
     border-radius: 12px;
+    margin-top: 3rem;
 }
 
 .divTextoEhTitulo{

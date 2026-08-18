@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
-import CssAcaoProduto3 from "./cadastroProdutoPc.module.css"
-import TextArea from "../../../../../Componentes/Inputs/TextArea";
-import Input from "../../../../../Componentes/Inputs/Input";
-import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction";
-import StatusSelect from "../../../../../Componentes/Inputs/Select";
 import { validarFormularioCadastrarProduto } from "../../../../../Utils/validarCadastro";
 import { jwtDecode } from "jwt-decode";
 import { postProdutosPC, getProdutoPorId, putProdutoPC } from "../../../../../services/produtosServices";
 import { getUserPorNome } from "../../../../../services/authServices";
 import { useParams } from "react-router-dom";
+import CssAcaoProduto3 from "./cadastroProdutoPc.module.css"
+import TextArea from "../../../../../Componentes/Inputs/TextArea";
+import Input from "../../../../../Componentes/Inputs/Input";
+import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction";
+import StatusSelect from "../../../../../Componentes/Inputs/Select";
 import ModalAviso from "../../../../../Componentes/Modals/ModalAviso";
 import useModalAviso from "../../../../../hooks/useModalAviso";
+import MensagemBemVindo from "../../../../../Componentes/Layouts/MensagemDeBemVindo";
+import { pegarUser } from "../../../../../Utils/pegarUser";
 
 const STATUS_OPTIONS = [
   // Pré-projeto
@@ -98,20 +100,16 @@ function AcaoCadastrarProdutoPc(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
     const { id } = useParams() // undefined na rota de cadastro, preenchido na de edição
     const modoEdicao = Boolean(id)
-
     const [erroParaCadastrarPC, setCadastrarErro] = useState("")
     const [userAdm, setUserAdm] = useState({})
     const [clientesBuscados, setClientesBuscados] = useState([]);
     const [carregando, setCarregando] = useState(false)
     const [form, setForm] = useState(FORM_VAZIO);
 
-    // Pega dados do token
+
     useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (!token) return;
-        const decoded = jwtDecode(token);
-        setUserAdm(decoded);
-    }, []);
+        setUserAdm(pegarUser())
+    }, [])
 
     // Se tiver id, busca o produto e preenche o form
     useEffect(() => {
@@ -151,7 +149,6 @@ function AcaoCadastrarProdutoPc(){
 
     function handleChange(e) {
         const { name, value } = e.target;
-        console.log(STATUS_COR_MAP)
         setForm((prev) => ({
             ...prev,
             [name]: value,
@@ -173,7 +170,6 @@ function AcaoCadastrarProdutoPc(){
         try {
             let resposta;
             if (modoEdicao) {
-                console.log(form)
                 // Chama PUT/PATCH para atualizar
                 resposta = await putProdutoPC(id, form)
                 abrirAviso("Produto atualizado")
@@ -202,16 +198,18 @@ function AcaoCadastrarProdutoPc(){
 
     if (carregando) return <p>Carregando...</p>
 
+    const tituloPagina = modoEdicao ? "Editar Projeto" : "Bem vindo"
+    const textoPagina = modoEdicao ? "Atualize as informações do projeto abaixo." : "Nesta área você pode cadastrar novos sites ou produtos adquiridos pelos clientes..."
+
     return(
         <section className={CssAcaoProduto3.sectionCadastrarPC}>
-            <div className={CssAcaoProduto3.divTitulo}>
-                <h1>{modoEdicao ? "Editar Projeto" : `Bem vindo, ${userAdm.role}`}</h1>
-                <p>
-                    {modoEdicao
-                        ? "Atualize as informações do projeto abaixo."
-                        : "Nesta área você pode cadastrar novos sites ou produtos adquiridos pelos clientes..."}
-                </p>
-            </div>
+            
+            <MensagemBemVindo
+                titulo={tituloPagina}
+                user={userAdm.nomeCompleto}
+                text={textoPagina}
+            />
+
             <form onSubmit={handleSubmit} className={CssAcaoProduto3.formCadastrarProdutoCliente}>
                 <div className={CssAcaoProduto3.div1}>
                     <Input

@@ -7,17 +7,9 @@
     color: var(--cor-letraClara);
 }
 
-.sectionDashboardUser h1{
-    font-size: var(--font-size-3xl);
-}
-
 .btnSair{
     width: 100%;
     color: var(--cor-letraClara);
-}
-
-.sectionDashboardUser p{
-    font-size: var(--font-size-lg);
 }
 
 .sectionAcoesUser{

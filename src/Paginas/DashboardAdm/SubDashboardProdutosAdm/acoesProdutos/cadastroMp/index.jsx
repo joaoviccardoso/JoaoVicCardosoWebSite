@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { getProdutoMpPorId, postProdutosMP, putProdutoMp } from "../../../../../services/produtoMp";
+import { validarFormularioParaCadastrarMP } from "../../../../../Utils/validarCadastro";
+import { useParams } from "react-router-dom";
 import BotaoAction from "../../../../../Componentes/Buttons/BotaoAction"
 import CssAcaoProduto1 from "./cadastroProdutoMp.module.css"
 import Input from "../../../../../Componentes/Inputs/Input";
@@ -8,9 +11,8 @@ import FuncionalidadesInput from "../../../../../Componentes/Inputs/InputDinamic
 import ImagemPrincipalInput from "../../../../../Componentes/Inputs/InputImagem";
 import ModalAviso from "../../../../../Componentes/Modals/ModalAviso";
 import useModalAviso from "../../../../../hooks/useModalAviso";
-import { getProdutoMpPorId, postProdutosMP, putProdutoMp } from "../../../../../services/produtoMp";
-import { validarFormularioParaCadastrarMP } from "../../../../../Utils/validarCadastro";
-import { useParams } from "react-router-dom";
+import MensagemBemVindo from "../../../../../Componentes/Layouts/MensagemDeBemVindo";
+import { pegarUser } from "../../../../../Utils/pegarUser";
 
 const FORM_VAZIO = {
     nomeCompleto: "",
@@ -30,7 +32,12 @@ function AcaoCadastroProdutoMp(){
     const { id } = useParams()
     const [erroParaCadastrar, setErroParaCadastrar] = useState(null)
     const modoEdicao = Boolean(id)
-    const [form, setForm] = useState(FORM_VAZIO);   
+    const [form, setForm] = useState(FORM_VAZIO);
+    const [userAdm, setUserAdm] = useState({})
+
+    useEffect(() => {
+        setUserAdm(pegarUser())
+    }, [])
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -123,16 +130,17 @@ function AcaoCadastroProdutoMp(){
         }
     }
 
+    const tituloPagina = modoEdicao ? "Editar Projeto" : "Bem vindo, Admin"
+    const textoPagina = modoEdicao ? "Atualize as informações do projeto abaixo." : "Nesta área você pode cadastrar novos sites ou produtos adquiridos pelos clientes..."
+
     return(
         <section>
-            <div className={CssAcaoProduto1.divTitulo}>
-                <h1>{modoEdicao ? "Editar Projeto" : `Bem vindo, Admin`}</h1>
-                <p>
-                    {modoEdicao
-                        ? "Atualize as informações do projeto abaixo."
-                        : "Nesta área você pode cadastrar novos sites ou produtos adquiridos pelos clientes..."}
-                </p>
-            </div>
+            <MensagemBemVindo
+                titulo={tituloPagina}
+                user={userAdm.nomeCompleto}
+                text={textoPagina}
+            />
+            
             <form onSubmit={handleSubmit} className={CssAcaoProduto1.formDadosCliete}>
                 <div className={CssAcaoProduto1.div1}>
                     <Input

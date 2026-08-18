@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { jwtDecode } from "jwt-decode";
 import TabelaConsultaProjetosPC from "../../../../../Componentes/Tables/TabelaProdutosPc";
 import CssAcaoProduto4 from "./consultaProdutoPc.module.css"
 import { getAllProdutosPC } from "../../../../../services/produtosServices";
+import { pegarUser } from "../../../../../Utils/pegarUser";
+import MensagemBemVindo from "../../../../../Componentes/Layouts/MensagemDeBemVindo";
 
 function AcaoConsultaPc(){
     const [userAdm, setUserAdm] = useState({});
@@ -13,13 +14,8 @@ function AcaoConsultaPc(){
     };
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (!token) return;
-                
-        // pega só o necessário do token
-        const decoded = jwtDecode(token);
-        setUserAdm(decoded); // decoded tem { id, role }
-    }, []);
+        setUserAdm(pegarUser())
+    }, [])
 
     useEffect(()  => {
         async function fetchData(){
@@ -36,10 +32,11 @@ function AcaoConsultaPc(){
 
     return(
         <section>
-            <div className={CssAcaoProduto4.divTextoEhTitulo}>
-                <h1>Bem vindo, {`${userAdm.role}`}</h1>
-                <p>Nesta área você pode visualizar, cadastrar e gerenciar todos os clientes do sistema. Utilize os filtros e a busca para encontrar clientes rapidamente e manter as informações sempre organizadas.</p>
-            </div>
+            <MensagemBemVindo
+                titulo={"Bem vindo"}
+                user={userAdm.nomeCompleto}
+                text={"Nesta área você pode visualizar, cadastrar e gerenciar todos os clientes do sistema. Utilize os filtros e a busca para encontrar clientes rapidamente e manter as informações sempre organizadas."}
+            />
 
             <div>
 

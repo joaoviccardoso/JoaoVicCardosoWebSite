@@ -8,6 +8,7 @@ import { getAllProdutosPC } from "../../../services/produtosServices"
 import { logout } from "../../../services/authServices"
 import { useNavigate } from "react-router-dom"
 import ModalConfirmacaoExclusao from "../../../Componentes/Modals/ModalDeConfirmacao"
+import MensagemBemVindo from "../../../Componentes/Layouts/MensagemDeBemVindo"
 
 function HomeDashborardAdm(){
     const navigate = useNavigate() 
@@ -58,8 +59,12 @@ function HomeDashborardAdm(){
         <section className={CssDashborardAdm.homeDashborardAdm}>
             <section className={CssDashborardAdm.sectionAcoes}>
                 <div className={CssDashborardAdm.divAcoes}>
-                    <h1>Bem vindo, {`${userAdm.nomeCompleto}`}</h1>
-                    <p>Aqui você pode visualizar um resumo geral das suas informações e acompanhar o status dos seus projetos. Utilize o painel para acessar rapidamente as principais funcionalidades e gerenciar tudo de forma simples e organizada</p>
+                    <MensagemBemVindo
+                        titulo={"Bem vindo"}
+                        user={userAdm.nomeCompleto}
+                        text={"Aqui você pode visualizar um resumo geral das suas informações e acompanhar o status dos seus projetos. Utilize o painel para acessar rapidamente as principais funcionalidades e gerenciar tudo de forma simples e organizada"}
+                    />
+
                     <div className={CssDashborardAdm.divBotoesLinks}>
                         <div className={CssDashborardAdm.botoesLink1}>
                             <BotaoDash

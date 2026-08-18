@@ -7,14 +7,6 @@
     color: var(--cor-letraClara);
 }
 
-.sactionMeusProjetos div h1{
-    font-size: var(--font-size-3xl);
-}
-
-.sactionMeusProjetos div p{
-    font-size: var(--font-size-lg);
-}
-
 .filtro{
     background-color: #000;
     border-radius: 12px;

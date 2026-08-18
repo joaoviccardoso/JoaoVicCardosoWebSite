@@ -5,7 +5,7 @@ import CssAcao2 from "./consultaCliente.module.css"
 import TabelaConsultaCliente from "../../../../../Componentes/Tables/TabelaConsultaCliente"
 import useModalAviso from "../../../../../hooks/useModalAviso"
 import ModalAviso from "../../../../../Componentes/Modals/ModalAviso"
-
+import MensagemBemVindo from "../../../../../Componentes/Layouts/MensagemDeBemVindo"
 
 function AcaoConsultaCliente(){
     const { avisoAberto, mensagemAviso, abrirAviso, fecharAviso } = useModalAviso();
@@ -41,10 +41,11 @@ function AcaoConsultaCliente(){
 
     return(
         <section className={CssAcao2.sectionConsultarCliente}>
-            <div className={CssAcao2.divTextoEhTitulo}>
-                <h1>Bem vindo, {`${userAdm.role}`}</h1>
-                <p>Nesta área você pode visualizar, cadastrar e gerenciar todos os clientes do sistema. Utilize os filtros e a busca para encontrar clientes rapidamente e manter as informações sempre organizadas.</p>
-            </div>
+            <MensagemBemVindo
+                titulo={"Bem vindo"}
+                user={userAdm.nomeCompleto}
+                text={"Nesta área você pode visualizar, cadastrar e gerenciar todos os clientes do sistema. Utilize os filtros e a busca para encontrar clientes rapidamente e manter as informações sempre organizadas."}
+            />
             
             <div className={CssAcao2.divFiltroCliente}>
 
