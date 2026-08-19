@@ -1,10 +1,8 @@
 import { useState } from "react";
-import CssCadastro from "./cadastro.module.css"
-import BemVindo from "../../../Componentes/MensagemBemVindo"
-import Input from "../../../Componentes/Inputs/Input/index.jsx";
-import ImgLink from "../../../Componentes/imgLink";
-import BotaoAction from "../../../Componentes/Buttons/BotaoAction/index.jsx";
 import { validarFormularioCadastro } from "../../../Utils/validarCadastro.js";
+import CssCadastro from "./cadastro.module.css"
+import Input from "../../../Componentes/Inputs/Input/index.jsx";
+import BotaoAction from "../../../Componentes/Buttons/BotaoAction/index.jsx";
 import ModalAviso from "../../../Componentes/Modals/ModalAviso/index.jsx";
 import useModalAviso from "../../../hooks/useModalAviso.js";
 const BASE_URL = import.meta.env.VITE_API_URL
@@ -83,10 +81,6 @@ function TelaCadastro(){
 
     return(
         <section className={CssCadastro.secaoTelaCadastro}>
-            <BemVindo
-                titulo="Bem-vindo à nossa plataforma"
-                texto="Crie sua conta e tenha acesso a ferramentas pensadas para facilitar sua rotina e organizar tudo em um só lugar."
-            />
             <section className={CssCadastro.secaoFormularioCadastro}>
                 <form onSubmit={handleSubmitLogin} className={CssCadastro.formCadastro}>
                     <h3>Crie sua conta pessoal</h3>

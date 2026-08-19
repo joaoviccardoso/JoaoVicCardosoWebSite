@@ -3,11 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { validarFormularioLogin } from "../../../Utils/validarLogin";
 import { jwtDecode } from "jwt-decode";
 import CssLogin from "./login.module.css"
-import BemVindo from "../../../Componentes/MensagemBemVindo"
-import ImgLink from "../../../Componentes/imgLink"
 import Input from "../../../Componentes/Inputs/Input";
 import BotaoAction from "../../../Componentes/Buttons/BotaoAction"
-import RadioGroup from "../../../Componentes/Inputs/RadioInput";
 import LinkParaNavegacao from "../../../Componentes/Layouts/Links/link"
 import useModalAviso from "../../../hooks/useModalAviso";
 import ModalAviso from "../../../Componentes/Modals/ModalAviso";
@@ -84,10 +81,6 @@ function TelaLogin(){
 
     return(
         <section className={CssLogin.sectionLogin}>
-            <BemVindo
-                titulo="Bem-vindo de volta"
-                texto="Faça login para continuar e aproveitar todos os recursos disponíveis na plataforma."
-            />
             <section className={CssLogin.containerFormularioLogin}>
                 <form onSubmit={handleSubmitLogin} className={CssLogin.formLogin}>
                     <div className={CssLogin.containerTexto}>
@@ -121,13 +114,13 @@ function TelaLogin(){
                     <div className={CssLogin.containerEsqueceuAhSenha}>
                         <LinkParaNavegacao
                             to="/Cadastro"
-                            child="Não tenho conta"
+                            child="Criar uma conta"
                             className="linkLogin"
                         />
 
                         <LinkParaNavegacao
                             to="/requestPassword"
-                            child="Esqueceu sua senha"
+                            child="Esqueceu sua senha?"
                             className=".linkLogin"
                         />
                     </div>

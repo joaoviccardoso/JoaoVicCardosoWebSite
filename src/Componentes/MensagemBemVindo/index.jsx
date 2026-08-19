@@ -1,4 +1,4 @@
-import CssBemVindo from "./bemVindo.module.css"
+/* import CssBemVindo from "./bemVindo.module.css"
 import ImgLink from "../imgLink"
 import imgPaginaEmConstrucao from "../../assets/PaginaEmConstrucao.svg"
 
@@ -16,4 +16,4 @@ function BemVindo({titulo, texto}){
     )
 }
 
-export default BemVindo
+export default BemVindo */

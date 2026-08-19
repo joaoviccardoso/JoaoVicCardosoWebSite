@@ -1,7 +1,8 @@
 .secaoTelaCadastro{
-    align-items: center;
     display: flex;
-    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     padding: 4rem 10rem;
 }
 
@@ -15,12 +16,13 @@
 
 .secaoFormularioCadastro h3{
     text-align: center;
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3x2);
 }
 
 .secaoFormularioCadastro p {
     text-align: center;
     font-size: var(--font-size-lg);
+    padding-bottom: 2rem;
 }
 
 .secaoFormularioCadastro a{
